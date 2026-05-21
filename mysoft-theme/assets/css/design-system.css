@@ -1,0 +1,256 @@
+/* Pangea @font-face × 3: Regular 400, Medium 500, SemiBold 600 */
+@font-face {
+  font-family: 'Pangea';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Pangea-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: 'Pangea';
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/Pangea-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: 'Pangea';
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/Pangea-SemiBold.otf") format("opentype");
+}
+
+/* Avenir Next @font-face × 3: Regular 400, Medium 500, Bold 700 */
+@font-face {
+  font-family: 'Avenir Next';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/AvenirNext-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Avenir Next';
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/AvenirNext-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Avenir Next';
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/AvenirNext-Bold.ttf") format("truetype");
+}
+
+:root {
+  /* ── COLOUR PRIMITIVES ── */
+  --navy:        #001A22;
+  --navy-50:     #E7ECEE;
+  --navy-100:    #C6D0D4;
+  --navy-200:    #8FA1A8;
+  --navy-300:    #5A7077;
+  --navy-400:    #2D4148;
+  --navy-500:    #001A22;
+  --navy-600:    #00141C;
+  --navy-700:    #000D14;
+  --navy-800:    #00060C;
+
+  --cyan:        #00B6ED;
+  --cyan-50:     #E0F6FD;
+  --cyan-100:    #B3E8FB;
+  --cyan-200:    #66D2F6;
+  --cyan-300:    #1FBEEF;
+  --cyan-400:    #00B6ED;
+  --cyan-500:    #009DCD;
+  --cyan-600:    #0080A7;
+  --cyan-700:    #006380;
+
+  --yellow:      #F8C556;
+  --yellow-50:   #FEF6E1;
+  --yellow-100:  #FCE7AB;
+  --yellow-200:  #F9D580;
+  --yellow-300:  #F8C556;
+  --yellow-400:  #E8AE34;
+  --yellow-500:  #C28F1F;
+
+  --white:       #FFFFFF;
+  --bg:          #F2F2F2;
+  --bg-elev:     #FFFFFF;
+  --bg-soft:     #F7F8FA;
+  --line:        #E4E6EA;
+  --line-strong: #C7CCD3;
+  --muted:       #6B7480;
+
+  --fg-1:        #001A22;
+  --fg-2:        #3F4A57;
+  --fg-3:        #6B7480;
+  --fg-inverse:  #FFFFFF;
+  --fg-brand:    #001A22;
+  --fg-accent:   #00B6ED;
+
+  --bg-1:        #F2F2F2;
+  --bg-2:        #FFFFFF;
+  --bg-3:        #F7F8FA;
+  --bg-brand:    #001A22;
+  --bg-accent:   #00B6ED;
+
+  --border-1:    #E4E6EA;
+  --border-2:    #C7CCD3;
+  --focus-ring:  rgba(0,182,237,0.35);
+
+  --success:     #1F8A5B;
+  --warning:     #E8AE34;
+  --danger:      #C6362D;
+  --info:        #00B6ED;
+
+  /* ── TYPOGRAPHY ── */
+  --font-display: 'Pangea', system-ui, -apple-system, sans-serif;
+  --font-sans:    'Avenir Next', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --fs-12:  0.75rem;
+  --fs-14:  0.875rem;
+  --fs-16:  1rem;
+  --fs-18:  1.125rem;
+  --fs-20:  1.25rem;
+  --fs-24:  1.5rem;
+  --fs-30:  1.875rem;
+  --fs-36:  2.25rem;
+  --fs-48:  3rem;
+  --fs-60:  3.75rem;
+  --fs-72:  4.5rem;
+  --fs-96:  6rem;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.65;
+
+  --tr-tight:   -0.02em;
+  --tr-normal:  0;
+  --tr-wide:    0.04em;
+  --tr-eyebrow: 0.18em;
+
+  /* ── SPACING ── */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* ── RADII ── */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 999px;
+
+  /* ── SHADOWS ── */
+  --shadow-xs:    0 1px 2px rgba(0,26,34,0.06);
+  --shadow-sm:    0 2px 6px rgba(0,26,34,0.06), 0 1px 2px rgba(0,26,34,0.04);
+  --shadow-md:    0 8px 20px rgba(0,26,34,0.08), 0 2px 6px rgba(0,26,34,0.05);
+  --shadow-lg:    0 18px 40px rgba(0,26,34,0.10), 0 4px 10px rgba(0,26,34,0.06);
+  --shadow-inset: inset 0 0 0 1px var(--border-1);
+
+  /* ── MOTION ── */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+
+  /* ── LAYOUT ── */
+  --container:        1240px;
+  --container-narrow: 880px;
+  --nav-h:            80px;
+}
+
+/* ── BASE RESETS & ELEMENTS ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body { font-family: var(--font-sans); color: var(--fg-1); -webkit-font-smoothing: antialiased; line-height: var(--lh-normal); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+::placeholder { color: rgba(255,255,255,0.28); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+
+/* ── HEADINGS & TEXT ── */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--fg-1);
+  margin: 0;
+}
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--fg-1);
+  margin: 0;
+}
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 0;
+}
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--fg-1);
+  margin: 0;
+}
+h5 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: var(--fg-1);
+  margin: 0;
+}
+p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--fg-2);
+  margin: 0;
+}
+.lead {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: block;
+}
