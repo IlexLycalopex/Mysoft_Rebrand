@@ -214,6 +214,12 @@
 .site-nav__mobile-toggle.is-active span:nth-child(2) { opacity: 0; }
 .site-nav__mobile-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Mobile-only CTA block (hidden on desktop) */
+.site-nav__mobile-ctas { display: none; }
+
+/* btn--full modifier (used inside mobile nav) */
+.btn--full { width: 100%; justify-content: center; }
+
 /* ── MOBILE NAV ─────────────────────────────────────────────────────── */
 @media (max-width: 1023px) {
   .site-nav__mobile-toggle { display: flex; }
@@ -250,4 +256,12 @@
   .site-nav__cta-card { display: none; }
   .site-nav__ctas { display: none; }
   .site-nav__btn { padding: 14px 24px; font-size: 15px; width: 100%; }
+  .site-nav__mobile-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    border-top: 1px solid var(--border-1);
+    margin-top: 8px;
+  }
 }
