@@ -1,0 +1,698 @@
+MYSOFT LTD
+
+AI-Led Digital Transformation
+
+Go-To-Market Framework
+
+Building Finance and Operations Functions Designed for the AI Era
+
+Sage X3  |  Sage Intacct  |  X3CloudDocs  |  Partner Ecosystem
+
+Version 2.0  |  May 2026  |  Confidential | Not for External Distribution
+
+1. Strategic Intent
+
+Mysoft’s go-to-market is built around a single, defensible position: we are the partner that helps ambitious organisations build finance and operations functions ready for growth — not just today, but for the business they are becoming.
+
+This is an AI-led digital transformation story. Not an efficiency argument. Not a cost-reduction narrative. A growth story, underpinned by the operational infrastructure, automation foundations, and AI capabilities that allow finance and operations to scale with the business rather than constrain it.
+
+This framework applies equally to Sage X3 and Sage Intacct engagements. The maturity journey, governance model, buying triggers, and commercial architecture are consistent across both platforms. Where capabilities differ, this document notes the platform-specific approach. The partner ISV ecosystem extends the value of both platforms across the full operational footprint.
+
+The Core Strategic Claim
+
+Build the finance and operations infrastructure your next chapter of growth actually needs.
+
+1.1 What This Means in Practice
+
+Finance becomes a growth enabler, not an operational bottleneck
+
+Operations are connected, visible, and optimised across the full value chain
+
+Automation removes the transactional layer, freeing your team for commercial judgement
+
+AI capabilities are introduced incrementally, on a governed, structured path
+
+Mysoft is the long-term transformation partner, not a one-time implementer
+
+1.2 What We Are Not Saying
+
+This GTM deliberately avoids:
+
+Redundancy and headcount reduction messaging
+
+Cost-cutting as a primary value driver
+
+AI as a replacement for people
+
+“Cloud accounting” as a differentiator
+
+Feature-led product messaging outside of demonstrations
+
+The CFO’s motivation is growth confidence, not cost management. The messaging must lead with ambition.
+
+2. Market Context
+
+Four converging forces are reshaping the mid-market finance and operations function and creating the buying environment Mysoft is positioned to lead.
+
+2.1 AI Is Moving from Experimentation to Deployment
+
+CFOs are no longer asking whether AI is relevant to finance. They are being asked by their boards to articulate a credible AI strategy. Most cannot yet, because their operational foundations — process maturity, data quality, and ERP infrastructure — are not ready to support it. That creates a major consultative opportunity for a partner who can design the journey, not just supply a platform.
+
+2.2 Finance and Operations Talent Constraints Are Structural, Not Cyclical
+
+Hiring experienced finance and operational professionals in the UK mid-market is increasingly difficult and expensive. The response cannot be to keep adding headcount to compensate for process gaps. Organisations that build the right infrastructure now gain a structural advantage: the ability to grow revenue without proportional growth in operating cost.
+
+2.3 ERP Is Becoming a System of Intelligence
+
+Cloud ERP is no longer a differentiator. What differentiates modern platforms is their capacity to act as an AI orchestration layer: connecting data, automating workflows, and surfacing insight at speed. Sage X3 and Sage Intacct are positioned to deliver this — but only when implemented and configured by a partner who understands the operating model, not just the software. The partner ISV ecosystem extends this intelligence across warehousing, manufacturing, logistics, and people.
+
+2.4 The Competitive Whitespace
+
+Most Sage partners are still leading with cloud, dashboards, and efficiency. Very few can credibly articulate:
+
+AI operating model design across finance and operations
+
+Agentic finance workflow governance
+
+Human-and-AI workforce architecture
+
+Incremental AI maturity journeys with commercial milestones
+
+An integrated partner ISV ecosystem that extends transformation beyond the core ERP
+
+That whitespace is Mysoft’s to occupy.
+
+3. Positioning
+
+3.1 Positioning Statement
+
+Mysoft Positioning
+
+Mysoft partners with ambitious organisations to build finance and operations functions designed for growth. We implement Sage X3 and Sage Intacct, automate intelligently with our own X3CloudDocs IP and a curated partner ecosystem, and design the governance and AI foundations that give organisations the operational capacity, speed, and insight to scale with confidence.
+
+We are not here to cut costs or reduce headcount. We are here to ensure your finance and operations infrastructure is ready for what your business is capable of becoming.
+
+3.2 The Identity Shift
+
+Moving away from
+
+Moving toward
+
+ERP reseller
+
+AI-led digital transformation partner
+
+Implementation partner
+
+Intelligent finance and operations advisor
+
+Software consultancy
+
+Long-term transformation specialist
+
+3.3 The Buying Committee Message
+
+Board / CEO
+
+The businesses that scale successfully in the next decade will have finance and operations functions built for it. That means systems that grow with the business, automation that removes operational drag, and AI that accelerates decision-making. That infrastructure has to be built deliberately.
+
+CFO
+
+Finance should be contributing to growth, not constraining it. The right platform and operating model means your team spends less time on process and more time on the commercial decisions that matter. Implemented well, Sage X3 or Sage Intacct is the foundation that makes that possible.
+
+Finance Director
+
+Your team is capable of far more than the current systems allow. The right ERP removes the manual layer and gives you the controls, visibility, and automation to operate at a materially higher level — without adding headcount to compensate for process gaps.
+
+Operations / Supply Chain Director
+
+The gap between what your systems show and what your operations require is costing you margin. Connected ERP with a specialist ISV ecosystem for inventory, warehousing, manufacturing, and logistics gives your team the visibility and control to operate efficiently at scale.
+
+4. The AI Transformation Journey
+
+The maturity ladder below defines how Mysoft takes clients from operational foundation through to agentic finance and operations. Each stage is a commercial milestone. Each generates implementation, configuration, advisory, and recurring revenue.
+
+The framework is platform-agnostic. It applies to Sage X3, Sage Intacct, and combined X3/Intacct environments. Platform-specific delivery notes appear within each stage.
+
+Stage
+
+Name
+
+Core Sell
+
+Primary Buyer
+
+Key Deliverables
+
+1
+
+Operational Foundation
+
+ERP implementation, data governance, real-time visibility
+
+CFO / FD
+
+Finance Operations Review, Governance Config Record, Process Governance Map
+
+2
+
+Intelligent Automation
+
+Remove the manual transactional layer. X3CloudDocs (X3), Intacct automation, and the ISV partner ecosystem
+
+CFO / Finance Manager
+
+Automation SOW, Tiered Approval Model, First QAOR
+
+3
+
+AI-Augmented Finance
+
+Platform AI and ISV intelligence: SEI, Phocas, ZAP BI, Velixo, Netstock, Lynq. Forecasting, variance commentary, operational insight
+
+CFO / Board Sponsor
+
+Full 4-layer governance, Board AI Governance Report, QAOR advisory
+
+4
+
+Agentic Finance Operations
+
+Governed agentic workflows. Finance and operations at scale without proportional headcount growth
+
+CFO / Board
+
+Agentic Design Workshop, Wave deployment, Annual Governance Review
+
+Stage Messaging
+
+Stage 1 — Operational Foundation
+
+“Build the platform your business deserves.”
+Reliable data, governed processes, real-time visibility. The point is not that the legacy system was inadequate. It is that the new one is built for what comes next.
+
+Stage 2 — Intelligent Automation
+
+“Free your team to work at their highest value.”
+Automation handles the transactional layer. People focus on analysis, governance, and commercial support. The team becomes more strategic, not smaller.
+
+Stage 3 — AI-Augmented Finance
+
+“Give finance the tools to work at the speed of the business.”
+AI-assisted forecasting, variance commentary, anomaly detection, and operational intelligence. Capabilities previously only available to larger organisations with bigger teams.
+
+Stage 4 — Agentic Finance Operations
+
+“Design the finance and operations function of the next decade.”
+Governed AI agents handling defined workflows. Humans in control of exceptions, strategy, and judgement. A function that scales with the business without requiring proportional resource growth.
+
+5. Buying Trigger Framework
+
+The GTM is structured around four recognisable buying triggers. These are the moments when a CFO or Operations Director will engage with content, take a call, or open a conversation with a partner.
+
+Growth Acceleration
+
+Revenue growing faster than the back office can support. Month-end is slipping. Consolidations are manual. Reporting is backward-looking.
+Entry: “When your finance and operations function becomes a growth bottleneck.”
+
+Scale Ambition
+
+Board or investor expectation of significant revenue growth. The CFO and COO know current systems and operating model will not support the business at 2x or 3x current size.
+Entry: “Finance and operations infrastructure designed for the business you are building.”
+
+AI Mandate
+
+Board or CEO has asked for a credible AI strategy. The CFO has no structured answer yet and recognises that operational foundations need addressing before AI can be deployed safely.
+Entry: “What leaders need to do before deploying AI in finance and operations.”
+
+Compliance or Operational Event
+
+A near-miss, acquisition, new reporting obligation, supply chain disruption, or regulatory change that has exposed process fragility.
+Entry: “What robust controls and operational resilience actually look like in a scaling business.”
+
+6. GTM Activation Plan
+
+Phase 1: Message Validation (Months 1–2)
+
+Test core positioning in three to four existing customer conversations; gather resonance data across both X3 and Intacct accounts
+
+Run one CFO roundtable framed around “Finance in the AI era: what needs to change”
+
+Develop one pillar content asset: “The AI-Ready Finance Function: A CFO Readiness Guide” as a gated download
+
+Align Sage co-marketing conversations around the AI transformation and growth narrative
+
+Phase 2: Content Programme (Months 2–4)
+
+Build four content assets aligned to the buying trigger framework — platform-agnostic, CFO audience
+
+Develop two operational content assets for Supply Chain and Operations Director audiences
+
+Launch AI Readiness Assessment as a free-with-intent gateway product at mysoftx3.com
+
+Develop ISV ecosystem content: “The integrated technology stack for mid-market operations”
+
+Phase 3: Campaign and Pipeline Activation (Months 3–6)
+
+Adapt the ERP-selection event model for both X3 verticals (manufacturing, distribution) and Intacct verticals (financial services, SaaS, professional services, not-for-profit)
+
+Establish LinkedIn thought leadership cadence: one post per week, CFO-oriented, evidence-based
+
+Develop vertical case studies anchored in the AI transformation journey narrative
+
+Run joint events or webinars with preferred ISV partners: Netstock, Lynq, SEI, WebExpenses, Payhawk
+
+Phase 4: Recurring Revenue Model (Months 6–12)
+
+Quarterly AI Optimisation Reviews: post go-live advisory to identify new automation and AI capabilities
+
+Finance AI Roadmap Workshops: half-day or full-day consultancy generating phased roadmap and ROI model
+
+ISV expansion conversations: at each QAOR, assess which partner solutions would accelerate the client’s next stage
+
+AI Maturity Benchmarking: annual assessment creating ongoing engagement and expansion ARR
+
+7. Content Strategy
+
+Content should pivot from explaining what cloud ERP is, to addressing what happens to finance and operations functions in the AI era. This is a significantly more commercially powerful conversation for a CFO and operations audience.
+
+Primary Content Pillars
+
+CFO Strategy
+
+How finance functions scale without proportional headcount growth
+Why AI success starts with finance process maturity, not technology
+The AI-ready finance operating model
+The future role of the CFO in AI-led organisations
+
+Operational Transformation
+
+AI in accounts payable and receivable automation
+AI-assisted forecasting, variance analysis, and cash flow modelling
+Human-in-the-loop finance AI governance
+Connected operations: ERP, warehouse, inventory, and logistics intelligence
+Manufacturing execution and field service in the AI era
+
+Strategic Insight
+
+Agentic AI in finance and operations: reality versus hype
+Why fragmented systems block AI adoption
+The business case for incremental AI maturity
+How mid-market businesses are building the function of 2030
+Building trusted AI foundations: governance, auditability, and board confidence
+
+Messaging to Phase Out
+
+“Cloud accounting” as a headline value proposition
+
+Feature-led messaging outside of demonstrations
+
+“Digital transformation partner” as a generic label without specific claim
+
+Future-tense AI promises without current demonstrable capability
+
+Product-specific messaging in top-of-funnel content — maturity journey first, platform second
+
+8. Competitive Positioning
+
+Do Nothing / Status Quo
+
+Quantify the cost of a finance and operations function that cannot support the next stage of growth. The question is not whether to invest in transformation. It is whether to do it on your terms or under pressure. The cost of inaction compounds every quarter.
+
+NetSuite
+
+NetSuite scales for complexity. Sage X3 and Sage Intacct scale for intelligence. Mid-market leaders need a finance-first platform with faster time to value, not enterprise ERP overhead. Mysoft’s implementation quality and advisory model reduces risk materially.
+
+Microsoft Dynamics
+
+Dynamics is a broad operational platform. Sage X3 and Sage Intacct are specialist platforms built for the way modern mid-market finance and operations teams need to work. Mysoft brings a specialist advisory model that generalist Microsoft partners cannot match.
+
+Other Sage Partners
+
+Most Sage partners implement software. Mysoft designs operating models. The AI transformation journey, governance approach, ISV partner ecosystem, and ongoing optimisation services are differentiators no other UK Sage partner currently articulates credibly.
+
+Legacy Sage Products
+
+Legacy systems were built for a simpler business. They cannot support multi-entity consolidation, AI-assisted reporting, or the automation layer that modern finance and operations teams require. The cost of staying is compounding.
+
+9. Success Metrics
+
+GTM effectiveness should be measured across three horizons:
+
+Pipeline Metrics
+
+Number of qualified opportunities by platform (X3 / Intacct) and buying trigger category
+
+Lead volume from gated content assets and AI readiness assessment
+
+Event attendance and conversion rate from ERP-selection events
+
+Average deal size and ARR per new logo
+
+ISV co-sell pipeline value (partner-originated or Mysoft-referred)
+
+Conversion Metrics
+
+Sales cycle length by platform, entry trigger, and vertical
+
+Close rate by vertical and deal size
+
+Champion identification rate within sales process
+
+Competitive win rate against named alternatives
+
+Revenue and Retention Metrics
+
+New ARR bookings (monthly and quarterly) — broken down by X3 and Intacct
+
+PS:ARR ratio and PS utilisation against delivery capacity
+
+Customer expansion ARR from advisory, AI optimisation, and ISV services
+
+Net Revenue Retention across the X3 and Intacct installed bases
+
+Leading Indicator
+
+The single most important leading indicator: the number of CFO-level conversations opened using the AI transformation narrative — not the product pitch. Platform and product follow once transformation intent is established.
+
+10. Pre-Execution Requirements
+
+Two strategic questions must be resolved before this GTM goes to market:
+
+10.1 AI Delivery Credibility
+
+The messaging positions Mysoft as an AI-enabled transformation partner. The evidence base for that claim must be defined before it goes to market. This means documenting:
+
+Delivered client outcomes involving automation or AI-adjacent capability — on both X3 and Intacct
+
+Internal tooling and AI capability within the Mysoft consulting team
+
+Trained consultants who can design AI readiness assessments credibly
+
+Proprietary frameworks: AI Readiness Assessment, Agentic Finance Governance Framework, AI Transformation Master Framework
+
+10.2 Platform AI Capability Mapping
+
+The AI maturity ladder requires a current, demonstrable mapping of what AI features are live and available today on each platform. Sales must be able to demo Stages 2 and 3 concretely rather than conceptually. This requires:
+
+A current Sage Intacct AI feature inventory (Copilot, Intelligent GL, forecasting) aligned to maturity stages
+
+A current Sage X3 AI and analytics capability map: X3 native analytics, SEI, Phocas, ZAP BI integration points
+
+X3CloudDocs capability map: PIA, SOA, EDM, ENA — demonstration scripts and readiness thresholds
+
+Demonstration scripts for AI-assisted reporting, Sage Copilot (Intacct), and ISV BI tools (X3)
+
+Clear guidance on what is available now versus what is on the Sage and partner roadmaps
+
+Pre-Execution Gate
+
+Resolve both points before activating Phase 2 content and any event that positions Mysoft as an AI transformation partner. The claim must be substantiated before it is made publicly.
+
+11. Partner ISV Ecosystem
+
+Mysoft’s transformation proposition extends beyond the core Sage ERP platforms. A curated partner ISV ecosystem enables clients to build a fully connected finance and operations function. ISV solutions are introduced at the appropriate maturity stage, governed by the same framework, and represent incremental ARR for Mysoft through referral and co-delivery arrangements.
+
+11.1 ISV Maturity Stage Mapping
+
+Stage 1 — Operational Foundation
+
+ERP implementation only. ISV scope assessment completed during discovery to plan the Stage 2 partner ecosystem conversation.
+
+Stage 2 — Intelligent Automation
+
+Document and AP automation (X3CloudDocs for X3; Intacct AP automation). Expense management: WebExpenses, Payhawk. EDI and integration: TrueCommerce. Payments: Nuvei.
+
+Stage 3 — AI-Augmented Finance
+
+Business intelligence and AI analytics: SEI, Phocas, ZAP BI, Velixo (Intacct), Swoop Analytics (Intacct). Inventory and demand intelligence: Netstock. Manufacturing execution: Lynq. Field service: Praxedo.
+
+Stage 4 — Agentic Finance Operations
+
+Full ecosystem active and integrated. Warehouse management: Datalinx, Blue Yonder. Shipping and fulfilment: Metapack, Veeqo, TrueCommerce. People and HR: Sage People. AI integration: Cindercone Magma.
+
+11.2 ISV Partner Reference Table
+
+ISV
+
+Category
+
+Platform
+
+Partner Status
+
+Role in Transformation
+
+SEI (Sage Enterprise Intelligence)
+
+Business Intelligence
+
+X3 + Intacct
+
+Preferred Partner ★
+
+Sage-native BI. Financial and operational reporting, dashboards, and analytics on live ERP data.
+
+Phocas
+
+Business Intelligence
+
+X3
+
+Preferred Partner ★
+
+Mid-market BI and analytics. ERP-connected sales, operations, and finance dashboards.
+
+ZAP BI
+
+Business Intelligence
+
+X3 + Intacct
+
+Preferred Partner ★
+
+Financial analytics and multi-dimensional reporting across Sage platforms.
+
+Velixo
+
+Business Intelligence
+
+Intacct
+
+Preferred Partner ★
+
+Excel-based reporting and analytics direct from Sage Intacct. CFO and board pack automation.
+
+Swoop Analytics
+
+Business Intelligence
+
+Intacct
+
+Preferred Partner ★
+
+Financial analytics and insight for Sage Intacct users.
+
+WebExpenses
+
+Expense Management
+
+X3 + Intacct
+
+Preferred Partner ★
+
+UK-headquartered expense management. Mobile capture, policy enforcement, ERP integration.
+
+Payhawk
+
+Expense Management
+
+X3 + Intacct
+
+Preferred Partner ★
+
+Corporate card and expense platform. Real-time spend visibility and ERP posting.
+
+Ramp
+
+Expense Management
+
+X3 + Intacct
+
+Market Option
+
+US-focused corporate card and expense automation platform.
+
+Pleo
+
+Expense Management
+
+X3 + Intacct
+
+Market Option
+
+UK/EU smart company card and expense management solution.
+
+X3CloudDocs
+
+Doc & AP Automation
+
+X3 only
+
+Mysoft IP ★
+
+Mysoft proprietary IP. Purchase Invoice Automation (PIA), Sales Order Automation (SOA), Electronic Document Management (EDM), Email and Notification Automation (ENA).
+
+Nuvei
+
+Payments
+
+X3 + Intacct
+
+Preferred Partner ★
+
+Payment processing and acceptance. Integrated with Sage ERP for order-to-cash automation.
+
+TrueCommerce
+
+EDI & Integration
+
+X3 + Intacct
+
+Preferred Partner ★
+
+EDI, fulfilment, and supply chain integration. Multi-trading-partner connectivity.
+
+Netstock
+
+Inventory Optimisation
+
+X3 + Intacct
+
+Preferred Partner ★
+
+Demand planning, inventory optimisation, and purchasing intelligence. ERP-connected.
+
+SlimStock
+
+Inventory Optimisation
+
+X3
+
+Market Option
+
+Inventory planning and optimisation for distribution and manufacturing.
+
+Lynq
+
+Manufacturing Execution
+
+X3
+
+Preferred Partner ★
+
+Manufacturing execution system (MES) integrated with Sage X3. Production visibility and control.
+
+Praxedo
+
+Field Service
+
+X3
+
+Preferred Partner ★
+
+Field service management integrated with Sage X3. Scheduling, mobile workforce, and billing.
+
+Datalinx
+
+Warehouse Management
+
+X3
+
+Preferred Partner ★
+
+WMS integrated with Sage X3. Goods-in, pick-pack-despatch, and stock accuracy.
+
+Blue Yonder
+
+Warehouse Management
+
+X3
+
+Preferred Partner ★
+
+Enterprise-grade WMS and supply chain planning for complex distribution environments.
+
+Metapack
+
+Shipping & Fulfilment
+
+X3
+
+Market Option
+
+Multi-carrier shipping platform. Label generation, tracking, and carrier management.
+
+Veeqo
+
+Shipping & Fulfilment
+
+X3
+
+Market Option
+
+Order and shipping management for multi-channel retail and distribution.
+
+Sage People
+
+HR & Workforce
+
+X3 + Intacct
+
+Preferred Partner ★
+
+Sage-native HRMS. People management, payroll, and workforce analytics.
+
+Cindercone Magma
+
+AI & Integration
+
+X3
+
+Preferred Partner ★
+
+Integration and automation platform for Sage X3 environments.
+
+ISV Positioning Note
+
+Preferred Partners (★) are ISVs with whom Mysoft has an established referral or co-delivery relationship. They are the recommended default for client conversations. Market Options are presented where client requirements or existing vendor relationships indicate an alternative. Mysoft’s position is vendor-agnostic within each category — the governance and integration model applies regardless of which ISV is selected.
+
+12. Vertical Targeting
+
+The GTM applies across all sectors served by Mysoft. Vertical-specific emphasis by platform:
+
+Sage X3 Primary Verticals
+
+Manufacturing (discrete, process, food and beverage)
+Wholesale distribution and logistics
+Field service and asset-intensive operations
+Business services requiring operational ERP
+
+Sage Intacct Primary Verticals
+
+Financial services and fund management
+SaaS and technology businesses
+Professional services and project-based organisations
+Not-for-profit and charity sector
+Legal services
+
+Cross-Platform Opportunities
+
+Multi-entity and group consolidation environments
+Organisations with mixed finance (Intacct) and operations (X3) requirements
+Private equity portfolio companies requiring rapid AI readiness
+High-growth businesses planning for Series B or IPO
+
+Confidentiality
+
+This document is confidential and prepared for internal Mysoft use. Client-facing outputs are derived from and edited from this source. Do not distribute externally without MD sign-off.

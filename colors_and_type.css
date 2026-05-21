@@ -1,0 +1,345 @@
+/* ============================================================
+   Mysoft Design System — Core tokens
+   ============================================================
+   Brand: Mysoft Ltd (mysoftx3.com)
+   Tagline: Ambitious Vision. Exceptional People. Successful outcomes.
+   Mood:   Minimalist. Modern. Human. Sleek. Trustworthy.
+   ============================================================ */
+
+/* ---------- Fonts ----------
+   Pangea = display / headlines / wordmark
+   Avenir Next = UI + body text
+*/
+@font-face {
+  font-family: "Pangea";
+  src: url("fonts/Pangea-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pangea";
+  src: url("fonts/Pangea-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pangea";
+  src: url("fonts/Pangea-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNext-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNext-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNext-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ============================================================
+     COLOR — primitives
+     ============================================================ */
+
+  /* Brand */
+  --navy:        #001A22;  /* primary brand — UI chrome, headlines, dark surfaces */
+  --navy-900:    #001A22;  /* alias kept for compatibility — same as --navy */
+  --cyan:        #00B6ED;  /* primary action / accent / links */
+  --yellow:      #F8C556;  /* warm accent / highlights / data viz */
+  --x3cd-red:    #D80A48;  /* X3CloudDocs brand — use only for X3CD surfaces */
+
+  /* Navy scale (anchored at --navy = #001A22; this is a deep cyan-black,
+     so the scale lightens toward 50 and only marginally darkens below 500) */
+  --navy-50:     #E7ECEE;
+  --navy-100:    #C6D0D4;
+  --navy-200:    #8FA1A8;
+  --navy-300:    #5A7077;
+  --navy-400:    #2D4148;
+  --navy-500:    #001A22;
+  --navy-600:    #00141C;
+  --navy-700:    #000D14;
+  --navy-800:    #00060C;
+  --navy-900-:   #001A22; /* alias of --navy-900 */
+
+  /* Cyan scale */
+  --cyan-50:     #E0F6FD;
+  --cyan-100:    #B3E8FB;
+  --cyan-200:    #66D2F6;
+  --cyan-300:    #1FBEEF;
+  --cyan-400:    #00B6ED;
+  --cyan-500:    #009DCD;
+  --cyan-600:    #0080A7;
+  --cyan-700:    #006380;
+
+  /* Yellow scale */
+  --yellow-50:   #FEF6E1;
+  --yellow-100:  #FCE7AB;
+  --yellow-200:  #F9D580;
+  --yellow-300:  #F8C556;
+  --yellow-400:  #E8AE34;
+  --yellow-500:  #C28F1F;
+
+  /* Neutrals */
+  --white:       #FFFFFF;
+  --bg:          #F2F2F2;   /* canonical page background */
+  --bg-elev:     #FFFFFF;   /* cards on top of bg */
+  --bg-soft:     #F7F8FA;   /* alt section */
+  --line:        #E4E6EA;   /* hairline borders */
+  --line-strong: #C7CCD3;
+  --muted:       #6B7480;
+  --text-2:      #3F4A57;
+  --text-1:      var(--navy-900);
+
+  /* Semantic */
+  --success:     #1F8A5B;
+  --warning:     #E8AE34;
+  --danger:      #C6362D;
+  --info:        var(--cyan);
+
+  /* ============================================================
+     COLOR — semantic roles
+     ============================================================ */
+  --fg-1:        var(--navy-900);   /* primary text */
+  --fg-2:        var(--text-2);     /* secondary text */
+  --fg-3:        var(--muted);      /* tertiary / hint */
+  --fg-inverse:  var(--white);
+  --fg-brand:    var(--navy);
+  --fg-accent:   var(--cyan);
+
+  --bg-1:        var(--bg);         /* page */
+  --bg-2:        var(--bg-elev);    /* card */
+  --bg-3:        var(--bg-soft);    /* alt section */
+  --bg-brand:    var(--navy);
+  --bg-brand-deep: var(--navy-900);
+  --bg-accent:   var(--cyan);
+
+  --border-1:    var(--line);
+  --border-2:    var(--line-strong);
+  --focus-ring:  color-mix(in oklch, var(--cyan) 60%, transparent);
+
+  /* ============================================================
+     TYPE — primitives
+     ============================================================ */
+  --font-display: "Pangea", "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-sans:    "Avenir Next", "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  /* Sizes (modular, 1.2 ratio at 16px) */
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-30: 1.875rem;
+  --fs-36: 2.25rem;
+  --fs-48: 3rem;
+  --fs-60: 3.75rem;
+  --fs-72: 4.5rem;
+  --fs-96: 6rem;
+
+  /* Weights */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* Line heights */
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.65;
+
+  /* Tracking */
+  --tr-tight:    -0.02em;
+  --tr-normal:   0;
+  --tr-wide:     0.04em;
+  --tr-eyebrow:  0.18em;   /* uppercase eyebrows on the site */
+
+  /* ============================================================
+     SPACING / SIZING
+     ============================================================ */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Radii — fairly soft but never pill-y for cards */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Shadows — restrained, single layer */
+  --shadow-xs: 0 1px 2px rgba(0, 26, 34, 0.06);
+  --shadow-sm: 0 2px 6px rgba(0, 26, 34, 0.06), 0 1px 2px rgba(0, 26, 34, 0.04);
+  --shadow-md: 0 8px 20px rgba(0, 26, 34, 0.08), 0 2px 6px rgba(0, 26, 34, 0.05);
+  --shadow-lg: 0 18px 40px rgba(0, 26, 34, 0.10), 0 4px 10px rgba(0, 26, 34, 0.06);
+  --shadow-inset: inset 0 0 0 1px var(--border-1);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+
+  /* Layout */
+  --container:   1240px;
+  --container-narrow: 880px;
+  --nav-h:       80px;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   ============================================================ */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  background: var(--bg-1);
+  font-weight: var(--fw-regular);
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(2.5rem, 5vw, var(--fs-72));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(2rem, 3.4vw, var(--fs-48));
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-30);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-24);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h5, .h5 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-18);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+p, .p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.lead {
+  font-size: var(--fs-20);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+a {
+  color: var(--cyan-500);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--navy); }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-3);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-xs);
+  padding: 0.1em 0.35em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-1);
+  margin: var(--space-12) 0;
+}
+
+::selection {
+  background: color-mix(in oklch, var(--cyan) 40%, transparent);
+  color: var(--navy-900);
+}
+
+/* Focus visible — restrained ring */
+:where(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}

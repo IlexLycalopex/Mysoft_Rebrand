@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mysoft — Sage ERP &amp; Finance Transformation Partner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mysoft is a specialist Sage ERP partner implementing Sage X3 and Sage Intacct for ambitious mid-market organisations. AI-enabled transformation, proprietary automation IP, and 20+ years of Sage expertise.">
+
+<meta name="ext-resource-dependency" content="assets/product-intacct.png" data-resource-id="productIntacct" />
+<meta name="ext-resource-dependency" content="assets/product-x3.png"      data-resource-id="productX3" />
+<meta name="ext-resource-dependency" content="assets/product-x3cd.png"    data-resource-id="productX3CD" />
+
+<template id="__bundler_thumbnail" data-bg-color="#001A22">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Navy background -->
+    <rect width="1200" height="800" fill="#001A22"/>
+    <!-- Wordmark -->
+    <text x="600" y="370" font-family="Georgia, serif" font-weight="700" font-size="96" fill="#ffffff" text-anchor="middle" letter-spacing="-3">Mysoft</text>
+    <text x="730" y="358" font-family="Georgia, serif" font-weight="300" font-size="64" fill="#00B6ED" text-anchor="middle">/</text>
+    <!-- Cyan accent line -->
+    <rect x="480" y="410" width="240" height="3" rx="2" fill="#00B6ED"/>
+    <!-- Subtitle -->
+    <text x="600" y="460" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.45)" text-anchor="middle" letter-spacing="4">SAGE ERP &amp; FINANCE TRANSFORMATION</text>
+  </svg>
+</template>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; background: var(--bg); }
+  body { font-family: var(--font-sans); color: var(--fg-1); -webkit-font-smoothing: antialiased; }
+
+  /* Button hover states */
+  .btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+  .btn:hover  { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn-primary:hover  { background: var(--navy-400) !important; }
+  .btn-accent:hover   { opacity: 0.88; }
+  .btn-ghost:hover    { border-color: var(--navy) !important; }
+  .btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+  .btn-invert:hover   { background: var(--bg) !important; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+
+  /* Input placeholder colour */
+  ::placeholder { color: rgba(255,255,255,0.28); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+
+  /* Tweaks panel */
+  #tweaks-panel {
+    display: none;
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    width: 300px; background: #fff;
+    border: 1px solid var(--border-1);
+    border-radius: 4px; box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  #tweaks-panel.visible { display: block; }
+  .tweak-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 18px;
+    background: var(--navy); color: #fff;
+  }
+  .tweak-section { padding: 16px 18px; border-bottom: 1px solid var(--border-1); }
+  .tweak-section:last-child { border-bottom: none; }
+  .tweak-label { font-family: var(--font-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 10px; }
+  .tweak-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tweak-chip {
+    font-family: var(--font-sans); font-size: 12px; font-weight: 500;
+    padding: 5px 12px; border-radius: 4px; cursor: pointer; border: 1px solid var(--border-1);
+    background: var(--bg); color: var(--navy); transition: all 140ms;
+  }
+  .tweak-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .tweak-swatch { width: 28px; height: 28px; border-radius: 4px; cursor: pointer; border: 2px solid transparent; transition: border 140ms; }
+  .tweak-swatch.active { border-color: var(--navy); }
+
+  /* Active section highlight in nav */
+  .nav-active { color: var(--cyan) !important; }
+</style>
+</head>
+<body data-screen-label="01 Homepage">
+
+<div id="root"></div>
+
+<!-- Tweaks Panel (plain HTML, outside React) -->
+<div id="tweaks-panel">
+  <div class="tweak-header">
+    <span style="font-family:var(--font-sans);font-weight:600;font-size:13px;">Tweaks</span>
+    <button onclick="closeTweaks()" style="background:none;border:none;cursor:pointer;color:#fff;font-size:18px;line-height:1;">×</button>
+  </div>
+
+  <div class="tweak-section">
+    <div class="tweak-label">Hero Headline Variant</div>
+    <div class="tweak-row">
+      <div class="tweak-chip active" data-group="hero" data-val="growth" onclick="applyTweak('hero',this)">Growth</div>
+      <div class="tweak-chip" data-group="hero" data-val="ai" onclick="applyTweak('hero',this)">AI-first</div>
+      <div class="tweak-chip" data-group="hero" data-val="cfo" onclick="applyTweak('hero',this)">CFO-led</div>
+    </div>
+  </div>
+
+  <div class="tweak-section">
+    <div class="tweak-label">Accent Colour</div>
+    <div class="tweak-row">
+      <div class="tweak-swatch active" data-group="accent" data-val="#00B6ED" style="background:#00B6ED" onclick="applyAccent(this,'#00B6ED')"></div>
+      <div class="tweak-swatch" data-group="accent" data-val="#F8C556" style="background:#F8C556" onclick="applyAccent(this,'#F8C556')"></div>
+      <div class="tweak-swatch" data-group="accent" data-val="#1CA97E" style="background:#1CA97E" onclick="applyAccent(this,'#1CA97E')"></div>
+    </div>
+  </div>
+
+  <div class="tweak-section">
+    <div class="tweak-label">Section Background</div>
+    <div class="tweak-row">
+      <div class="tweak-chip active" data-group="bg" data-val="default" onclick="applyBg('default',this)">Default</div>
+      <div class="tweak-chip" data-group="bg" data-val="white" onclick="applyBg('white',this)">Pure white</div>
+    </div>
+  </div>
+
+  <div class="tweak-section">
+    <div class="tweak-label">Nav Style</div>
+    <div class="tweak-row">
+      <div class="tweak-chip active" data-group="nav" data-val="light" onclick="applyNav('light',this)">Light</div>
+      <div class="tweak-chip" data-group="nav" data-val="dark" onclick="applyNav('dark',this)">Dark</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Components: Button.jsx must be first (exports shared primitives) -->
+<script type="text/babel" src="Button.jsx"></script>
+<script type="text/babel" src="NavBar.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="AIJourney.jsx"></script>
+<script type="text/babel" src="WhyMysoft.jsx"></script>
+<script type="text/babel" src="Solutions.jsx"></script>
+<script type="text/babel" src="AssessmentCTA.jsx"></script>
+<script type="text/babel" src="Testimonials.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<script type="text/babel">
+const App = () => {
+  const scrollToAssessment = () => {
+    const el = document.getElementById("assessment");
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <NavBar onAssess={scrollToAssessment} />
+      <main>
+        <Hero onAssess={scrollToAssessment} />
+        <Solutions />
+        <AIJourney onAssess={scrollToAssessment} />
+        <WhyMysoft />
+        <Testimonials />
+        <AssessmentCTA onAssess={scrollToAssessment} />
+        <Footer onAssess={scrollToAssessment} />
+      </main>
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+
+<script>
+// Tweaks panel
+window.addEventListener('message', e => {
+  if (e.data && e.data.type === '__activate_edit_mode')   showTweaks();
+  if (e.data && e.data.type === '__deactivate_edit_mode') hideTweaks();
+});
+window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+function showTweaks() { document.getElementById('tweaks-panel').classList.add('visible'); }
+function hideTweaks() {
+  document.getElementById('tweaks-panel').classList.remove('visible');
+  window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+}
+function closeTweaks() { hideTweaks(); }
+
+function applyTweak(group, el) {
+  document.querySelectorAll(`.tweak-chip[data-group="${group}"]`).forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function applyAccent(el, color) {
+  document.querySelectorAll('.tweak-swatch[data-group="accent"]').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  document.documentElement.style.setProperty('--cyan', color);
+  document.documentElement.style.setProperty('--cyan-500', color);
+}
+
+function applyBg(val, el) {
+  document.querySelectorAll('.tweak-chip[data-group="bg"]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.documentElement.style.setProperty('--bg', val === 'white' ? '#ffffff' : '#F2F2F2');
+}
+
+function applyNav(val, el) {
+  document.querySelectorAll('.tweak-chip[data-group="nav"]').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  // Nav colour swap is communicated as a CSS class on body
+  document.body.dataset.navStyle = val;
+}
+</script>
+
+</body>
+</html>

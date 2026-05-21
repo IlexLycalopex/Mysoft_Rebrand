@@ -1,0 +1,1507 @@
+MYSOFT LTD
+
+AI Transformation Journey
+
+Master Recommendations and Actions Framework
+
+All four stages  |  Sage X3, Sage Intacct, X3CloudDocs  |  Version 1.0  |  May 2026
+
+Purpose of this document
+
+This is the master source document for Mysoft's AI Transformation Journey client output framework. It contains the full set of recommendations, actions, configuration requirements, success metrics, and commercial outputs for each of the four maturity stages. Content is structured to allow any stage to be lifted and formatted as a standalone client-facing document.
+
+Each stage section covers: readiness conditions, Mysoft recommendations by category, client obligations by timing, system configuration requirements (Intacct, X3, X3CloudDocs), success metrics, commercial outputs, and expansion triggers.
+
+This document is internal. Client-facing outputs are derived from this source and edited for audience and context before delivery.
+
+Stage Overview
+
+Stage
+
+Name
+
+Core Sell
+
+Primary Buyer
+
+Key Deliverables
+
+1
+
+Operational Foundation
+
+ERP implementation. Reliable data, governed processes, real-time visibility.
+
+CFO / FD
+
+Finance Operations Review, Governance Config Record, Process Governance Map
+
+2
+
+Intelligent Automation
+
+Remove the manual transactional layer. X3CloudDocs (X3), Intacct automation, and the partner ISV ecosystem on a governed foundation.
+
+CFO / Finance Manager
+
+X3CloudDocs SOW, Tiered Approval Model, First QAOR
+
+3
+
+AI-Augmented Finance
+
+ERP-native AI and ISV intelligence: platform AI capabilities, SEI, Phocas, ZAP BI, Velixo, Netstock, Lynq. Forecasting, variance commentary, operational insight.
+
+CFO / Board Sponsor
+
+Full 4-layer governance, Board AI Governance Report, QAOR advisory
+
+4
+
+Agentic Finance Operations
+
+Governed agentic workflows. Finance at scale without proportional headcount growth.
+
+CFO / Board
+
+Agentic Design Workshop, Wave deployment, Annual Governance Review
+
+Stage 1  |  Operational Foundation
+
+Build the platform your business deserves.
+
+Buying trigger
+
+ERP end-of-life, acquisition, compliance event, or growth stall caused by operational infrastructure
+
+Primary buyer
+
+CFO / Finance Director, with COO and IT Director as secondary stakeholders
+
+Sales cycle
+
+Three to six months from first conversation to signed SOW
+
+Stage 1 is the foundational implementation: a properly configured Sage X3 or Sage Intacct environment with clean data, governed processes, documented approval structures, and real-time visibility. Nothing at Stage 2 or above is possible without it. The commercial value at this stage is not automation or AI — it is the removal of operational risk, the establishment of a trusted system of record, and the infrastructure on which every subsequent investment is built.
+
+  Stage 1 Entry Conditions
+
+All conditions should be confirmed before Stage 1 engagement begins. Unmet conditions are flagged in the client output document with a recommended action to close the gap.
+
+Finance data is currently fragmented, manually assembled, or held primarily in spreadsheets
+
+Current ERP is end-of-life, under-configured, or cannot support current transaction volume
+
+Management accounts take more than five working days to produce
+
+Approval authorities are undocumented or not system-enforced
+
+External audit has raised systems or controls observations in the past two years
+
+The business is planning or has recently completed an acquisition
+
+Board or investor scrutiny of finance function quality has increased
+
+  Mysoft Recommendations and Actions — Stage 1
+
+Discovery and Scoping
+
+Conduct a structured Finance Operations Review covering: current system architecture, data flow, close cycle timeline, approval matrix, reconciliation processes, and known pain points. This becomes the baseline document for the entire engagement.
+
+Map all finance workflows to identify which are candidates for Stage 2 automation — document this now, even though automation is not the current scope. This protects the commercial pathway and avoids having to re-discover in six months.
+
+Identify shadow systems (Excel models, third-party point solutions, manual journals) and agree a migration or retirement plan before go-live.
+
+Run the AI Readiness Assessment at discovery stage to establish the Domain A and Domain D baseline scores. This creates the forward roadmap narrative from the first client meeting.
+
+Agree the Process Governance Map scope with the client CFO. Even at Stage 1, document what will be automated and what will remain manual — this becomes Layer 1 of the governance framework.
+
+Implementation — Sage Intacct
+
+Configure the dimensional chart of accounts to support multi-entity, multi-location, and project-level reporting. Dimensions set at Stage 1 cannot easily be restructured later — get this right first time.
+
+Implement Intacct approval workflows for purchase orders, invoices, and expense claims from day one. Even at Stage 1, system-enforced approvals are non-negotiable; they are the foundation of the Layer 2 governance model.
+
+Configure Intacct's native audit trail and user permission model to align with the client's existing approval authority matrix. Document the mapping as a named Mysoft deliverable.
+
+Set up Intacct dashboards and reporting for CFO and Finance Director from go-live: real-time cash position, AP ageing, AR ageing, and period-close status. These replace manual reporting immediately and demonstrate value on day one.
+
+Implement bank reconciliation through Intacct. Automated bank feeds and reconciliation are the first automation win at Stage 1 and build confidence in the platform's data integrity.
+
+Configure multi-entity consolidation if applicable. The consolidation architecture set at Stage 1 directly enables AI-assisted group reporting at Stage 3.
+
+Establish the close cycle calendar within Intacct, with period-end checklists and sign-off workflows. A structured, system-governed close process is the prerequisite for AI-assisted close at Stage 3.
+
+Implementation — Sage X3
+
+Configure the core operational modules required for the client's sector: manufacturing (production orders, BOM, routings), distribution (purchase orders, sales orders, stock management), or food and beverage (catch weight, traceability, quality management). Scope is client-specific but must be complete at Stage 1.
+
+Set up X3 financial reporting structure: legal entities, sites, analytical dimensions. The analytical dimension design at Stage 1 determines the depth of operational insight available at Stage 2 and above.
+
+Configure X3 approval workflows for procurement and finance sign-off. Approval rules set now become the threshold framework for X3CloudDocs automation at Stage 2.
+
+Implement X3 supplier and customer master data governance. Clean master data is the foundation for automated invoice matching and order processing at Stage 2. Establish data quality rules and ownership before go-live.
+
+Establish X3 period-close procedures and lock controls. Financial period lock configuration in X3 is the control environment foundation — set it correctly and document the process.
+
+Configure X3 intercompany and multi-site transactions if applicable. The intercompany design at Stage 1 directly affects the scope of automation available at Stage 2.
+
+Data Migration and Quality
+
+Define and execute a data quality baseline before migration: supplier master, customer master, chart of accounts, open transactions. Do not migrate poor data — use the implementation as the forcing function to clean it.
+
+Conduct a structured data migration validation against the pre-agreed acceptance criteria. Deliver a signed data migration sign-off document before go-live. This protects Mysoft and gives the client CFO an auditable record.
+
+Document all data transformation rules applied during migration. This is required if the client is subject to financial regulation or audit and should be standard regardless.
+
+Establish ongoing data governance: who owns supplier master, customer master, and chart of accounts maintenance. AI quality at Stage 3 is directly dependent on data governance established at Stage 1.
+
+Training and Adoption
+
+Deliver role-specific training, not system-feature training. Finance Manager training should cover: close process, approval workflows, exception handling, and reporting. CFO/FD training should cover: dashboards, variance analysis, and the audit trail. Do not deliver generic ERP training.
+
+Conduct a structured go-live readiness review with the client's Finance Director before cutover. Confirm: all open items resolved, approval workflows tested, user access confirmed, first-period close plan agreed.
+
+Deliver a 30-day post-go-live support plan with named Mysoft contact and defined escalation path. Early adoption issues that are not resolved quickly erode confidence and damage the expansion pathway.
+
+Governance and Documentation
+
+Deliver the Governance Configuration Record as a standard go-live document: approval thresholds, user permissions, workflow rules, period-lock procedures, and data ownership. Version-controlled and client-signed.
+
+Draft the Process Governance Map for Stage 2 (even if Stage 2 is not in scope). Identifying the automation candidates now positions the QAOR conversation and creates forward commercial momentum.
+
+Begin the AI Readiness Assessment scoring update post-go-live: Domain A should now be at 2-3. Record this as evidence of Mysoft-delivered readiness progression.
+
+  Client Obligations — Stage 1
+
+Timing
+
+Client Action
+
+Before implementation begins
+
+Appoint a named Finance Project Lead with authority to make decisions on chart of accounts, approval matrix, and data migration scope. Projects without a client decision-maker stall.
+
+Before implementation begins
+
+Provide a complete current system export: chart of accounts, supplier master, customer master, open transactions, and historical transaction data as agreed in the data migration scope.
+
+Before implementation begins
+
+Document the current approval authority matrix. If this does not exist, create it before implementation begins — it cannot be configured into the system without it.
+
+During implementation
+
+Attend all structured workshops. The Finance Project Lead must be available for the chart of accounts design, approval workflow design, and reporting requirements sessions. Absence delays and increases cost.
+
+During implementation
+
+Complete data quality remediation tasks on the agreed timeline. Mysoft provides the migration framework; the client owns the data cleaning.
+
+Before go-live
+
+Complete user acceptance testing for all core workflows. Sign off the UAT completion record before cutover is agreed.
+
+Before go-live
+
+CFO/FD to review and sign the Governance Configuration Record. This is not administrative — it is the first governance document in the AI maturity journey.
+
+Post go-live
+
+Commit to the 30-day hypercare period. Designate a named finance team contact for the daily hypercare check-in. Issues not raised in hypercare become harder to resolve.
+
+Ongoing
+
+Maintain data governance ownership: named owner for supplier master, customer master, and chart of accounts. Report master data changes to Mysoft where they affect approval workflow configuration.
+
+  System Configuration Requirements — Stage 1
+
+Sage Intacct
+
+Dimensional chart of accounts: entity, department, location, project, fund (NFP) — agree before implementation begins
+
+Multi-entity structure and intercompany elimination rules
+
+AP and PO approval workflows with value thresholds aligned to approval authority matrix
+
+AR workflow and credit control process configuration
+
+Bank feed integration and automated reconciliation
+
+Period-close calendar, checklists, and lock controls
+
+User roles and permissions aligned to approval authority matrix
+
+Audit trail configuration: all financial transactions, approval decisions, user actions
+
+CFO and FD dashboard: cash position, AP/AR ageing, period-close status, KPI set agreed at discovery
+
+Standard management report pack: P&L by dimension, balance sheet, cash flow statement
+
+Integration to payroll system (BACS, payroll journal automation)
+
+Integration to CRM if applicable (Salesforce, Zoho, HubSpot) — agree at discovery stage
+
+Sage X3
+
+Legal entity, site, and analytical dimension structure — must be agreed before configuration begins
+
+Chart of accounts aligned to group reporting structure
+
+Procurement workflow: purchase requisition, PO approval, goods receipt, invoice matching
+
+Sales order workflow: order entry, credit check, despatch, invoice generation
+
+Manufacturing: BOM, routing, production order, cost capture (sector-specific)
+
+Stock management: warehouse structure, bin configuration, stock valuation method
+
+Quality management configuration (food and beverage, regulated manufacturing)
+
+Catch weight and traceability configuration (food and beverage)
+
+Financial period lock and intercompany configuration
+
+Supplier and customer master data governance rules
+
+X3 reporting: management pack, operational dashboards, KPI set agreed at discovery
+
+EDI integration framework (if applicable) — documented now as Stage 2 X3CloudDocs SOA candidate
+
+X3CloudDocs
+
+Not in scope at Stage 1. However, the X3CloudDocs readiness assessment should be completed at go-live: AP invoice volume (300+ per month threshold for PIA), SO volume (200+ per month threshold for SOA), and document management requirements (500+ documents per month threshold for EDM). Document findings in the Process Governance Map for Stage 2 commercial conversation.
+
+  Success Metrics — Stage 1
+
+Metric
+
+Target
+
+How Measured
+
+Close cycle length
+
+Management accounts produced within five working days of period end
+
+Finance team self-report, month 3 post go-live
+
+System adoption rate
+
+100% of finance transactions processed through the ERP by month 2
+
+ERP transaction log, no shadow system usage
+
+Data quality
+
+Zero reconciliation breaks between bank and GL at month-end close
+
+Bank reconciliation report, month 2 post go-live
+
+Approval workflow compliance
+
+All purchase orders and invoices approved through system workflow, zero email approvals
+
+Intacct/X3 approval log
+
+AI Readiness Assessment — Domain A
+
+Score moves to 2 or 3 by month 3 post go-live
+
+Mysoft AI Readiness Assessment re-run at 90 days
+
+CFO confidence in data
+
+CFO prepared to present management accounts to board from system output, unadjusted
+
+CFO sign-off on first board pack from new system
+
+  Mysoft Commercial Outputs — Stage 1
+
+Discovery and scoping report (Finance Operations Review)
+
+Implementation SOW with fixed price or T&M structure and defined deliverables
+
+Governance Configuration Record (go-live deliverable)
+
+Process Governance Map — Stage 2 readiness (go-live deliverable)
+
+AI Readiness Assessment — baseline and post-go-live scores
+
+30-day hypercare support plan
+
+Stage 2 commercial proposal (delivered at 60-day post-go-live review)
+
+  Stage 2 Expansion Triggers
+
+The following signals indicate the client is ready for the next-stage commercial conversation. Any one of these is sufficient to open the discussion; two or more is a strong indicator.
+
+AP or PO invoice volume reaches or exceeds 300 per month — PIA candidacy
+
+Sales order volume reaches or exceeds 200 per month — SOA candidacy
+
+Finance team is spending more than 20% of capacity on manual transaction processing
+
+Close cycle is under five days but further reduction is constrained by manual matching
+
+Supplier or customer base has grown materially since go-live, increasing processing volume
+
+Board or CFO has raised an AI agenda or automation expectation
+
+Stage 2  |  Intelligent Automation
+
+Free your team to work at their highest value.
+
+Buying trigger
+
+Transaction volume growth, manual processing bottleneck, close cycle constraint, or board automation agenda
+
+Primary buyer
+
+CFO / Finance Director, with Finance Manager and AP/AR Lead as operational stakeholders
+
+Sales cycle
+
+Two to four months from Stage 2 commercial conversation to go-live, depending on X3CloudDocs module scope
+
+Stage 2 removes the manual transactional layer from finance operations. Both Sage X3 and Sage Intacct customers follow the same governance model at this stage; the automation tooling differs by platform capability.
+
+For Sage X3 customers, the primary automation layer is X3CloudDocs — Mysoft's proprietary IP covering Purchase Invoice Automation (PIA), Sales Order Automation (SOA), Electronic Document Management (EDM), and Email and Notification Automation (ENA). For Sage Intacct customers, this stage activates Intacct's native AP and AR automation, Intelligent GL anomaly detection, and Spend Management, extended where required by preferred ISV partners (WebExpenses, Payhawk, TrueCommerce).
+
+In both cases, the governance model — Layer 1 and Layer 2 — is configured and live. The finance team's capacity shifts from routine processing to exception management, analysis, and commercial support.
+
+  Stage 2 Entry Conditions
+
+All conditions should be confirmed before Stage 2 engagement begins. Unmet conditions are flagged in the client output document with a recommended action to close the gap.
+
+Stage 1 operational foundation is live and stable (minimum 60 days post go-live)
+
+Data quality in the core ERP is confirmed as reliable (Domain A score 2-3)
+
+Approval authority matrix is documented and system-enforced
+
+Finance team has confirmed capacity constraint from manual processing volume
+
+AP invoice volume is at or above 300 per month (PIA candidacy) or SO volume is at or above 200 per month (SOA candidacy)
+
+AI Readiness Assessment Domain B score is 1 or above
+
+Process Governance Map for Stage 2 has been drafted (Mysoft deliverable from Stage 1)
+
+  Mysoft Recommendations and Actions — Stage 2
+
+X3CloudDocs — Purchase Invoice Automation (PIA)
+
+Run the PIA scoping workshop: map the current invoice receipt and processing workflow, document all invoice types (PO-matched, non-PO, credit notes, recurring), identify the exception categories and their current handling, and confirm the volume and value distribution across supplier tiers.
+
+Configure PIA for automated three-way matching: purchase order, goods receipt, and supplier invoice. Set matching tolerances at the level agreed in the Process Governance Map — typically ±2-5% for value and exact match for quantity, client-specific.
+
+Configure PIA exception routing: invoices that fail matching go to the named Finance Manager (Tier 2 review) within the 48-hour SLA. Invoices above the Tier 3 threshold go directly to Finance Director. Do not allow exceptions to queue without an SLA.
+
+Set up PIA for e-invoicing compliance where the client has European supplier relationships or anticipates UK e-invoicing mandate requirements. Configure for Peppol network receipt where applicable.
+
+Configure PIA supplier portal (if in scope) for supplier self-service invoice submission and status tracking. Reduces inbound supplier queries and AP team administration.
+
+Deliver PIA go-live with a parallel run period of a minimum of two weeks: process invoices through both old and new routes, reconcile daily, confirm match rates before full cutover.
+
+Establish PIA KPI reporting from day one: match rate (target 85%+ at launch, 90%+ by month 3), exception rate, processing time per invoice, cycle time from receipt to payment approval.
+
+X3CloudDocs — Sales Order Automation (SOA)
+
+Run the SOA scoping workshop: map all inbound order channels (EDI, email, web, phone, customer portal), document order types, identify exception triggers (credit hold, out-of-stock, special pricing), and confirm volume and channel distribution.
+
+Configure SOA for automated order ingestion from EDI and email channels. Set up order validation rules aligned to the client's credit and pricing policy — orders that do not pass validation route to the order management team (Tier 2).
+
+Configure SOA exception handling: credit hold escalation, out-of-stock notification, and special pricing approval routing, all within the Tiered Approval Model.
+
+Set up SOA EDI mapping for top-ten customer trading partners. EDI configuration requires customer-specific mapping — prioritise by volume. Remaining customers can be onboarded in waves post-launch.
+
+Configure SOA confirmation and despatch notification workflows through X3CloudDocs ENA (if in scope) — automated order acknowledgement, despatch notification, and proof of delivery documentation reduce inbound customer queries.
+
+Deliver SOA go-live with parallel processing period. Confirm order capture accuracy and exception rates before full channel cutover.
+
+Establish SOA KPI reporting: orders processed without manual intervention (target 75%+ at launch), order-to-despatch cycle time, exception rate by order type, EDI partner uptime.
+
+X3CloudDocs — Electronic Document Management (EDM)
+
+Configure EDM as the document repository for all X3 financial documents: purchase invoices, sales invoices, delivery notes, contracts, and correspondence. EDM is the audit trail infrastructure for Stage 3 AI governance.
+
+Set up EDM retention policies aligned to statutory requirements: seven years minimum for financial documents, longer for contracts. Configure automatic archival and access controls.
+
+Configure EDM document search and retrieval for Finance Director and external auditor use. Auditors should be able to retrieve any document by transaction reference, date range, or document type within seconds.
+
+Integrate EDM with X3 transaction records so that every transaction has its source documents attached and retrievable. This is the configuration that makes the AI audit trail possible at Stage 3.
+
+Configure EDM for HMRC Making Tax Digital compliance where applicable: VAT return supporting documentation, digital record keeping requirements.
+
+X3CloudDocs — Email and Notification Automation (ENA)
+
+Configure ENA for AP payment notification: automated remittance advice to suppliers on payment run, reducing inbound supplier queries and AP team time.
+
+Configure ENA for AR dunning automation: automated payment reminder sequences by customer segment and ageing bracket. Approval authority rules apply — ENA does not send to customers flagged for escalation without Finance Manager review.
+
+Configure ENA for internal approval notifications: Tier 2 and Tier 3 approval requests delivered by ENA with direct action links. Remove email-based approval — all approvals through the system.
+
+Configure ENA for exception alerts: Finance Director and CFO receive exception summary notification at agreed frequency (daily or weekly). This is the Layer 2 operational reporting output.
+
+Set ENA volume thresholds and suppression rules to avoid notification fatigue. If a recipient is receiving more than a defined number of notifications per day, escalate to Mysoft for workflow review.
+
+Sage Intacct Automation
+
+Activate Intacct AP automation: automated invoice capture (OCR or integrated submission), three-way matching against POs and receipts, and routing to approval workflow. Configure matching tolerances and exception rules in the Process Governance Map.
+
+Activate Intacct AR automation: automated cash application, payment matching against open invoices, and AR ageing exception flagging. Set up automated dunning email sequences through Intacct communications.
+
+Configure Intacct Intelligent GL for anomaly detection: activate GL anomaly alerts for unusual posting patterns, duplicate payments, and threshold breaches. This is the first AI-adjacent capability in Intacct and should be demonstrated to the CFO as a Stage 3 preview.
+
+Configure Intacct vendor payment automation: electronic payment file generation (BACS, SEPA, ACH for US entities), payment approval workflow, and payment confirmation receipt.
+
+Set up Intacct contract and revenue recognition automation where applicable (SaaS, professional services, subscription businesses). Revenue recognition rules configured at Stage 2 are the foundation for AI-assisted revenue forecasting at Stage 3.
+
+Configure Intacct project accounting if applicable: time and expense capture, project billing automation, project profitability reporting. For professional services clients, this is often the primary Stage 2 value driver.
+
+Activate Intacct Spend Management for employee expense automation: mobile receipt capture, automated policy checking, approval routing, and GL posting. Removes a common remaining manual process after AP automation.
+
+Governance — Layer 1 and Layer 2 Activation
+
+Finalise and client-sign the Process Governance Map: confirm automation tier for each workflow, document matching tolerances, exception triggers, and approval routing rules. This is a named Mysoft deliverable and the first formal governance document.
+
+Configure and document the Tiered Approval Model in the system: Tier 1 automation rules, Tier 2 notification SLAs, Tier 3 mandatory review triggers, Tier 4 CFO escalation conditions. Each tier must be testable and auditable.
+
+Establish the first Quarterly AI Optimisation Review at go-live: schedule it for 90 days post-launch. The first QAOR covers: match rates vs target, exception rate calibration, threshold review, and Stage 3 readiness assessment.
+
+Deliver the Layer 1 and Layer 2 Governance Configuration Record update: add Stage 2 automation rules to the Stage 1 record. This is now the current governance baseline.
+
+Configure the AI action log for all automated actions: every Tier 1 action, Tier 2 notification, and override decision is logged with timestamp, user, and outcome. This is the audit trail that Layer 3 builds on.
+
+  Client Obligations — Stage 2
+
+Timing
+
+Client Action
+
+Before Stage 2 begins
+
+Name the Tier 2 and Tier 3 approvers for each automated workflow. AP automation cannot go live without named approvers configured in the system.
+
+Before Stage 2 begins
+
+Complete Mysoft's AI-assisted workflow orientation for Finance Manager and AP/AR Lead. This is a half-day session covering: what the system does automatically, what escalates to them, and how to review and act on Tier 2 notifications.
+
+During implementation
+
+Provide supplier master data including email addresses and EDI partner details for PIA and ENA configuration. Incomplete supplier master data delays configuration.
+
+During implementation
+
+Confirm EDI partner list and trading partner mapping priority order for SOA configuration. The client's top-ten EDI customers by volume should be mapped first.
+
+Before go-live
+
+Complete parallel run testing for PIA and SOA. Minimum two-week parallel period with daily reconciliation. Finance Manager must confirm match rate and exception handling before full cutover.
+
+Before go-live
+
+CFO/FD to review and sign the Process Governance Map. This document defines what the AI does and does not do — it requires CFO-level sign-off, not just Finance Manager approval.
+
+Post go-live
+
+Monitor Tier 2 exception rate weekly for the first 60 days. If exception rate exceeds 15% of automated transactions, notify Mysoft immediately for threshold review.
+
+Post go-live
+
+Maintain 48-hour SLA on Tier 2 review and action. Exceptions that queue beyond the SLA trigger automatic escalation — ensure named approvers are briefed and available.
+
+Ongoing
+
+Notify Mysoft of any material changes to transaction volumes, supplier or customer base, approval authority changes, or ERP configuration changes within 30 days. Changes that affect automation rules require a Governance Configuration Record update.
+
+Ongoing
+
+Finance Manager to prepare the monthly exception rate summary for input to the QAOR. This is the primary operational governance report and feeds the threshold calibration review.
+
+  System Configuration Requirements — Stage 2
+
+Sage Intacct
+
+AP automation: OCR capture or integrated submission, three-way matching, tolerance rules, exception routing
+
+Intacct Intelligent GL: anomaly detection activation, alert threshold configuration, exception report
+
+AR automation: cash application, payment matching, automated dunning sequences with approval rules
+
+Vendor payment automation: BACS/SEPA/ACH payment file, approval workflow, payment confirmation
+
+Spend Management: mobile receipt capture, expense policy rules, approval routing, GL posting
+
+Contract and revenue recognition automation (if applicable): ASC 606 / IFRS 15 configuration
+
+Project accounting and billing automation (professional services clients)
+
+AI action log configuration: all Tier 1 and Tier 2 actions logged with timestamp and user
+
+Tiered Approval Model: Tier 1-4 workflow rules configured and tested
+
+Exception report: Finance Director dashboard showing exception rate, SLA compliance, override log
+
+Sage X3
+
+X3CloudDocs PIA: invoice ingestion (email, EDI, portal), OCR, three-way matching, exception routing
+
+X3CloudDocs SOA: order ingestion (EDI, email, portal), order validation, credit check integration, exception routing
+
+X3CloudDocs EDM: document repository, retention policies, audit access configuration, HMRC MTD compliance
+
+X3CloudDocs ENA: remittance advice, AR dunning, approval notifications, exception alerts
+
+PIA matching tolerances: value, quantity, and coding rules — client-specific
+
+SOA EDI mapping: top-ten trading partner maps delivered at go-live
+
+ENA suppression rules and notification frequency thresholds
+
+AI action log: all X3CloudDocs automated actions logged in X3 with timestamp and user
+
+X3CloudDocs
+
+Full scope at Stage 2. Module selection is driven by volume thresholds and client workflow: PIA (300+ invoices/month), SOA (200+ orders/month), EDM (500+ documents/month — recommended as standard for all Stage 2 clients), ENA (all Stage 2 clients as the notification layer for Tier 2/3 approval workflows).
+
+  Success Metrics — Stage 2
+
+Metric
+
+Target
+
+How Measured
+
+Invoice match rate (PIA)
+
+85% at launch, 90%+ by month 3
+
+X3CloudDocs PIA dashboard
+
+Order automation rate (SOA)
+
+75% processed without manual intervention at launch
+
+X3CloudDocs SOA dashboard
+
+Tier 2 SLA compliance
+
+95%+ of Tier 2 exceptions actioned within 48 hours
+
+ENA notification log and approval timestamp
+
+AP processing time
+
+Reduction from baseline by 60%+ by month 3
+
+Invoice receipt to payment approval cycle time
+
+Close cycle
+
+Maintained or reduced vs Stage 1 baseline despite volume growth
+
+Period-close calendar
+
+Exception rate
+
+Below 15% of automated transaction volume at month 3
+
+Monthly exception rate summary
+
+AI Readiness Assessment — Domain B
+
+Score moves to 2-3 by month 3 post Stage 2 go-live
+
+Mysoft AI Readiness Assessment re-run at 90 days
+
+  Mysoft Commercial Outputs — Stage 2
+
+X3CloudDocs implementation SOW (PIA, SOA, EDM, ENA as applicable)
+
+Process Governance Map — Layer 1 and Layer 2 (signed deliverable)
+
+Tiered Approval Model document (signed deliverable)
+
+Governance Configuration Record v2 (updated at go-live)
+
+AI action log configuration (standard go-live deliverable)
+
+First QAOR scheduled and agenda prepared (90 days post go-live)
+
+Stage 3 readiness assessment (delivered at first QAOR)
+
+Recurring QAOR advisory fee established
+
+  Stage 3 Expansion Triggers
+
+The following signals indicate the client is ready for the next-stage commercial conversation. Any one of these is sufficient to open the discussion; two or more is a strong indicator.
+
+QAOR Domain C score reaches 2: AI tools in use, readiness for governance deployment
+
+CFO has been asked by board for an AI strategy or AI governance report
+
+Sage Intacct Copilot or Intelligent GL anomaly detection is generating value and CFO wants to extend AI scope
+
+Close cycle is under five days and CFO appetite for AI-assisted reporting and forecasting is confirmed
+
+Exception rate is below 10% and Finance Manager capacity has been freed for higher-value work
+
+Finance team headcount is stable despite revenue growth — automation benefit is demonstrated
+
+Stage 3  |  AI-Augmented Finance
+
+Give finance the tools to work at the speed of the business.
+
+Buying trigger
+
+Board AI mandate, CFO readiness for AI-assisted reporting and forecasting, or Stage 2 QAOR readiness confirmation
+
+Primary buyer
+
+CFO / Finance Director, with board sponsor (CEO or Chair) typically engaged at this stage
+
+Sales cycle
+
+One to three months from QAOR readiness confirmation to Stage 3 activation; ongoing advisory thereafter
+
+Stage 3 activates AI and analytical intelligence capabilities on the fully governed foundation established in Stage 2. The full four-layer governance framework is live. The CFO can present the AI governance model to auditors and non-executives. Mysoft's advisory relationship moves from implementation to strategic partnership: Quarterly AI Optimisation Reviews, Board AI Governance Reports, and ongoing maturity progression.
+
+The AI capability set at Stage 3 differs by platform:
+
+For Sage Intacct clients, Stage 3 activates Intacct-native capabilities: Intelligent GL anomaly detection, Sage Copilot for natural language querying and variance commentary, AI-assisted forecasting, cash flow modelling, and predictive reporting.
+
+For Sage X3 clients, Stage 3 is delivered through a combination of X3 native analytics and preferred ISV partners. Sage Enterprise Intelligence (SEI) provides the AI-assisted reporting and analytics layer. Phocas and ZAP BI provide mid-market BI and financial intelligence. Velixo enables Excel-based board pack automation directly from X3 data. Netstock adds AI-driven demand planning and inventory intelligence. Lynq provides manufacturing execution intelligence where applicable.
+
+In both cases, the outcomes are equivalent: AI-assisted insight, anomaly detection, forward-looking forecasting, and reduced manual reporting effort. The platform-specific tooling is noted in the system configuration section below.
+
+  Stage 3 Entry Conditions
+
+All conditions should be confirmed before Stage 3 engagement begins. Unmet conditions are flagged in the client output document with a recommended action to close the gap.
+
+Stage 2 automation has been live for a minimum of 90 days
+
+AI Readiness Assessment total score is 20 or above, with Domain A at 2-3 and Domain D at 2-3
+
+Exception rate is below 15% and Tier 2 SLA compliance is above 95%
+
+AI action log is configured and auditable — no gaps in the Layer 3 record
+
+CFO has confirmed readiness to present AI governance to auditors at next audit cycle
+
+Mysoft has completed the pre-deployment checklist: platform AI feature inventory validated (Intacct and/or X3 + ISV), governance framework pilot completed, consulting team briefed
+
+Legal review of governance framework claims completed
+
+  Mysoft Recommendations and Actions — Stage 3
+
+Intacct AI Capabilities — Activation and Configuration
+
+Conduct the Stage 3 AI capability activation workshop with the CFO and Finance Manager: walk through each live Intacct AI feature, demonstrate the output, agree the activation sequence, and add each to the Process Governance Map with its automation tier classification.
+
+Activate Intacct Intelligent GL for full anomaly detection: configure detection sensitivity, define the alert threshold that triggers Tier 2 review, and confirm that anomaly alerts are routed to the correct approver. Demonstrate the first alert cycle to the Finance Director before full activation.
+
+Activate Sage Copilot for CFO and Finance Director users: configure the natural language query scope (which datasets Copilot can access, which require explicit authorisation), and deliver a Copilot orientation session covering approved use cases and current capability boundaries.
+
+Activate AI-assisted forecasting: configure the forecasting model inputs (revenue drivers, cost structure, working capital cycles), agree the forecasting horizon (rolling 12-month recommended), and confirm the approval workflow for forecast publication to the board. Forecasts are AI-generated but CFO-approved before board use.
+
+Activate variance commentary generation for the management accounts close: configure the narrative parameters (material variance threshold, commentary format, sector and business context), and run the first AI-generated commentary pack alongside the manual version for CFO comparison before full adoption.
+
+Activate natural language reporting for board pack preparation: configure the report templates, agree the data scope, and train Finance Director and CFO on the query interface. Natural language reporting removes BI dependency for standard board pack production.
+
+Configure AI-assisted cash flow forecasting: integrate AR ageing, AP payment schedule, payroll, and known commitments into the Intacct cash flow model. Confirm the Tier 3 review requirement for cash flow forecasts used in banking or investor reporting.
+
+Governance — Full Four-Layer Activation
+
+Finalise and activate Layer 3: confirm AI action log configuration captures all Stage 3 AI actions (anomaly detection, Copilot queries, forecast generation, commentary generation). Test auditor access to the structured log before the next audit period.
+
+Activate Layer 4: schedule the Quarterly AI Optimisation Review calendar for the full year. First QAOR after Stage 3 activation should include a full four-layer governance review and an update to the Governance Configuration Record.
+
+Produce the first Board-level AI Governance Report: structured document covering the four layers, current automation scope, approval authority structure, audit trail evidence, and QAOR cycle summary. Delivered within 60 days of Stage 3 activation. CFO presents to board and non-executives.
+
+Update the Process Governance Map: add all Stage 3 AI capabilities with their automation tier, approval requirements, and exception handling. This document is now the primary evidence base for auditors.
+
+Conduct a structured legal review of all governance framework claims before any external marketing references Stage 3 client deployments. Mysoft's consulting lead to sign off.
+
+Brief external auditors on the AI governance model at the start of the next audit cycle. Prepare the structured auditor briefing pack: Process Governance Map summary, Tiered Approval Model, audit trail access guide, and QAOR record.
+
+Advisory and Thought Leadership
+
+Conduct a mid-year Finance AI Strategy Review with the CFO: assess AI capability utilisation rates, identify under-used features, and agree the optimisation plan for the second half. This is separate from the QAOR and operates at the strategic rather than operational level.
+
+Present the Stage 4 agentic finance roadmap to the CFO and board sponsor. Stage 4 is a multi-year horizon but the design decisions required — data architecture, governance model, technology choices — should be made now. Mysoft delivers a Stage 4 readiness assessment and indicative roadmap.
+
+Identify the client as a potential Mysoft case study and reference customer. Stage 3 deployments are Mysoft's primary proof point for AI transformation positioning. Agree the case study scope and approval process with the CFO.
+
+Engage the client in Mysoft's AI Optimisation Review benchmarking: compare exception rates, match rates, and AI utilisation against the Mysoft client portfolio anonymised benchmark. This gives the CFO a competitive readiness data point and deepens the advisory relationship.
+
+  Client Obligations — Stage 3
+
+Timing
+
+Client Action
+
+Before Stage 3 activation
+
+CFO to confirm readiness to present AI governance to auditors and non-executives at next cycle. If not ready, identify the remaining gap and agree a plan with Mysoft before activating Stage 3 AI capabilities.
+
+Before Stage 3 activation
+
+Complete the legal review of the governance framework with the client's own legal or compliance team. Mysoft provides the framework; legal sign-off is the client's obligation.
+
+During Stage 3 activation
+
+CFO and Finance Director to complete the Sage Copilot and AI-assisted forecasting orientation. AI capabilities at Stage 3 require informed users — adoption without understanding creates governance risk.
+
+During Stage 3 activation
+
+Finance Manager to attend the Layer 3 AI action log review session. They must be able to produce the AI action log on request for the Finance Director, auditors, and Mysoft QAOR.
+
+Ongoing
+
+CFO to attend each Quarterly AI Optimisation Review. A named delegate with equivalent authority may attend in exceptional circumstances but cannot be the permanent substitute.
+
+Ongoing
+
+Monthly review of AI action log summary by Finance Director. Any anomaly in the log not matching the expected governance model must be reported to Mysoft within 48 hours.
+
+Ongoing
+
+Board to receive the annual Board AI Governance Report. CFO accountable for presentation and for responding to board and non-executive questions on the governance model.
+
+Ongoing
+
+Brief incoming external auditors on the AI governance model at the start of each audit cycle. Do not assume auditors from a previous cycle have retained the briefing.
+
+Ongoing
+
+Notify Mysoft immediately if Sage releases a new AI capability for the client's ERP platform (X3 or Intacct) that has been activated without a QAOR review. Unplanned AI capability activation outside the governance framework is a Layer 4 event.
+
+  System Configuration Requirements — Stage 3
+
+Sage Intacct
+
+Intelligent GL: anomaly detection sensitivity, alert thresholds, Tier 2 routing for anomaly alerts
+
+Sage Copilot: user access configuration, dataset scope, query audit log, approved use cases documented
+
+AI-assisted forecasting: model inputs, horizon configuration, CFO approval workflow for board use
+
+Variance commentary: material threshold, narrative parameters, business context configuration
+
+Natural language reporting: board pack template configuration, data scope, user access
+
+Cash flow forecasting: AR/AP/payroll integration, commitment data, Tier 3 review for banking use
+
+Layer 3 AI action log: all Stage 3 AI actions captured — anomaly detection, Copilot queries, forecast generation, commentary
+
+Auditor access configuration: structured read access for AI action log, approval workflow log, anomaly detection record
+
+QAOR dashboard: exception rate, AI utilisation, anomaly count, SLA compliance — prepared for each quarterly review
+
+Board AI Governance Report template: configured as a named Mysoft deliverable within Intacct reporting
+
+Sage X3
+
+X3CloudDocs PIA and SOA: threshold review and recalibration based on QAOR exception rate analysis
+
+X3CloudDocs EDM: audit access configuration for all Stage 3 AI action documents
+
+X3 operational intelligence dashboards: AI-assisted KPI commentary where X3 reporting capability supports it
+
+X3 to Intacct data integration review (if mixed X3/Intacct environment): confirm data quality and feed reliability
+
+X3CloudDocs
+
+X3CloudDocs modules should be fully optimised at Stage 3. The QAOR should review match rates, exception rates, and SLA compliance for all active modules and recalibrate thresholds. New module activation (e.g. ENA if not live at Stage 2) should be assessed at the first Stage 3 QAOR.
+
+  Success Metrics — Stage 3
+
+Metric
+
+Target
+
+How Measured
+
+AI-assisted close cycle
+
+Variance commentary generated for 100% of material variances without manual narrative drafting
+
+CFO sign-off rate on AI-generated commentary vs manual override rate
+
+Forecasting accuracy
+
+Rolling 12-month forecast within ±10% of actuals at the quarter horizon
+
+Intacct forecasting model vs actuals comparison at each period end
+
+Copilot utilisation
+
+CFO and Finance Director using natural language querying for at least 50% of ad hoc reporting requests by month 3
+
+Copilot query log
+
+Anomaly detection value
+
+Minimum one material anomaly identified by Intelligent GL per quarter that was not identified by manual review
+
+QAOR anomaly log
+
+AI Governance Report
+
+Board-level AI Governance Report produced and presented at first board meeting following Stage 3 activation
+
+Board meeting minutes
+
+Auditor readiness
+
+CFO presents AI governance model to external auditors without Mysoft support required
+
+Auditor engagement record
+
+AI Readiness Assessment total
+
+Score of 28+ by QAOR 2
+
+Mysoft AI Readiness Assessment re-run at QAOR 2
+
+  Mysoft Commercial Outputs — Stage 3
+
+Stage 3 activation SOW (QAOR advisory, Layer 3-4 governance configuration, Board AI Governance Report)
+
+Board-level AI Governance Report (named, branded Mysoft deliverable)
+
+Four-layer Governance Configuration Record v3 (updated at Stage 3 activation)
+
+Auditor briefing pack (standard deliverable)
+
+Quarterly AI Optimisation Review — ongoing (recurring ARR)
+
+Finance AI Strategy Review — annual (advisory fee)
+
+Stage 4 readiness assessment (delivered at QAOR 3 or Finance AI Strategy Review)
+
+Case study and reference customer agreement
+
+  Stage 4 Expansion Triggers
+
+The following signals indicate the client is ready for the next-stage commercial conversation. Any one of these is sufficient to open the discussion; two or more is a strong indicator.
+
+AI Readiness Assessment total score reaches 30+
+
+CFO or board has set an explicit agentic workflow or autonomous finance objective
+
+Exception rate is below 5% and Tier 1 automation volume represents 90%+ of transactions
+
+Anomaly detection is catching issues that the finance team confirms are commercially material
+
+Finance function is operating at materially higher volume without headcount growth — Stage 3 benefit is demonstrated
+
+Sage releases agentic workflow capability in Intacct that passes the QAOR new capability assessment
+
+Stage 4  |  Agentic Finance Operations
+
+Design the finance function of the next decade.
+
+Buying trigger
+
+Board AI mandate for agentic capability, demonstrated Stage 3 governance maturity, or competitive pressure to operate finance at scale without proportional headcount growth
+
+Primary buyer
+
+CFO / Finance Director with board-level sponsorship; CEO or Chair engagement typical at this stage
+
+Sales cycle
+
+Ongoing strategic advisory engagement; agentic workflow deployment is iterative over 12-24 months
+
+Stage 4 is governed agentic finance operations: AI agents that execute defined workflows autonomously within an explicit, board-approved governance framework. Humans govern exceptions, anomalies, and high-value decisions. Routine, low-risk, and rules-based processing is fully automated. The finance function operates at a materially higher volume with the same or smaller team. This is the design brief for the finance function of the next decade — built on Stages 1, 2, and 3, and governed by a framework that is auditable, board-defensible, and regulatorily coherent.
+
+  Stage 4 Entry Conditions
+
+All conditions should be confirmed before Stage 4 engagement begins. Unmet conditions are flagged in the client output document with a recommended action to close the gap.
+
+All four governance layers are live, current, and auditable
+
+AI Readiness Assessment total score is 30 or above with no domain override conditions active
+
+Stage 3 has been live for a minimum of 12 months with QAOR records demonstrating governance maturity
+
+The client's ERP platform (Sage X3 or Sage Intacct) has confirmed agentic workflow capability, or third-party AI orchestration tools have been validated and passed the QAOR new capability assessment
+
+Board has received and approved the annual Board AI Governance Report
+
+Legal review of agentic workflow governance claims completed
+
+No material audit observations relating to AI governance in the most recent audit cycle
+
+Finance team has completed agentic workflow orientation delivered by Mysoft
+
+  Mysoft Recommendations and Actions — Stage 4
+
+Agentic Workflow Design
+
+Conduct the Agentic Finance Design Workshop with CFO, Finance Director, and board sponsor. Map the target state: which workflows will be fully agentic, which will remain human-in-the-loop, and which will remain fully human. This is a strategic, not technical, conversation — outputs are a workflow map and a governance brief, not a software specification.
+
+Define the agentic scope precisely in the Process Governance Map update: each agentic workflow must have a named human owner, defined exception criteria, documented override protocol, and explicit statement of what the agent cannot do. Scope creep in agentic deployment is a governance failure.
+
+Design the human-and-AI workforce architecture: which roles change, which new roles are created (exception manager, AI governance reviewer, AI optimisation analyst), and how performance management adapts. This is a People and Culture deliverable, not just a technology deliverable. Mysoft should involve Kim Rix or the client equivalent.
+
+Sequence the agentic workflow deployment in waves: Wave 1 — highest-volume, lowest-risk workflows (payment run preparation, recurring invoice processing, routine bank reconciliation). Wave 2 — higher-value workflows with stronger governance (multi-entity consolidation, AI-assisted audit pack preparation). Wave 3 — complex or novel workflows (agentic cash flow management, AI-directed working capital optimisation). Each wave requires QAOR sign-off before the next begins.
+
+Define the agentic failure protocol: what happens when an agentic workflow encounters a scenario outside its defined parameters. The failure protocol must be documented, tested, and communicated to all stakeholders before Wave 1 goes live.
+
+Establish the AI model performance review within the QAOR: at Stage 4, the QAOR includes a structured assessment of agentic workflow performance — action accuracy rate, exception rate, override rate, and any unintended outputs. This review is the primary governance evidence for auditors.
+
+Intacct Platform and Configuration
+
+Validate the client's ERP platform agentic workflow capability against the design brief. For Sage Intacct: confirm which workflows are deliverable within the current release, which require Sage roadmap commitment, and which require third-party AI orchestration. For Sage X3: confirm X3 agentic integration points, X3CloudDocs automation layer coverage, and any third-party orchestration tools required to achieve the agreed agentic scope.
+
+Configure agentic approval workflows within Intacct: payment run agents, reconciliation agents, and reporting agents each require separate workflow configuration with explicit Tier 1-4 classification. No agentic workflow operates above Tier 1 without a human review gate.
+
+Configure the Stage 4 AI action log: all agentic actions must generate a log entry with: action taken, confidence level, exception trigger (if any), and any human review outcome. The log must be structured for auditor export.
+
+Integrate agentic workflows with the broader finance technology stack: ERP, treasury management, payroll, and CRM. Document all integration points and data flows in the Governance Configuration Record.
+
+Establish agentic workflow monitoring: real-time dashboards for Finance Director and CFO showing agentic action volume, exception rate, SLA performance, and anomaly flags. Exception rates above threshold trigger automatic QAOR escalation.
+
+Configure model drift detection: establish baseline performance metrics for each agentic workflow and alert thresholds for performance degradation. A workflow whose accuracy falls below threshold is automatically suspended pending QAOR review.
+
+Board and Regulatory Governance
+
+Update the Board AI Governance Report for Stage 4: include agentic workflow scope, human oversight architecture, exception rates, audit trail evidence, and the QAOR cycle record. This report is the primary board governance document and should be presented at the first board meeting of each financial year.
+
+Develop the Regulatory and Audit Engagement Plan: brief external auditors on agentic workflow governance before the first audit cycle where agentic workflows are material. Prepare structured responses to anticipated auditor questions (see governance framework Section 6).
+
+Conduct an annual Agentic Finance Governance Review: broader than the quarterly QAOR, this review covers: scope expansion assessment, regulatory landscape changes, Intacct AI roadmap alignment, and the governance model adequacy for the next 12 months.
+
+Engage with the client's insurers or risk advisors on the agentic workflow governance model. Directors and Officers insurance and professional indemnity coverage may require notification of material AI deployment in finance.
+
+Publish the client's AI governance posture internally: all finance team members should understand what is automated, what escalates to them, and what remains human. Internal communication of the governance model reduces risk of unofficial AI tool adoption outside the framework.
+
+People and Organisation
+
+Redesign the Finance Manager role specification to reflect Stage 4 responsibilities: exception oversight, AI governance reviewer, process optimisation analyst. The role evolves from transaction processor to AI supervisor — this requires formal role redesign, not just informal expectation change.
+
+Establish the AI Governance Reviewer role (or assign the function within an existing role): responsible for monthly AI action log review, exception rate monitoring, and QAOR preparation. This is a permanent operational role, not a project role.
+
+Develop finance team capability in AI governance: training on understanding AI output confidence indicators, exception trigger review, override decision-making, and escalation protocol. This is not technology training — it is governance judgement training.
+
+Review the finance function headcount model: Stage 4 should demonstrate that revenue growth no longer requires proportional finance headcount growth. Model the capacity released by agentic deployment and agree with the CFO how that capacity is redeployed (commercial finance, FP&A, strategic advisory) rather than reduced.
+
+  Client Obligations — Stage 4
+
+Timing
+
+Client Action
+
+Before Stage 4 begins
+
+Board to formally approve the agentic finance scope and the updated governance framework. This is a board-level decision, not a CFO-only decision. Obtain written board resolution or equivalent.
+
+Before Stage 4 begins
+
+Complete legal review of agentic workflow governance and any regulatory notification required. Mysoft provides the framework; regulatory compliance is the client's obligation.
+
+Before Stage 4 begins
+
+Notify external auditors of the planned agentic workflow scope and governance model before deployment. Do not wait for audit fieldwork to introduce this — early engagement reduces audit risk.
+
+Before Stage 4 begins
+
+Complete the finance team agentic workflow orientation delivered by Mysoft. All finance team members affected by agentic workflows must be briefed before Wave 1 goes live.
+
+During deployment
+
+CFO to review Wave 1 performance data at the four-week mark and provide written approval before Wave 2 begins. Each wave requires explicit CFO sign-off.
+
+Ongoing
+
+AI Governance Reviewer (named role) to complete monthly AI action log review and produce the monthly governance summary for Finance Director.
+
+Ongoing
+
+CFO to attend the Quarterly AI Optimisation Review. At Stage 4, the QAOR agenda includes the agentic performance review — CFO attendance is mandatory, not delegable.
+
+Ongoing
+
+Board to receive the annual Agentic Finance Governance Review summary. CFO accountable for board presentation and for ensuring board members can articulate the governance model to external stakeholders.
+
+Ongoing
+
+Report any agentic workflow unintended output to Mysoft within 24 hours. At Stage 4, unintended agentic outputs are a governance event, not a technical support query.
+
+Ongoing
+
+Notify Mysoft immediately of any regulatory or audit finding relating to AI governance. Stage 4 governance failures may have commercial, regulatory, or reputational consequences that require immediate response.
+
+  System Configuration Requirements — Stage 4
+
+Sage Intacct
+
+Agentic workflow configuration: each agent workflow defined with Tier classification, exception criteria, and human review gate
+
+Payment run agent: automated payment file preparation within approved parameters, CFO approval gate for execution
+
+Reconciliation agent: automated bank and intercompany reconciliation, exception flagging for Tier 2 review
+
+Reporting agent: automated board pack draft generation, CFO approval gate before distribution
+
+Stage 4 AI action log: all agentic actions captured with confidence level, exception trigger, and human review outcome
+
+Model drift detection: baseline performance metrics per agentic workflow, alert thresholds, automatic suspension on threshold breach
+
+Agentic monitoring dashboard: Finance Director and CFO real-time view of agentic action volume, exception rate, SLA, anomaly flags
+
+Auditor export: structured AI action log export for audit fieldwork, auditor access configuration
+
+Integration configuration: agentic workflow integration with treasury, payroll, CRM documented in Governance Configuration Record
+
+Sage X3
+
+X3CloudDocs: all modules operating at optimised Stage 4 thresholds, reviewed at each QAOR
+
+X3 agentic integration (if applicable): X3 operational data feeds to Intacct agentic workflows confirmed and documented
+
+X3 document management: EDM at full audit coverage, all agentic workflow source documents retrievable
+
+X3CloudDocs
+
+All X3CloudDocs modules are operating at optimised Stage 4 thresholds. QAOR reviews focus on threshold calibration, new module capability assessment (as Mysoft releases), and integration with any Intacct-side agentic workflows. X3CloudDocs ENA is the primary notification layer for all agentic exception events in the X3 environment.
+
+  Success Metrics — Stage 4
+
+Metric
+
+Target
+
+How Measured
+
+Agentic automation rate
+
+85%+ of defined workflow volume processed without human intervention
+
+Agentic workflow action log
+
+Exception rate
+
+Below 10% of agentic transaction volume, declining quarter on quarter
+
+QAOR exception rate review
+
+Finance headcount to revenue ratio
+
+Demonstrable reduction in finance FTE per £10M of revenue vs Stage 2 baseline
+
+Annual people and finance reporting
+
+Close cycle
+
+Board pack draft produced by agentic reporting agent within two working days of period end
+
+Close calendar and reporting agent log
+
+Audit trail completeness
+
+100% of agentic actions retrievable for any date in the last 7 years
+
+Auditor sample review at each audit cycle
+
+Board AI Governance Report
+
+Produced annually without Mysoft intervention, using Intacct AI action log and QAOR records as source
+
+CFO self-production rate
+
+Model drift
+
+Zero agentic workflows operating below performance baseline without QAOR suspension triggered
+
+Model drift detection dashboard
+
+Regulatory and audit readiness
+
+No material audit findings relating to AI governance
+
+Annual audit management letter
+
+  Mysoft Commercial Outputs — Stage 4
+
+Agentic Finance Design Workshop output (scope map, governance brief, human-AI workforce architecture)
+
+Agentic workflow deployment SOW — Wave 1, 2, 3
+
+Board AI Governance Report — Stage 4 version (annual named deliverable)
+
+Agentic Finance Governance Review — annual (advisory fee)
+
+Regulatory and audit engagement plan
+
+Quarterly AI Optimisation Review — ongoing at Stage 4 scope (enhanced QAOR fee)
+
+Finance AI Roadmap — annual update (strategic advisory)
+
+Case study and reference customer (Stage 4 deployment)
+
+  Stage 5 Expansion Triggers
+
+The following signals indicate the client is ready for the next-stage commercial conversation. Any one of these is sufficient to open the discussion; two or more is a strong indicator.
+
+Client requests agentic capability beyond current ERP platform scope — evaluate third-party AI orchestration tools for X3 or Intacct environments
+
+Regulatory landscape changes requiring governance framework update
+
+Sage releases new agentic capability that passes QAOR assessment
+
+Client group structure changes (acquisition, disposal) requiring governance model redesign
+
+Client CFO or board requests AI governance consulting for a subsidiary, JV, or portfolio company
+
+Appendix A: Partner ISV Ecosystem
+
+Mysoft's transformation proposition extends beyond the core Sage ERP platforms. The partner ISV ecosystem enables clients to build a fully connected finance and operations function. ISV solutions are introduced at the appropriate maturity stage, governed within the same four-layer governance framework, and represent incremental commercial opportunity for Mysoft through referral and co-delivery arrangements.
+
+This appendix provides the reference ecosystem. Solutions marked Preferred Partner (★) are ISVs with established Mysoft referral or co-delivery relationships and are the recommended default for client conversations. Market Options are presented where client requirements or existing vendor relationships indicate an alternative.
+
+A.1 ISV Maturity Stage Mapping
+
+Stage
+
+ISV Ecosystem Activation
+
+Stage 1 — Operational Foundation
+
+ERP implementation only. ISV scope assessment completed during discovery to plan the Stage 2 partner ecosystem conversation.
+
+Stage 2 — Intelligent Automation
+
+X3 customers: X3CloudDocs (Mysoft IP — PIA, SOA, EDM, ENA). Intacct customers: native AP/AR automation, extended by Stampli or Yooz for enhanced document capture where required.
+Both platforms: WebExpenses ★ or Payhawk ★ for expense management; TrueCommerce ★ for EDI; Nuvei ★ for payments.
+
+Stage 3 — AI-Augmented Finance
+
+X3 customers: SEI ★, Phocas ★, ZAP BI ★ for AI-assisted BI and analytics; Velixo ★ for Excel-based reporting; Netstock ★ for demand planning and inventory intelligence; Lynq ★ for manufacturing execution; Praxedo ★ for field service.
+Intacct customers: Sage Copilot, Intelligent GL, AI-assisted forecasting (platform-native); Velixo ★ and Swoop Analytics ★ for additional Excel and analytical reporting layers.
+
+Stage 4 — Agentic Finance Operations
+
+Full ecosystem operational and integrated. Warehouse management: Datalinx ★, Blue Yonder ★. Shipping and fulfilment: Metapack, Veeqo, TrueCommerce ★. People and HR: Sage People ★. AI/integration orchestration: Cindercone Magma ★.
+
+A.2 Full ISV Partner Reference Table
+
+All ISVs listed below are relevant to Sage X3, Sage Intacct, or both. Platform column indicates compatibility. Integration with the ERP should be confirmed at discovery stage.
+
+Category
+
+ISV / Product
+
+Platform
+
+Partner Status
+
+Role in Transformation
+
+Business Intelligence
+
+SEI (Sage Enterprise Intelligence)
+
+X3 + Intacct
+
+Preferred ★
+
+Sage-native BI. Financial and operational reporting, dashboards, and analytics on live ERP data.
+
+Phocas
+
+X3
+
+Preferred ★
+
+Mid-market BI and analytics. ERP-connected sales, operations, and finance dashboards with AI-assisted insight.
+
+ZAP BI
+
+X3 + Intacct
+
+Preferred ★
+
+Financial analytics and multi-dimensional reporting across Sage platforms.
+
+Velixo
+
+Intacct
+
+Preferred ★
+
+Excel-based reporting and analytics direct from Sage Intacct. CFO and board pack automation.
+
+Swoop Analytics
+
+Intacct
+
+Preferred ★
+
+Financial analytics and enhanced insight for Sage Intacct users.
+
+Expense Management
+
+WebExpenses
+
+X3 + Intacct
+
+Preferred ★
+
+UK-headquartered expense management. Mobile capture, policy enforcement, ERP integration.
+
+Payhawk
+
+X3 + Intacct
+
+Preferred ★
+
+Corporate card and expense platform. Real-time spend visibility, receipt capture, and ERP posting.
+
+Ramp
+
+X3 + Intacct
+
+Market Option
+
+US-focused corporate card and expense automation. Strong for North American entities.
+
+Pleo
+
+X3 + Intacct
+
+Market Option
+
+Smart company card and expense management for UK/EU teams.
+
+Doc & AP Automation
+
+X3CloudDocs
+
+X3 only
+
+Mysoft IP ★
+
+Mysoft proprietary product. Purchase Invoice Automation (PIA), Sales Order Automation (SOA), Electronic Document Management (EDM), Email and Notification Automation (ENA).
+
+Stampli
+
+Intacct
+
+Market Option
+
+AI-driven AP automation for Sage Intacct. Invoice capture, matching, and approval workflow.
+
+Yooz
+
+X3 + Intacct
+
+Market Option
+
+Document capture and AP automation. OCR-based invoice processing with ERP integration.
+
+Payments
+
+Nuvei
+
+X3 + Intacct
+
+Preferred ★
+
+Payment processing and acceptance. Integrated with Sage ERP for order-to-cash automation.
+
+EDI & Integration
+
+TrueCommerce
+
+X3 + Intacct
+
+Preferred ★
+
+EDI, fulfilment network, and supply chain integration. Multi-trading-partner connectivity.
+
+Inventory Optimisation
+
+Netstock
+
+X3 + Intacct
+
+Preferred ★
+
+AI-assisted demand planning, inventory optimisation, and purchasing intelligence. ERP-connected.
+
+SlimStock
+
+X3
+
+Market Option
+
+Inventory planning and optimisation for distribution and manufacturing businesses.
+
+Inventory Planner
+
+Intacct
+
+Market Option
+
+Demand forecasting and inventory management for e-commerce and distribution.
+
+Manufacturing Execution
+
+Lynq
+
+X3
+
+Preferred ★
+
+Manufacturing execution system (MES) integrated with Sage X3. Production visibility, scheduling, and real-time floor control.
+
+Field Service Management
+
+Praxedo
+
+X3
+
+Preferred ★
+
+Field service management integrated with Sage X3. Scheduling, mobile workforce, job costing, and billing.
+
+Warehouse Management
+
+Datalinx
+
+X3
+
+Preferred ★
+
+WMS integrated with Sage X3. Goods-in, pick-pack-despatch, and real-time stock accuracy.
+
+Blue Yonder
+
+X3
+
+Preferred ★
+
+Enterprise-grade WMS and supply chain planning for complex distribution environments.
+
+Shipping & Fulfilment
+
+Metapack
+
+X3
+
+Market Option
+
+Multi-carrier shipping platform. Label generation, carrier selection, tracking, and customer notification.
+
+Veeqo
+
+X3
+
+Market Option
+
+Order management and multi-carrier shipping for multi-channel retail and distribution.
+
+HR & Workforce
+
+Sage People
+
+X3 + Intacct
+
+Preferred ★
+
+Sage-native HRMS. People management, recruitment, payroll integration, and workforce analytics.
+
+AI & Integration
+
+Cindercone Magma
+
+X3
+
+Preferred ★
+
+Integration and automation platform for Sage X3 environments. Connects X3 to the wider technology stack.
+
+ISV Integration and Governance:  All ISV integrations should be documented in the Governance Configuration Record at the stage they are activated. Data flows between ISV and ERP must be mapped in the Process Governance Map. Where ISV automation actions generate financial postings, those actions fall within the Tiered Approval Model and must generate an AI action log entry. Mysoft conducts ISV integration review at each Quarterly AI Optimisation Review.
+
+A.3 Automation Layer: X3CloudDocs (X3) and Intacct Native + ISV (Intacct)
+
+X3CloudDocs is Mysoft's proprietary IP and is the primary Stage 2 automation layer for all Sage X3 engagements. It is not available for Sage Intacct environments.
+
+For Sage Intacct clients, the equivalent Stage 2 automation layer is delivered through a combination of:
+
+- Sage Intacct native AP automation: OCR invoice capture, three-way matching, approval workflow, Intelligent GL anomaly detection
+
+- Sage Intacct native AR automation: cash application, payment matching, automated dunning sequences
+
+- Sage Intacct Spend Management: mobile expense capture, policy enforcement, approval routing, GL posting
+
+- Extended document capture where required: Stampli (AP) or Yooz (AP/AR) for enhanced OCR and exception handling beyond native Intacct capability
+
+- Expense management: WebExpenses ★ or Payhawk ★ as the preferred corporate card and expense management layer
+
+- EDI connectivity: TrueCommerce ★ where trading partner integration is required
+
+The governance model — Layer 1 and Layer 2, Process Governance Map, Tiered Approval Model, AI action log — is identical for X3 and Intacct clients at Stage 2. The tooling differs; the framework does not.
+
+A.4 AI and Analytics Layer: Sage Intacct vs Sage X3 at Stage 3
+
+Capability
+
+Sage Intacct (Platform-Native)
+
+Sage X3 (Platform + ISV)
+
+Anomaly Detection
+
+Intelligent GL — native AI anomaly detection on GL postings. Configurable thresholds, Tier 2 routing.
+
+X3 native exception reporting + SEI ★ anomaly alerts. Phocas ★ for operational anomaly insight.
+
+Natural Language Querying
+
+Sage Copilot — natural language queries across Intacct datasets. Audit log of all queries.
+
+SEI ★ conversational analytics layer. ZAP BI ★ for ad hoc financial queries.
+
+AI-Assisted Forecasting
+
+Native Intacct AI forecasting: rolling 12-month, revenue driver inputs, cash flow modelling.
+
+Netstock ★ for demand and inventory forecasting. SEI ★ and Phocas ★ for financial and sales forecasting.
+
+Variance Commentary
+
+Native AI-generated management accounts commentary. Configurable narrative parameters.
+
+SEI ★ automated commentary. Velixo ★ for Excel-based commentary automation from X3 data.
+
+Board Pack Automation
+
+Natural language reporting, board pack template configuration, data-driven narrative.
+
+Velixo ★ direct Excel automation from X3. SEI ★ report scheduling and distribution.
+
+Manufacturing Intelligence
+
+N/A (Intacct is a finance-first platform).
+
+Lynq ★ MES: real-time production visibility, schedule adherence, OEE reporting. Praxedo ★ for field service intelligence.
+
+Inventory Intelligence
+
+Netstock ★ integrated for demand planning and inventory optimisation.
+
+Netstock ★ integrated for demand planning, inventory optimisation, and purchasing intelligence.
+
+BI and Analytics Platform
+
+Velixo ★, Swoop Analytics ★ as preferred analytics layers above native Intacct reporting.
+
+SEI ★, Phocas ★, ZAP BI ★ as the primary BI and analytics layer above X3 native reporting.
+
+Both platforms achieve Stage 3 outcomes: AI-assisted insight, anomaly detection, forward-looking forecasting, and materially reduced manual reporting effort. The tooling differs by platform. The governance framework, commercial model, and advisory outcomes are identical.
