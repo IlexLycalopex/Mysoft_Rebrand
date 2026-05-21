@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page Template — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Generic page template derived from the Mysoft index page. All sections shown with lorem-ipsum content and gradient image blocks.">
+
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; background: var(--bg); }
+  body { font-family: var(--font-sans); color: var(--fg-1); -webkit-font-smoothing: antialiased; }
+
+  .btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+  .btn:hover  { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn-primary:hover    { background: var(--navy-400) !important; }
+  .btn-accent:hover     { opacity: 0.88; }
+  .btn-ghost:hover      { border-color: var(--navy) !important; }
+  .btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+  .btn-invert:hover     { background: var(--bg) !important; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+
+  ::placeholder { color: rgba(255,255,255,0.28); }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+  .nav-active { color: var(--cyan) !important; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Shared primitives must load first -->
+<script type="text/babel" src="Button.jsx"></script>
+<script type="text/babel" src="NavBar.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="PageTemplate.jsx"></script>
+
+<script type="text/babel">
+const App = () => {
+  const scrollToCTA = () => {
+    const el = document.getElementById("page-cta");
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <NavBar onAssess={scrollToCTA} />
+      <PageTemplate onAssess={scrollToCTA} />
+      <Footer onAssess={scrollToCTA} />
+    </>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+
+</body>
+</html>
