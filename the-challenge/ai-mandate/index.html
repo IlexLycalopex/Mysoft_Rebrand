@@ -41,9 +41,9 @@
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
   .card { background: var(--white); border: 1px solid var(--line);
           border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
-  .sec-alt .card { background: var(--bg-soft); }
+  .sec-alt .card { background: var(--white); }
   .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
-               background: var(--cyan-50); color: var(--cyan-600);
+               background: var(--bg); color: var(--navy);
                display: flex; align-items: center; justify-content: center;
                margin-bottom: 18px; }
   .card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
@@ -59,7 +59,7 @@
   .step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
   .step:last-child { border-bottom: none; }
   .step-num { width: 36px; height: 36px; min-width: 36px; border-radius: 50%;
-              background: var(--navy); color: #fff; font-family: var(--font-display);
+              background: var(--bg); color: var(--navy); border: 1px solid var(--line); font-family: var(--font-display);
               font-weight: 600; font-size: 15px; display: flex; align-items: center;
               justify-content: center; margin-top: 3px; }
   .step-body h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
@@ -95,7 +95,8 @@
   .btn-ghost:hover { border-color: var(--navy); }
   .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
   .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
-  .btn-primary:hover { background: var(--navy-400) !important; }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -112,7 +113,7 @@
       <h1 class="hero-h1">Building a credible AI strategy<br>for finance</h1>
       <p class="hero-lede">The board expects an AI roadmap. The team expects direction. The vendors promise transformation. CFOs need a structured path that delivers genuine return — not a pilot that stalls after three months.</p>
       <div class="btn-group">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Assess Your Readiness</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Assess Your Readiness</a>
         <a href="#" class="btn btn-gw btn-lg">View Governance Framework</a>
       </div>
     </div>
@@ -257,7 +258,7 @@
       <h2 class="sec-h2">Know where you are before you decide where to go</h2>
       <p>The AI Readiness Assessment places your organisation on the maturity ladder and identifies the specific gaps standing between you and a credible AI strategy.</p>
       <div class="btn-group" style="justify-content:center">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the Assessment</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the Assessment</a>
         <a href="#" class="btn btn-gw btn-lg">Book a Strategy Session</a>
       </div>
     </div>

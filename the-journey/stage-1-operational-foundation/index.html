@@ -65,9 +65,9 @@
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .card { background: var(--white); border: 1px solid var(--line);
           border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
-  .sec-alt .card { background: var(--bg-soft); }
+  .sec-alt .card { background: var(--white); }
   .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
-               background: var(--cyan-50); color: var(--cyan-600);
+               background: var(--bg); color: var(--navy);
                display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
   .card h4 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
              color: var(--navy); margin: 0 0 8px; }
@@ -114,7 +114,8 @@
   .btn-ghost:hover { border-color: var(--navy); }
   .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
   .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
-  .btn-primary:hover { background: var(--navy-400) !important; }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -137,7 +138,7 @@
       <h1 class="hero-h1">Build the Platform<br>Your Business Deserves.</h1>
       <p class="hero-lede">Stage 1 is not just ERP implementation. It is the architecture decision that determines whether AI adoption at Stage 3 and Stage 4 is straightforward or requires expensive rework. Mysoft configures Sage X3 or Sage Intacct with governance, dimensional data architecture, and approval controls from day one.</p>
       <div class="btn-group">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the AI Readiness Assessment</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the AI Readiness Assessment</a>
         <a href="#" class="btn btn-gw btn-lg">Talk to a Consultant</a>
       </div>
     </div>
@@ -288,7 +289,7 @@
       <h2 class="sec-h2">The AI Readiness Assessment Places Your Organisation at the Right Stage in Under Five Minutes.</h2>
       <p>Free, actionable, no commitment required.</p>
       <div class="btn-group" style="justify-content:center">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the Free Assessment</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the Free Assessment</a>
         <a href="#" class="btn btn-gw btn-lg">Talk to a Consultant</a>
       </div>
     </div>

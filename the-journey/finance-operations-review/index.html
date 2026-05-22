@@ -49,6 +49,8 @@
   .btn-ghost-white:hover { border-color: rgba(255,255,255,0.7); }
   .btn-gw { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); }
   .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
 
   /* Sections */
   .sec { padding: 80px 32px; }
@@ -66,12 +68,11 @@
   .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
   .card { background: var(--white); border-radius: var(--radius-md);
           border: 1px solid var(--line); padding: 28px; }
-  .sec-alt .card { background: var(--bg); }
+  .sec-alt .card { background: var(--white); }
   .card-icon { width: 40px; height: 40px; border-radius: var(--radius-sm);
                background: var(--bg); border: 1px solid var(--line);
                display: flex; align-items: center; justify-content: center;
                margin-bottom: 16px; color: var(--navy); }
-  .sec-alt .card-icon { background: var(--white); }
   .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 16px;
              line-height: 1.3; letter-spacing: -0.01em; color: var(--navy);
              margin: 0 0 10px; }
@@ -82,7 +83,7 @@
   .step { display: flex; gap: 28px; padding: 32px 0; border-bottom: 1px solid var(--line); }
   .step:last-child { border-bottom: none; }
   .step-num { width: 40px; height: 40px; flex-shrink: 0;
-              background: var(--navy); color: #fff; border-radius: 999px;
+              background: var(--bg); color: var(--navy); border: 1px solid var(--line); border-radius: 999px;
               display: flex; align-items: center; justify-content: center;
               font-family: var(--font-display); font-weight: 700; font-size: 16px;
               margin-top: 2px; }
@@ -99,7 +100,7 @@
                 gap: 32px; max-width: var(--container); margin: 0 auto; }
   .proof-item { text-align: center; }
   .proof-item strong { display: block; font-family: var(--font-display); font-weight: 700;
-                       font-size: 28px; color: var(--cyan); letter-spacing: -0.02em; }
+                       font-size: 28px; color: #fff; letter-spacing: -0.02em; }
   .proof-item span { font-family: var(--font-sans); font-size: 13px;
                      color: rgba(255,255,255,0.6); line-height: 1.4; margin-top: 6px; display: block; }
 
@@ -128,7 +129,7 @@
     <h1 class="hero-h1">Finance Operations Review</h1>
     <p class="hero-lede">A structured diagnostic of your finance function — covering process maturity, system capability, automation potential, and governance posture. The starting point for every Mysoft engagement and the evidence base for your transformation roadmap.</p>
     <div class="btn-group">
-      <a href="../../contact/" class="btn btn-navy">Book a Finance Ops Review</a>
+      <a href="../../contact/" class="btn btn-invert">Book a Finance Ops Review</a>
       <a href="../ai-readiness-assessment/" class="btn btn-ghost-white">Take the Online Assessment</a>
     </div>
   </div>
@@ -280,7 +281,7 @@
     <h2>Every transformation programme starts with knowing where you are</h2>
     <p>The Finance Operations Review gives you an honest, expert assessment of your current finance function — and the evidence you need to make the right next decision.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="../../contact/" class="btn btn-navy btn-lg">Book a Finance Ops Review</a>
+      <a href="../../contact/" class="btn btn-invert btn-lg">Book a Finance Ops Review</a>
       <a href="../ai-readiness-assessment/" class="btn btn-gw btn-lg">Take the Free Online Assessment First</a>
     </div>
   </div>
