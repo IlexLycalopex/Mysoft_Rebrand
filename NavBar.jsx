@@ -126,7 +126,7 @@ const NAV_ITEMS = {
   },
 };
 
-const NavBar = ({ onAssess }) => {
+const NavBar = ({ onAssess, homeHref = "./" }) => {
   const [open, setOpen] = React.useState(null);
   const [scrolled, setScrolled] = React.useState(false);
   const closeTimer = React.useRef(null);
@@ -164,7 +164,7 @@ const NavBar = ({ onAssess }) => {
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
         {/* Logo */}
-        <a href="#" style={{ textDecoration: "none" }} onClick={closePanel}>
+        <a href={homeHref} style={{ textDecoration: "none" }} onClick={closePanel}>
           <Wordmark size={26} />
         </a>
 

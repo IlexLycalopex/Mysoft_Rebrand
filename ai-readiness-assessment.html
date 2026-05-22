@@ -861,7 +861,7 @@ body {
   const assessmentScrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   ReactDOM.createRoot(document.getElementById('nav-root')).render(
-    <NavBar onAssess={assessmentScrollTop} />
+    <NavBar onAssess={assessmentScrollTop} homeHref="./" />
   );
   ReactDOM.createRoot(document.getElementById('footer-root')).render(
     <Footer onAssess={assessmentScrollTop} />
