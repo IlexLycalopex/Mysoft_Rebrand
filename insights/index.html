@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Insights | Finance Transformation Intelligence — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Practical insight for CFOs, Finance Directors, and operations leaders navigating AI adoption, ERP modernisation, and digital transformation. Analysis, frameworks, and sector intelligence.">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+  .sec-lede { font-size: 17px; line-height: 1.65; color: var(--fg-2); max-width: 640px; margin: 14px 0 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--white); border: 1px solid var(--line);
+          border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
+  .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
+               background: var(--bg); color: var(--navy);
+               display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+             color: var(--navy); margin: 0 0 10px; }
+  .card h3 a { text-decoration: none; color: var(--navy); transition: color 140ms; }
+  .card h3 a:hover { color: var(--cyan); }
+  .card p  { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  .link-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px;
+                font-size: 13px; font-weight: 500; color: var(--cyan); text-decoration: none;
+                transition: color 140ms; }
+  .link-arrow:hover { color: var(--navy); }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
+  .cta-band .sec-eyebrow { color: var(--cyan); display: block; margin-bottom: 12px; }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; max-width: 640px; }
+  .cta-band p { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.65);
+                max-width: 480px; margin: 0 auto 36px; }
+  .cta-band .btn-group { justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <span class="hero-eyebrow">Insights</span>
+      <h1 class="hero-h1">Finance Transformation Intelligence.</h1>
+      <p class="hero-lede">Practical insight for CFOs, Finance Directors, and operations leaders navigating AI adoption, ERP modernisation, and digital transformation. No vendor marketing — structured, evidence-based analysis.</p>
+    </div>
+  </section>
+
+  <!-- Featured Resources -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Featured Resources</span>
+        <h2 class="sec-h2">Start Here</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" data-icon="book-open"></div>
+          <h3><a href="ai-ready-finance-guide/">The AI-Ready Finance Guide</a></h3>
+          <p>A structured guide for CFOs navigating the transition from traditional ERP to AI-augmented finance operations. Four-stage maturity model, governance framework, platform selection criteria, and ROI measurement.</p>
+          <a href="ai-ready-finance-guide/" class="link-arrow">Read the guide →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="play-circle"></div>
+          <h3><a href="demo-hub/">Demo Hub</a></h3>
+          <p>Scenario-based demonstrations of Sage Intacct, Sage X3, and X3CloudDocs — built around real finance challenges, not generic product tours. Watch on demand or book a live session.</p>
+          <a href="demo-hub/" class="link-arrow">Visit Demo Hub →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="clipboard-list"></div>
+          <h3><a href="erp-selection-framework/">ERP Selection Framework</a></h3>
+          <p>A decision framework for mid-market finance leaders evaluating ERP options. Criteria definition, vendor assessment methodology, and risk factors — structured to produce a defensible decision.</p>
+          <a href="erp-selection-framework/" class="link-arrow">Download the framework →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- By Topic -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">By Topic</span>
+        <h2 class="sec-h2">CFO Strategy and Thought Leadership</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" data-icon="cpu"></div>
+          <h3><a href="cfo-strategy/">CFO Strategy</a></h3>
+          <p>AI governance, finance function transformation, board reporting, and the strategic CFO agenda. Analysis for finance leaders thinking beyond the close cycle.</p>
+          <a href="cfo-strategy/" class="link-arrow">View articles →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="settings"></div>
+          <h3><a href="operational-transformation/">Operational Transformation</a></h3>
+          <p>ERP implementation, process automation, integration architecture, and change management. Practical guidance for organisations in active transformation.</p>
+          <a href="operational-transformation/" class="link-arrow">View articles →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="lightbulb"></div>
+          <h3><a href="strategic-insight/">Strategic Insight</a></h3>
+          <p>Sector analysis, competitive landscape, and market intelligence for mid-market businesses navigating technology investment decisions.</p>
+          <a href="strategic-insight/" class="link-arrow">View articles →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events and Community -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Events and Community</span>
+        <h2 class="sec-h2">Mysoft Events and Webinars</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon" data-icon="calendar"></div>
+          <h3><a href="events-webinars/">Events and Webinars</a></h3>
+          <p>Live and on-demand sessions — ERP selection roundtables, AI in finance briefings, product deep-dives, and the Mysoft annual customer conference. Structured for active buyers and existing customers.</p>
+          <a href="events-webinars/" class="link-arrow">View events →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="users"></div>
+          <h3>Customer Transformation Stories</h3>
+          <p>How mid-market organisations have used Sage Intacct, Sage X3, and X3CloudDocs to transform their finance and operations functions — with measurable outcomes.</p>
+          <a href="customer-transformation-stories/" class="link-arrow">Read the stories →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="narrow">
+      <span class="sec-eyebrow">Next Step</span>
+      <h2 class="sec-h2">Know Where You Are Before You Decide Where to Go.</h2>
+      <p>The AI Readiness Assessment is the fastest way to understand your current finance maturity and the specific path forward for your organisation.</p>
+      <div class="btn-group">
+        <a href="../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the Assessment</a>
+        <a href="../the-journey/finance-operations-review/" class="btn btn-gw btn-lg">Talk to a Specialist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'book-open':'<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+    'play-circle':'<circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>',
+    'clipboard-list':'<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/>',
+    'cpu':'<rect x="9" y="9" width="6" height="6"/><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="9" y1="2" x2="9" y2="9"/><line x1="15" y1="2" x2="15" y2="9"/><line x1="9" y1="15" x2="9" y2="22"/><line x1="15" y1="15" x2="15" y2="22"/><line x1="2" y1="9" x2="9" y2="9"/><line x1="2" y1="15" x2="9" y2="15"/><line x1="15" y1="9" x2="22" y2="9"/><line x1="15" y1="15" x2="22" y2="15"/>',
+    'settings':'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+    'lightbulb':'<line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14z"/>',
+    'calendar':'<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+    'users':'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../vendor/react.development.js"></script>
+<script src="../vendor/react-dom.development.js"></script>
+<script src="../vendor/babel.min.js"></script>
+<script type="text/babel" src="../Button.jsx"></script>
+<script type="text/babel" src="../NavBar.jsx"></script>
+<script type="text/babel" src="../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../" />);
+</script>
+
+</body>
+</html>

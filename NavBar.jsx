@@ -102,12 +102,13 @@ const NAV_ITEMS = {
   },
   insights: {
     label: "Insights",
+    href: "insights/",
     cols: [
       { t: "Content", l: [
-        { name: "CFO Strategy",              sub: "Finance as a growth enabler" },
-        { name: "Operational Transformation",sub: "AI in AP, AR, and beyond" },
-        { name: "Strategic Insight",         sub: "Agentic AI — reality versus hype" },
-        { name: "Events & Webinars",         sub: "ERP selection events and roundtables" },
+        { name: "CFO Strategy",              sub: "Finance as a growth enabler",          href: "insights/cfo-strategy/" },
+        { name: "Operational Transformation",sub: "AI in AP, AR, and beyond",             href: "insights/operational-transformation/" },
+        { name: "Strategic Insight",         sub: "Agentic AI — reality versus hype",     href: "insights/strategic-insight/" },
+        { name: "Events & Webinars",         sub: "ERP selection events and roundtables", href: "insights/events-webinars/" },
       ]},
       { t: "Resources", l: [
         { name: "AI-Ready Finance Guide",           sub: "Gated — free download" },

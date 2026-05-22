@@ -51,10 +51,14 @@ const FOOTER_COLS = [
   {
     t: "Insights",
     l: [
-      { name: "CFO Strategy",                   href: null },
-      { name: "AI-Ready Finance Guide",          href: null },
-      { name: "Customer Transformation Stories", href: null },
-      { name: "Demo Hub",                        href: null },
+      { name: "CFO Strategy",              href: "insights/cfo-strategy/" },
+      { name: "Operational Transformation", href: "insights/operational-transformation/" },
+      { name: "Strategic Insight",          href: "insights/strategic-insight/" },
+      { name: "Events & Webinars",          href: "insights/events-webinars/" },
+      { name: "AI-Ready Finance Guide",     href: null },
+      { name: "ERP Selection Framework",    href: null },
+      { name: "Customer Stories",           href: null },
+      { name: "Demo Hub",                   href: null },
     ],
   },
   {
