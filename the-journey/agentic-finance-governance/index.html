@@ -33,17 +33,21 @@
 
   /* Buttons */
   .btn { display: inline-flex; align-items: center; gap: 8px;
-         font-family: var(--font-sans); font-weight: 600; font-size: 14px;
-         border-radius: var(--radius-btn); text-decoration: none; border: none; cursor: pointer;
-         transition: all 180ms var(--ease-out); white-space: nowrap; }
-  .btn-primary { background: var(--cyan); color: var(--navy); padding: 12px 22px; }
-  .btn-primary:hover { background: var(--cyan-hover); }
-  .btn-ghost-white { background: transparent; color: #fff; padding: 12px 22px;
-                     border: 1.5px solid rgba(255,255,255,0.35); }
-  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.7); }
-  .btn-outline-navy { background: transparent; color: var(--navy); padding: 12px 22px;
-                      border: 1.5px solid rgba(0,26,34,0.35); }
-  .btn-outline-navy:hover { border-color: var(--navy); }
+         font-family: var(--font-sans); font-weight: 500; font-size: 14px;
+         border-radius: var(--radius-md); text-decoration: none;
+         border: 1px solid transparent; cursor: pointer;
+         transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; white-space: nowrap; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
 
   /* Sections */
   .sec { padding: 80px 32px; }
@@ -109,11 +113,11 @@
   .card ul li::before { content: "—"; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
 
   /* CTA band */
-  .cta-band { background: var(--cyan); padding: 96px 32px; text-align: center; }
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
   .cta-band h2 { font-family: var(--font-display); font-weight: 600;
                  font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -0.025em;
-                 color: var(--navy); margin: 0 0 14px; }
-  .cta-band p { font-size: 18px; color: rgba(0,26,34,0.72); margin: 0 auto 40px; max-width: 560px; }
+                 color: #fff; margin: 0 0 14px; }
+  .cta-band p { font-size: 18px; color: rgba(255,255,255,0.65); margin: 0 auto 40px; max-width: 560px; }
   .source-note { margin-top: 16px; font-size: 12px; color: var(--muted); }
 </style>
 </head>
@@ -135,7 +139,7 @@
     <p class="hero-lede">AI in finance without governance is a control failure waiting to happen. The Mysoft Agentic Finance Governance Framework v1.1 defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.</p>
     <div class="btn-group">
       <a href="../../the-journey/finance-operations-review/" class="btn btn-invert">Request a Governance Review</a>
-      <a href="../ai-readiness-assessment/" class="btn btn-ghost-white">Take the Assessment</a>
+      <a href="../../ai-readiness-assessment.html" class="btn btn-gw">Take the Assessment</a>
     </div>
   </div>
 </section>
@@ -316,7 +320,7 @@
 <!-- CTA band -->
 <section class="cta-band">
   <div style="max-width:640px; margin:0 auto;">
-    <span class="sec-eyebrow" style="color:rgba(0,26,34,0.6);">Governance Assessment</span>
+    <span class="sec-eyebrow">Governance Assessment</span>
     <h2>Understand your current governance posture</h2>
     <p>We offer a structured governance assessment for finance leaders who want to understand how their current AI controls compare to the Mysoft Governance Framework v1.1 — and where the gaps are before they become audit findings.</p>
     <div class="btn-group" style="justify-content:center;">
