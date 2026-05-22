@@ -65,16 +65,17 @@ const NAV_ITEMS = {
   },
   journey: {
     label: "The Journey",
+    href: "the-journey/",
     cols: [
       { t: "AI Transformation Stages", l: [
-        { name: "The Journey — Overview",              sub: "How we take you from Stage 1 to Stage 4" },
-        { name: "Stage 1 — Operational Foundation",    sub: "Build the platform your business deserves" },
-        { name: "Stage 2 — Intelligent Automation",    sub: "Remove the manual transactional layer" },
-        { name: "Stage 3 — AI-Augmented Finance",      sub: "Intelligence at the speed of the business" },
-        { name: "Stage 4 — Agentic Finance Operations",sub: "Finance at scale without headcount growth" },
+        { name: "The Journey — Overview",              sub: "How we take you from Stage 1 to Stage 4",  href: "the-journey/" },
+        { name: "Stage 1 — Operational Foundation",    sub: "Build the platform your business deserves", href: "the-journey/stage-1-operational-foundation/" },
+        { name: "Stage 2 — Intelligent Automation",    sub: "Remove the manual transactional layer",     href: "the-journey/stage-2-intelligent-automation/" },
+        { name: "Stage 3 — AI-Augmented Finance",      sub: "Intelligence at the speed of the business", href: "the-journey/stage-3-ai-augmented-finance/" },
+        { name: "Stage 4 — Agentic Finance Operations",sub: "Finance at scale without headcount growth",  href: "the-journey/stage-4-agentic-finance-operations/" },
       ]},
       { t: "Frameworks & Tools", l: [
-        { name: "AI Readiness Assessment",     sub: "Free — find your maturity stage", href: "ai-readiness-assessment.html" },
+        { name: "AI Readiness Assessment",     sub: "Free — find your maturity stage", href: "the-journey/ai-readiness-assessment/" },
         { name: "Agentic Finance Governance",  sub: "Board-defensible AI governance" },
         { name: "Finance Operations Review",   sub: "Structured discovery process" },
         { name: "ISV Partner Ecosystem",       sub: "The integrated technology stack" },

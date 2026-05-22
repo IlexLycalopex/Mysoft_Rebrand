@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stage 4 — Agentic Finance Operations: Finance at Scale — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Stage 4 deploys governed agentic workflows across the finance function — executing high-volume processes autonomously under full human oversight. Finance at scale, without proportional headcount growth.">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 18px;
+                font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.45); }
+  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+  .breadcrumb-sep { opacity: 0.4; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+  .sec-lede { font-size: 17px; line-height: 1.65; color: var(--fg-2); max-width: 640px; margin: 14px 0 0; }
+  .sec-body  { font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 14px 0 0; }
+  .sec-note  { font-size: 13px; line-height: 1.65; color: var(--muted); margin: 12px 0 0; }
+
+  /* Two-col intro */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+
+  /* Agentic loop */
+  .loop-box { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; }
+  .loop-label { font-family: var(--font-sans); font-weight: 600; font-size: 11px;
+                letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 24px; }
+  .loop-nodes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .loop-node { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-md);
+               padding: 8px 14px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--navy); }
+  .loop-node-cyan { background: var(--cyan); color: var(--navy); border-color: var(--cyan); font-weight: 600; }
+  .loop-arrow { color: var(--cyan); font-weight: 700; font-size: 16px; }
+  .loop-note { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 16px; }
+
+  /* Steps */
+  .steps { margin-top: 40px; }
+  .step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+  .step-num { width: 36px; height: 36px; border-radius: 999px; background: var(--navy);
+              color: var(--cyan); display: flex; align-items: center; justify-content: center;
+              font-family: var(--font-display); font-weight: 700; font-size: 15px; flex-shrink: 0; }
+  .step-body h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem;
+                  color: var(--navy); margin: 0 0 8px; }
+  .step-body p  { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  /* Conditions list */
+  .conditions { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .condition { display: flex; gap: 20px; align-items: flex-start; padding: 20px 24px;
+               background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); }
+  .condition-num { width: 32px; height: 32px; border-radius: 999px; background: var(--cyan-50);
+                   color: var(--cyan-600); display: flex; align-items: center; justify-content: center;
+                   font-family: var(--font-display); font-weight: 700; font-size: 14px; flex-shrink: 0; }
+  .condition-text { font-size: 15px; line-height: 1.6; color: var(--fg-2); padding-top: 4px; }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
+  .cta-band .sec-eyebrow { color: var(--cyan); }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; max-width: 640px; }
+  .cta-band > .narrow > p { font-size: 17px; line-height: 1.65;
+                              color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto 36px; }
+  .cta-band .btn-group { justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-primary:hover { background: var(--navy-400) !important; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../">Home</a><span class="breadcrumb-sep">/</span>
+        <a href="../">The Journey</a><span class="breadcrumb-sep">/</span>
+        <span>Stage 4</span>
+      </div>
+      <span class="hero-eyebrow">Stage 4 — Agentic Finance Operations</span>
+      <h1 class="hero-h1">Finance at Scale.<br>Without Headcount Growth.</h1>
+      <p class="hero-lede">Agentic AI executes defined financial processes autonomously — completing tasks, anticipating needs, and routing exceptions to the right human authority — under the governance architecture established in Stages 1 to 3. This is not automation. This is finance operations redesigned for a business that does not stop.</p>
+      <div class="btn-group">
+        <a href="#" class="btn btn-navy btn-lg">Talk to a Mysoft Specialist</a>
+        <a href="#" class="btn btn-gw btn-lg">Read the Governance Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation vs Agentic -->
+  <section class="sec">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="sec-eyebrow">What Agentic Means in Practice</span>
+          <h2 class="sec-h2">The Difference Between Automation and Agentic AI</h2>
+          <p class="sec-body">Automation executes a defined step. An agent executes a defined workflow — adapting to exceptions, routing decisions, and completing multi-step processes without manual handoffs.</p>
+          <p class="sec-body">At Stage 4, AI Agents work proactively across finance, compliance, and operations — drawing on trusted data to complete tasks, anticipate needs, and keep key processes running in the background. Exceptions are routed to the right human authority, not queued for the next available person.</p>
+          <p class="sec-note">Source: Sage Future 2026 press release, May 2026: "Sage's next-generation AI Agents work proactively across finance, compliance, and operations."</p>
+          <p class="sec-note">Sage and PwC's "Beyond the Black Box" initiative (April 2026) defines the governance standard for agentic finance — combining transparent, explainable AI with real-world expertise.</p>
+        </div>
+        <div class="loop-box">
+          <div class="loop-label">The Agentic Finance Loop</div>
+          <div class="loop-nodes">
+            <span class="loop-node">Task triggered</span>
+            <span class="loop-arrow">→</span>
+            <span class="loop-node loop-node-cyan">Agent executes</span>
+            <span class="loop-arrow">→</span>
+            <span class="loop-node">Exception detected</span>
+          </div>
+          <div class="loop-nodes">
+            <span class="loop-node">Audit trail created</span>
+            <span class="loop-arrow">←</span>
+            <span class="loop-node loop-node-cyan">Human reviews</span>
+            <span class="loop-arrow">←</span>
+            <span class="loop-node">Escalated (Tier 3/4)</span>
+          </div>
+          <p class="loop-note">Every step generates a timestamped, immutable audit trail entry in Sage Intacct or Sage X3.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Mysoft deploys Stage 4 -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Stage 4 in Practice</span>
+        <h2 class="sec-h2">How Mysoft Deploys Stage 4</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Agentic Design Workshop</h3>
+            <p>A Mysoft-facilitated session mapping agentic workflow candidates across the finance function. Each candidate assessed against the Stage 4 entry conditions and governance requirements before activation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Wave Deployment</h3>
+            <p>Phased activation of agentic workflows with validation at each wave. No new agentic workflow is activated without governance sign-off and audit trail verification. MD sign-off required before Stage 4 scope is activated (per Governance Framework v1.1).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Annual Governance Review</h3>
+            <p>Full framework audit conducted annually. QAOR operates on a six-monthly cycle at Stage 4. Every agentic action is reviewed against exception thresholds, and new Sage AI capabilities are assessed for Stage 4 deployment eligibility.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Oversight Model</h3>
+            <p>Every agentic action generates a complete audit trail. Tier 4 authority (CFO/FD) governs exception escalation. The Board AI Governance Report is updated at each Annual Governance Review.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entry conditions -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Entry Conditions</span>
+        <h2 class="sec-h2">Stage 4 Is Not for Everyone — Yet</h2>
+        <p class="sec-lede">Stage 4 entry requires demonstrated governance maturity across Stages 1, 2, and 3. The AI Readiness Assessment score and governance framework audit determine readiness.</p>
+      </div>
+      <div class="conditions">
+        <div class="condition">
+          <div class="condition-num">1</div>
+          <div class="condition-text">AI Readiness Assessment score of 30–39, or demonstrated Stage 3 governance maturity (override condition applies)</div>
+        </div>
+        <div class="condition">
+          <div class="condition-num">2</div>
+          <div class="condition-text">All four governance layers active and validated — Process Governance, Authority and Approval, Audit Trail, QAOR</div>
+        </div>
+        <div class="condition">
+          <div class="condition-num">3</div>
+          <div class="condition-text">QAOR established and completed at least once, with documented exception calibration outcomes</div>
+        </div>
+        <div class="condition">
+          <div class="condition-num">4</div>
+          <div class="condition-text">MD sign-off required before Stage 4 scope is activated (per Mysoft Governance Framework v1.1)</div>
+        </div>
+      </div>
+      <div class="btn-group" style="margin-top:2rem">
+        <a href="../../ai-readiness-assessment.html" class="btn btn-navy">Check Your Readiness Score</a>
+        <a href="#" class="btn btn-ghost">View the Governance Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="narrow">
+      <span class="sec-eyebrow">Interested in Stage 4</span>
+      <h2 class="sec-h2">Start With the Governance Framework.</h2>
+      <p>Understanding the governance requirements before committing to Stage 4 scope is the Mysoft approach. Download the framework or talk to a specialist.</p>
+      <div class="btn-group" style="justify-content:center">
+        <a href="#" class="btn btn-navy btn-lg">Explore the Governance Framework</a>
+        <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../../" />);
+</script>
+
+</body>
+</html>
