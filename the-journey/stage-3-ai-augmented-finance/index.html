@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stage 3 — AI-Augmented Finance: Sage Copilot and AI Analytics — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Stage 3 deploys Sage Copilot, the Finance Intelligence Agent, intelligent close automation, and AI-powered BI across a governed finance function. The CFO's team becomes a strategic function.">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 18px;
+                font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.45); }
+  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+  .breadcrumb-sep { opacity: 0.4; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+  .sec-lede { font-size: 17px; line-height: 1.65; color: var(--fg-2); max-width: 640px; margin: 14px 0 0; }
+  .sec-note  { font-size: 12px; line-height: 1.55; color: var(--muted); margin-top: 8px; }
+
+  /* Card grids */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .card { background: var(--white); border: 1px solid var(--line);
+          border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
+  .sec-alt .card { background: var(--bg-soft); }
+  .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
+               background: var(--cyan-50); color: var(--cyan-600);
+               display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .card h4 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+             color: var(--navy); margin: 0 0 8px; }
+  .card p  { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  /* Partner grid */
+  .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+  .partner-card { background: var(--white); border: 1px solid var(--line);
+                  border-radius: var(--radius-md); padding: 24px; }
+  .partner-name { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+                  color: var(--navy); margin-bottom: 8px; }
+  .partner-badges { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+  .badge { font-family: var(--font-sans); font-weight: 600; font-size: 10px;
+           letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px;
+           border-radius: 999px; }
+  .badge-x3      { background: rgba(216,10,72,0.1); color: var(--x3cd-red); }
+  .badge-intacct { background: var(--cyan-50); color: var(--cyan-600); }
+  .badge-both    { background: rgba(0,26,34,0.07); color: var(--navy); }
+  .partner-card p { font-size: 13px; line-height: 1.55; color: var(--fg-2); margin: 0; }
+
+  /* Governance layers */
+  .layers { margin-top: 32px; }
+  .layer { border: 1px solid var(--line); padding: 24px 28px; background: var(--white); }
+  .layer:first-child { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+  .layer:last-child  { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+  .layer + .layer { border-top: none; }
+  .layer-header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .layer-num { width: 28px; height: 28px; border-radius: 999px; background: var(--navy);
+               color: #fff; display: flex; align-items: center; justify-content: center;
+               font-family: var(--font-display); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .layer-title { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--navy); }
+  .layer-body { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; padding-left: 42px; }
+  .sec-note-block { font-size: 12px; color: var(--muted); margin-top: 16px; }
+
+  /* Next stage card */
+  .next-stage { display: flex; align-items: center; justify-content: space-between; gap: 32px;
+                background: var(--white); border: 1px solid var(--line);
+                border-radius: var(--radius-lg); padding: 32px 40px; box-shadow: var(--shadow-sm); }
+  .next-stage-label { font-family: var(--font-sans); font-weight: 600; font-size: 11px;
+                      letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 6px; }
+  .next-stage h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem;
+                   color: var(--navy); margin: 0 0 6px; }
+  .next-stage p { font-size: 14px; color: var(--fg-2); margin: 0; }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
+  .cta-band .sec-eyebrow { color: var(--cyan); }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; max-width: 640px; }
+  .cta-band > .narrow > p { font-size: 17px; line-height: 1.65;
+                              color: rgba(255,255,255,0.65); max-width: 480px; margin: 0 auto 36px; }
+  .cta-band .btn-group { justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-primary:hover { background: var(--navy-400) !important; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../">Home</a><span class="breadcrumb-sep">/</span>
+        <a href="../">The Journey</a><span class="breadcrumb-sep">/</span>
+        <span>Stage 3</span>
+      </div>
+      <span class="hero-eyebrow">Stage 3 — AI-Augmented Finance</span>
+      <h1 class="hero-h1">Intelligence at the<br>Speed of the Business.</h1>
+      <p class="hero-lede">Stage 3 is where AI becomes operational. Sage Copilot provides conversational access to financial data. The Finance Intelligence Agent surfaces answers instantly. Close Automation removes the highest-risk manual steps from the period-end cycle. This only works on the governed foundation of Stages 1 and 2.</p>
+      <div class="btn-group">
+        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the AI Readiness Assessment</a>
+        <a href="#" class="btn btn-gw btn-lg">Explore Sage Intacct</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sage AI — Intacct -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Sage AI — February and April 2026 Releases</span>
+        <h2 class="sec-h2">Ask Your Finance System a Question. Get an Answer.</h2>
+        <p class="sec-lede">Sage Copilot and the Finance Intelligence Agent bring natural language access to financial data — across both Sage Intacct and Sage X3. Intelligence at the speed the business requires.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon" data-icon="message-square"></div>
+          <h4>Finance Intelligence Agent</h4>
+          <p>Ask questions of your financial data in plain language and receive instant, actionable answers. No SQL, no report building, no waiting for analysis.</p>
+          <p class="sec-note">Source: Sage Intacct AI press release, February 2026.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="monitor"></div>
+          <h4>Close Workspace</h4>
+          <p>Real-time visibility across AR, AP, GL, and cash in a single close management view. Track, manage, and streamline close activities from one place.</p>
+          <p class="sec-note">Source: Sage Intacct AI press release, April 2026. Generally available UK and US.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="check-square"></div>
+          <h4>Subledger Reconciliation Assistant</h4>
+          <p>Automatically compares the general ledger with all sub-ledgers and instantly identifies discrepancies. Removes one of the highest-risk manual steps in the close cycle.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="bar-chart"></div>
+          <h4>Variance Analysis</h4>
+          <p>AI-powered period-on-period variance flagging. Surfaces anomalies automatically and directs finance team attention to where it is needed most.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="dollar-sign"></div>
+          <h4>Cash Intelligence</h4>
+          <p>Real-time cash position monitoring. AI-driven cash flow analysis and forward-looking cash visibility for the CFO.</p>
+          <p class="sec-note">Source: Sage Intacct AI press release, February 2026.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="upload"></div>
+          <h4>AI-Powered Data Import</h4>
+          <p>Complex dataset import without spreadsheet manipulation. Intelligent field mapping, validation, and exception handling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sage X3 at Stage 3 -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Sage X3 at Stage 3</span>
+        <h2 class="sec-h2">Operational Intelligence for Manufacturing and Distribution</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon" data-icon="cpu"></div>
+          <h4>Sage Copilot for X3</h4>
+          <p>Available from June 2025. Embedded natural language interaction and conversational data queries across your operational ERP data.</p>
+          <p class="sec-note">Source: Sage X3 Copilot press release, June 2025.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="alert-triangle"></div>
+          <h4>Sales Intelligence Agent</h4>
+          <p>Proactive alerts on overdue orders, delayed shipments, and declining customer demand — before they become customer service failures.</p>
+          <p class="sec-note">Source: Sage X3 AI press release, February 2026.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="truck"></div>
+          <h4>Connected Supply Chain</h4>
+          <p>Real-time visibility from purchase order creation through to delivery. Connected supply chain intelligence at Stage 3.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="file-text"></div>
+          <h4>AI-Powered AP Automation</h4>
+          <p>Expanded AI-driven document capture, classification, and vendor matching for accounts payable in manufacturing environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BI stack -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Stage 3 BI Stack</span>
+        <h2 class="sec-h2">Intelligence Partners by Platform</h2>
+      </div>
+      <div class="partner-grid">
+        <div class="partner-card">
+          <div class="partner-name">Sage Enterprise Intelligence (SEI)</div>
+          <div class="partner-badges"><span class="badge badge-x3">X3</span><span class="badge badge-intacct">Intacct</span></div>
+          <p>Native Sage BI and reporting with embedded analytics across both platforms.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name">Phocas</div>
+          <div class="partner-badges"><span class="badge badge-x3">X3</span></div>
+          <p>Operational BI for manufacturing and distribution businesses on Sage X3.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name">ZAP BI</div>
+          <div class="partner-badges"><span class="badge badge-x3">X3</span><span class="badge badge-intacct">Intacct</span></div>
+          <p>Self-service BI and analytics for finance teams across both Sage platforms.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name">Velixo</div>
+          <div class="partner-badges"><span class="badge badge-intacct">Intacct</span></div>
+          <p>Excel-connected reporting and budgeting for Sage Intacct finance teams.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name">Swoop Analytics</div>
+          <div class="partner-badges"><span class="badge badge-intacct">Intacct</span></div>
+          <p>Automated insight delivery and anomaly detection for Intacct data.</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name">Netstock</div>
+          <div class="partner-badges"><span class="badge badge-both">Both</span></div>
+          <p>AI demand planning and inventory optimisation across X3 and Intacct.</p>
+        </div>
+      </div>
+      <div style="margin-top:2rem">
+        <a href="#" class="btn btn-ghost">View Full ISV Ecosystem</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Governance layers -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Stage 3 Governance</span>
+        <h2 class="sec-h2">Full Four-Layer Governance Framework Activated</h2>
+      </div>
+      <div class="layers">
+        <div class="layer">
+          <div class="layer-header"><div class="layer-num">1</div><div class="layer-title">Process Governance</div></div>
+          <p class="layer-body">Workflow mapping complete. All AI-eligible processes classified as routine or exception. Process Governance Map updated to reflect Stage 3 AI deployment.</p>
+        </div>
+        <div class="layer">
+          <div class="layer-header"><div class="layer-num">2</div><div class="layer-title">Authority and Approval</div></div>
+          <p class="layer-body">Tiered Approval Model (Tiers 1–4) fully operational across all automated processes. Human authority matrix reviewed and confirmed at each QAOR.</p>
+        </div>
+        <div class="layer">
+          <div class="layer-header"><div class="layer-num">3</div><div class="layer-title">Audit Trail and Control</div></div>
+          <p class="layer-body">Timestamped, tamper-resistant audit trail for every financial transaction and AI-executed action. CFO/FD read access; auditors have structured access during audit periods.</p>
+        </div>
+        <div class="layer">
+          <div class="layer-header"><div class="layer-num">4</div><div class="layer-title">Model Review and Governance Cycle (QAOR)</div></div>
+          <p class="layer-body">Quarterly AI Optimisation Review covers exception rate calibration, new Sage AI capability assessment, audit trail anomaly review, and Stage 4 readiness. Board AI Governance Report introduced at Stage 3.</p>
+        </div>
+      </div>
+      <p class="sec-note-block">Source: Mysoft Agentic Finance AI Governance Framework v1.1.</p>
+    </div>
+  </section>
+
+  <!-- Next stage -->
+  <section class="sec">
+    <div class="container">
+      <div class="next-stage">
+        <div>
+          <div class="next-stage-label">What comes next</div>
+          <h3>Stage 4 — Agentic Finance Operations</h3>
+          <p>Governed agentic workflows. Finance at scale. Without headcount growth.</p>
+        </div>
+        <a href="../stage-4-agentic-finance-operations/" class="btn btn-navy">Explore Stage 4</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="narrow">
+      <span class="sec-eyebrow">Ready to Move to AI-Augmented Finance</span>
+      <h2 class="sec-h2">The AI Readiness Assessment Confirms Your Stage 3 Entry Conditions.</h2>
+      <p>It also confirms your governance baseline and identifies the specific capabilities ready to activate.</p>
+      <div class="btn-group" style="justify-content:center">
+        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the Assessment</a>
+        <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'message-square':'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+    'monitor':'<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+    'check-square':'<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+    'bar-chart':'<line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>',
+    'dollar-sign':'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+    'upload':'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',
+    'cpu':'<rect x="9" y="9" width="6" height="6"/><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="9" y1="2" x2="9" y2="9"/><line x1="15" y1="2" x2="15" y2="9"/><line x1="9" y1="15" x2="9" y2="22"/><line x1="15" y1="15" x2="15" y2="22"/><line x1="2" y1="9" x2="9" y2="9"/><line x1="2" y1="15" x2="9" y2="15"/><line x1="15" y1="9" x2="22" y2="9"/><line x1="15" y1="15" x2="22" y2="15"/>',
+    'alert-triangle':'<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+    'truck':'<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+    'file-text':'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../../" />);
+</script>
+
+</body>
+</html>

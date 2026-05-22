@@ -23,10 +23,12 @@ const FOOTER_COLS = [
   {
     t: "The Journey",
     l: [
-      { name: "AI Readiness Assessment",    href: "ai-readiness-assessment.html" },
-      { name: "Agentic Finance Governance", href: null },
-      { name: "Finance Operations Review",  href: null },
-      { name: "ISV Partner Ecosystem",      href: null },
+      { name: "The Journey Overview",                href: "the-journey/" },
+      { name: "Stage 1 — Operational Foundation",    href: "the-journey/stage-1-operational-foundation/" },
+      { name: "Stage 2 — Intelligent Automation",    href: "the-journey/stage-2-intelligent-automation/" },
+      { name: "Stage 3 — AI-Augmented Finance",      href: "the-journey/stage-3-ai-augmented-finance/" },
+      { name: "Stage 4 — Agentic Finance Operations",href: "the-journey/stage-4-agentic-finance-operations/" },
+      { name: "AI Readiness Assessment",             href: "the-journey/ai-readiness-assessment/" },
     ],
   },
   {
