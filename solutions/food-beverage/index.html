@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ERP for Food and Beverage | Sage X3 — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Food and beverage businesses face regulatory, traceability, and perishability requirements that standard ERP cannot accommodate. Sage X3 handles batch traceability, shelf-life management, recipe costing, and compliance reporting as core capabilities.">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  :root { --x3cd: #C50F41; --x3cd-bg: rgba(197,15,65,0.06); }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 18px;
+                font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.45); }
+  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+  .breadcrumb-sep { opacity: 0.4; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-eyebrow--red { color: #C50F41; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+  .sec-lede { font-size: 17px; line-height: 1.65; color: var(--fg-2); max-width: 640px; margin: 14px 0 0; }
+  .sec-body  { font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 14px 0 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--white); border: 1px solid var(--line);
+          border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
+  .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
+               background: var(--bg); color: var(--navy);
+               display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .card-icon--x3cd { background: var(--x3cd-bg); color: #C50F41; }
+  .card--x3cd { border-top: 3px solid #C50F41; }
+  .card h4 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+             color: var(--navy); margin: 0 0 8px; }
+  .card p  { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
+  .cta-band .sec-eyebrow { color: var(--cyan); display: block; margin-bottom: 12px; }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; max-width: 640px; }
+  .cta-band p { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.65);
+                max-width: 480px; margin: 0 auto 36px; }
+  .cta-band .btn-group { justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../">Home</a><span class="breadcrumb-sep">/</span>
+        <a href="../">Solutions</a><span class="breadcrumb-sep">/</span>
+        <span>Food &amp; Beverage</span>
+      </div>
+      <span class="hero-eyebrow">Sector</span>
+      <h1 class="hero-h1">ERP for Food and Beverage.</h1>
+      <p class="hero-lede">Food and beverage businesses face regulatory, traceability, and perishability requirements that standard ERP cannot accommodate. Sage X3, deployed by Mysoft, handles batch traceability, shelf-life management, recipe costing, and compliance reporting as core capabilities — not add-ons.</p>
+      <div class="btn-group">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-invert btn-lg">Book a Sector Demo</a>
+        <a href="../sage-x3/" class="btn btn-gw btn-lg">Explore Sage X3</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sector Requirements -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Sector Requirements</span>
+        <h2 class="sec-h2">What Food and Beverage ERP Must Handle</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" data-icon="layers"></div>
+          <h4>Batch Traceability</h4>
+          <p>End-to-end lot traceability from raw material receipt through production to customer despatch. Recall readiness requires the ability to identify every affected batch and every customer that received product within minutes — not days.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="clock"></div>
+          <h4>Shelf-Life and Date Management</h4>
+          <p>FEFO (First Expired, First Out) picking, best-before date management, and automated near-expiry alerts integrated with procurement and production planning. Reduces waste and prevents recall exposure.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="sliders"></div>
+          <h4>Recipe and Formulation Costing</h4>
+          <p>Variable recipe costing, yield management, and co-product and by-product accounting. Accurate product cost calculations that update automatically when ingredient costs change — not quarterly manual recalculations.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="shield-check"></div>
+          <h4>Regulatory and Certification Compliance</h4>
+          <p>BRC, SALSA, and retailer audit documentation. Allergen management, label compliance, and specification control integrated with production — so compliance documentation is a system output, not a manual exercise.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="percent"></div>
+          <h4>Promotional Pricing and Customer Management</h4>
+          <p>Complex customer price agreements, promotional pricing, and retrospective discount management — typical in food retail supply — handled natively within the sales order management module.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="truck"></div>
+          <h4>EDI and Retailer Integration</h4>
+          <p>Purchase order, despatch advice, and invoice EDI with major UK and European retailers. X3CloudDocs handles electronic notification and acknowledgement within the Sage X3 environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sage X3 for F&B -->
+  <section class="sec sec-alt">
+    <div class="narrow">
+      <span class="sec-eyebrow">Sage X3 for Food &amp; Beverage</span>
+      <h2 class="sec-h2">Core Capabilities for Food and Beverage Operations</h2>
+      <p class="sec-body">Sage X3 has a strong installed base in European food and beverage manufacturing. The core platform handles the sector-specific requirements listed above without requiring third-party add-ons for batch management, shelf-life, or recipe costing.</p>
+      <p class="sec-body">Mysoft's food and beverage implementations are scoped around the specific compliance and traceability requirements of the business — not a generic manufacturing template. We work with your quality and operations teams, not just finance.</p>
+      <div class="btn-group" style="margin-top:28px">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-navy">Discuss Your Requirements</a>
+        <a href="../sage-x3/" class="btn btn-ghost">Explore Sage X3</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- X3CloudDocs for F&B -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow sec-eyebrow--red">X3CloudDocs</span>
+        <h2 class="sec-h2">Document Automation for Food and Beverage Purchasing</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card card--x3cd">
+          <div class="card-icon card-icon--x3cd" data-icon="file-scan"></div>
+          <h4>Purchase Invoice Automation</h4>
+          <p>High-volume supplier invoice processing for raw materials, packaging, and logistics — capturing, coding, and matching against purchase orders with minimal manual intervention.</p>
+        </div>
+        <div class="card card--x3cd">
+          <div class="card-icon card-icon--x3cd" data-icon="git-compare"></div>
+          <h4>Supplier Statement Reconciliation</h4>
+          <p>Automated matching of supplier statements against the Sage X3 ledger — critical for managing the high supplier transaction volumes typical in food manufacturing purchasing.</p>
+        </div>
+        <div class="card card--x3cd">
+          <div class="card-icon card-icon--x3cd" data-icon="send"></div>
+          <h4>Electronic Notification and Acknowledgement</h4>
+          <p>EDI-based purchase order acknowledgement, despatch advice, and invoice submission — directly within Sage X3 for retailer and major customer trading relationships.</p>
+        </div>
+      </div>
+      <div style="margin-top:24px">
+        <a href="../x3clouddocs/" class="btn btn-ghost">Explore X3CloudDocs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="narrow">
+      <span class="sec-eyebrow">Food &amp; Beverage</span>
+      <h2 class="sec-h2">See How Sage X3 Handles Your Sector's Specific Requirements.</h2>
+      <p>Batch traceability, shelf-life management, recipe costing, and compliance reporting — demonstrated in a food and beverage context.</p>
+      <div class="btn-group">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-invert btn-lg">Book a Sector Demo</a>
+        <a href="../sage-x3/" class="btn btn-gw btn-lg">Explore Sage X3</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'layers':'<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>',
+    'clock':'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+    'sliders':'<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>',
+    'shield-check':'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+    'percent':'<line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+    'truck':'<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+    'file-scan':'<path d="M20 10V7.5L14.5 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h4.5"/><polyline points="14 2 14 8 20 8"/><path d="M16 22a2 2 0 0 1-2-2"/><path d="M20 22a2 2 0 0 0 2-2"/><path d="M20 14a2 2 0 0 1 2 2"/><path d="M16 14a2 2 0 0 0-2 2"/>',
+    'git-compare':'<circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/>',
+    'send':'<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../../" />);
+</script>
+
+</body>
+</html>
