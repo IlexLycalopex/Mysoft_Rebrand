@@ -275,7 +275,7 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
                 onClick={() => { onAssess && onAssess(); closePanel(); }}
                 style={{
                   marginTop: 20, display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "var(--cyan)", color: "var(--navy)", border: "none",
+                  background: "#fff", color: "var(--navy)", border: "none",
                   borderRadius: 4, padding: "10px 16px",
                   fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, cursor: "pointer",
                 }}

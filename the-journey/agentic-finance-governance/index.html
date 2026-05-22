@@ -33,17 +33,22 @@
 
   /* Buttons */
   .btn { display: inline-flex; align-items: center; gap: 8px;
-         font-family: var(--font-sans); font-weight: 600; font-size: 14px;
-         border-radius: var(--radius-btn); text-decoration: none; border: none; cursor: pointer;
-         transition: all 180ms var(--ease-out); white-space: nowrap; }
-  .btn-primary { background: var(--cyan); color: var(--navy); padding: 12px 22px; }
-  .btn-primary:hover { background: var(--cyan-hover); }
+         font-family: var(--font-sans); font-weight: 500; font-size: 14px;
+         border-radius: var(--radius-md); border: 1px solid transparent; cursor: pointer;
+         text-decoration: none; white-space: nowrap;
+         transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
   .btn-ghost-white { background: transparent; color: #fff; padding: 12px 22px;
                      border: 1.5px solid rgba(255,255,255,0.35); }
   .btn-ghost-white:hover { border-color: rgba(255,255,255,0.7); }
-  .btn-outline-navy { background: transparent; color: var(--navy); padding: 12px 22px;
-                      border: 1.5px solid rgba(0,26,34,0.35); }
-  .btn-outline-navy:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
 
   /* Sections */
   .sec { padding: 80px 32px; }
@@ -71,7 +76,7 @@
   /* Governance layers */
   .layers { display: flex; flex-direction: column; gap: 12px; }
   .layer { display: flex; gap: 0; border: 1px solid var(--line);
-           border-radius: var(--radius-card); overflow: hidden; background: var(--white); }
+           border-radius: var(--radius-md); overflow: hidden; background: var(--white); }
   .layer-label { background: var(--navy); color: #fff; padding: 24px 20px;
                  font-family: var(--font-sans); font-weight: 700; font-size: 11px;
                  letter-spacing: 0.14em; text-transform: uppercase;
@@ -94,11 +99,11 @@
   .tier-table-full tbody td { padding: 18px 16px; vertical-align: top; color: var(--fg-2); line-height: 1.55; }
   .tier-table-full tbody td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
   .tier-table-full tbody td:nth-child(2) { font-weight: 500; color: var(--fg-1); }
-  .table-wrap { border: 1px solid var(--line); border-radius: var(--radius-card); overflow: hidden; }
+  .table-wrap { border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; }
 
   /* QAOR cards */
   .card-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .card { background: var(--white); border-radius: var(--radius-card);
+  .card { background: var(--white); border-radius: var(--radius-md);
           border: 1px solid var(--line); padding: 28px; }
   .sec-alt .card { background: var(--bg); }
   .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 17px;
@@ -109,11 +114,11 @@
   .card ul li::before { content: "—"; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
 
   /* CTA band */
-  .cta-band { background: var(--cyan); padding: 96px 32px; text-align: center; }
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
   .cta-band h2 { font-family: var(--font-display); font-weight: 600;
                  font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -0.025em;
-                 color: var(--navy); margin: 0 0 14px; }
-  .cta-band p { font-size: 18px; color: rgba(0,26,34,0.72); margin: 0 auto 40px; max-width: 560px; }
+                 color: #fff; margin: 0 0 14px; }
+  .cta-band p { font-size: 18px; color: rgba(255,255,255,0.65); margin: 0 auto 40px; max-width: 560px; }
   .source-note { margin-top: 16px; font-size: 12px; color: var(--muted); }
 </style>
 </head>
@@ -134,7 +139,7 @@
     <h1 class="hero-h1">Agentic Finance Governance Framework</h1>
     <p class="hero-lede">AI in finance without governance is a control failure waiting to happen. The Mysoft Agentic Finance Governance Framework v1.1 defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.</p>
     <div class="btn-group">
-      <a href="../../contact/" class="btn btn-primary">Request a Governance Review</a>
+      <a href="../../contact/" class="btn btn-navy">Request a Governance Review</a>
       <a href="../ai-readiness-assessment/" class="btn btn-ghost-white">Take the Assessment</a>
     </div>
   </div>
@@ -316,12 +321,12 @@
 <!-- CTA band -->
 <section class="cta-band">
   <div style="max-width:640px; margin:0 auto;">
-    <span class="sec-eyebrow" style="color:rgba(0,26,34,0.6);">Governance Assessment</span>
+    <span class="sec-eyebrow" style="color:var(--cyan);">Governance Assessment</span>
     <h2>Understand your current governance posture</h2>
     <p>We offer a structured governance assessment for finance leaders who want to understand how their current AI controls compare to the Mysoft Governance Framework v1.1 — and where the gaps are before they become audit findings.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="../../contact/" class="btn btn-primary" style="background:var(--navy);color:#fff;">Request a Governance Review</a>
-      <a href="../stage-2-intelligent-automation/" class="btn btn-outline-navy">Return to Stage 2</a>
+      <a href="../../contact/" class="btn btn-navy btn-lg">Request a Governance Review</a>
+      <a href="../stage-2-intelligent-automation/" class="btn btn-gw btn-lg">Return to Stage 2</a>
     </div>
   </div>
 </section>
