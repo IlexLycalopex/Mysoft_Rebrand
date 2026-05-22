@@ -37,10 +37,11 @@ const FOOTER_COLS = [
   {
     t: "Solutions",
     l: [
-      { name: "Sage Intacct",      href: null },
-      { name: "Sage X3",           href: null },
-      { name: "X3CloudDocs",       href: null },
-      { name: "Partner Ecosystem", href: null },
+      { name: "Sage Intacct",              href: "solutions/sage-intacct/" },
+      { name: "Sage X3",                   href: "solutions/sage-x3/" },
+      { name: "X3CloudDocs",               href: "solutions/x3clouddocs/" },
+      { name: "Manufacturing & Distribution", href: "solutions/manufacturing-distribution/" },
+      { name: "ISV Partner Ecosystem",     href: "the-journey/isv-partner-ecosystem/" },
     ],
   },
   {
