@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Mysoft — Sage ERP &amp; Finance Transformation Partner</title>
+<title>Page Template — Mysoft</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Mysoft is a specialist Sage ERP partner implementing Sage X3 and Sage Intacct for ambitious mid-market organisations. AI-enabled transformation, proprietary automation IP, and 20+ years of Sage expertise.">
+<meta name="description" content="Generic page template derived from the Mysoft index page. All sections shown with lorem-ipsum content and gradient image blocks.">
 
 <link rel="stylesheet" href="colors_and_type.css">
 <style>
@@ -13,25 +13,19 @@
   html, body { margin: 0; background: var(--bg); }
   body { font-family: var(--font-sans); color: var(--fg-1); -webkit-font-smoothing: antialiased; }
 
-  /* Button hover states */
   .btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
   .btn:hover  { transform: translateY(-1px); }
   .btn:active { transform: translateY(0); }
-  .btn-primary:hover  { background: var(--navy-400) !important; }
-  .btn-accent:hover   { opacity: 0.88; }
-  .btn-ghost:hover    { border-color: var(--navy) !important; }
+  .btn-primary:hover    { background: var(--navy-400) !important; }
+  .btn-accent:hover     { opacity: 0.88; }
+  .btn-ghost:hover      { border-color: var(--navy) !important; }
   .btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
-  .btn-invert:hover   { background: var(--bg) !important; }
+  .btn-invert:hover     { background: var(--bg) !important; }
   .btn:hover .btn-arrow { transform: translateX(4px); }
 
-  /* Input placeholder colour */
   ::placeholder { color: rgba(255,255,255,0.28); }
-
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
-
-  /* Active section highlight in nav */
   .nav-active { color: var(--cyan) !important; }
 </style>
 </head>
@@ -39,26 +33,20 @@
 
 <div id="root"></div>
 
-
 <script src="vendor/react.development.js"></script>
 <script src="vendor/react-dom.development.js"></script>
 <script src="vendor/babel.min.js"></script>
 
-<!-- Components: Button.jsx must be first (exports shared primitives) -->
+<!-- Shared primitives must load first -->
 <script type="text/babel" src="Button.jsx"></script>
 <script type="text/babel" src="NavBar.jsx"></script>
-<script type="text/babel" src="Hero.jsx"></script>
-<script type="text/babel" src="AIJourney.jsx"></script>
-<script type="text/babel" src="WhyMysoft.jsx"></script>
-<script type="text/babel" src="Solutions.jsx"></script>
-<script type="text/babel" src="AssessmentCTA.jsx"></script>
-<script type="text/babel" src="Testimonials.jsx"></script>
 <script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="PageTemplate.jsx"></script>
 
 <script type="text/babel">
 const App = () => {
-  const scrollToAssessment = () => {
-    const el = document.getElementById("assessment");
+  const scrollToCTA = () => {
+    const el = document.getElementById("page-cta");
     if (!el) return;
     const top = el.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top, behavior: "smooth" });
@@ -66,16 +54,9 @@ const App = () => {
 
   return (
     <>
-      <NavBar onAssess={scrollToAssessment} />
-      <main>
-        <Hero onAssess={scrollToAssessment} />
-        <Solutions />
-        <AIJourney onAssess={scrollToAssessment} />
-        <WhyMysoft />
-        <Testimonials />
-        <AssessmentCTA onAssess={scrollToAssessment} />
-        <Footer onAssess={scrollToAssessment} />
-      </main>
+      <NavBar onAssess={scrollToCTA} />
+      <PageTemplate onAssess={scrollToCTA} />
+      <Footer onAssess={scrollToCTA} />
     </>
   );
 };
@@ -83,7 +64,6 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 </script>
-
 
 </body>
 </html>
