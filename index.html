@@ -58,10 +58,7 @@
 <script type="text/babel">
 const App = () => {
   const scrollToAssessment = () => {
-    const el = document.getElementById("assessment");
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 80;
-    window.scrollTo({ top, behavior: "smooth" });
+    window.location.href = "ai-readiness-assessment.html";
   };
 
   return (

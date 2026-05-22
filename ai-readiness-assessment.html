@@ -1,0 +1,1314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Readiness Assessment — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free AI Readiness Assessment. Answer 13 questions across five domains to find your position on the AI maturity ladder and get a shortlist of next steps tailored to your platform.">
+
+<!-- Mysoft design system: fonts + tokens -->
+<link rel="stylesheet" href="colors_and_type.css">
+
+<style>
+/* ── BUTTON HOVER STATES (matching index.html) ─────────────────────────── */
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover   { background: var(--navy-400) !important; }
+.btn-accent:hover    { opacity: 0.88; }
+.btn-ghost:hover     { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover{ border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover    { background: var(--bg) !important; }
+.btn:hover .btn-arrow{ transform: translateX(4px); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+
+/* ── ASSESSMENT-SPECIFIC TOKENS ──────────────────────────────────────────── */
+:root {
+  --success-bg: #E1F1E9;
+  --warning-bg: #FFFBEB;
+  --danger-bg:  #FBEAE7;
+}
+
+/* ── RESET / BASE ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  background: var(--bg);
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+}
+
+/* ── PAGE VISIBILITY ─────────────────────────────────────────────────────── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── EYEBROW ─────────────────────────────────────────────────────────────── */
+.eyebrow-inverse { color: var(--cyan); }
+
+/* ── BUTTONS (assessment UI) ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn .arrow { display: inline-block; transition: transform var(--dur-fast) var(--ease-out); }
+.btn:hover .arrow { transform: translateX(2px); }
+.btn-sm  { padding: 8px 14px; font-size: 13px; }
+.btn-md  { padding: 11px 20px; }
+.btn-lg  { padding: 14px 26px; font-size: 15px; }
+.btn-primary { background: var(--navy); color: var(--white); }
+.btn-primary:disabled { opacity: 0.38; cursor: not-allowed; pointer-events: none; }
+.btn-ghost { background: var(--white); color: var(--navy); border-color: var(--line-strong); }
+.btn-ghost-inverse { background: rgba(255,255,255,0.10); color: var(--white); border-color: rgba(255,255,255,0.25); }
+.btn-ghost-inverse:hover { background: rgba(255,255,255,0.18); }
+.btn-cyan { background: var(--cyan); color: var(--navy); }
+.btn-cyan:hover { background: var(--cyan-500); }
+
+/* ── CARDS ───────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 28px;
+}
+
+/* ── BADGES ──────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge-navy   { background: var(--navy-50);    color: var(--navy); }
+.badge-cyan   { background: var(--cyan-50);    color: var(--cyan-600); }
+.badge-yellow { background: var(--yellow-50);  color: var(--yellow-500); }
+.badge-success{ background: var(--success-bg); color: var(--success); }
+.badge-warning{ background: var(--warning-bg); color: #92400E; }
+.badge-danger { background: var(--danger-bg);  color: var(--danger); }
+
+/* ── FORM ────────────────────────────────────────────────────────────────── */
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--fg-1);
+}
+.field input {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--fg-1);
+  outline: none;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.field input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,182,237,0.20);
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* WELCOME PAGE                                                                */
+/* ────────────────────────────────────────────────────────────────────────── */
+.welcome-hero {
+  background: var(--navy);
+  padding: 96px 32px 108px;
+  text-align: center;
+}
+.welcome-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--white);
+  max-width: 760px;
+  margin: 18px auto 20px;
+}
+.welcome-hero p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.65);
+  max-width: 540px;
+  margin: 0 auto 40px;
+}
+.welcome-meta {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+.welcome-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  font-weight: 500;
+}
+.welcome-meta-item svg { opacity: 0.7; flex-shrink: 0; }
+
+.welcome-lift {
+  max-width: 940px;
+  margin: -48px auto 0;
+  padding: 0 24px;
+}
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+@media (max-width: 800px) { .domain-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .domain-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.domain-tile {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px 14px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.domain-tile-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.domain-tile h4 {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-1);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.domain-tile p {
+  font-size: 11px;
+  color: var(--fg-3);
+  line-height: 1.4;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* PLATFORM PAGE                                                               */
+/* ────────────────────────────────────────────────────────────────────────── */
+.page-shell {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--fg-1);
+  margin: 12px 0 10px;
+}
+.page-desc { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin-bottom: 36px; }
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+@media (max-width: 600px) { .platform-grid { grid-template-columns: 1fr; } }
+
+.platform-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px 18px;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-out);
+  text-align: center;
+  box-shadow: var(--shadow-xs);
+}
+.platform-card:hover { border-color: var(--navy-300); box-shadow: var(--shadow-sm); }
+.platform-card.selected {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,182,237,0.18), var(--shadow-sm);
+  background: var(--cyan-50);
+}
+.platform-card .plat-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.platform-card h3 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg-1);
+  margin-bottom: 5px;
+}
+.platform-card p { font-size: 12px; color: var(--fg-3); line-height: 1.5; }
+.platform-card.selected h3 { color: var(--cyan-600); }
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* QUESTION PAGE                                                               */
+/* ────────────────────────────────────────────────────────────────────────── */
+.progress-bar-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+}
+.progress-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.progress-domain-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-1);
+  letter-spacing: 0.02em;
+}
+.progress-count-label { font-size: 12px; color: var(--fg-3); }
+.progress-track {
+  height: 5px;
+  background: var(--line);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--cyan);
+  border-radius: var(--radius-pill);
+  transition: width 0.4s var(--ease-out);
+}
+.step-dots { display: flex; gap: 3px; margin-top: 8px; }
+.step-dot {
+  flex: 1;
+  height: 2px;
+  background: var(--line);
+  border-radius: var(--radius-pill);
+  transition: background 0.3s;
+}
+.step-dot.done   { background: var(--cyan); }
+.step-dot.active { background: var(--navy); }
+
+.q-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+  margin-top: 20px;
+}
+.q-domain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.q-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--fg-1);
+  margin-bottom: 8px;
+}
+.q-why {
+  font-size: 13px;
+  color: var(--fg-3);
+  line-height: 1.55;
+  margin-bottom: 26px;
+  font-style: italic;
+}
+.answer-list { display: flex; flex-direction: column; gap: 9px; }
+.answer-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+  background: var(--white);
+}
+.answer-item:hover { border-color: var(--navy-300); background: var(--navy-50); }
+.answer-item.selected {
+  border-color: var(--cyan);
+  background: var(--cyan-50);
+  box-shadow: 0 0 0 2px rgba(0,182,237,0.14);
+}
+.answer-radio {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--line-strong);
+  border-radius: 50%;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.answer-item.selected .answer-radio { border-color: var(--cyan); background: var(--cyan); }
+.answer-radio::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--white);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--dur-fast);
+}
+.answer-item.selected .answer-radio::after { opacity: 1; }
+.answer-text { font-size: 14px; color: var(--fg-1); line-height: 1.5; flex: 1; }
+.answer-item.selected .answer-text { color: var(--cyan-600); font-weight: 500; }
+
+.q-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.q-nav-hint { font-size: 12px; color: var(--fg-3); }
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* RESULTS PAGE                                                                */
+/* ────────────────────────────────────────────────────────────────────────── */
+.results-hero {
+  background: var(--navy);
+  padding: 64px 32px 80px;
+  text-align: center;
+}
+.results-hero h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 14px 0 10px;
+}
+.results-hero p { font-size: 16px; color: rgba(255,255,255,0.60); }
+
+.results-body {
+  max-width: 900px;
+  margin: -44px auto 0;
+  padding: 0 24px 80px;
+}
+
+.stage-result-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 36px;
+  margin-bottom: 20px;
+  border-left: 5px solid;
+}
+.stage-header { display: flex; gap: 28px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+.stage-header-left { flex: 1; min-width: 240px; }
+.stage-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  margin: 10px 0 10px;
+  line-height: 1.2;
+}
+.stage-desc { font-size: 14px; color: var(--fg-2); line-height: 1.65; max-width: 580px; }
+.score-block { text-align: center; min-width: 110px; }
+.score-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.score-denom { font-size: 20px; color: var(--fg-3); font-weight: 500; }
+.score-label { font-size: 11px; color: var(--fg-3); margin-top: 4px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.override-box {
+  background: var(--warning-bg);
+  border: 1px solid #FCD34D;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: #78350F;
+  line-height: 1.55;
+}
+.override-box strong { color: #713F12; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+.card-title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 18px;
+}
+
+.domain-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
+.domain-bar-row:last-child { margin-bottom: 0; }
+.domain-bar-letter { font-size: 11px; font-weight: 600; color: var(--fg-3); min-width: 14px; }
+.domain-bar-track { flex: 1; height: 8px; background: var(--line); border-radius: var(--radius-pill); overflow: hidden; }
+.domain-bar-fill { height: 100%; border-radius: var(--radius-pill); transition: width 0.7s var(--ease-out); }
+.domain-bar-score { font-size: 12px; font-weight: 600; color: var(--fg-2); min-width: 38px; text-align: right; }
+
+.ladder { display: flex; flex-direction: column; gap: 8px; }
+.ladder-rung {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  opacity: 0.4;
+}
+.ladder-rung.current { opacity: 1; border-width: 2px; }
+.ladder-rung-stage-num { font-size: 11px; font-weight: 600; color: var(--fg-3); min-width: 52px; }
+.ladder-rung.current .ladder-rung-stage-num { color: inherit; }
+.ladder-rung-name { font-size: 13px; font-weight: 500; color: var(--fg-2); flex: 1; }
+.ladder-rung.current .ladder-rung-name { color: var(--fg-1); }
+.ladder-active-indicator { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); display: none; }
+.ladder-rung.current .ladder-active-indicator { display: block; }
+
+.recs-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 32px;
+  margin-bottom: 16px;
+}
+.rec-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rec-item:first-child { padding-top: 4px; }
+.rec-item:last-child { border-bottom: none; padding-bottom: 4px; }
+.rec-num {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 2px;
+}
+.rec-body h4 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-1);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.rec-body p { font-size: 13px; color: var(--fg-2); line-height: 1.55; }
+.rec-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  margin-top: 6px;
+}
+
+.cta-card {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.cta-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 14px 0 12px;
+}
+.cta-card p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 30px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+.cta-btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--cyan);
+  color: var(--navy);
+  border: none;
+  padding: 14px 26px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+  text-decoration: none;
+}
+.btn-cta-primary:hover { background: var(--cyan-500); }
+
+.results-footer { text-align: center; margin-top: 16px; font-size: 12px; color: var(--fg-3); }
+.results-footer button {
+  background: none;
+  border: none;
+  color: var(--fg-3);
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+  font-family: var(--font-sans);
+}
+.results-footer button:hover { color: var(--fg-1); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .q-card { padding: 24px 18px; }
+  .stage-result-card { padding: 24px 20px; }
+  .cta-card { padding: 32px 20px; }
+  .recs-card { padding: 20px; }
+  .q-nav { flex-direction: column; align-items: stretch; }
+  .q-nav .btn { justify-content: center; }
+  .welcome-hero { padding: 64px 20px 80px; }
+}
+
+@media print {
+  #nav-root, .btn, .cta-btn-row, .results-footer, #footer-root { display: none !important; }
+  body { background: white; padding-top: 0; }
+  .results-body { margin-top: 0; }
+  .card, .stage-result-card, .recs-card, .two-col > .card { box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav mounted by React -->
+<div id="nav-root"></div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: WELCOME                                                           -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page active" id="page-welcome">
+  <div class="welcome-hero">
+    <span class="eyebrow eyebrow-inverse">5 Domains · 13 Questions · ~6 minutes</span>
+    <h1>How ready is your business for AI-led transformation?</h1>
+    <p>Answer 13 questions across five domains to find your position on the AI maturity ladder — and get a shortlist of next steps tailored to your platform.</p>
+    <div class="welcome-meta">
+      <span class="welcome-meta-item">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        5–7 minutes to complete
+      </span>
+      <span class="welcome-meta-item">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Instant results, no login
+      </span>
+      <span class="welcome-meta-item">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Tailored to your platform
+      </span>
+    </div>
+    <button class="btn btn-cyan btn-lg" onclick="goToPlatform()">
+      Start the assessment <span class="arrow">→</span>
+    </button>
+  </div>
+
+  <div class="welcome-lift">
+    <div class="domain-grid">
+      <div class="domain-tile">
+        <div class="domain-tile-icon" style="background:#E0F6FD;"><svg width="20" height="20" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <h4>ERP &amp; Data Foundation</h4>
+        <p>System maturity and data quality</p>
+      </div>
+      <div class="domain-tile">
+        <div class="domain-tile-icon" style="background:#E7ECEE;"><svg width="20" height="20" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h4>Process Maturity</h4>
+        <p>Workflows, approvals, close cycle</p>
+      </div>
+      <div class="domain-tile">
+        <div class="domain-tile-icon" style="background:#FEF6E1;"><svg width="20" height="20" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div>
+        <h4>AI &amp; Tech Readiness</h4>
+        <p>Cloud, data strategy, AI exposure</p>
+      </div>
+      <div class="domain-tile">
+        <div class="domain-tile-icon" style="background:#FFFBEB;"><svg width="20" height="20" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h4>Governance &amp; Controls</h4>
+        <p>Internal controls and AI policy</p>
+      </div>
+      <div class="domain-tile">
+        <div class="domain-tile-icon" style="background:#E1F1E9;"><svg width="20" height="20" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Organisational Readiness</h4>
+        <p>Leadership mandate and capability</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: PLATFORM                                                          -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-platform">
+  <div class="page-shell">
+    <span class="eyebrow">About your business</span>
+    <h2 class="page-title">What best describes your organisation?</h2>
+    <p class="page-desc">This helps us tailor your results to your sector. There are no wrong answers — we work with organisations at every stage of their journey.</p>
+
+    <div class="platform-grid">
+      <div class="platform-card" onclick="selectPlatform('x3', this)">
+        <div class="plat-icon"><svg width="24" height="24" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <h3>Manufacturing, Distribution or Wholesale</h3>
+        <p>You make, move, or sell physical goods — operations and stock are central to your business</p>
+      </div>
+      <div class="platform-card" onclick="selectPlatform('intacct', this)">
+        <div class="plat-icon"><svg width="24" height="24" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <h3>Professional Services, Technology or Finance</h3>
+        <p>Revenue is driven by people, projects or subscriptions — the finance function is your operational core</p>
+      </div>
+      <div class="platform-card" onclick="selectPlatform('both', this)">
+        <div class="plat-icon"><svg width="24" height="24" fill="none" stroke="#001A22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+        <h3>Mixed, non-profit or not sure yet</h3>
+        <p>Your business does not fit neatly into either category, or you are still exploring your options</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;align-items:center;">
+      <button class="btn btn-ghost btn-md" onclick="goToWelcome()">← Back</button>
+      <button class="btn btn-primary btn-md" id="btn-start-questions" onclick="startQuestions()" disabled>
+        Continue <span class="arrow">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: QUESTION                                                          -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-question">
+  <div class="progress-bar-wrap">
+    <div class="progress-top-row">
+      <span class="progress-domain-label" id="q-domain-label"></span>
+      <span class="progress-count-label" id="q-count-label"></span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="step-dots" id="step-dots"></div>
+  </div>
+
+  <div class="page-shell" style="padding-top:16px;">
+    <div class="q-card">
+      <div class="q-domain-badge" id="q-domain-badge"></div>
+      <div class="q-text" id="q-text"></div>
+      <div class="q-why" id="q-why"></div>
+      <div class="answer-list" id="answer-list"></div>
+      <div class="q-nav">
+        <button class="btn btn-ghost btn-md" id="btn-prev" onclick="prevQuestion()">← Previous</button>
+        <span class="q-nav-hint" id="q-nav-hint">Select an answer to continue</span>
+        <button class="btn btn-primary btn-md" id="btn-next" onclick="nextQuestion()" disabled>
+          Next <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE: RESULTS                                                           -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-results">
+  <div class="results-hero">
+    <span class="eyebrow eyebrow-inverse">Your Results</span>
+    <h2>AI Readiness Assessment</h2>
+    <p>Here is where your organisation stands today — and a clear path forward.</p>
+  </div>
+
+  <div class="results-body">
+
+    <!-- Stage card -->
+    <div class="stage-result-card" id="stage-result-card">
+      <div class="stage-header">
+        <div class="stage-header-left">
+          <div id="stage-badge-el"></div>
+          <div class="stage-name" id="stage-name-el"></div>
+          <div class="stage-desc" id="stage-desc-el"></div>
+        </div>
+        <div class="score-block">
+          <div>
+            <span class="score-num" id="score-num-el">0</span>
+            <span class="score-denom">/ 39</span>
+          </div>
+          <div class="score-label">Overall score</div>
+        </div>
+      </div>
+      <div id="override-alerts-el"></div>
+    </div>
+
+    <!-- Domain scores + Maturity ladder -->
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Domain Scores</div>
+        <div id="domain-bars-el"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Maturity Ladder</div>
+        <div class="ladder" id="ladder-el"></div>
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recs-card">
+      <div class="card-title" id="recs-title-el">Priority Recommendations</div>
+      <div id="recs-list-el"></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-card">
+      <span class="eyebrow eyebrow-inverse">Next step</span>
+      <h3>Speak to our experts</h3>
+      <p>We will walk you through a detailed roadmap tailored to your stage, platform, and sector — with a clear commercial plan to get you there.</p>
+      <div class="cta-btn-row">
+        <a href="https://www.mysoftx3.com/contact" class="btn-cta-primary">
+          Book a discovery call <span style="display:inline-block;transition:transform .14s;">→</span>
+        </a>
+        <button class="btn btn-ghost-inverse btn-md" onclick="window.print()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+
+    <div class="results-footer">
+      <button onclick="restartAssessment()">Retake assessment</button>
+      &nbsp;·&nbsp; Mysoft AI Readiness Assessment v1.0
+    </div>
+  </div>
+</div>
+
+<!-- Footer mounted by React -->
+<div id="footer-root"></div>
+
+<!-- ── VENDOR ──────────────────────────────────────────────────────────── -->
+<script src="vendor/react.development.js"></script>
+<script src="vendor/react-dom.development.js"></script>
+<script src="vendor/babel.min.js"></script>
+
+<!-- ── SHARED COMPONENTS (Button must be first) ───────────────────────── -->
+<script type="text/babel" src="Button.jsx"></script>
+<script type="text/babel" src="NavBar.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<!-- ── MOUNT NAV + FOOTER ──────────────────────────────────────────────── -->
+<script type="text/babel">
+  const assessmentScrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(
+    <NavBar onAssess={assessmentScrollTop} />
+  );
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(
+    <Footer onAssess={assessmentScrollTop} />
+  );
+</script>
+
+<!-- ── ASSESSMENT LOGIC ─────────────────────────────────────────────────── -->
+<script>
+// ── DOMAIN DEFINITIONS ────────────────────────────────────────────────────
+const DOMAINS = [
+  { id: 'A', name: 'ERP & Data Foundation',    color: '#009DCD', barColor: '#00B6ED', bg: '#E0F6FD', maxScore: 9 },
+  { id: 'B', name: 'Process Maturity',          color: '#5A7077', barColor: '#5A7077', bg: '#E7ECEE', maxScore: 9 },
+  { id: 'C', name: 'AI & Tech Readiness',       color: '#C28F1F', barColor: '#F8C556', bg: '#FEF6E1', maxScore: 9 },
+  { id: 'D', name: 'Governance & Controls',     color: '#92400E', barColor: '#E8AE34', bg: '#FFFBEB', maxScore: 6 },
+  { id: 'E', name: 'Organisational Readiness',  color: '#1F8A5B', barColor: '#1F8A5B', bg: '#E1F1E9', maxScore: 6 },
+];
+
+// ── QUESTIONS ─────────────────────────────────────────────────────────────
+const QUESTIONS = [
+  // Domain A
+  { domain:0, text:'How would you describe your current finance and ERP system?',
+    why:'The quality of your ERP foundation determines whether AI can work reliably — or at all.',
+    answers:[
+      {score:0, text:'Multiple disconnected systems or spreadsheets — no single source of truth'},
+      {score:1, text:'A legacy system that is end-of-life or significantly under-configured'},
+      {score:2, text:'A functioning system but with gaps in data quality or coverage'},
+      {score:3, text:'A modern, well-configured ERP with clean, structured, and complete data'},
+    ]},
+  { domain:0, text:'How long does it typically take to produce your monthly management accounts?',
+    why:'Close cycle length is one of the clearest indicators of process and data maturity.',
+    answers:[
+      {score:0, text:'More than 10 working days — or management accounts are not produced regularly'},
+      {score:1, text:'6–10 working days'},
+      {score:2, text:'3–5 working days'},
+      {score:3, text:'1–2 working days, with largely automated reporting'},
+    ]},
+  { domain:0, text:'How would you rate the quality and completeness of your transactional data?',
+    why:'AI models are only as reliable as the data they learn from.',
+    answers:[
+      {score:0, text:'Unreliable — frequent errors, gaps, or manual corrections required'},
+      {score:1, text:'Partially reliable — some areas clean, others inconsistent'},
+      {score:2, text:'Mostly reliable — minor quality issues that are managed'},
+      {score:3, text:'Highly reliable — clean, structured, and auditable across all entities'},
+    ]},
+  // Domain B
+  { domain:1, text:'How are your core finance processes — AP, AR, and expenses — managed today?',
+    why:'Manual processes create audit risk and constrain the automation potential of any AI layer.',
+    answers:[
+      {score:0, text:'Predominantly manual — paper, email, or spreadsheets'},
+      {score:1, text:'Partially in-system, but with heavy manual intervention'},
+      {score:2, text:'Largely in-system with documented workflows'},
+      {score:3, text:'Fully in-system with automated approvals and exception-only intervention'},
+    ]},
+  { domain:1, text:'Are purchase and invoice approval authorities formally documented and enforced in your systems?',
+    why:'Unenforced approval authorities are a governance gap that becomes critical at Stage 3 and beyond.',
+    answers:[
+      {score:0, text:'No documented approval authority matrix is in place'},
+      {score:1, text:'Documented on paper or policy but not enforced in systems'},
+      {score:2, text:'Partially enforced in systems for some transaction types'},
+      {score:3, text:'Fully documented and system-enforced with a complete audit trail'},
+    ]},
+  { domain:1, text:'How standardised and consistent is your financial period-close process?',
+    why:'A reliable close process is the foundation for AI-assisted forecasting and board reporting.',
+    answers:[
+      {score:0, text:'No formal close process — ad hoc each period'},
+      {score:1, text:'An informal checklist exists but is not consistently followed'},
+      {score:2, text:'A documented process that is mostly followed'},
+      {score:3, text:'Fully documented and system-driven close calendar completed consistently each period'},
+    ]},
+  // Domain C
+  { domain:2, text:"What is your organisation's current experience with AI tools in finance or operations?",
+    why:'Prior exposure shapes change readiness and the pace at which AI can be deployed safely.',
+    answers:[
+      {score:0, text:'No AI tools in use — limited awareness of what is available'},
+      {score:1, text:'Informal experimentation, e.g. using general AI tools on an ad hoc basis'},
+      {score:2, text:'Piloting one or two AI tools in specific areas of the business'},
+      {score:3, text:'Actively using AI with defined use cases and measurable outcomes'},
+    ]},
+  { domain:2, text:'How would you describe your IT infrastructure and cloud readiness?',
+    why:'Cloud-native infrastructure unlocks AI capabilities that on-premise architecture cannot support.',
+    answers:[
+      {score:0, text:'Predominantly on-premise with limited cloud adoption'},
+      {score:1, text:'Mixed — some SaaS tools alongside legacy on-premise systems'},
+      {score:2, text:'Mostly cloud-based with modern integrations in place'},
+      {score:3, text:'Cloud-first architecture with API-driven integrations and a clear technology roadmap'},
+    ]},
+  { domain:2, text:'Does your organisation have a defined data strategy or data governance policy?',
+    why:'Without data ownership and quality standards, AI augmentation creates as many risks as it resolves.',
+    answers:[
+      {score:0, text:'No data strategy or governance policy exists'},
+      {score:1, text:'Informal understanding of the need but nothing formally documented'},
+      {score:2, text:'A basic data governance policy is in place'},
+      {score:3, text:'A formal data strategy with defined ownership, classification, and quality standards'},
+    ]},
+  // Domain D
+  { domain:3, text:'How would you describe your internal controls and audit readiness?',
+    why:'Weak controls at Stage 2 become critical failures when AI begins executing transactions autonomously.',
+    answers:[
+      {score:0, text:'Weak controls — audit has raised observations; manual workarounds are common'},
+      {score:1, text:'Basic controls in place but with identified gaps'},
+      {score:2, text:'Controls are documented and largely effective'},
+      {score:3, text:'Strong controls framework — clean audit history, tested and evidenced regularly'},
+    ]},
+  { domain:3, text:'Does your organisation have policies governing the use of AI or automation?',
+    why:'AI governance is increasingly a board and audit committee expectation, not a nice-to-have.',
+    answers:[
+      {score:0, text:'No AI or automation governance policies exist'},
+      {score:1, text:'Informal awareness of the need — no formal policy'},
+      {score:2, text:'A basic policy is drafted or currently in development'},
+      {score:3, text:'A formal AI governance framework with defined roles, review cadence, and board visibility'},
+    ]},
+  // Domain E
+  { domain:4, text:"How strong is senior leadership's mandate for digital transformation?",
+    why:'Without a board-level mandate, transformation stalls at Stage 1. Technology alone does not create change.',
+    answers:[
+      {score:0, text:'Low — change is resisted; no board-level mandate for transformation'},
+      {score:1, text:'Mixed — individual champions exist but there is no unified leadership commitment'},
+      {score:2, text:'Positive — leadership support exists but investment is not yet formally committed'},
+      {score:3, text:'Strong — board mandate in place, dedicated budget allocated, named executive sponsor'},
+    ]},
+  { domain:4, text:'How capable is your finance and operations team of adopting new technology?',
+    why:'Change capability is the most underestimated constraint in any digital transformation programme.',
+    answers:[
+      {score:0, text:'Low — significant training would be needed; previous change programmes have struggled'},
+      {score:1, text:'Developing — willing but would need substantial support throughout'},
+      {score:2, text:'Good — the team has navigated previous technology changes successfully'},
+      {score:3, text:'High — experienced with technology adoption; change champions already in place'},
+    ]},
+];
+
+// ── STAGE DATA ─────────────────────────────────────────────────────────────
+const STAGES = {
+  1: {
+    label: 'Stage 1', name: 'Operational Foundation', range: '0–9',
+    color: '#5A7077', bg: '#E7ECEE', borderColor: '#5A7077',
+    desc: 'Your organisation needs robust ERP and data foundations before AI investment will deliver reliable returns. The priority is a well-configured, single-source-of-truth ERP — the infrastructure every subsequent stage is built on.',
+  },
+  2: {
+    label: 'Stage 2', name: 'Intelligent Automation', range: '10–19',
+    color: '#009DCD', bg: '#E0F6FD', borderColor: '#00B6ED',
+    desc: 'Your foundations are in place. The next step is removing the manual transactional layer — automating AP, AR, approvals, and document management — to free your finance team for higher-value work and create the clean data pipeline AI requires.',
+  },
+  3: {
+    label: 'Stage 3', name: 'AI-Augmented Finance', range: '20–29',
+    color: '#C28F1F', bg: '#FEF6E1', borderColor: '#F8C556',
+    desc: 'Your automated foundation is ready for AI capabilities — anomaly detection, intelligent forecasting, AI-assisted GL coding, and advanced analytics. The four-layer governance framework is essential at this stage to maintain control and audit confidence.',
+  },
+  4: {
+    label: 'Stage 4', name: 'Agentic Finance Operations', range: '30–39',
+    color: '#1F8A5B', bg: '#E1F1E9', borderColor: '#1F8A5B',
+    desc: 'You are at the frontier. Governed agentic workflows can now execute AP, AR, and close-cycle actions autonomously — with full audit trails and board governance reporting. Finance becomes a competitive capability, not just an operational function.',
+  },
+};
+
+// ── RECOMMENDATIONS ────────────────────────────────────────────────────────
+const RECS = {
+  1: {
+    x3: [
+      {title:'Implement Sage X3 as your single source of truth', detail:'Configure core modules for your sector — manufacturing (BOM, production orders, routings) or distribution (PO, SO, stock management) — with a clean chart of accounts from day one.', tag:'Sage X3'},
+      {title:'Establish a dimensional chart of accounts', detail:'Structure your COA with the dimensions you will need at Stage 3 (entity, location, project, cost centre). This architecture cannot easily be restructured once live.', tag:'Foundation'},
+      {title:'Embed approval workflows at implementation', detail:'Configure system-enforced approval authorities for purchase orders, invoices, and expenses. Retrofitting governance after go-live costs significantly more in time and risk.', tag:'Governance'},
+      {title:'Set up real-time CFO dashboards from go-live', detail:'Cash position, AP/AR ageing, and period-close status dashboards should be in scope at implementation — not a later phase. This is the first tangible board-level return on your ERP investment.', tag:'Reporting'},
+      {title:'Do not invest in AI until Stage 2 readiness is confirmed', detail:'AI on an unreliable or incomplete ERP foundation amplifies existing problems. Complete a Finance Operations Review and Governance Configuration Record before progressing.', tag:'Critical'},
+    ],
+    intacct: [
+      {title:'Implement Sage Intacct as your financial system of record', detail:'Configure a dimensional chart of accounts — multi-entity, multi-location, project-level — from day one. Dimensions set here enable AI-assisted group reporting at Stage 3.', tag:'Sage Intacct'},
+      {title:'Configure approval workflows from go-live', detail:'Implement approval workflows for POs, invoices, and expense claims in Intacct from day one. Embedding controls at implementation is significantly less costly than retrofitting them later.', tag:'Governance'},
+      {title:'Implement bank reconciliation and a period-close calendar', detail:'Set up automated bank reconciliation through Intacct and establish a formal close cycle calendar with period-end checklists. This is the operating rhythm your board reporting depends on.', tag:'Process'},
+      {title:'Build real-time CFO visibility from the outset', detail:'Configure Intacct dashboards for real-time cash, AP ageing, AR ageing, and period-close status. Real-time visibility is the first CFO-level return on your Intacct investment.', tag:'Reporting'},
+      {title:'Do not invest in AI until Stage 2 readiness is confirmed', detail:'AI on an unreliable or incomplete ERP foundation amplifies existing problems. Complete a Finance Operations Review and Governance Configuration Record before progressing.', tag:'Critical'},
+    ],
+    both: [
+      {title:'Choose the right ERP platform for your sector first', detail:'Sage X3 is designed for manufacturing, wholesale, and distribution. Sage Intacct is built for finance-led organisations — professional services, SaaS, non-profit, and multi-entity groups. Platform choice determines your AI pathway.', tag:'Platform'},
+      {title:'Establish a clean, dimensional chart of accounts', detail:'Whichever platform you choose, configure your COA with the dimensions required for multi-entity, project, and cost centre reporting from day one.', tag:'Foundation'},
+      {title:'Embed approval workflows at implementation', detail:'System-enforced approval authorities for purchases, invoices, and expenses should be live from go-live. Retrofitting governance costs significantly more in time and risk.', tag:'Governance'},
+      {title:'Prioritise real-time CFO visibility', detail:'Cash position, AP/AR ageing, and period-close status dashboards should be part of your initial implementation scope — not a later phase.', tag:'Reporting'},
+      {title:'Do not invest in AI until Stage 2 readiness is confirmed', detail:'AI on an unreliable foundation amplifies existing problems rather than solving them. Establish clean data and governed processes first.', tag:'Critical'},
+    ],
+  },
+  2: {
+    x3: [
+      {title:'Deploy X3CloudDocs for Purchase Invoice Automation', detail:"Mysoft's own IP — X3CloudDocs automates invoice capture, coding, matching, and approval within Sage X3. Target: zero-touch processing for high-volume, low-complexity supplier invoices.", tag:'X3CloudDocs'},
+      {title:'Implement Sales Order Automation and EDM', detail:'Automate the inbound sales order process and establish Electronic Document Management across X3. SOA removes the manual sales order entry layer; EDM creates your structured document repository.', tag:'X3CloudDocs'},
+      {title:'Enable Electronic Network Automation', detail:'Connect X3CloudDocs ENA for structured supplier and customer communications — purchase order acknowledgements, delivery notes, and remittance advice processed without manual intervention.', tag:'Automation'},
+      {title:'Commission your first QAOR at 90 days', detail:'A Quarterly AI Optimisation Review measures automation capture rate, exception volume, and process time savings — and identifies where to expand next.', tag:'Advisory'},
+      {title:'Establish Layer 1 and Layer 2 governance', detail:'Process governance (documented workflows, authority matrix) and system governance (configuration records, change control) must be in place before progressing to AI-augmented capabilities.', tag:'Governance'},
+    ],
+    intacct: [
+      {title:'Activate Sage Intacct native AP and AR automation', detail:"Enable Intacct's built-in accounts payable and receivable automation — automated matching, coding suggestions, and approval routing. This is your first automation layer.", tag:'Sage Intacct'},
+      {title:'Connect an expense management solution', detail:'Integrate WebExpenses, Payhawk, or a comparable platform with Intacct for automated expense capture, policy enforcement, and payment. Remove the manual expense process entirely.', tag:'Automation'},
+      {title:'Implement TrueCommerce for order automation', detail:'For businesses with significant transaction volumes, TrueCommerce connects trading partners directly to Intacct — automating order receipt, confirmation, and invoice issuance.', tag:'Automation'},
+      {title:'Commission your first QAOR at 90 days', detail:'A Quarterly AI Optimisation Review measures automation capture rates, exception volumes, and time savings — and identifies where to expand the automation scope next.', tag:'Advisory'},
+      {title:'Establish Layer 1 and Layer 2 governance', detail:'Process governance and system governance must be formalised before progressing to AI-augmented capabilities.', tag:'Governance'},
+    ],
+    both: [
+      {title:'Automate your highest-volume transactional processes first', detail:'For X3 businesses, X3CloudDocs PIA and SOA deliver the fastest return. For Intacct businesses, native AP/AR automation and an expense management integration are the priority starting points.', tag:'Automation'},
+      {title:'Remove the manual document handling layer', detail:'Electronic Document Management (X3CloudDocs on X3) or Intacct document management eliminates paper and email-based document processes — a prerequisite for AI document intelligence at Stage 3.', tag:'Foundation'},
+      {title:'Commission your first QAOR at 90 days post-automation', detail:'A Quarterly AI Optimisation Review establishes your automation baseline — capture rate, exception volume, and process time — and sets the roadmap for Stage 3.', tag:'Advisory'},
+      {title:'Formalise Layer 1 and Layer 2 governance', detail:'Process governance and system governance must be documented and operating before AI-augmented capabilities are introduced.', tag:'Governance'},
+      {title:'Map your Stage 3 candidates now', detail:'While implementing Stage 2, document the processes that will benefit from AI augmentation at Stage 3. This protects the commercial pathway and prevents scope creep later.', tag:'Planning'},
+    ],
+  },
+  3: {
+    x3: [
+      {title:'Deploy Sage Enterprise Intelligence for embedded analytics', detail:'SEI provides embedded BI and reporting within Sage X3 — real-time dashboards, KPI monitoring, and data exploration without exporting to spreadsheets. This is your Stage 3 analytics foundation.', tag:'Sage X3'},
+      {title:'Connect Phocas or Velixo for advanced reporting', detail:'Phocas delivers operational analytics across X3 data (sales, stock, margin by product/customer/region). Velixo provides Excel-connected board-level financial reporting with live X3 data.', tag:'Analytics'},
+      {title:'Implement Netstock for AI-driven inventory optimisation', detail:'Netstock connects to X3 stock data and uses demand forecasting algorithms to reduce inventory holding while maintaining service levels — delivering measurable working capital benefit.', tag:'AI Tool'},
+      {title:'Consider Lynq for MES and operational intelligence', detail:'For manufacturers, Lynq provides machine-level data capture and MES capabilities integrated with X3 production orders — connecting the shop floor to the finance function.', tag:'AI Tool'},
+      {title:'Implement the full four-layer governance framework', detail:'All four governance layers — process, system, audit, and board review — must be operational. Commission a quarterly Board AI Governance Report from this stage onward.', tag:'Governance'},
+    ],
+    intacct: [
+      {title:'Activate Sage Copilot for AI-assisted insights', detail:'Sage Copilot is native to Intacct and provides AI-driven anomaly detection, variance explanations, and conversational analytics. Activate and configure it for your chart of accounts and key metrics.', tag:'Sage Intacct'},
+      {title:'Enable Intelligent GL for automated coding', detail:"Intacct's Intelligent GL uses machine learning to suggest transaction coding based on historical patterns — reducing manual intervention and improving consistency across entities.", tag:'Sage Intacct'},
+      {title:'Deploy AI-driven forecasting and cash flow modelling', detail:"Activate Intacct's AI forecasting capabilities for rolling cash flow projections and budget variance modelling. Connect Velixo or Swoop Analytics for board-ready output formatting.", tag:'AI Tool'},
+      {title:'Implement Swoop Analytics or Velixo for board reporting', detail:'Connect Swoop Analytics or Velixo to Intacct for automated board pack preparation — pulling live data into formatted management reports with AI-generated commentary.', tag:'Analytics'},
+      {title:'Implement the full four-layer governance framework', detail:'All four governance layers must be operational. Commission a quarterly Board AI Governance Report from this stage onward.', tag:'Governance'},
+    ],
+    both: [
+      {title:"Deploy your platform's native AI capabilities first", detail:"For Intacct: Sage Copilot and Intelligent GL. For X3: Sage Enterprise Intelligence. Platform-native AI is lower risk, faster to deploy, and already governed by Sage's own control framework.", tag:'AI Tool'},
+      {title:'Add BI and advanced analytics for board-level reporting', detail:'Velixo connects to both X3 and Intacct for board-ready financial reporting. Phocas is optimised for X3 operational analytics; Swoop Analytics for Intacct.', tag:'Analytics'},
+      {title:'Implement the full four-layer governance framework', detail:'All four governance layers — process, system, audit, and board review — must be operational before AI tools process material transactions autonomously.', tag:'Governance'},
+      {title:'Expand QAOR to include AI performance metrics', detail:'Your Quarterly AI Optimisation Review should now include AI exception rates, model accuracy metrics, and an audit of decisions taken by automated processes since the prior review.', tag:'Advisory'},
+      {title:'Document your Stage 4 agentic workflow candidates', detail:'Identify which Stage 3 AI-assisted processes are candidates for fully agentic operation at Stage 4 — typically AP processing, close cycle automation, and exception escalation workflows.', tag:'Planning'},
+    ],
+  },
+  4: {
+    x3: [
+      {title:'Design and deploy governed agentic AP and AR workflows', detail:'Agentic workflows execute AP matching, payment approval escalation, and AR cash allocation autonomously — within defined thresholds, with full audit trails and override capabilities. X3CloudDocs extensions underpin these workflows.', tag:'Agentic'},
+      {title:'Extend X3CloudDocs for agentic supplier interactions', detail:'X3CloudDocs agentic extensions enable automated supplier onboarding, PO acknowledgement handling, and dispute resolution workflows.', tag:'X3CloudDocs'},
+      {title:'Run an Agentic Design Workshop', detail:'A structured workshop to map your Wave 1 and Wave 2 agentic deployments — defining thresholds, fallback logic, audit requirements, and governance controls before build begins.', tag:'Advisory'},
+      {title:'Commission an Annual Governance Review', detail:'At Stage 4, governance reviews move to annual cadence with board-level reporting — covering agentic workflow performance, AI decision audit, model drift indicators, and strategic alignment.', tag:'Governance'},
+      {title:'Position finance as a strategic competitive capability', detail:'Engage Mysoft for a Strategic Finance Advisory engagement — mapping how your AI-enabled finance function creates measurable competitive advantage in your market.', tag:'Strategic'},
+    ],
+    intacct: [
+      {title:'Design and deploy governed agentic workflows in Intacct', detail:'Sage Intacct agentic workflows execute AP processing, GL coding, and close-cycle actions autonomously — within defined governance thresholds and with full audit trail capture.', tag:'Agentic'},
+      {title:'Automate the period-close cycle end-to-end', detail:'At Stage 4, the Intacct close cycle should be largely autonomous — automated reconciliations, journal entries, variance flags, and commentary drafted by AI for FD review. Target: close in under 24 hours.', tag:'Sage Intacct'},
+      {title:'Run an Agentic Design Workshop', detail:'A structured workshop to define Wave 1 and Wave 2 agentic deployments — establishing thresholds, fallback logic, and governance controls before build begins.', tag:'Advisory'},
+      {title:'Implement board-level AI Governance Reporting', detail:'Commission quarterly Board AI Governance Reports — covering agentic workflow performance, AI decision volumes, exception rates, model accuracy, and regulatory compliance indicators.', tag:'Governance'},
+      {title:'Position finance as a strategic competitive capability', detail:'Engage Mysoft for a Strategic Finance Advisory engagement to quantify and communicate the competitive advantage your AI-enabled finance function delivers.', tag:'Strategic'},
+    ],
+    both: [
+      {title:'Define your agentic workflow architecture', detail:'Map which finance processes are candidates for agentic operation — typically AP matching and payment, AR cash allocation, GL coding, and close-cycle reconciliations. Each requires defined thresholds, fallback logic, and governance controls.', tag:'Agentic'},
+      {title:'Run an Agentic Finance Design Workshop', detail:'A structured Mysoft workshop to design your Wave 1 and Wave 2 agentic deployments before build begins. This is the most important planning investment at Stage 4.', tag:'Advisory'},
+      {title:'Implement board-level AI Governance Reporting', detail:'Board AI Governance Reports should cover: agentic workflow performance, AI decision volumes, exception escalation rates, model accuracy trends, and regulatory/compliance posture.', tag:'Governance'},
+      {title:'Move to an Annual Governance Review cadence', detail:'At Stage 4, governance reviews move to annual strategic cycle — assessing the full AI programme against business objectives, not just technical metrics.', tag:'Governance'},
+      {title:'Position finance as a competitive differentiator', detail:'Engage Mysoft for a Strategic Finance Advisory engagement — quantifying how your AI-enabled finance function creates measurable competitive advantage and positions the business for its next growth chapter.', tag:'Strategic'},
+    ],
+  },
+};
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+let selectedPlatform = null;
+let answers = new Array(13).fill(null);
+let currentQ = 0;
+
+// ── PAGE NAVIGATION ────────────────────────────────────────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goToWelcome() { showPage('welcome'); }
+function goToPlatform() { showPage('platform'); }
+
+// ── PLATFORM SELECTION ─────────────────────────────────────────────────────
+function selectPlatform(platform, el) {
+  selectedPlatform = platform;
+  document.querySelectorAll('.platform-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('btn-start-questions').disabled = false;
+}
+function startQuestions() {
+  if (!selectedPlatform) return;
+  currentQ = 0;
+  answers = new Array(13).fill(null);
+  renderQuestion();
+  showPage('question');
+}
+
+// ── QUESTION RENDERING ─────────────────────────────────────────────────────
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const domain = DOMAINS[q.domain];
+  const total = QUESTIONS.length;
+
+  document.getElementById('q-domain-label').textContent = domain.name;
+  document.getElementById('q-count-label').textContent = `Question ${currentQ + 1} of ${total}`;
+  document.getElementById('progress-fill').style.width = `${(currentQ / total) * 100}%`;
+
+  const dotsEl = document.getElementById('step-dots');
+  dotsEl.innerHTML = QUESTIONS.map((qq, i) => {
+    let cls = '';
+    if (i < currentQ) cls = 'done';
+    else if (i === currentQ) cls = 'active';
+    return `<div class="step-dot ${cls}"></div>`;
+  }).join('');
+
+  const badge = document.getElementById('q-domain-badge');
+  badge.textContent = `Domain ${domain.id}: ${domain.name}`;
+  badge.style.background = domain.bg;
+  badge.style.color = domain.color;
+
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-why').textContent = `Why this matters: ${q.why}`;
+
+  document.getElementById('answer-list').innerHTML = q.answers.map(a => `
+    <div class="answer-item ${answers[currentQ] === a.score ? 'selected' : ''}"
+         onclick="selectAnswer(${a.score}, this)">
+      <div class="answer-radio"></div>
+      <span class="answer-text">${a.text}</span>
+    </div>
+  `).join('');
+
+  const prevBtn = document.getElementById('btn-prev');
+  const nextBtn = document.getElementById('btn-next');
+  prevBtn.style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+
+  const answered = answers[currentQ] !== null;
+  nextBtn.disabled = !answered;
+  nextBtn.innerHTML = currentQ === total - 1
+    ? 'See my results <span class="arrow">→</span>'
+    : 'Next <span class="arrow">→</span>';
+  document.getElementById('q-nav-hint').textContent = answered ? '' : 'Select an answer to continue';
+}
+
+function selectAnswer(score, el) {
+  answers[currentQ] = score;
+  document.querySelectorAll('.answer-item').forEach(a => a.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('btn-next').disabled = false;
+  document.getElementById('q-nav-hint').textContent = '';
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < QUESTIONS.length - 1) {
+    currentQ++;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    computeAndShowResults();
+  }
+}
+function prevQuestion() {
+  if (currentQ > 0) { currentQ--; renderQuestion(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+}
+
+// ── SCORING + RESULTS ──────────────────────────────────────────────────────
+function computeAndShowResults() {
+  const domainScores = [0, 0, 0, 0, 0];
+  QUESTIONS.forEach((q, i) => { domainScores[q.domain] += (answers[i] || 0); });
+  const total = domainScores.reduce((a, b) => a + b, 0);
+
+  let stage = total <= 9 ? 1 : total <= 19 ? 2 : total <= 29 ? 3 : 4;
+
+  const overrides = [];
+  if (domainScores[0] <= 2 && stage > 2) {
+    overrides.push({ domain: 'A', score: domainScores[0], max: 9,
+      msg: `Domain A (ERP & Data Foundation) score is critically low (${domainScores[0]}/9). AI on an unreliable ERP foundation is high-risk. We recommend treating this as Stage 1 or early Stage 2 until the data foundation is strengthened.` });
+    stage = Math.min(stage, 2);
+  }
+  if (domainScores[3] <= 1 && stage > 2) {
+    overrides.push({ domain: 'D', score: domainScores[3], max: 6,
+      msg: `Domain D (Governance & Controls) score is too low (${domainScores[3]}/6) to safely progress beyond Stage 2. Strengthening internal controls and AI governance policies is a prerequisite for advancing.` });
+    stage = Math.min(stage, 2);
+  }
+
+  renderResults(total, domainScores, stage, overrides);
+  showPage('results');
+}
+
+function renderResults(total, domainScores, stage, overrides) {
+  const sd = STAGES[stage];
+  const platform = selectedPlatform || 'both';
+
+  const card = document.getElementById('stage-result-card');
+  card.style.borderLeftColor = sd.borderColor;
+
+  const badgeEl = document.getElementById('stage-badge-el');
+  badgeEl.innerHTML = `<span class="badge" style="background:${sd.bg};color:${sd.color};"><span class="badge-dot"></span>${sd.label}</span>`;
+
+  document.getElementById('stage-name-el').textContent = `${sd.label} — ${sd.name}`;
+  document.getElementById('stage-desc-el').textContent = sd.desc;
+  document.getElementById('score-num-el').textContent = total;
+  document.getElementById('score-num-el').style.color = sd.color;
+
+  document.getElementById('override-alerts-el').innerHTML = overrides.map(o => `
+    <div class="override-box">
+      <svg width="16" height="16" fill="none" stroke="#92400E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span><strong>Override applied — Domain ${o.domain}:</strong> ${o.msg}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('domain-bars-el').innerHTML = DOMAINS.map((d, i) => {
+    const pct = Math.round((domainScores[i] / d.maxScore) * 100);
+    return `
+      <div class="domain-bar-row">
+        <span class="domain-bar-letter">${d.id}</span>
+        <div class="domain-bar-track">
+          <div class="domain-bar-fill" style="width:${pct}%;background:${d.barColor};"></div>
+        </div>
+        <span class="domain-bar-score">${domainScores[i]}/${d.maxScore}</span>
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('ladder-el').innerHTML = [4,3,2,1].map(s => {
+    const st = STAGES[s];
+    const isCurrent = s === stage;
+    return `
+      <div class="ladder-rung ${isCurrent ? 'current' : ''}"
+           style="${isCurrent ? `border-color:${st.borderColor};background:${st.bg};` : ''}">
+        <span class="ladder-rung-stage-num" style="${isCurrent ? `color:${st.color};` : ''}">${st.label}</span>
+        <span class="ladder-rung-name">${st.name}</span>
+        <div class="ladder-active-indicator"></div>
+      </div>
+    `;
+  }).join('');
+
+  const recsData = RECS[stage][platform] || RECS[stage]['both'];
+  document.getElementById('recs-title-el').textContent = `Priority Recommendations — ${sd.name}`;
+  document.getElementById('recs-list-el').innerHTML = recsData.map((r, i) => {
+    const tagStyle = r.tag === 'Critical'
+      ? `background:#FBEAE7;color:#C6362D;`
+      : `background:${sd.bg};color:${sd.color};`;
+    return `
+      <div class="rec-item">
+        <div class="rec-num" style="background:${sd.color};">${i + 1}</div>
+        <div class="rec-body">
+          <h4>${r.title}</h4>
+          <p>${r.detail}</p>
+          <span class="rec-tag" style="${tagStyle}">${r.tag}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function restartAssessment() {
+  answers = new Array(13).fill(null);
+  currentQ = 0;
+  selectedPlatform = null;
+  document.querySelectorAll('.platform-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('btn-start-questions').disabled = true;
+  showPage('welcome');
+}
+</script>
+
+</body>
+</html>
