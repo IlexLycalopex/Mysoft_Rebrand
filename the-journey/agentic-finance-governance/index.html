@@ -36,11 +36,11 @@
          font-family: var(--font-sans); font-weight: 600; font-size: 14px;
          border-radius: var(--radius-btn); text-decoration: none; border: none; cursor: pointer;
          transition: all 180ms var(--ease-out); white-space: nowrap; }
-  .btn-primary { background: var(--cyan); color: var(--navy); padding: 12px 22px; }
-  .btn-primary:hover { background: var(--cyan-hover); }
   .btn-ghost-white { background: transparent; color: #fff; padding: 12px 22px;
                      border: 1.5px solid rgba(255,255,255,0.35); }
   .btn-ghost-white:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
   .btn-outline-navy { background: transparent; color: var(--navy); padding: 12px 22px;
                       border: 1.5px solid rgba(0,26,34,0.35); }
   .btn-outline-navy:hover { border-color: var(--navy); }
@@ -62,7 +62,7 @@
   .principle { display: flex; gap: 36px; padding: 36px 0; border-bottom: 1px solid var(--line); }
   .principle:last-child { border-bottom: none; }
   .principle-num { font-family: var(--font-display); font-weight: 700; font-size: 38px;
-                   color: var(--cyan); line-height: 1; flex-shrink: 0; width: 56px;
+                   color: var(--navy); line-height: 1; flex-shrink: 0; width: 56px;
                    padding-top: 4px; letter-spacing: -0.03em; }
   .principle-body h3 { font-family: var(--font-display); font-weight: 600; font-size: 20px;
                        letter-spacing: -0.015em; color: var(--navy); margin: 0 0 12px; }
@@ -100,7 +100,7 @@
   .card-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
   .card { background: var(--white); border-radius: var(--radius-card);
           border: 1px solid var(--line); padding: 28px; }
-  .sec-alt .card { background: var(--bg); }
+  .sec-alt .card { background: var(--white); }
   .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 17px;
              letter-spacing: -0.01em; color: var(--navy); margin: 0 0 16px; }
   .card ul { padding-left: 0; margin: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -134,7 +134,7 @@
     <h1 class="hero-h1">Agentic Finance Governance Framework</h1>
     <p class="hero-lede">AI in finance without governance is a control failure waiting to happen. The Mysoft Agentic Finance Governance Framework v1.1 defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.</p>
     <div class="btn-group">
-      <a href="../../contact/" class="btn btn-primary">Request a Governance Review</a>
+      <a href="../../contact/" class="btn btn-invert">Request a Governance Review</a>
       <a href="../ai-readiness-assessment/" class="btn btn-ghost-white">Take the Assessment</a>
     </div>
   </div>
@@ -320,7 +320,7 @@
     <h2>Understand your current governance posture</h2>
     <p>We offer a structured governance assessment for finance leaders who want to understand how their current AI controls compare to the Mysoft Governance Framework v1.1 — and where the gaps are before they become audit findings.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="../../contact/" class="btn btn-primary" style="background:var(--navy);color:#fff;">Request a Governance Review</a>
+      <a href="../../contact/" class="btn btn-invert btn-lg">Request a Governance Review</a>
       <a href="../stage-2-intelligent-automation/" class="btn btn-outline-navy">Return to Stage 2</a>
     </div>
   </div>

@@ -46,9 +46,9 @@
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
   .card { background: var(--white); border: 1px solid var(--line);
           border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
-  .sec-alt .card { background: var(--bg-soft); }
+  .sec-alt .card { background: var(--white); }
   .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
-               background: var(--cyan-50); color: var(--cyan-600);
+               background: var(--bg); color: var(--navy);
                display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
   .card h4 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
              color: var(--navy); margin: 0 0 8px; }
@@ -113,7 +113,8 @@
   .btn-ghost:hover { border-color: var(--navy); }
   .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
   .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
-  .btn-primary:hover { background: var(--navy-400) !important; }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -136,7 +137,7 @@
       <h1 class="hero-h1">Intelligence at the<br>Speed of the Business.</h1>
       <p class="hero-lede">Stage 3 is where AI becomes operational. Sage Copilot provides conversational access to financial data. The Finance Intelligence Agent surfaces answers instantly. Close Automation removes the highest-risk manual steps from the period-end cycle. This only works on the governed foundation of Stages 1 and 2.</p>
       <div class="btn-group">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the AI Readiness Assessment</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the AI Readiness Assessment</a>
         <a href="#" class="btn btn-gw btn-lg">Explore Sage Intacct</a>
       </div>
     </div>
@@ -317,7 +318,7 @@
       <h2 class="sec-h2">The AI Readiness Assessment Confirms Your Stage 3 Entry Conditions.</h2>
       <p>It also confirms your governance baseline and identifies the specific capabilities ready to activate.</p>
       <div class="btn-group" style="justify-content:center">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the Assessment</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the Assessment</a>
         <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
       </div>
     </div>

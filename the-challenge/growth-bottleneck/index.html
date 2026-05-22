@@ -41,9 +41,9 @@
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
   .card { background: var(--white); border: 1px solid var(--line);
           border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
-  .sec-alt .card { background: var(--bg-soft); }
+  .sec-alt .card { background: var(--white); }
   .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
-               background: var(--cyan-50); color: var(--cyan-600);
+               background: var(--bg); color: var(--navy);
                display: flex; align-items: center; justify-content: center;
                margin-bottom: 18px; }
   .card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
@@ -84,7 +84,8 @@
   .btn-ghost:hover { border-color: var(--navy); }
   .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
   .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
-  .btn-primary:hover { background: var(--navy-400) !important; }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -101,7 +102,7 @@
       <h1 class="hero-h1">Finance systems holding back<br>business growth</h1>
       <p class="hero-lede">When your ERP cannot keep pace with the business, every expansion decision becomes a manual workaround. The cost of staying still compounds year on year.</p>
       <div class="btn-group">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Assess Your Position</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Assess Your Position</a>
         <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
       </div>
     </div>
@@ -241,7 +242,7 @@
       <h2 class="sec-h2">Find out where your organisation sits on the AI maturity ladder</h2>
       <p>Our free AI Readiness Assessment takes 10 minutes and gives you a stage rating, a gap analysis, and a recommended path forward — without a sales call.</p>
       <div class="btn-group" style="justify-content:center">
-        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Take the Assessment</a>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-invert btn-lg">Take the Assessment</a>
         <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
       </div>
     </div>
