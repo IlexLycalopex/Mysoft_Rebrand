@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>For the COO and Operations Director — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Operations leaders need finance and operations data in a single view. Mysoft builds the integrated operational ERP that makes real-time finance and operations visibility possible — without reconciliation overhead.">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+  .sec-lede { font-size: 17px; line-height: 1.65; color: var(--fg-2); max-width: 640px; margin: 14px 0 0; }
+  .sec-body  { font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 14px 0 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .card { background: var(--white); border: 1px solid var(--line);
+          border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
+  .sec-alt .card { background: var(--bg-soft); }
+  .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
+               background: var(--cyan-50); color: var(--cyan-600);
+               display: flex; align-items: center; justify-content: center;
+               margin-bottom: 18px; }
+  .card-icon-red { background: rgba(216,10,72,0.08); color: var(--x3cd-red); }
+  .card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
+             color: var(--navy); margin: 0 0 10px; line-height: 1.3; }
+  .card p { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
+  .cta-band .sec-eyebrow { color: var(--cyan); }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; max-width: 640px; }
+  .cta-band > .narrow > p { font-size: 17px; line-height: 1.65;
+                              color: rgba(255,255,255,0.65); max-width: 480px;
+                              margin: 0 auto 36px; }
+  .cta-band .btn-group { justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-primary:hover { background: var(--navy-400) !important; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <span class="hero-eyebrow">Who We Serve</span>
+      <h1 class="hero-h1">For the COO and<br>Operations Director</h1>
+      <p class="hero-lede">Operations leaders need finance and operations data in a single view — not two systems that never quite reconcile. We build the integrated operational ERP that makes that possible.</p>
+      <div class="btn-group">
+        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Assess Your Operations Readiness</a>
+        <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operations priorities -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Operations Priorities</span>
+        <h2 class="sec-h2">Where finance and operations intersect</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon" data-icon="package"></div>
+          <h3>Inventory and production visibility</h3>
+          <p>Operations leaders making procurement and production decisions need real-time inventory valuations, accurate cost-of-goods data, and integrated purchasing workflows. Without that, decisions are made on lagged data and margin leakage is invisible until month-end.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="truck"></div>
+          <h3>Supply chain and supplier management</h3>
+          <p>Supplier performance, three-way matching, and purchase-order lifecycle management are operational as much as financial. A system that separates these functions creates reconciliation overhead and delays that compound across the supply chain.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="git-branch"></div>
+          <h3>Multi-site coordination</h3>
+          <p>Manufacturing and distribution operations spanning multiple sites need a single operational view — stock levels, production schedules, intersite transfers, and financial performance — without manual consolidation between disconnected systems.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="zap"></div>
+          <h3>Document and approval automation</h3>
+          <p>Purchase invoice processing, goods-received notes, and supplier statement reconciliation are high-volume, low-value tasks that consume operations team capacity. X3CloudDocs automates these workflows, reducing processing time and eliminating manual matching errors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sage X3 -->
+  <section class="sec sec-alt">
+    <div class="narrow">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Sage X3 for Operations</span>
+        <h2 class="sec-h2">Full operational ERP — not finance bolted onto operations</h2>
+        <p class="sec-lede">Sage X3 is an integrated ERP designed for organisations where operations complexity is inseparable from financial complexity. Manufacturing, distribution, multi-site, multi-currency — all connected to a single ledger that finance and operations share, not replicate.</p>
+      </div>
+      <div class="grid-2" style="margin-top:2rem">
+        <div class="card">
+          <h3>Manufacturing and production</h3>
+          <p>Bill of materials, production orders, capacity planning, quality management, and cost variance analysis — all feeding directly into the financial ledger without manual intervention or period-end journals.</p>
+        </div>
+        <div class="card">
+          <h3>Inventory and warehouse</h3>
+          <p>Real-time stock valuation, batch and serial number traceability, multiple valuation methods (FIFO, AVCO, standard cost), and WMS integration via the Mysoft ISV ecosystem.</p>
+        </div>
+        <div class="card">
+          <h3>Purchasing and supplier management</h3>
+          <p>Purchase orders, receipts, supplier invoices, and three-way matching in a single workflow. X3CloudDocs adds AI-powered invoice capture and automated matching for high-volume purchasing environments.</p>
+        </div>
+        <div class="card">
+          <h3>Distribution and sales order management</h3>
+          <p>Order-to-cash from customer order through despatch, invoicing, and revenue recognition. Integrates with shipping partners via the Mysoft ISV ecosystem for automated despatch and track-and-trace.</p>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;text-align:center">
+        <a href="#" class="btn btn-ghost">Explore Sage X3 in Detail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- X3CloudDocs -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">X3CloudDocs</span>
+        <h2 class="sec-h2">Intelligent document automation for operations teams</h2>
+        <p class="sec-lede">X3CloudDocs is Mysoft's proprietary IP — the top-rated product on the Sage X3 Marketplace. It delivers document automation, supplier statement reconciliation, and intelligent matching directly inside Sage X3.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="border-top:3px solid var(--x3cd-red)">
+          <div class="card-icon card-icon-red" data-icon="file-text"></div>
+          <h3>Purchase Invoice Automation</h3>
+          <p>AI-powered capture and coding of supplier invoices directly into Sage X3. Reduces processing time and eliminates manual keying errors for high-volume purchasing operations.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--x3cd-red)">
+          <div class="card-icon card-icon-red" data-icon="check-square"></div>
+          <h3>Supplier Statement Reconciliation</h3>
+          <p>Automated matching of supplier statements against Sage X3 ledger entries. Identifies discrepancies, duplicate invoices, and missing credits — work that typically consumes significant accounts payable capacity.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--x3cd-red)">
+          <div class="card-icon card-icon-red" data-icon="archive"></div>
+          <h3>Electronic Document Management</h3>
+          <p>Structured document storage linked directly to Sage X3 transactions. Purchase orders, delivery notes, invoices, and correspondence — all retrievable from within the ERP without switching systems.</p>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;text-align:center">
+        <a href="#" class="btn btn-ghost">View X3CloudDocs in Full</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="narrow">
+      <span class="sec-eyebrow">Operations Leaders</span>
+      <h2 class="sec-h2">See what integrated finance and operations looks like.</h2>
+      <p>Book a scenario-based demonstration of Sage X3 — built around your specific operational context, not a generic product tour.</p>
+      <div class="btn-group" style="justify-content:center">
+        <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Assess Your Readiness</a>
+        <a href="#" class="btn btn-gw btn-lg">Talk to a Specialist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'package':'<line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>',
+    'truck':'<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+    'git-branch':'<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
+    'zap':'<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+    'file-text':'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+    'check-square':'<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+    'archive':'<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../../" />);
+</script>
+
+</body>
+</html>
