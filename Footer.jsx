@@ -41,7 +41,11 @@ const FOOTER_COLS = [
       { name: "Sage X3",                   href: "solutions/sage-x3/" },
       { name: "X3CloudDocs",               href: "solutions/x3clouddocs/" },
       { name: "Manufacturing & Distribution", href: "solutions/manufacturing-distribution/" },
-      { name: "ISV Partner Ecosystem",     href: "the-journey/isv-partner-ecosystem/" },
+      { name: "Food & Beverage",              href: "solutions/food-beverage/" },
+      { name: "Professional Services & SaaS", href: "solutions/professional-services-saas/" },
+      { name: "Not-for-Profit & Healthcare",  href: "solutions/not-for-profit-healthcare/" },
+      { name: "Financial Services",           href: "solutions/financial-services/" },
+      { name: "ISV Partner Ecosystem",        href: "the-journey/isv-partner-ecosystem/" },
     ],
   },
   {
