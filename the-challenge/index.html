@@ -230,7 +230,7 @@
 <script type="text/babel" src="../Footer.jsx"></script>
 <script type="text/babel">
   const onAssess = () => { window.location.href = '../ai-readiness-assessment.html'; };
-  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} homeHref="../" />);
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../" />);
   ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} />);
 </script>
 

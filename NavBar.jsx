@@ -1,30 +1,36 @@
 // New buyer-trigger-led navigation
 // Architecture: The Challenge | The Journey | Solutions | Insights | About | [Assess Your AI Readiness]
 
-// Mega-menu link with hover state
-const MegaLink = ({ it }) => {
+// Mega-menu link with hover state.
+// it.href (relative to site root) is set only for pages that exist;
+// basePath converts root-relative paths to the depth of the current page.
+const MegaLink = ({ it, basePath = "./" }) => {
   const [hovered, setHovered] = React.useState(false);
+  const href = it.href ? basePath + it.href : null;
   return (
     <a
-      href="#"
-      style={{ textDecoration: "none", display: "block" }}
-      onMouseEnter={() => setHovered(true)}
+      href={href || undefined}
+      style={{ textDecoration: "none", display: "block", cursor: href ? "pointer" : "default" }}
+      onClick={e => { if (!href) e.preventDefault(); }}
+      onMouseEnter={() => setHovered(!!href)}
       onMouseLeave={() => setHovered(false)}
     >
       <div style={{
         fontFamily: "var(--font-sans)", fontSize: 13.5, fontWeight: 500,
         lineHeight: 1.3, display: "flex", alignItems: "center", gap: 5,
-        color: hovered ? "var(--cyan)" : "var(--navy)",
+        color: hovered ? "var(--cyan)" : href ? "var(--navy)" : "var(--fg-3)",
         transition: "color 140ms var(--ease-out)",
       }}>
         {it.name}
-        <span style={{
-          fontSize: 12, color: "var(--cyan)",
-          opacity: hovered ? 1 : 0,
-          transform: hovered ? "translateX(0)" : "translateX(-5px)",
-          transition: "opacity 140ms var(--ease-out), transform 140ms var(--ease-out)",
-          display: "inline-block",
-        }}>→</span>
+        {href && (
+          <span style={{
+            fontSize: 12, color: "var(--cyan)",
+            opacity: hovered ? 1 : 0,
+            transform: hovered ? "translateX(0)" : "translateX(-5px)",
+            transition: "opacity 140ms var(--ease-out), transform 140ms var(--ease-out)",
+            display: "inline-block",
+          }}>→</span>
+        )}
       </div>
       {it.sub && (
         <div style={{
@@ -36,22 +42,25 @@ const MegaLink = ({ it }) => {
   );
 };
 
+// href values are root-relative paths; prepend basePath at render time.
+// Omitting href means the page doesn't exist yet — the link renders as plain text.
 const NAV_ITEMS = {
   challenge: {
     label: "The Challenge",
+    href: "the-challenge/",
     cols: [
       { t: "Buying Triggers", l: [
-        { name: "Growth Bottleneck", sub: "When your back office can't keep pace" },
-        { name: "AI Mandate", sub: "Board has asked for a credible AI strategy" },
-        { name: "Scale Ambition", sub: "Infrastructure for 2× or 3× growth" },
-        { name: "Compliance Event", sub: "Acquisition, audit, or regulatory change" },
+        { name: "Growth Bottleneck",  sub: "When your back office can't keep pace", href: "the-challenge/growth-bottleneck/" },
+        { name: "AI Mandate",         sub: "Board has asked for a credible AI strategy", href: "the-challenge/ai-mandate/" },
+        { name: "Scale Ambition",     sub: "Infrastructure for 2× or 3× growth", href: "the-challenge/scale-ambition/" },
+        { name: "Compliance Event",   sub: "Acquisition, audit, or regulatory change", href: "the-challenge/compliance-event/" },
       ]},
       { t: "Who We Serve", l: [
-        { name: "CFO & Finance Director", sub: null },
+        { name: "CFO & Finance Director",   sub: null },
         { name: "COO & Operations Director", sub: null },
-        { name: "CEO & Board", sub: null },
-        { name: "CTO & IT Director", sub: null },
-        { name: "CIO", sub: null },
+        { name: "CEO & Board",              sub: null },
+        { name: "CTO & IT Director",        sub: null },
+        { name: "CIO",                      sub: null },
       ]},
     ],
   },
@@ -59,17 +68,17 @@ const NAV_ITEMS = {
     label: "The Journey",
     cols: [
       { t: "AI Transformation Stages", l: [
-        { name: "The Journey — Overview", sub: "How we take you from Stage 1 to Stage 4" },
-        { name: "Stage 1 — Operational Foundation", sub: "Build the platform your business deserves" },
-        { name: "Stage 2 — Intelligent Automation", sub: "Remove the manual transactional layer" },
-        { name: "Stage 3 — AI-Augmented Finance", sub: "Intelligence at the speed of the business" },
-        { name: "Stage 4 — Agentic Finance Operations", sub: "Finance at scale without headcount growth" },
+        { name: "The Journey — Overview",              sub: "How we take you from Stage 1 to Stage 4" },
+        { name: "Stage 1 — Operational Foundation",    sub: "Build the platform your business deserves" },
+        { name: "Stage 2 — Intelligent Automation",    sub: "Remove the manual transactional layer" },
+        { name: "Stage 3 — AI-Augmented Finance",      sub: "Intelligence at the speed of the business" },
+        { name: "Stage 4 — Agentic Finance Operations",sub: "Finance at scale without headcount growth" },
       ]},
       { t: "Frameworks & Tools", l: [
-        { name: "AI Readiness Assessment", sub: "Free — find your maturity stage" },
-        { name: "Agentic Finance Governance", sub: "Board-defensible AI governance" },
-        { name: "Finance Operations Review", sub: "Structured discovery process" },
-        { name: "ISV Partner Ecosystem", sub: "The integrated technology stack" },
+        { name: "AI Readiness Assessment",     sub: "Free — find your maturity stage", href: "ai-readiness-assessment.html" },
+        { name: "Agentic Finance Governance",  sub: "Board-defensible AI governance" },
+        { name: "Finance Operations Review",   sub: "Structured discovery process" },
+        { name: "ISV Partner Ecosystem",       sub: "The integrated technology stack" },
       ]},
     ],
   },
@@ -77,17 +86,17 @@ const NAV_ITEMS = {
     label: "Solutions",
     cols: [
       { t: "Platforms", l: [
-        { name: "Sage Intacct", sub: "Finance-first cloud ERP" },
-        { name: "Sage X3", sub: "Operational ERP for complex businesses" },
-        { name: "X3CloudDocs", sub: "AI document automation — Mysoft IP" },
-        { name: "Partner Ecosystem", sub: "Netstock, Lynq, Phocas, SEI and more" },
+        { name: "Sage Intacct",       sub: "Finance-first cloud ERP" },
+        { name: "Sage X3",            sub: "Operational ERP for complex businesses" },
+        { name: "X3CloudDocs",        sub: "AI document automation — Mysoft IP" },
+        { name: "Partner Ecosystem",  sub: "Netstock, Lynq, Phocas, SEI and more" },
       ]},
       { t: "By Sector", l: [
-        { name: "Manufacturing & Distribution", sub: null },
-        { name: "Food & Beverage", sub: null },
-        { name: "Professional Services & SaaS", sub: null },
-        { name: "Not-for-Profit & Healthcare", sub: null },
-        { name: "Financial Services", sub: null },
+        { name: "Manufacturing & Distribution",     sub: null },
+        { name: "Food & Beverage",                  sub: null },
+        { name: "Professional Services & SaaS",     sub: null },
+        { name: "Not-for-Profit & Healthcare",      sub: null },
+        { name: "Financial Services",               sub: null },
       ]},
     ],
   },
@@ -95,16 +104,16 @@ const NAV_ITEMS = {
     label: "Insights",
     cols: [
       { t: "Content", l: [
-        { name: "CFO Strategy", sub: "Finance as a growth enabler" },
-        { name: "Operational Transformation", sub: "AI in AP, AR, and beyond" },
-        { name: "Strategic Insight", sub: "Agentic AI — reality versus hype" },
-        { name: "Events & Webinars", sub: "ERP selection events and roundtables" },
+        { name: "CFO Strategy",              sub: "Finance as a growth enabler" },
+        { name: "Operational Transformation",sub: "AI in AP, AR, and beyond" },
+        { name: "Strategic Insight",         sub: "Agentic AI — reality versus hype" },
+        { name: "Events & Webinars",         sub: "ERP selection events and roundtables" },
       ]},
       { t: "Resources", l: [
-        { name: "AI-Ready Finance Guide", sub: "Gated — free download" },
-        { name: "ERP Selection Framework", sub: null },
-        { name: "Customer Transformation Stories", sub: null },
-        { name: "Demo Hub", sub: null },
+        { name: "AI-Ready Finance Guide",           sub: "Gated — free download" },
+        { name: "ERP Selection Framework",          sub: null },
+        { name: "Customer Transformation Stories",  sub: null },
+        { name: "Demo Hub",                         sub: null },
       ]},
     ],
   },
@@ -112,21 +121,21 @@ const NAV_ITEMS = {
     label: "About",
     cols: [
       { t: "Who We Are", l: [
-        { name: "Our Story", sub: "20 years. UK's first Sage X3 partner" },
-        { name: "Meet the Team", sub: "50+ in-house Sage experts" },
-        { name: "Careers", sub: "Join us" },
+        { name: "Our Story",    sub: "20 years. UK's first Sage X3 partner" },
+        { name: "Meet the Team",sub: "50+ in-house Sage experts" },
+        { name: "Careers",      sub: "Join us" },
       ]},
       { t: "Credentials", l: [
-        { name: "Sage Platinum Club 2025", sub: null },
-        { name: "Excellence Partner of the Year", sub: null },
-        { name: "Customer Transformation Stories", sub: null },
-        { name: "Support Portal", sub: null },
+        { name: "Sage Platinum Club 2025",          sub: null },
+        { name: "Excellence Partner of the Year",   sub: null },
+        { name: "Customer Transformation Stories",  sub: null },
+        { name: "Support Portal",                   sub: null },
       ]},
     ],
   },
 };
 
-const NavBar = ({ onAssess, homeHref = "./" }) => {
+const NavBar = ({ onAssess, basePath = "./" }) => {
   const [open, setOpen] = React.useState(null);
   const [scrolled, setScrolled] = React.useState(false);
   const closeTimer = React.useRef(null);
@@ -163,8 +172,8 @@ const NavBar = ({ onAssess, homeHref = "./" }) => {
         height: "var(--nav-h)", padding: "0 32px",
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
-        {/* Logo */}
-        <a href={homeHref} style={{ textDecoration: "none" }} onClick={closePanel}>
+        {/* Logo — always returns to homepage */}
+        <a href={basePath} style={{ textDecoration: "none" }} onClick={closePanel}>
           <Wordmark size={26} />
         </a>
 
@@ -174,7 +183,13 @@ const NavBar = ({ onAssess, homeHref = "./" }) => {
             <button
               key={key}
               onMouseEnter={() => { cancelClose(); setOpen(key); }}
-              onClick={() => setOpen(open === key ? null : key)}
+              onClick={() => {
+                if (item.href) {
+                  window.location.href = basePath + item.href;
+                } else {
+                  setOpen(open === key ? null : key);
+                }
+              }}
               style={{
                 background: "transparent", border: 0, cursor: "pointer",
                 fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 13.5,
@@ -235,8 +250,8 @@ const NavBar = ({ onAssess, homeHref = "./" }) => {
                 }}>{col.t}</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {col.l.map((it, li) => (
-                  <MegaLink key={li} it={it} />
-                ))}
+                    <MegaLink key={li} it={it} basePath={basePath} />
+                  ))}
                 </div>
               </div>
             ))}
