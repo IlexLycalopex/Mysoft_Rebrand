@@ -122,15 +122,15 @@ const NAV_ITEMS = {
     label: "About",
     cols: [
       { t: "Who We Are", l: [
-        { name: "Our Story",    sub: "20 years. UK's first Sage X3 partner" },
-        { name: "Meet the Team",sub: "50+ in-house Sage experts" },
-        { name: "Careers",      sub: "Join us" },
+        { name: "Our Story",    sub: "20 years. UK's first Sage X3 partner",   href: "about/our-story/" },
+        { name: "Meet the Team",sub: "50+ in-house Sage experts",               href: "about/meet-the-team/" },
+        { name: "Careers",      sub: "Join us",                                 href: "about/careers/" },
       ]},
       { t: "Credentials", l: [
-        { name: "Sage Platinum Club 2025",          sub: null },
-        { name: "Excellence Partner of the Year",   sub: null },
-        { name: "Customer Transformation Stories",  sub: null },
-        { name: "Support Portal",                   sub: null },
+        { name: "Sage Platinum Club 2025",         sub: "Highest partner tier",              href: "about/sage-platinum-club-2025/" },
+        { name: "Excellence Partner of the Year",  sub: null },
+        { name: "Customer Transformation Stories", sub: "Measurable outcomes",               href: "insights/customer-transformation-stories/" },
+        { name: "Support Portal",                  sub: "Break-fix, service desk, managed",  href: "about/support-portal/" },
       ]},
     ],
   },

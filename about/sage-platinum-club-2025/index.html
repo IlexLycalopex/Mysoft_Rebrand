@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sage Platinum Club 2025 | About — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mysoft achieved Sage Platinum Partner status in 2025 — the highest tier in the Sage partner ecosystem, awarded on implementation quality, customer satisfaction, and technical depth.">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 18px;
+                font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.45); }
+  .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+  .breadcrumb-sep { opacity: 0.4; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0 0 20px; }
+  .sec-body p { font-size: 16px; line-height: 1.75; color: var(--fg-2); margin: 0 0 20px; }
+  .sec-body p:last-child { margin-bottom: 0; }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 2.5rem; }
+  .card { background: var(--white); border: 1px solid var(--line);
+          border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
+  .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
+               background: var(--bg); color: var(--navy);
+               display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+             color: var(--navy); margin: 0 0 10px; line-height: 1.35; }
+  .card p  { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  /* Credential panel */
+  .credential-panel { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+  .credential-item { display: flex; gap: 20px; align-items: flex-start;
+                     background: var(--white); border: 1px solid var(--line);
+                     border-radius: var(--radius-lg); padding: 28px;
+                     box-shadow: var(--shadow-sm); }
+  .credential-badge { width: 48px; height: 48px; border-radius: var(--radius-md);
+                      background: var(--navy); color: #fff;
+                      display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .credential-item h3 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+                         color: var(--navy); margin: 0 0 6px; }
+  .credential-item p { font-size: 14px; line-height: 1.6; color: var(--fg-2); margin: 0; }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center;
+              border-top: 1px solid rgba(255,255,255,0.08); }
+  .cta-band .sec-eyebrow { color: var(--cyan); display: block; margin-bottom: 12px; }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; max-width: 640px; }
+  .cta-band p { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.65);
+                max-width: 480px; margin: 0 auto 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../">Home</a><span class="breadcrumb-sep">/</span>
+        <a href="../">About</a><span class="breadcrumb-sep">/</span>
+        <span>Sage Platinum Club 2025</span>
+      </div>
+      <span class="hero-eyebrow">About Mysoft</span>
+      <h1 class="hero-h1">Sage Platinum Club 2025.</h1>
+      <p class="hero-lede">Mysoft achieved Sage Platinum Partner status in 2025 — the highest tier in the Sage partner ecosystem, awarded on implementation quality, customer satisfaction, and technical depth. Not a marketing designation; a structured quality assessment by Sage.</p>
+    </div>
+  </section>
+
+  <!-- What Platinum Means -->
+  <section class="sec">
+    <div class="narrow">
+      <span class="sec-eyebrow">What Platinum Means</span>
+      <h2 class="sec-h2">The criteria behind the status.</h2>
+      <div class="sec-body">
+        <p>Sage Platinum Partner status is awarded annually to the highest-performing partners in the Sage ecosystem. It is not awarded on sales volume alone — the assessment includes customer satisfaction scores, implementation quality metrics, technical certification levels, and partner retention rates.</p>
+        <p>For organisations evaluating ERP partners, Platinum status provides independent evidence of delivery quality that no partner-produced marketing material can replicate. The assessors are Sage, not the partner.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" data-icon="star"></div>
+          <h3>Customer satisfaction</h3>
+          <p>Sage measures customer satisfaction directly with partner customers — independently of the partner. Our scores reflect the quality of delivery and the strength of the long-term relationships we build with the organisations we work with.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="check-circle"></div>
+          <h3>Implementation quality</h3>
+          <p>Project delivery against scope, timeline, and budget are tracked by Sage for Platinum assessment. Our delivery track record — maintained consistently across both Sage X3 and Sage Intacct implementations — underpins the status.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="graduation-cap"></div>
+          <h3>Technical certification</h3>
+          <p>Platinum status requires a minimum number of Sage-certified consultants at the required certification levels — across all relevant product lines. Our entire delivery team holds current Sage certification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What It Means For You -->
+  <section class="sec sec-alt">
+    <div class="narrow">
+      <span class="sec-eyebrow">What It Means for You</span>
+      <h2 class="sec-h2">Why partner tier matters when you are choosing an ERP partner.</h2>
+      <div class="sec-body">
+        <p>A well-implemented mid-tier ERP platform consistently outperforms a poorly implemented tier-one platform. The same principle applies to partner quality: the implementation partner's capability determines outcomes more than the platform's feature set in the majority of cases.</p>
+        <p>Platinum status is the most reliable independent signal of partner quality available to organisations evaluating Sage partners. It is not sufficient on its own — reference conversations and demonstrated sector experience matter too — but it is the right starting filter.</p>
+      </div>
+      <div style="margin-top:2rem">
+        <a href="../../insights/erp-selection-framework/" class="btn btn-ghost">Read the ERP Selection Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="sec">
+    <div class="container">
+      <span class="sec-eyebrow">The Credential Panel</span>
+      <h2 class="sec-h2">Mysoft credentials.</h2>
+      <div class="credential-panel">
+        <div class="credential-item">
+          <div class="credential-badge" data-icon="award"></div>
+          <div>
+            <h3>Sage Platinum Partner</h3>
+            <p>Highest tier in the Sage partner ecosystem — UK and North America. 2025 award.</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-badge" data-icon="trophy"></div>
+          <div>
+            <h3>No.1 Rated — Sage X3 Marketplace</h3>
+            <p>X3CloudDocs is the top-rated product on the Sage X3 Marketplace — the only Mysoft-owned IP product in the Sage ecosystem.</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-badge" data-icon="globe"></div>
+          <div>
+            <h3>UK and North America</h3>
+            <p>International support capability — Sage Intacct and Sage X3 implementations and support across two continents. A dual-geography status that is genuinely rare in the Sage partner network.</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-badge" data-icon="calendar"></div>
+          <div>
+            <h3>20+ years Sage expertise</h3>
+            <p>More than two decades of Sage implementation experience, product knowledge, and customer relationship depth — starting with Sage X3 at inception in the UK.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="container">
+      <span class="sec-eyebrow">Partner Quality</span>
+      <h2 class="sec-h2">The right credentials are the starting point — outcomes are the proof.</h2>
+      <p>Platinum status is our credentialing. Our customer transformation stories are our proof. The conversation you have with us will determine whether we are the right fit for your specific situation.</p>
+      <div class="btn-group">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-invert btn-lg">Talk to Us</a>
+        <a href="../../insights/customer-transformation-stories/" class="btn btn-gw btn-lg">Customer Stories</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'star':'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+    'check-circle':'<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+    'graduation-cap':'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
+    'award':'<circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>',
+    'trophy':'<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>',
+    'globe':'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+    'calendar':'<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+  /* White icons for navy credential badges */
+  document.querySelectorAll('.credential-badge[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../../" />);
+</script>
+
+</body>
+</html>

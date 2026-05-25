@@ -64,10 +64,11 @@ const FOOTER_COLS = [
   {
     t: "About",
     l: [
-      { name: "Our Story",     href: null },
-      { name: "Meet the Team", href: null },
-      { name: "Careers",       href: null },
-      { name: "Support Portal",href: null },
+      { name: "Our Story",              href: "about/our-story/" },
+      { name: "Meet the Team",          href: "about/meet-the-team/" },
+      { name: "Careers",                href: "about/careers/" },
+      { name: "Sage Platinum 2025",     href: "about/sage-platinum-club-2025/" },
+      { name: "Support Portal",         href: "about/support-portal/" },
     ],
   },
 ];
