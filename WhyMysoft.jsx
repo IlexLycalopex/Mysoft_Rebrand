@@ -122,7 +122,7 @@ const WhyMysoft = () => {
                 fontFamily: "var(--font-sans)", fontSize: 17, lineHeight: 1.7,
                 color: "rgba(255,255,255,0.7)", margin: "0 0 28px",
               }}>
-                Most Sage partners implement software. Mysoft designs operating models. The AI transformation journey, governance approach, ISV partner ecosystem, and ongoing optimisation services are differentiators no other UK Sage partner currently articulates credibly. We implement <a href="#" style={{ color: "#fff", fontWeight: 600, textDecoration: "none" }}>Sage X3</a>, <a href="#" style={{ color: "#fff", fontWeight: 600, textDecoration: "none" }}>Sage Intacct</a>, and our own <a href="#" style={{ color: "#fff", fontWeight: 600, textDecoration: "none" }}>X3CloudDocs</a>.
+                Most Sage partners implement software. Mysoft designs operating models. The AI transformation journey, governance approach, ISV partner ecosystem, and ongoing optimisation services are differentiators no other UK Sage partner currently articulates credibly. We implement <a href="solutions/sage-x3/" style={{ color: "#fff", fontWeight: 600, textDecoration: "none" }}>Sage X3</a>, <a href="solutions/sage-intacct/" style={{ color: "#fff", fontWeight: 600, textDecoration: "none" }}>Sage Intacct</a>, and our own <a href="solutions/x3clouddocs/" style={{ color: "#fff", fontWeight: 600, textDecoration: "none" }}>X3CloudDocs</a>.
               </p>
               <p style={{
                 fontFamily: "var(--font-sans)", fontSize: 15, lineHeight: 1.6,

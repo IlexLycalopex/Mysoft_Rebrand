@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Contact Mysoft — UK and North America Sage Platinum Partner. Talk to us about Sage Intacct, Sage X3, X3CloudDocs, or the AI Transformation Journey.">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0; }
+
+  .sec { padding: 80px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0 0 20px; }
+
+  /* Contact route cards */
+  .route-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .route-card { background: var(--white); border: 1px solid var(--line);
+                border-radius: var(--radius-lg); padding: 32px 28px;
+                box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+  .route-card.highlight { border-top: 3px solid var(--cyan); }
+  .route-icon { width: 48px; height: 48px; border-radius: var(--radius-md);
+                background: var(--bg); color: var(--navy);
+                display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+  .route-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem;
+                   color: var(--navy); margin: 0 0 10px; }
+  .route-card p { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0 0 10px; flex: 1; }
+  .route-card p:last-of-type { margin-bottom: 20px; }
+  .route-label { font-size: 12px; font-weight: 600; color: var(--cyan); margin: 4px 0 0; letter-spacing: 0.05em; }
+
+  /* Office cards */
+  .office-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+  .office-card { background: var(--white); border: 1px solid var(--line);
+                 border-radius: var(--radius-lg); padding: 32px;
+                 box-shadow: var(--shadow-sm); }
+  .office-flag { font-size: 28px; margin-bottom: 12px; line-height: 1; display: block; }
+  .office-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem;
+                    color: var(--navy); margin: 0 0 6px; }
+  .office-region { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+                   color: var(--cyan); margin: 0 0 16px; display: block; }
+  .office-detail { margin: 0; padding: 0; list-style: none; }
+  .office-detail li { display: flex; gap: 10px; align-items: flex-start;
+                      font-size: 14px; line-height: 1.6; color: var(--fg-2);
+                      padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .office-detail li:last-child { border-bottom: none; }
+  .office-detail-label { font-weight: 500; color: var(--navy); min-width: 60px; flex-shrink: 0; }
+
+  /* X3CloudDocs partner community */
+  .partner-strip { background: var(--navy); padding: 56px 32px; }
+  .partner-inner { max-width: var(--container); margin: 0 auto; display: grid;
+                   grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .partner-strip h2 { font-family: var(--font-display); font-weight: 600;
+                       font-size: clamp(1.6rem, 2.5vw, 2.2rem); line-height: 1.1;
+                       color: #fff; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .partner-strip p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.65); margin: 0 0 16px; }
+  .partner-strip .sec-eyebrow { color: var(--cyan); margin-bottom: 12px; }
+  .partner-regions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .partner-tag { font-size: 12px; font-weight: 500; padding: 5px 12px;
+                 border-radius: var(--radius-pill); border: 1px solid rgba(255,255,255,0.2);
+                 color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+
+  /* CTA options -->
+  .cta-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .cta-opt { text-align: center; padding: 28px 20px; border: 1px solid var(--line);
+             border-radius: var(--radius-lg); background: var(--white); box-shadow: var(--shadow-sm); }
+  .cta-opt h3 { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+                color: var(--navy); margin: 0 0 8px; }
+  .cta-opt p { font-size: 13.5px; line-height: 1.6; color: var(--fg-2); margin: 0 0 18px; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.08); }
+  .btn-invert { background: #fff; color: var(--navy); }
+  .btn-invert:hover { background: var(--bg); }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero-page">
+    <div class="container">
+      <span class="hero-eyebrow">Get in Touch</span>
+      <h1 class="hero-h1">Let's talk about your finance and operations challenge.</h1>
+      <p class="hero-lede">We respond within one business day. Senior consultants — not sales coordinators — are in every first conversation. UK and North America time zones covered.</p>
+    </div>
+  </section>
+
+  <!-- Contact routes -->
+  <section class="sec">
+    <div class="container">
+      <span class="sec-eyebrow">Contact Options</span>
+      <h2 class="sec-h2">Choose the conversation that fits where you are.</h2>
+      <div class="route-grid">
+        <div class="route-card highlight">
+          <div class="route-icon" data-icon="calendar-check"></div>
+          <h3>Finance Operations Review</h3>
+          <p>A structured, 60-minute discovery session with a senior Mysoft consultant — not a sales call. We assess your current finance and operations landscape, identify where ERP or AI automation could deliver measurable impact, and outline the most appropriate next step.</p>
+          <p class="route-label">Recommended starting point</p>
+          <a href="../the-journey/finance-operations-review/" class="btn btn-navy" style="margin-top:auto">Book a Session</a>
+        </div>
+        <div class="route-card">
+          <div class="route-icon" data-icon="message-circle"></div>
+          <h3>General Enquiry</h3>
+          <p>For questions about Sage Intacct, Sage X3, X3CloudDocs, or the AI Transformation Journey. Also for partnership enquiries, X3CloudDocs reseller conversations, and press or analyst contacts.</p>
+          <p style="margin-top:1rem"><strong>hello@mysoft.co.uk</strong></p>
+          <p class="route-label">Responds within one business day</p>
+          <a href="mailto:hello@mysoft.co.uk" class="btn btn-ghost" style="margin-top:auto">Send an Email</a>
+        </div>
+        <div class="route-card">
+          <div class="route-icon" data-icon="headphones"></div>
+          <h3>Customer Support</h3>
+          <p>Existing Mysoft customers requiring support for Sage Intacct, Sage X3, or X3CloudDocs. See priority definitions, SLAs, and the full support channel guide on the Support Portal page.</p>
+          <p style="margin-top:1rem"><strong>support@mysoft.co.uk</strong></p>
+          <p class="route-label">P1 critical: within 2 hours</p>
+          <a href="../about/support-portal/" class="btn btn-ghost" style="margin-top:auto">Support Portal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offices -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <span class="sec-eyebrow">Our Presence</span>
+      <h2 class="sec-h2">UK and North America — Sage Platinum in both.</h2>
+      <p style="font-size:16px;line-height:1.75;color:var(--fg-2);max-width:680px;margin:0 0 8px">Mysoft holds Sage Platinum Partner status across both the UK and North America. This dual-geography Platinum status is genuinely uncommon in the Sage partner ecosystem — most partners are accredited in one geography, not two. It reflects the depth of implementation capability we have built in each market.</p>
+      <div class="office-grid">
+        <div class="office-card">
+          <span class="office-flag">🇬🇧</span>
+          <h3>United Kingdom</h3>
+          <span class="office-region">Primary base — Sage Platinum Partner</span>
+          <ul class="office-detail">
+            <li><span class="office-detail-label">Products</span>Sage X3, Sage Intacct, X3CloudDocs</li>
+            <li><span class="office-detail-label">Sectors</span>Manufacturing, distribution, food &amp; beverage, professional services, NFP, financial services</li>
+            <li><span class="office-detail-label">Hours</span>Monday – Friday, 8:30am – 5:30pm GMT/BST</li>
+            <li><span class="office-detail-label">Support</span>+44 (0)1234 567890</li>
+            <li><span class="office-detail-label">Email</span>hello@mysoft.co.uk</li>
+          </ul>
+        </div>
+        <div class="office-card">
+          <span class="office-flag">🇺🇸</span>
+          <h3>North America</h3>
+          <span class="office-region">Growing market — Sage Platinum Partner</span>
+          <ul class="office-detail">
+            <li><span class="office-detail-label">Products</span>Sage Intacct (primary), Sage X3, X3CloudDocs</li>
+            <li><span class="office-detail-label">Sectors</span>Professional services, SaaS, not-for-profit, manufacturing</li>
+            <li><span class="office-detail-label">Hours</span>Eastern and Pacific time zones covered — UK team available for overlapping hours</li>
+            <li><span class="office-detail-label">Support</span>Covered through UK support infrastructure</li>
+            <li><span class="office-detail-label">Email</span>usa@mysoft.co.uk</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- X3CloudDocs international -->
+  <div class="partner-strip">
+    <div class="partner-inner">
+      <div>
+        <span class="sec-eyebrow">X3CloudDocs International</span>
+        <h2>A global Sage X3 partner community — built on Mysoft IP.</h2>
+        <p>X3CloudDocs is not only deployed by Mysoft directly. As the top-rated product on the Sage X3 Marketplace, X3CloudDocs is resold and implemented by a growing network of authorised international Sage X3 partners across Europe, the Middle East, and beyond.</p>
+        <p>If you are a Sage X3 partner interested in adding X3CloudDocs to your portfolio, or an organisation outside the UK or North America looking for a local implementation partner using X3CloudDocs, we would like to hear from you.</p>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:hello@mysoft.co.uk" class="btn btn-invert">Partner Enquiry</a>
+          <a href="../solutions/x3clouddocs/" class="btn btn-gw">About X3CloudDocs</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin:0 0 14px">X3CloudDocs partner presence</p>
+        <div class="partner-regions">
+          <span class="partner-tag">🇬🇧 United Kingdom</span>
+          <span class="partner-tag">🇺🇸 United States</span>
+          <span class="partner-tag">🇨🇦 Canada</span>
+          <span class="partner-tag">🇫🇷 France</span>
+          <span class="partner-tag">🇩🇪 Germany</span>
+          <span class="partner-tag">🇪🇸 Spain</span>
+          <span class="partner-tag">🇮🇹 Italy</span>
+          <span class="partner-tag">🇧🇪 Belgium</span>
+          <span class="partner-tag">🇳🇱 Netherlands</span>
+          <span class="partner-tag">🇦🇪 UAE</span>
+          <span class="partner-tag">🇿🇦 South Africa</span>
+          <span class="partner-tag">🇦🇺 Australia</span>
+        </div>
+        <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5">Contact us to discuss X3CloudDocs availability in your region.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other ways to engage -->
+  <section class="sec">
+    <div class="container">
+      <span class="sec-eyebrow">Other Ways to Engage</span>
+      <h2 class="sec-h2">Not ready for a conversation yet?</h2>
+      <div class="cta-options">
+        <div class="cta-opt">
+          <h3>Take the AI Readiness Assessment</h3>
+          <p>Free. 10 minutes. Find your finance maturity stage and get a recommended next step — no commitment required.</p>
+          <a href="../ai-readiness-assessment.html" class="btn btn-navy">Take the Assessment</a>
+        </div>
+        <div class="cta-opt">
+          <h3>Read the ERP Selection Framework</h3>
+          <p>A six-stage framework for evaluating and selecting an ERP platform — designed to be used before the first vendor conversation.</p>
+          <a href="../insights/erp-selection-framework/" class="btn btn-ghost">Read the Framework</a>
+        </div>
+        <div class="cta-opt">
+          <h3>Watch a Platform Demo</h3>
+          <p>On-demand demonstrations of Sage Intacct, Sage X3, and X3CloudDocs — built around real finance and operations challenges.</p>
+          <a href="../insights/demo-hub/" class="btn btn-ghost">Visit the Demo Hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'calendar-check':'<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/>',
+    'message-circle':'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+    'headphones':'<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../vendor/react.development.js"></script>
+<script src="../vendor/react-dom.development.js"></script>
+<script src="../vendor/babel.min.js"></script>
+<script type="text/babel" src="../Button.jsx"></script>
+<script type="text/babel" src="../NavBar.jsx"></script>
+<script type="text/babel" src="../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../" />);
+</script>
+
+</body>
+</html>
