@@ -131,7 +131,6 @@ const NAV_ITEMS = {
       ]},
       { t: "Credentials", l: [
         { name: "Sage Platinum Club 2025",         sub: "Highest partner tier",              href: "about/sage-platinum-club-2025/" },
-        { name: "Excellence Partner of the Year",  sub: null },
         { name: "Customer Transformation Stories", sub: "Measurable outcomes",               href: "insights/customer-transformation-stories/" },
         { name: "Support Portal",                  sub: "Break-fix, service desk, managed",  href: "about/support-portal/" },
       ]},
