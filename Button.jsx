@@ -4,7 +4,7 @@
 const Button = ({ variant = "primary", size = "md", icon = null, children, onClick, type = "button", href, style = {} }) => {
   const base = {
     display: "inline-flex", alignItems: "center", gap: 10,
-    fontFamily: "var(--font-sans)", fontWeight: 500,
+    fontFamily: "var(--font-sans)", fontWeight: 500, lineHeight: 1.45,
     border: "1px solid transparent", borderRadius: 4,
     cursor: "pointer", whiteSpace: "nowrap", textDecoration: "none",
     transition: "background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out)",

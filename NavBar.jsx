@@ -49,7 +49,7 @@ const NAV_ITEMS = {
     label: "The Challenge",
     href: "the-challenge/",
     cols: [
-      { t: "Buying Triggers", l: [
+      { t: "Triggers", l: [
         { name: "Growth Bottleneck",  sub: "When your back office can't keep pace", href: "the-challenge/growth-bottleneck/" },
         { name: "AI Mandate",         sub: "Board has asked for a credible AI strategy", href: "the-challenge/ai-mandate/" },
         { name: "Scale Ambition",     sub: "Infrastructure for 2× or 3× growth", href: "the-challenge/scale-ambition/" },
@@ -133,6 +133,44 @@ const NAV_ITEMS = {
         { name: "Support Portal",                   sub: null },
       ]},
     ],
+  },
+};
+
+const PANEL_CTAS = {
+  challenge: {
+    tag: "Start here",
+    title: "Is your finance function ready for AI?",
+    body: "Free assessment. Maturity stage score and a recommended next step. No commitment.",
+    cta: "Take the assessment →",
+    href: null,
+  },
+  journey: {
+    tag: "Customer outcomes",
+    title: "See what finance transformation looks like in practice.",
+    body: "Real outcomes from real organisations — measurable results, not testimonial quotes.",
+    cta: "Read customer stories →",
+    href: "insights/customer-transformation-stories/",
+  },
+  solutions: {
+    tag: "Speak to an expert",
+    title: "Discuss your platform requirements with a Mysoft consultant.",
+    body: "Sector expertise. Platform depth. No obligation. Most conversations are 30 minutes.",
+    cta: "Speak with a consultant →",
+    href: "the-journey/finance-operations-review/",
+  },
+  insights: {
+    tag: "See it live",
+    title: "See the platform against your specific use cases.",
+    body: "Scenario-based, expert-led demonstrations. On demand or book a live session tailored to your context.",
+    cta: "Visit Demo Hub →",
+    href: "insights/demo-hub/",
+  },
+  about: {
+    tag: "Get in touch",
+    title: "Talk to us about your finance and operations challenge.",
+    body: "We respond within one business day. No obligation, no sales process.",
+    cta: "Contact us →",
+    href: "the-journey/finance-operations-review/",
   },
 };
 
@@ -257,33 +295,39 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
               </div>
             ))}
 
-            {/* Panel CTA card */}
-            <div style={{
-              background: "var(--navy)", borderRadius: 4, padding: 24,
-              display: "flex", flexDirection: "column", justifyContent: "space-between",
-              color: "#fff",
-            }}>
-              <div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--cyan)" }}>Start here</div>
-                <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 17, lineHeight: 1.25, marginTop: 10 }}>
-                  Is your finance function ready for AI?
+            {/* Panel CTA card — content varies per open tab */}
+            {(() => {
+              const c = PANEL_CTAS[open] || PANEL_CTAS.challenge;
+              const handleClick = () => {
+                closePanel();
+                if (c.href) { window.location.href = basePath + c.href; }
+                else { onAssess && onAssess(); }
+              };
+              return (
+                <div style={{
+                  background: "var(--navy)", borderRadius: 4, padding: 24,
+                  display: "flex", flexDirection: "column", justifyContent: "space-between",
+                  color: "#fff",
+                }}>
+                  <div>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--cyan)" }}>{c.tag}</div>
+                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 17, lineHeight: 1.25, marginTop: 10 }}>{c.title}</div>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.5, marginTop: 8 }}>{c.body}</div>
+                  </div>
+                  <button
+                    onClick={handleClick}
+                    style={{
+                      marginTop: 20, display: "inline-flex", alignItems: "center", gap: 8,
+                      background: "#fff", color: "var(--navy)", border: "none",
+                      borderRadius: 4, padding: "10px 16px",
+                      fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, cursor: "pointer",
+                    }}
+                  >
+                    {c.cta}
+                  </button>
                 </div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.5, marginTop: 8 }}>
-                  Free assessment. Maturity stage score and a recommended next step. No commitment.
-                </div>
-              </div>
-              <button
-                onClick={() => { onAssess && onAssess(); closePanel(); }}
-                style={{
-                  marginTop: 20, display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "var(--cyan)", color: "var(--navy)", border: "none",
-                  borderRadius: 4, padding: "10px 16px",
-                  fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, cursor: "pointer",
-                }}
-              >
-                Take the assessment →
-              </button>
-            </div>
+              );
+            })()}
           </div>
         </div>
       )}

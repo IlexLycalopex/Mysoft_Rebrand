@@ -189,7 +189,7 @@ const AIJourney = ({ onAssess }) => {
         </p>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "240px 1fr", gap: 0, border: "1px solid var(--border-1)", borderRadius: 20, overflow: "hidden" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "240px 1fr", gap: 0, border: "1px solid var(--border-1)", borderRadius: 4, overflow: "hidden" }}>
         {/* Stage tabs */}
         <div style={{ borderRight: "1px solid var(--border-1)", display: "flex", flexDirection: "column" }}>
           {STAGES.map(s => (
