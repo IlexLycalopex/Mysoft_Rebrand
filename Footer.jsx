@@ -121,9 +121,14 @@ const Footer = ({ onAssess, basePath = "./" }) => (
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.2, color: "#fff" }}>
             Ready to build the infrastructure your next chapter actually needs?
           </div>
-          <Button variant="accent" size="lg" icon="→" href={basePath + "ai-readiness-assessment.html"}>
-            Assess Your AI Readiness
-          </Button>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <Button variant="accent" size="lg" icon="→" href={basePath + "ai-readiness-assessment.html"}>
+              Assess Your AI Readiness
+            </Button>
+            <Button variant="ghostWhite" size="lg" href={basePath + "contact/"}>
+              Contact Us
+            </Button>
+          </div>
           <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "rgba(255,255,255,0.35)" }}>
             Free. No commitment. Results within one business day.
           </div>
