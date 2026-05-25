@@ -126,7 +126,7 @@ const Testimonials = () => {
             lineHeight: 1.1, color: "var(--navy)", margin: "14px 0 0",
           }}>Real businesses.<br />Measurable outcomes.</h2>
         </div>
-        <Button variant="ghost" size="md" icon="→" href="#">All transformation stories</Button>
+        <Button variant="ghost" size="md" icon="→" href="insights/customer-transformation-stories/">All transformation stories</Button>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>

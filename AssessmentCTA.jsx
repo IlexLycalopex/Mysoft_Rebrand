@@ -8,6 +8,7 @@ const INSIGHTS = [
     body: "Why AI success starts with finance process maturity — not technology. A structured guide for CFOs who have been asked for a credible AI strategy.",
     readTime: "12 min read",
     accent: "var(--cyan)",
+    href: "insights/ai-ready-finance-guide/",
   },
   {
     tag: "Strategic Insight",
@@ -15,6 +16,7 @@ const INSIGHTS = [
     body: "What agentic finance actually means in practice, what governance it requires, and why most organisations are not yet ready — but can be.",
     readTime: "8 min read",
     accent: "var(--yellow)",
+    href: "insights/strategic-insight/",
   },
   {
     tag: "Operational Transformation",
@@ -22,6 +24,7 @@ const INSIGHTS = [
     body: "The operational infrastructure, automation foundations, and AI capabilities that allow finance and operations to scale with the business rather than constrain it.",
     readTime: "10 min read",
     accent: "var(--cyan)",
+    href: "insights/operational-transformation/",
   },
 ];
 
@@ -182,13 +185,13 @@ const AssessmentCTA = ({ onAssess }) => {
               lineHeight: 1.1, color: "var(--navy)", margin: "12px 0 0",
             }}>Finance and operations in the AI era.</h2>
           </div>
-          <Button variant="ghost" size="md" icon="→" href="#">All insights</Button>
+          <Button variant="ghost" size="md" icon="→" href="insights/">All insights</Button>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {INSIGHTS.map((ins, i) => (
             <a
-              key={i} href="#"
+              key={i} href={ins.href || "#"}
               onMouseEnter={() => setHoveredCard(i)}
               onMouseLeave={() => setHoveredCard(null)}
               style={{

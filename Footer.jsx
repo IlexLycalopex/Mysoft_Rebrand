@@ -37,6 +37,7 @@ const FOOTER_COLS = [
   {
     t: "Solutions",
     l: [
+      { name: "Compare Platforms",          href: "solutions/" },
       { name: "Sage Intacct",              href: "solutions/sage-intacct/" },
       { name: "Sage X3",                   href: "solutions/sage-x3/" },
       { name: "X3CloudDocs",               href: "solutions/x3clouddocs/" },
@@ -69,6 +70,7 @@ const FOOTER_COLS = [
       { name: "Careers",                href: "about/careers/" },
       { name: "Sage Platinum 2025",     href: "about/sage-platinum-club-2025/" },
       { name: "Support Portal",         href: "about/support-portal/" },
+      { name: "Contact",                href: "contact/" },
     ],
   },
 ];

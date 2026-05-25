@@ -76,7 +76,7 @@ const NAV_ITEMS = {
         { name: "Stage 4 — Agentic Finance Operations",sub: "Finance at scale without headcount growth",  href: "the-journey/stage-4-agentic-finance-operations/" },
       ]},
       { t: "Frameworks & Tools", l: [
-        { name: "AI Readiness Assessment",     sub: "Free — find your maturity stage",  href: "the-journey/ai-readiness-assessment/" },
+        { name: "AI Readiness Assessment",     sub: "Free — find your maturity stage",  isAssess: true },
         { name: "Agentic Finance Governance",  sub: "Board-defensible AI governance",   href: "the-journey/agentic-finance-governance/" },
         { name: "Finance Operations Review",   sub: "Structured discovery process",     href: "the-journey/finance-operations-review/" },
         { name: "ISV Partner Ecosystem",       sub: "The integrated technology stack",  href: "the-journey/isv-partner-ecosystem/" },
@@ -85,8 +85,10 @@ const NAV_ITEMS = {
   },
   solutions: {
     label: "Solutions",
+    href: "solutions/",
     cols: [
       { t: "Platforms", l: [
+        { name: "Compare Platforms",  sub: "Intacct vs X3 — find your fit",           href: "solutions/" },
         { name: "Sage Intacct",       sub: "Finance-first cloud ERP",                href: "solutions/sage-intacct/" },
         { name: "Sage X3",            sub: "Operational ERP for complex businesses", href: "solutions/sage-x3/" },
         { name: "X3CloudDocs",        sub: "AI document automation — Mysoft IP",     href: "solutions/x3clouddocs/" },
@@ -171,7 +173,7 @@ const PANEL_CTAS = {
     title: "Talk to us about your finance and operations challenge.",
     body: "We respond within one business day. No obligation, no sales process.",
     cta: "Contact us →",
-    href: "the-journey/finance-operations-review/",
+    href: "contact/",
   },
 };
 
@@ -249,7 +251,7 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
 
         {/* CTAs */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href="#" style={{
+          <a href={basePath + "insights/demo-hub/"} style={{
             fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 13,
             color: "var(--fg-2)", textDecoration: "none", padding: "8px 10px",
             transition: "color 140ms",
