@@ -128,7 +128,7 @@ const TemplateFeatureCards = () => (
       {FEATURE_CARDS.map((f, i) => (
         <div key={i} style={{
           background: "#fff", border: "1px solid var(--border-1)",
-          borderRadius: 10, overflow: "hidden", boxShadow: "var(--shadow-sm)",
+          borderRadius: 4, overflow: "hidden", boxShadow: "var(--shadow-sm)",
         }}>
           <GradientBlock gradient={f.gradient} aspectRatio="5/3" style={{ borderRadius: 0 }} />
           <div style={{ padding: "24px 28px 28px" }}>
@@ -339,7 +339,7 @@ const TemplateTestimonials = () => (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
       {TESTIMONIALS.map((t, i) => (
         <div key={i} style={{
-          background: "#fff", borderRadius: 16,
+          background: "#fff", borderRadius: 4,
           border: "1px solid var(--border-1)", padding: 32,
           boxShadow: "var(--shadow-sm)", display: "flex", flexDirection: "column",
         }}>
