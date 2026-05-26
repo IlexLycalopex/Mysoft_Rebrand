@@ -33,7 +33,6 @@ jobs:
           rsync -a \
             --exclude='.git/' \
             --exclude='.github/' \
-            --exclude='*.jsx' \
             --exclude='_doc_*.txt' \
             --exclude='README.md' \
             --exclude='template.html' \
