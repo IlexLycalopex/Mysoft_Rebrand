@@ -119,6 +119,12 @@
                      color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
                      padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
   .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
+  .product-placeholder { background: linear-gradient(135deg, var(--navy) 0%, #0a2a35 100%);
+                          border-radius: var(--radius-lg); aspect-ratio: 16/9;
+                          display: flex; align-items: center; justify-content: center;
+                          color: rgba(255,255,255,0.2); font-family: var(--font-sans);
+                          font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+                          border: 1px solid rgba(255,255,255,0.06); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -195,6 +201,25 @@
           <h4>AI-Powered Data Import</h4>
           <p>Complex dataset import without spreadsheet manipulation. Intelligent field mapping, validation, and exception handling.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product visual -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+        <div>
+          <span class="sec-eyebrow">AI-Augmented Finance</span>
+          <h2 class="sec-h2">Finance intelligence that works at the speed of the business</h2>
+          <p class="sec-lede">Stage 3 delivers AI-powered forecasting, anomaly detection, and scenario modelling built on the clean data foundation established in Stages 1 and 2. Finance insight without the analytical lag.</p>
+          <p style="font-size:16px;line-height:1.65;color:var(--fg-2);margin:16px 0 0">Predictive cash flow. Automated variance analysis. Exception management that surfaces the right issues to the right people — without manual reporting cycles.</p>
+          <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+            <a href="../../ai-readiness-assessment.html" class="btn btn-navy">Assess Stage 3 Readiness</a>
+            <a href="../../the-journey/finance-operations-review/" class="btn btn-ghost">Talk to Our Team</a>
+          </div>
+        </div>
+        <div class="product-placeholder">AI Dashboard — Available Soon</div>
       </div>
     </div>
   </section>

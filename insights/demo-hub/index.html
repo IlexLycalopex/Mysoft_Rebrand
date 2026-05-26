@@ -90,6 +90,12 @@
                      color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
                      padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
   .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
+  .product-placeholder { background: linear-gradient(135deg, var(--navy) 0%, #0a2a35 100%);
+                          border-radius: var(--radius-lg); aspect-ratio: 16/9;
+                          display: flex; align-items: center; justify-content: center;
+                          color: rgba(255,255,255,0.2); font-family: var(--font-sans);
+                          font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+                          border: 1px solid rgba(255,255,255,0.06); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -182,6 +188,21 @@
         <span>20 Years&#39; Experience</span>
         <span>UK + North America</span>
         <span>98% SLA Met</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo visual placeholder -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Featured Demo</span>
+        <h2 class="sec-h2">See Sage Intacct and X3 in action</h2>
+        <p class="sec-lede">Walkthrough demos of Sage Intacct multi-entity consolidation, X3CloudDocs AP automation, and the Agentic Finance Governance Framework in a live environment. Recorded sessions available on request.</p>
+      </div>
+      <div class="product-placeholder" style="max-width:900px;margin:40px auto 0">Demo Recording — Available on Request</div>
+      <div style="text-align:center;margin-top:28px">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-navy btn-lg">Request a Live Demo</a>
       </div>
     </div>
   </section>
