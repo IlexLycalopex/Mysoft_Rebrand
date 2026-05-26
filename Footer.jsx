@@ -80,8 +80,7 @@ const Footer = ({ onAssess, basePath = "./" }) => (
     <div style={{ maxWidth: "var(--container)", margin: "0 auto" }}>
 
       {/* Top — wordmark + tagline + CTA */}
-      <div style={{
-        display: "grid", gridTemplateColumns: "1fr 1fr",
+      <div className="footer-top-grid" style={{
         gap: 48, alignItems: "end",
         paddingBottom: 56, marginBottom: 56,
         borderBottom: "1px solid rgba(255,255,255,0.1)",
@@ -131,7 +130,7 @@ const Footer = ({ onAssess, basePath = "./" }) => (
       </div>
 
       {/* Nav cols */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 28 }}>
+      <div className="footer-nav-grid" style={{ gap: 28 }}>
         {FOOTER_COLS.map(col => (
           <div key={col.t}>
             <div style={{

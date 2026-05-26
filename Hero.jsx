@@ -138,15 +138,21 @@ const HeroJourneyPanel = () => {
 
 const Hero = ({ onAssess }) => {
   const [idx, setIdx] = React.useState(0);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
   React.useEffect(() => {
     const t = setInterval(() => setIdx(x => (x + 1) % HERO_OUTCOMES.length), 2800);
     return () => clearInterval(t);
   }, []);
+  React.useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
 
   return (
-    <section style={{ background: "var(--bg)", padding: "148px 32px 96px" }}>
+    <section style={{ background: "var(--bg)", padding: isMobile ? "calc(var(--nav-h) + 40px) 20px 56px" : "148px 32px 96px" }}>
       <div style={{ maxWidth: "var(--container)", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 72, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr", gap: isMobile ? 40 : 72, alignItems: "center" }}>
 
           {/* Left */}
           <div>
@@ -209,8 +215,8 @@ const Hero = ({ onAssess }) => {
             </div>
           </div>
 
-          {/* Right */}
-          <HeroJourneyPanel />
+          {/* Right — hidden on mobile */}
+          {!isMobile && <HeroJourneyPanel />}
         </div>
       </div>
     </section>

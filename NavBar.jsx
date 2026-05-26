@@ -176,9 +176,68 @@ const PANEL_CTAS = {
   },
 };
 
+// Mobile accordion section
+const MobileNavSection = ({ itemKey, item, basePath, onAssess, onClose }) => {
+  const [expanded, setExpanded] = React.useState(false);
+  return (
+    <div style={{ borderBottom: "1px solid var(--border-1)" }}>
+      <button
+        onClick={() => setExpanded(e => !e)}
+        style={{
+          width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
+          background: "transparent", border: 0, padding: "14px 20px",
+          fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 15,
+          color: "var(--navy)", cursor: "pointer", textAlign: "left",
+        }}
+      >
+        {item.label}
+        <svg width="10" height="10" viewBox="0 0 10 10" style={{ flexShrink: 0, transform: expanded ? "rotate(180deg)" : "none", transition: "transform 200ms" }}>
+          <path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      {expanded && (
+        <div style={{ padding: "4px 20px 16px" }}>
+          {item.cols.map((col, ci) => (
+            <div key={ci} style={{ marginBottom: 16 }}>
+              <div style={{
+                fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 500,
+                letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--cyan)",
+                marginBottom: 10,
+              }}>{col.t}</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {col.l.map((it, li) => {
+                  const href = it.href ? basePath + it.href : null;
+                  return (
+                    <a
+                      key={li}
+                      href={href || undefined}
+                      onClick={e => {
+                        if (!href) { e.preventDefault(); if (it.isAssess) { onClose(); onAssess && onAssess(); } }
+                        else onClose();
+                      }}
+                      style={{
+                        textDecoration: "none", display: "block",
+                        fontFamily: "var(--font-sans)", fontSize: 14,
+                        color: href || it.isAssess ? "var(--navy)" : "var(--fg-3)",
+                        fontWeight: 500,
+                      }}
+                    >{it.name}</a>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const NavBar = ({ onAssess, basePath = "./" }) => {
   const [open, setOpen] = React.useState(null);
   const [scrolled, setScrolled] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
   const closeTimer = React.useRef(null);
 
   React.useEffect(() => {
@@ -186,6 +245,18 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
+
+  React.useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  React.useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   const scheduleClose = () => {
     closeTimer.current = setTimeout(() => setOpen(null), 180);
@@ -210,62 +281,93 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
     >
       <div style={{
         maxWidth: "var(--container)", margin: "0 auto",
-        height: "var(--nav-h)", padding: "0 32px",
+        height: "var(--nav-h)", padding: "0 20px",
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
         {/* Logo — always returns to homepage */}
         <a href={basePath} style={{ textDecoration: "none" }} onClick={closePanel}>
-          <Wordmark size={26} />
+          <Wordmark size={isMobile ? 22 : 26} />
         </a>
 
-        {/* Centre nav */}
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }} onMouseLeave={scheduleClose}>
-          {Object.entries(NAV_ITEMS).map(([key, item]) => (
-            <button
-              key={key}
-              onMouseEnter={() => { cancelClose(); setOpen(key); }}
-              onClick={() => {
-                if (item.href) {
-                  window.location.href = basePath + item.href;
-                } else {
-                  setOpen(open === key ? null : key);
-                }
-              }}
-              style={{
-                background: "transparent", border: 0, cursor: "pointer",
-                fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 13.5,
-                color: open === key ? "var(--cyan)" : "var(--navy)",
-                padding: "8px 10px",
-                display: "inline-flex", alignItems: "center", gap: 4,
+        {isMobile ? (
+          /* Hamburger button */
+          <button
+            onClick={() => setMobileOpen(o => !o)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            style={{
+              background: "transparent", border: 0, cursor: "pointer",
+              padding: 8, display: "flex", flexDirection: "column",
+              justifyContent: "center", alignItems: "center", gap: 5,
+            }}
+          >
+            <span style={{
+              display: "block", width: 22, height: 2, background: "var(--navy)",
+              borderRadius: 2, transition: "transform 200ms, opacity 200ms",
+              transform: mobileOpen ? "translateY(7px) rotate(45deg)" : "none",
+            }} />
+            <span style={{
+              display: "block", width: 22, height: 2, background: "var(--navy)",
+              borderRadius: 2, transition: "opacity 200ms",
+              opacity: mobileOpen ? 0 : 1,
+            }} />
+            <span style={{
+              display: "block", width: 22, height: 2, background: "var(--navy)",
+              borderRadius: 2, transition: "transform 200ms, opacity 200ms",
+              transform: mobileOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+            }} />
+          </button>
+        ) : (
+          <>
+            {/* Centre nav — desktop */}
+            <div style={{ display: "flex", alignItems: "center", gap: 4 }} onMouseLeave={scheduleClose}>
+              {Object.entries(NAV_ITEMS).map(([key, item]) => (
+                <button
+                  key={key}
+                  onMouseEnter={() => { cancelClose(); setOpen(key); }}
+                  onClick={() => {
+                    if (item.href) {
+                      window.location.href = basePath + item.href;
+                    } else {
+                      setOpen(open === key ? null : key);
+                    }
+                  }}
+                  style={{
+                    background: "transparent", border: 0, cursor: "pointer",
+                    fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 13.5,
+                    color: open === key ? "var(--cyan)" : "var(--navy)",
+                    padding: "8px 10px",
+                    display: "inline-flex", alignItems: "center", gap: 4,
+                    transition: "color 140ms",
+                  }}
+                >
+                  {item.label}
+                  <svg width="9" height="9" viewBox="0 0 9 9" style={{ transform: open === key ? "rotate(180deg)" : "none", transition: "transform 140ms" }}>
+                    <path d="M1.5 3 4.5 6 7.5 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              ))}
+            </div>
+
+            {/* CTAs — desktop */}
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <a href={basePath + "insights/demo-hub/"} style={{
+                fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 13,
+                color: "var(--fg-2)", textDecoration: "none", padding: "8px 10px",
                 transition: "color 140ms",
               }}
-            >
-              {item.label}
-              <svg width="9" height="9" viewBox="0 0 9 9" style={{ transform: open === key ? "rotate(180deg)" : "none", transition: "transform 140ms" }}>
-                <path d="M1.5 3 4.5 6 7.5 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          ))}
-        </div>
-
-        {/* CTAs */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href={basePath + "insights/demo-hub/"} style={{
-            fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 13,
-            color: "var(--fg-2)", textDecoration: "none", padding: "8px 10px",
-            transition: "color 140ms",
-          }}
-            onMouseEnter={e => e.target.style.color = "var(--navy)"}
-            onMouseLeave={e => e.target.style.color = "var(--fg-2)"}
-          >Book a demo</a>
-          <Button variant="primary" size="sm" icon="→" onClick={onAssess}>
-            Assess Your AI Readiness
-          </Button>
-        </div>
+                onMouseEnter={e => e.target.style.color = "var(--navy)"}
+                onMouseLeave={e => e.target.style.color = "var(--fg-2)"}
+              >Book a demo</a>
+              <Button variant="primary" size="sm" icon="→" onClick={onAssess}>
+                Assess Your AI Readiness
+              </Button>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* Mega-panel */}
-      {open && (
+      {/* Desktop mega-panel */}
+      {!isMobile && open && (
         <div
           onMouseEnter={cancelClose}
           onMouseLeave={scheduleClose}
@@ -330,6 +432,53 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
                 </div>
               );
             })()}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile slide-down menu */}
+      {isMobile && mobileOpen && (
+        <div style={{
+          position: "fixed", top: "var(--nav-h)", left: 0, right: 0, bottom: 0,
+          background: "#fff", overflowY: "auto",
+          borderTop: "1px solid var(--border-1)",
+          display: "flex", flexDirection: "column",
+        }}>
+          <div style={{ flex: 1 }}>
+            {Object.entries(NAV_ITEMS).map(([key, item]) => (
+              <MobileNavSection
+                key={key}
+                itemKey={key}
+                item={item}
+                basePath={basePath}
+                onAssess={onAssess}
+                onClose={() => setMobileOpen(false)}
+              />
+            ))}
+          </div>
+
+          {/* Mobile CTAs */}
+          <div style={{ padding: "20px 20px 32px", display: "flex", flexDirection: "column", gap: 10 }}>
+            <a
+              href={basePath + "insights/demo-hub/"}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: "flex", justifyContent: "center", alignItems: "center",
+                padding: "12px 20px", borderRadius: 4,
+                border: "1px solid var(--border-2)",
+                fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: 14,
+                color: "var(--navy)", textDecoration: "none",
+              }}
+            >Book a demo</a>
+            <button
+              onClick={() => { setMobileOpen(false); onAssess && onAssess(); }}
+              style={{
+                display: "flex", justifyContent: "center", alignItems: "center", gap: 6,
+                padding: "12px 20px", borderRadius: 4,
+                background: "var(--navy)", border: 0, cursor: "pointer",
+                fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "#fff",
+              }}
+            >Assess Your AI Readiness →</button>
           </div>
         </div>
       )}

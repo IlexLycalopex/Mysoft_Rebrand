@@ -1,0 +1,153 @@
+/* ============================================================
+   Mysoft — Responsive Overrides
+   Breakpoints: tablet 768–1023px | mobile < 768px
+   !important overrides per-page <style> blocks which otherwise
+   take cascade precedence over this external stylesheet.
+   ============================================================ */
+
+/* ============================================================
+   SHARED CLASS DEFINITIONS
+   Footer and product-grid classes are defined here so responsive
+   overrides can target them cleanly.
+   ============================================================ */
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Product showcase 2-col layouts added sitewide */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* ============================================================
+   TABLET: 768–1023px
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container { padding-left: 24px !important; padding-right: 24px !important; }
+  .narrow    { padding-left: 24px !important; padding-right: 24px !important; }
+
+  .sec        { padding-top: 80px !important; padding-bottom: 80px !important; }
+  .hero-page  { padding: 80px 24px 64px !important; }
+  .cta-band   { padding: 80px 24px !important; }
+  .navy-statement  { padding: 64px 24px !important; }
+  .assess-inline   { padding: 80px 24px !important; }
+
+  .grid-3      { grid-template-columns: repeat(2, 1fr) !important; }
+  .proof-strip { grid-template-columns: repeat(2, 1fr) !important; }
+  .footer-nav-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+  .expertise-grid    { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .marketplace-grid  { grid-template-columns: 1fr !important; gap: 40px !important; }
+}
+
+/* ============================================================
+   MOBILE: < 768px
+   ============================================================ */
+@media (max-width: 767px) {
+  /* --- Layout --- */
+  .container { padding-left: 20px !important; padding-right: 20px !important; }
+  .narrow    { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* --- Section spacing --- */
+  .sec        { padding: 64px 20px !important; }
+  .hero-page  { padding: 72px 20px 56px !important; }
+  .cta-band   { padding: 64px 20px !important; }
+  .navy-statement  { padding: 56px 20px !important; }
+  .assess-inline   { padding: 64px 20px !important; }
+
+  /* --- Hero content --- */
+  .hero-lede  { font-size: 1rem !important; max-width: 100% !important; }
+  .hero-stats {
+    flex-wrap: wrap !important;
+    row-gap: 10px !important;
+    margin-top: 28px !important;
+  }
+  .hero-stats span {
+    font-size: 10.5px !important;
+    padding-left: 14px !important;
+    margin-left: 14px !important;
+  }
+
+  /* --- Grids → single column --- */
+  .grid-2        { grid-template-columns: 1fr !important; }
+  .grid-3        { grid-template-columns: 1fr !important; }
+  .proof-strip   { grid-template-columns: repeat(2, 1fr) !important; }
+  .partner-grid  { grid-template-columns: 1fr !important; }
+  .fit-grid      { grid-template-columns: 1fr !important; }
+  .use-panel-grid { grid-template-columns: 1fr !important; }
+  .expertise-grid    { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .marketplace-grid  { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .tab-inner         { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .two-col           { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .card-grid-2       { grid-template-columns: 1fr !important; }
+  .plat-thumbs       { grid-template-columns: 1fr !important; }
+
+  /* Product showcase grids */
+  .product-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Assessment */
+  .assess-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .assess-card { padding: 24px !important; }
+
+  /* Statement quote */
+  .statement-quote { font-size: clamp(1.2rem, 5vw, 1.7rem) !important; }
+
+  /* --- Footer --- */
+  .footer-top-grid { grid-template-columns: 1fr !important; }
+  .footer-nav-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* --- Cards --- */
+  .card  { padding: 24px !important; }
+
+  /* --- Buttons --- */
+  .btn-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .btn-group .btn,
+  .btn-group a.btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- Tab navs — horizontal scroll, hidden scrollbar --- */
+  .layer-tabs-nav,
+  .use-tabs-nav {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .layer-tabs-nav::-webkit-scrollbar,
+  .use-tabs-nav::-webkit-scrollbar { display: none; }
+
+  .layer-tab-btn,
+  .use-tab-btn { padding: 12px 14px !important; font-size: 12px !important; }
+
+  /* --- Comparison table — horizontal scroll container --- */
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-scroll .plat-header,
+  .table-scroll .comp-body { min-width: 680px; }
+
+  /* --- Page-specific layouts --- */
+  .step      { gap: 16px !important; }
+  .steps     { gap: 0 !important; }
+  .proof-item { padding: 24px 16px !important; }
+
+  /* Contact page partner strip */
+  .partner-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .cta-options   { grid-template-columns: 1fr !important; }
+
+  /* Route grid on contact */
+  .route-grid { grid-template-columns: 1fr !important; }
+}

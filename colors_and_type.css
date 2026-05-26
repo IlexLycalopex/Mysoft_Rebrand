@@ -343,3 +343,7 @@ hr {
   outline-offset: 2px;
   border-radius: var(--radius-xs);
 }
+
+@media (max-width: 767px) {
+  :root { --nav-h: 60px; }
+}
