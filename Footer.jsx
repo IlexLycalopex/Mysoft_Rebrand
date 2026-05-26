@@ -1,76 +1,99 @@
-// Footer — updated navigation structure aligned to new buyer-trigger architecture
+// Footer — basePath prop converts root-relative hrefs to the depth of the current page.
+// Items without href render as non-linked text (page not yet built).
 
 const FOOTER_COLS = [
   {
     t: "The Challenge",
     l: [
-      "Growth Bottleneck",
-      "AI Mandate",
-      "Scale Ambition",
-      "Compliance Event",
-      "Who We Serve",
+      { name: "Growth Bottleneck",  href: "the-challenge/growth-bottleneck/" },
+      { name: "AI Mandate",         href: "the-challenge/ai-mandate/" },
+      { name: "Scale Ambition",     href: "the-challenge/scale-ambition/" },
+      { name: "Compliance Event",   href: "the-challenge/compliance-event/" },
+    ],
+  },
+  {
+    t: "Who We Serve",
+    l: [
+      { name: "CFO & Finance Director",    href: "who-we-serve/cfo-finance-director/" },
+      { name: "COO & Operations Director", href: "who-we-serve/coo-operations-director/" },
+      { name: "CEO & Board",               href: "who-we-serve/ceo-board/" },
+      { name: "CTO & IT Director",         href: "who-we-serve/cto-it-director/" },
     ],
   },
   {
     t: "The Journey",
     l: [
-      "AI Transformation Journey",
-      "AI Readiness Assessment",
-      "Agentic Finance Governance",
-      "Finance Operations Review",
-      "ISV Partner Ecosystem",
+      { name: "Overview",                            href: "the-journey/" },
+      { name: "Stage 1 — Operational Foundation",    href: "the-journey/stage-1-operational-foundation/" },
+      { name: "Stage 2 — Intelligent Automation",    href: "the-journey/stage-2-intelligent-automation/" },
+      { name: "Stage 3 — AI-Augmented Finance",      href: "the-journey/stage-3-ai-augmented-finance/" },
+      { name: "Stage 4 — Agentic Finance Operations",href: "the-journey/stage-4-agentic-finance-operations/" },
+      { name: "AI Readiness Assessment",             href: "ai-readiness-assessment.html" },
+      { name: "Agentic Finance Governance",          href: "the-journey/agentic-finance-governance/" },
+      { name: "Finance Operations Review",           href: "the-journey/finance-operations-review/" },
+      { name: "ISV Partner Ecosystem",               href: "the-journey/isv-partner-ecosystem/" },
     ],
   },
   {
     t: "Solutions",
     l: [
-      "Sage Intacct",
-      "Sage X3",
-      "X3CloudDocs",
-      "By Sector",
-      "Partner Ecosystem",
+      { name: "Compare Platforms",          href: "solutions/" },
+      { name: "Sage Intacct",              href: "solutions/sage-intacct/" },
+      { name: "Sage X3",                   href: "solutions/sage-x3/" },
+      { name: "X3CloudDocs",               href: "solutions/x3clouddocs/" },
+      { name: "Manufacturing & Distribution", href: "solutions/manufacturing-distribution/" },
+      { name: "Food & Beverage",              href: "solutions/food-beverage/" },
+      { name: "Professional Services & SaaS", href: "solutions/professional-services-saas/" },
+      { name: "Not-for-Profit & Healthcare",  href: "solutions/not-for-profit-healthcare/" },
+      { name: "Financial Services",           href: "solutions/financial-services/" },
+      { name: "ISV Partner Ecosystem",        href: "the-journey/isv-partner-ecosystem/" },
     ],
   },
   {
     t: "Insights",
     l: [
-      "CFO Strategy",
-      "Frameworks & Guides",
-      "Events & Webinars",
-      "Customer Transformation Stories",
-      "AI-Ready Finance Guide",
+      { name: "CFO Strategy",              href: "insights/cfo-strategy/" },
+      { name: "Operational Transformation", href: "insights/operational-transformation/" },
+      { name: "Strategic Insight",          href: "insights/strategic-insight/" },
+      { name: "Events & Webinars",          href: "insights/events-webinars/" },
+      { name: "AI-Ready Finance Guide",     href: "insights/ai-ready-finance-guide/" },
+      { name: "ERP Selection Framework",    href: "insights/erp-selection-framework/" },
+      { name: "Customer Stories",           href: "insights/customer-transformation-stories/" },
+      { name: "Demo Hub",                   href: "insights/demo-hub/" },
     ],
   },
   {
     t: "About",
     l: [
-      "Our Story",
-      "Meet the Team",
-      "Careers",
-      "Sage Platinum Club 2025",
-      "Support Portal",
+      { name: "Our Story",              href: "about/our-story/" },
+      { name: "Meet the Team",          href: "about/meet-the-team/" },
+      { name: "Careers",                href: "about/careers/" },
+      { name: "Sage Platinum 2025",     href: "about/sage-platinum-club-2025/" },
+      { name: "Support Portal",         href: "about/support-portal/" },
+      { name: "Contact",                href: "contact/" },
     ],
   },
 ];
 
-const Footer = ({ onAssess }) => (
+const Footer = ({ onAssess, basePath = "./" }) => (
   <footer style={{ background: "var(--navy)", color: "#fff", padding: "80px 32px 32px" }}>
     <div style={{ maxWidth: "var(--container)", margin: "0 auto" }}>
 
       {/* Top — wordmark + tagline + CTA */}
-      <div style={{
-        display: "grid", gridTemplateColumns: "1fr 1fr",
+      <div className="footer-top-grid" style={{
         gap: 48, alignItems: "end",
         paddingBottom: 56, marginBottom: 56,
         borderBottom: "1px solid rgba(255,255,255,0.1)",
       }}>
         <div>
-          <Wordmark tone="white" size={32} />
+          <a href={basePath} style={{ textDecoration: "none" }}>
+            <Wordmark tone="white" size={32} />
+          </a>
           <p style={{
             marginTop: 20, fontFamily: "var(--font-sans)", fontSize: 15,
             color: "rgba(255,255,255,0.6)", lineHeight: 1.6, maxWidth: 400,
           }}>
-            AI-enabled Sage ERP and finance transformation partner. Implementing <a href="#" style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage X3</a> and <a href="#" style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage Intacct</a>, extending with proprietary <a href="#" style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>X3CloudDocs</a> automation IP, and leveraging AI to help ambitious organisations scale their finance and operations functions with confidence.
+            AI-enabled Sage ERP and finance transformation partner. Implementing <a href={basePath + "solutions/sage-x3/"} style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage X3</a> and <a href={basePath + "solutions/sage-intacct/"} style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage Intacct</a>, extending with proprietary <a href={basePath + "solutions/x3clouddocs/"} style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>X3CloudDocs</a> automation IP, and leveraging AI to help ambitious organisations scale their finance and operations functions with confidence.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 10 }}>
             {[
@@ -97,9 +120,14 @@ const Footer = ({ onAssess }) => (
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.2, color: "#fff" }}>
             Ready to build the infrastructure your next chapter actually needs?
           </div>
-          <Button variant="accent" size="lg" icon="→" onClick={onAssess}>
-            Assess Your AI Readiness
-          </Button>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <Button variant="accent" size="lg" icon="→" href={basePath + "ai-readiness-assessment.html"}>
+              Assess Your AI Readiness
+            </Button>
+            <Button variant="ghostWhite" size="lg" href={basePath + "contact/"}>
+              Contact Us
+            </Button>
+          </div>
           <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "rgba(255,255,255,0.35)" }}>
             Free. No commitment. Results within one business day.
           </div>
@@ -107,7 +135,7 @@ const Footer = ({ onAssess }) => (
       </div>
 
       {/* Nav cols */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 32 }}>
+      <div className="footer-nav-grid" style={{ gap: 28 }}>
         {FOOTER_COLS.map(col => (
           <div key={col.t}>
             <div style={{
@@ -116,16 +144,24 @@ const Footer = ({ onAssess }) => (
               color: "var(--cyan)", marginBottom: 16,
             }}>{col.t}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-              {col.l.map(it => (
-                <a key={it} href="#" style={{
-                  fontFamily: "var(--font-sans)", fontSize: 13,
-                  color: "rgba(255,255,255,0.6)", textDecoration: "none",
-                  transition: "color 140ms",
-                }}
-                  onMouseEnter={e => e.target.style.color = "#fff"}
-                  onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.6)"}
-                >{it}</a>
-              ))}
+              {col.l.map(it => {
+                const href = it.href ? basePath + it.href : null;
+                return (
+                  <a
+                    key={it.name}
+                    href={href || undefined}
+                    onClick={e => { if (!href) e.preventDefault(); }}
+                    style={{
+                      fontFamily: "var(--font-sans)", fontSize: 13,
+                      color: href ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.3)",
+                      textDecoration: "none", cursor: href ? "pointer" : "default",
+                      transition: "color 140ms",
+                    }}
+                    onMouseEnter={e => { if (href) e.target.style.color = "#fff"; }}
+                    onMouseLeave={e => { e.target.style.color = href ? "rgba(255,255,255,0.6)" : "rgba(255,255,255,0.3)"; }}
+                  >{it.name}</a>
+                );
+              })}
             </div>
           </div>
         ))}

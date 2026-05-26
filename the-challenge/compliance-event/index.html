@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ERP Implementation Driven by Audit or Acquisition — Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A compliance event, external audit, or acquisition creates a hard deadline for ERP modernisation. Mysoft manages high-pressure, compliance-driven implementations with a structured, de-risked approach.">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--fg-1); background: var(--bg);
+         padding-top: var(--nav-h); margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+  .narrow    { max-width: var(--container-narrow); margin: 0 auto; padding: 0 32px; }
+
+  .hero-page { background: var(--navy); padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                  display: block; margin-bottom: 14px; }
+  .hero-h1 { font-family: var(--font-display); font-weight: 600;
+             font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: 1.05;
+             letter-spacing: -0.025em; color: #fff; margin: 0 0 20px; max-width: 820px; }
+  .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
+               color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
+  .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .sec { padding: 100px 32px; }
+  .sec-alt { background: var(--white); }
+  .sec-hdr { margin-bottom: 40px; }
+  .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
+                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
+                 display: block; margin-bottom: 12px; }
+  .sec-h2 { font-family: var(--font-display); font-weight: 600;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+            letter-spacing: -0.025em; color: var(--navy); margin: 0; }
+  .sec-lede { font-size: 17px; line-height: 1.65; color: var(--fg-2); max-width: 640px; margin: 14px 0 0; }
+  .sec-body  { font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 0 0 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  .card { background: var(--white); border: 1px solid var(--line);
+          border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
+  .sec-alt .card { background: var(--bg-soft); }
+  .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
+               background: var(--bg); color: var(--navy);
+               display: flex; align-items: center; justify-content: center;
+               margin-bottom: 18px; }
+  .card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
+             color: var(--navy); margin: 0 0 10px; line-height: 1.3; }
+  .card p { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+  .card-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 600;
+               font-size: 13px; color: var(--cyan); text-decoration: none; margin-top: 20px;
+               transition: gap 140ms; }
+  .card-link:hover { gap: 10px; }
+
+  /* Steps */
+  .steps { margin-top: 40px; }
+  .step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+  .step-num { width: 36px; height: 36px; min-width: 36px; border-radius: 50%;
+              background: var(--cyan); color: var(--navy); font-family: var(--font-display);
+              font-weight: 600; font-size: 15px; display: flex; align-items: center;
+              justify-content: center; margin-top: 3px; }
+  .step-body h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
+                  color: var(--navy); margin: 0 0 8px; }
+  .step-body p  { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+  .cta-band { background: var(--navy); padding: 96px 32px; text-align: center; }
+  .cta-band .sec-eyebrow { color: var(--cyan); }
+  .cta-band .sec-h2 { color: #fff; margin: 14px auto 18px; }
+  .cta-band > .narrow > p { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.65);
+                              max-width: 520px; margin: 0 auto 36px; }
+  .cta-band .btn-group { justify-content: center; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans);
+         font-weight: 500; font-size: 14px; border-radius: var(--radius-md);
+         border: 1px solid transparent; cursor: pointer; text-decoration: none;
+         white-space: nowrap; transition: background 140ms, border-color 140ms, transform 140ms;
+         padding: 12px 22px; line-height: 1; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-lg { padding: 14px 26px; font-size: 15px; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-400); }
+  .btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-gw:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.08); }
+  .btn-primary:hover { background: var(--navy-400) !important; }
+  .hero-stats { display: flex; align-items: center; margin-top: 40px; flex-wrap: wrap; row-gap: 10px; }
+  .hero-stats span { font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+                     color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
+                     padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
+  .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
+  .navy-statement { background: var(--navy); padding: 80px 32px; }
+  .statement-quote { font-family: var(--font-display); font-weight: 600;
+                     font-size: clamp(1.5rem, 2.5vw, 2.2rem); line-height: 1.25;
+                     letter-spacing: -0.02em; color: #fff; margin: 0 auto;
+                     max-width: 860px; text-align: center; }
+  .statement-quote .cyan { color: var(--cyan); }
+  .assess-inline { background: linear-gradient(160deg, #001a22 0%, #002d3d 100%); padding: 100px 32px; }
+  .assess-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+                 max-width: var(--container); margin: 0 auto; }
+  .assess-checklist { list-style: none; padding: 0; margin: 24px 0 0;
+                      display: flex; flex-direction: column; gap: 12px; }
+  .assess-checklist li { display: flex; align-items: flex-start; gap: 10px;
+                          font-family: var(--font-sans); font-size: 15px; color: rgba(255,255,255,0.65); }
+  .assess-checklist li::before { content: "✓"; color: var(--cyan); font-weight: 700;
+                                  flex-shrink: 0; margin-top: 1px; }
+  .assess-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+                 border-radius: var(--radius-lg); padding: 36px; }
+  .assess-q { font-family: var(--font-display); font-weight: 600; font-size: 17px;
+              color: #fff; margin: 0 0 20px; line-height: 1.3; }
+  .assess-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .assess-opt { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+                border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.12);
+                font-family: var(--font-sans); font-size: 14px; color: rgba(255,255,255,0.65);
+                text-decoration: none; transition: border-color 140ms, background 140ms, color 140ms; }
+  .assess-opt:hover { border-color: var(--cyan); background: rgba(0,182,237,0.07); color: #fff; }
+  .assess-opt::before { content: ""; width: 16px; height: 16px; border-radius: 999px;
+                         border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; }
+  .assess-note { font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.3);
+                 margin: 16px 0 0; text-align: center; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+</style>
+  <link rel="stylesheet" href="../../responsive.css">
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<main>
+
+  <section class="hero-page">
+    <div class="container">
+      <span class="hero-eyebrow">The Challenge</span>
+      <h1 class="hero-h1">ERP implementation driven by<br><span style="color:var(--cyan)">audit or acquisition</span></h1>
+      <p class="hero-lede">A compliance event, external audit, or acquisition creates a hard deadline for ERP modernisation. The window is time-limited and the cost of delay is measurable. The question is not whether to act, but how to de-risk the transition.</p>
+      <div class="btn-group">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-navy btn-lg">Talk to a Specialist</a>
+        <a href="../../insights/erp-selection-framework/" class="btn btn-gw btn-lg">ERP Selection Framework</a>
+      </div>
+      <div class="hero-stats">
+        <span>Sage Platinum Club 2025</span>
+        <span>20 Years&#39; Experience</span>
+        <span>UK + North America</span>
+        <span>98% SLA Met</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trigger Events -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Trigger Events</span>
+        <h2 class="sec-h2">The compliance events that make inaction untenable</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon" data-icon="file-search"></div>
+          <h3>External audit findings</h3>
+          <p>Auditors identifying control weaknesses, manual override risks, or inadequate audit trail in a legacy system create board-level pressure to act. The audit report is often the trigger that finally unlocks the ERP budget.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="git-merge"></div>
+          <h3>Acquisition integration</h3>
+          <p>Acquiring an entity with a different finance system creates an immediate integration decision. Parallel running is expensive and risky. Consolidating onto a single platform is almost always the right answer — the question is which platform and how quickly.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="trending-up"></div>
+          <h3>PE or institutional investment</h3>
+          <p>Private equity and institutional investors typically require a 90-day post-investment review that includes finance system assessment. Organisations with inadequate ERP find themselves in a value-creation conversation within months of close.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="landmark"></div>
+          <h3>Regulatory change</h3>
+          <p>Making Tax Digital, IFRS 15 revenue recognition, or industry-specific regulatory requirements can expose legacy systems as non-compliant. The compliance deadline creates a non-negotiable implementation window.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- De-risking -->
+  <section class="sec sec-alt">
+    <div class="narrow">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">De-Risking the Transition</span>
+        <h2 class="sec-h2">How Mysoft manages compliance-driven implementations</h2>
+        <p class="sec-lede">Compliance-driven implementations are high-pressure engagements. Timelines are compressed, stakeholder scrutiny is elevated, and the consequences of delay are material. Our approach is built for exactly this context.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Rapid scoping and risk assessment</h3>
+            <p>We begin with a structured discovery engagement — typically 5–10 days — that produces a clear scope, a risk-ranked implementation plan, and a timeline that accounts for the compliance deadline. No surprises at go-live.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Platform selection with clear criteria</h3>
+            <p>We apply the Mysoft ERP Selection Framework to recommend the right platform for your sector, size, and compliance requirements. For services and NFP, that is typically Sage Intacct. For manufacturing and distribution, Sage X3. We do not recommend a platform before we understand the business.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Phased delivery with compliance controls first</h3>
+            <p>We sequence implementation so that the controls required by the audit finding or regulatory requirement are live first. Growth and optimisation capabilities are delivered in subsequent phases — but the compliance gap closes in Phase 1.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Hypercare and audit support</h3>
+            <p>Our hypercare period is structured around the next audit cycle. We provide documentation, evidence packs, and direct support for auditor queries — so the first post-implementation audit is a demonstration of control improvement, not an exposure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statement -->
+  <section class="navy-statement">
+    <div class="container">
+      <p class="statement-quote">Compliance events don't create the problem. They <span class="cyan">reveal the infrastructure gap</span> that was always there.</p>
+    </div>
+  </section>
+
+  <!-- Why Mysoft -->
+  <section class="sec">
+    <div class="container">
+      <div class="sec-hdr">
+        <span class="sec-eyebrow">Why Mysoft</span>
+        <h2 class="sec-h2">What sets a Mysoft compliance implementation apart</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" data-icon="award"></div>
+          <h3>Sage Platinum Partner</h3>
+          <p>Platinum status reflects implementation volume, customer satisfaction, and technical depth — the highest tier in the Sage partner ecosystem. For a compliance-driven engagement, partner quality is not a secondary consideration.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="file-text"></div>
+          <h3>X3CloudDocs — document control</h3>
+          <p>For X3 implementations, X3CloudDocs delivers purchase invoice automation, supplier statement reconciliation, and document management that directly addresses the document-control weaknesses auditors most commonly flag.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" data-icon="shield-check"></div>
+          <h3>Governance framework included</h3>
+          <p>Every Mysoft implementation includes the AI Governance Framework — defining approval tiers, audit trail requirements, and review cadences that satisfy auditor expectations and build a foundation for future automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedded Assessment -->
+  <section class="assess-inline">
+    <div class="assess-grid">
+      <div>
+        <span class="hero-eyebrow">AI Readiness Assessment</span>
+        <h2 style="font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3.2vw,2.8rem);line-height:1.1;letter-spacing:-0.025em;color:#fff;margin:16px 0 20px">Is your finance infrastructure ready to satisfy the compliance requirement?</h2>
+        <p style="font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0;max-width:480px">Our assessment maps your current ERP position against the controls, audit trail requirements, and governance structures that auditors and investors expect. Understand the gaps before they become findings — and get a clear implementation path on a timeline that works.</p>
+        <ul class="assess-checklist">
+          <li>8-minute online assessment</li>
+          <li>Benchmarked against your sector</li>
+          <li>Personalised recommendations report</li>
+          <li>Response within one business day</li>
+        </ul>
+      </div>
+      <div class="assess-card">
+        <p class="assess-q">What best describes your current ERP situation?</p>
+        <div class="assess-options">
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">On a legacy system that needs replacing</a>
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">Mid-implementation or recently live</a>
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">Post-implementation, looking to optimise</a>
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">Exploring AI and automation capabilities</a>
+        </div>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-gw btn-lg" style="width:100%;justify-content:center;display:flex">Start the Full Assessment →</a>
+        <p class="assess-note">Free. No commitment. Results within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta-band">
+    <div class="narrow">
+      <span class="sec-eyebrow">Time-Sensitive</span>
+      <h2 class="sec-h2">If there is a compliance deadline in play, the conversation starts now</h2>
+      <p>Compliance-driven implementations have hard timelines. We can have a scoping conversation within 48 hours and a risk-assessed delivery plan on the table within two weeks.</p>
+      <div class="btn-group" style="justify-content:center">
+        <a href="../../the-journey/finance-operations-review/" class="btn btn-navy btn-lg">Start the Conversation</a>
+        <a href="../../insights/erp-selection-framework/" class="btn btn-gw btn-lg">ERP Selection Framework</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-root"></div>
+
+<script>
+(function(){
+  var P={
+    'file-search':'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11.5" cy="14.5" r="2.5"/><line x1="13.25" y1="16.25" x2="15" y2="18"/>',
+    'git-merge':'<circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/>',
+    'trending-up':'<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+    'landmark':'<line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/>',
+    'award':'<circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>',
+    'file-text':'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>',
+    'shield-check':'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var n=el.getAttribute('data-icon');
+    if(P[n]) el.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+P[n]+'</svg>';
+  });
+})();
+</script>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+<script type="text/babel">
+  const onAssess = () => { window.location.href = '../../ai-readiness-assessment.html'; };
+  ReactDOM.createRoot(document.getElementById('nav-root')).render(<NavBar onAssess={onAssess} basePath="../../" />);
+  ReactDOM.createRoot(document.getElementById('footer-root')).render(<Footer onAssess={onAssess} basePath="../../" />);
+</script>
+
+</body>
+</html>

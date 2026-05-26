@@ -20,7 +20,7 @@
   .btn-primary:hover  { background: var(--navy-400) !important; }
   .btn-accent:hover   { opacity: 0.88; }
   .btn-ghost:hover    { border-color: var(--navy) !important; }
-  .btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+  .btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; color: #fff !important; background: rgba(255,255,255,0.08) !important; }
   .btn-invert:hover   { background: var(--bg) !important; }
   .btn:hover .btn-arrow { transform: translateX(4px); }
 
@@ -34,15 +34,16 @@
   /* Active section highlight in nav */
   .nav-active { color: var(--cyan) !important; }
 </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
 <div id="root"></div>
 
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="vendor/react.development.js"></script>
+<script src="vendor/react-dom.development.js"></script>
+<script src="vendor/babel.min.js"></script>
 
 <!-- Components: Button.jsx must be first (exports shared primitives) -->
 <script type="text/babel" src="Button.jsx"></script>
@@ -58,15 +59,12 @@
 <script type="text/babel">
 const App = () => {
   const scrollToAssessment = () => {
-    const el = document.getElementById("assessment");
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 80;
-    window.scrollTo({ top, behavior: "smooth" });
+    window.location.href = "ai-readiness-assessment.html";
   };
 
   return (
     <>
-      <NavBar onAssess={scrollToAssessment} />
+      <NavBar onAssess={scrollToAssessment} basePath="./" />
       <main>
         <Hero onAssess={scrollToAssessment} />
         <Solutions />

@@ -21,6 +21,7 @@ const PLATFORMS = [
     body: "The AI-native cloud finance platform for mid-market organisations. Multi-entity consolidation, dimensional reporting, and an open API architecture that integrates your full technology stack. Implemented and governed by Mysoft from Stage 1 to Stage 4.",
     tags: ["Multi-entity", "AI-native", "Open API"],
     cta: "Explore Sage Intacct",
+    href: "solutions/sage-intacct/",
     caption: "CFO daily view — Sage Intacct with Copilot AI",
   },
   {
@@ -30,6 +31,7 @@ const PLATFORMS = [
     body: "Operational ERP for manufacturing, distribution, and food & beverage businesses with complex requirements. Production orders, supply chain, multi-site, multi-currency — and the operational data foundation that makes AI adoption meaningful at Stage 2 and above.",
     tags: ["Multi-site", "Multi-currency", "Supply Chain"],
     cta: "Explore Sage X3",
+    href: "solutions/sage-x3/",
     caption: "Warehouse manager view — Sage X3 with Copilot insights",
   },
   {
@@ -39,6 +41,7 @@ const PLATFORMS = [
     body: "Mysoft-built and Mysoft-exclusive. The Stage 2 anchor of the AI maturity journey. AP invoice automation, outbound document dispatch, custom approval workflows, and email intelligence — all governed from the outset. The top-rated product on the Sage X3 Marketplace.",
     tags: ["AP Automation", "Document Management", "Mysoft-exclusive", "Stage 2 anchor"],
     cta: "Explore X3CloudDocs",
+    href: "solutions/x3clouddocs/",
     caption: "Live invoice processing — X3CloudDocs automated field matching",
     badge: true,
   },
@@ -117,12 +120,12 @@ const PlatformDetail = ({ platform }) => (
         ))}
       </div>
 
-      <a href="#" style={{
+      <a href={platform.href || "#"} style={{
         marginTop: 24, display: "inline-flex", alignItems: "center", gap: 6,
         fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13,
         color: "var(--cyan)", textDecoration: "none",
       }}>{platform.cta} →</a>
-      <a href="#" style={{
+      <a href="insights/demo-hub/" style={{
         marginTop: 10, display: "inline-flex", alignItems: "center", gap: 6,
         fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13,
         color: "rgba(255,255,255,0.5)", textDecoration: "none",
@@ -195,7 +198,7 @@ const Solutions = () => {
               Choose your platform.<br />We design the transformation.
             </h2>
           </div>
-          <Button variant="ghost" size="md" icon="→" href="#">Compare platforms</Button>
+          <Button variant="ghost" size="md" icon="→" href="solutions/">Compare platforms</Button>
         </div>
 
         {/* Bordered container — mirrors Journey layout */}
@@ -210,7 +213,7 @@ const Solutions = () => {
               <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--fg-3)", lineHeight: 1.5 }}>
                 Extended by a curated ISV ecosystem across warehousing, logistics, BI, and people.
               </div>
-              <a href="#" style={{
+              <a href="the-journey/isv-partner-ecosystem/" style={{
                 marginTop: 12, display: "inline-flex", alignItems: "center", gap: 5,
                 fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 12,
                 color: "var(--cyan)", background: "none", border: "none", cursor: "pointer",
@@ -231,7 +234,7 @@ const Solutions = () => {
             <span style={{ fontWeight: 600, color: "var(--navy)" }}>Partner ISV Ecosystem</span>
             <span>Netstock · Lynq · SEI · Phocas · ZAP BI · Velixo · WebExpenses · Payhawk</span>
           </div>
-          <a href="#" style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 12, color: "var(--navy)", textDecoration: "none", flexShrink: 0 }}>Full ecosystem →</a>
+          <a href="the-journey/isv-partner-ecosystem/" style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 12, color: "var(--navy)", textDecoration: "none", flexShrink: 0 }}>Full ecosystem →</a>
         </div>
 
       </Section>
