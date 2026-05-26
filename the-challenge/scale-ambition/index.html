@@ -25,7 +25,7 @@
                color: rgba(255,255,255,0.72); max-width: 640px; margin: 0 0 36px; }
   .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  .sec { padding: 80px 32px; }
+  .sec { padding: 100px 32px; }
   .sec-alt { background: var(--white); }
   .sec-hdr { margin-bottom: 40px; }
   .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
@@ -43,7 +43,7 @@
           border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
   .sec-alt .card { background: var(--bg-soft); }
   .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
-               background: var(--cyan-50); color: var(--cyan-600);
+               background: var(--bg); color: var(--navy);
                display: flex; align-items: center; justify-content: center;
                margin-bottom: 18px; }
   .card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.125rem;
@@ -83,6 +83,40 @@
   .btn-gw { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.3); }
   .btn-gw:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.08); }
   .btn-primary:hover { background: var(--navy-400) !important; }
+  .hero-stats { display: flex; align-items: center; margin-top: 40px; flex-wrap: wrap; row-gap: 10px; }
+  .hero-stats span { font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+                     color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
+                     padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
+  .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
+  .navy-statement { background: var(--navy); padding: 80px 32px; }
+  .statement-quote { font-family: var(--font-display); font-weight: 600;
+                     font-size: clamp(1.5rem, 2.5vw, 2.2rem); line-height: 1.25;
+                     letter-spacing: -0.02em; color: #fff; margin: 0 auto;
+                     max-width: 860px; text-align: center; }
+  .statement-quote .cyan { color: var(--cyan); }
+  .assess-inline { background: linear-gradient(160deg, #001a22 0%, #002d3d 100%); padding: 100px 32px; }
+  .assess-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+                 max-width: var(--container); margin: 0 auto; }
+  .assess-checklist { list-style: none; padding: 0; margin: 24px 0 0;
+                      display: flex; flex-direction: column; gap: 12px; }
+  .assess-checklist li { display: flex; align-items: flex-start; gap: 10px;
+                          font-family: var(--font-sans); font-size: 15px; color: rgba(255,255,255,0.65); }
+  .assess-checklist li::before { content: "✓"; color: var(--cyan); font-weight: 700;
+                                  flex-shrink: 0; margin-top: 1px; }
+  .assess-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+                 border-radius: var(--radius-lg); padding: 36px; }
+  .assess-q { font-family: var(--font-display); font-weight: 600; font-size: 17px;
+              color: #fff; margin: 0 0 20px; line-height: 1.3; }
+  .assess-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .assess-opt { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+                border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.12);
+                font-family: var(--font-sans); font-size: 14px; color: rgba(255,255,255,0.65);
+                text-decoration: none; transition: border-color 140ms, background 140ms, color 140ms; }
+  .assess-opt:hover { border-color: var(--cyan); background: rgba(0,182,237,0.07); color: #fff; }
+  .assess-opt::before { content: ""; width: 16px; height: 16px; border-radius: 999px;
+                         border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; }
+  .assess-note { font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.3);
+                 margin: 16px 0 0; text-align: center; }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -97,11 +131,17 @@
   <section class="hero-page">
     <div class="container">
       <span class="hero-eyebrow">The Challenge</span>
-      <h1 class="hero-h1">Finance infrastructure for<br>scaling mid-market businesses</h1>
+      <h1 class="hero-h1">Finance infrastructure for<br><span style="color:var(--cyan)">scaling mid-market businesses</span></h1>
       <p class="hero-lede">Growth targets demand a finance function that can move at the speed of the business. When the infrastructure cannot keep up, scale becomes a source of risk rather than value.</p>
       <div class="btn-group">
         <a href="../../ai-readiness-assessment.html" class="btn btn-navy btn-lg">Assess Your Readiness</a>
         <a href="../../the-journey/finance-operations-review/" class="btn btn-gw btn-lg">Book a Discovery Call</a>
+      </div>
+      <div class="hero-stats">
+        <span>Sage Platinum Club 2025</span>
+        <span>20 Years&#39; Experience</span>
+        <span>UK + North America</span>
+        <span>98% SLA Met</span>
       </div>
     </div>
   </section>
@@ -173,6 +213,13 @@
     </div>
   </section>
 
+  <!-- Statement -->
+  <section class="navy-statement">
+    <div class="container">
+      <p class="statement-quote">The ambition is clear. The question is whether the finance and operations infrastructure <span class="cyan">can scale with it</span>.</p>
+    </div>
+  </section>
+
   <!-- Benchmarks -->
   <section class="sec">
     <div class="container">
@@ -196,6 +243,34 @@
           <h3>Real-time board reporting</h3>
           <p>Finance leaders at Stage 3 present rolling 13-week forecasts with AI-generated variance commentary, rather than retrospective monthly packs. This shifts the finance function from historian to strategic advisor.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedded Assessment -->
+  <section class="assess-inline">
+    <div class="assess-grid">
+      <div>
+        <span class="hero-eyebrow">AI Readiness Assessment</span>
+        <h2 style="font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3.2vw,2.8rem);line-height:1.1;letter-spacing:-0.025em;color:#fff;margin:16px 0 20px">Can your finance infrastructure support 2× or 3× growth?</h2>
+        <p style="font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0;max-width:480px">Our assessment evaluates whether your current ERP and finance function are built to scale — or whether they will become the constraint as growth accelerates. Understand your readiness position before the pressure arrives, not after it exposes the gaps.</p>
+        <ul class="assess-checklist">
+          <li>8-minute online assessment</li>
+          <li>Benchmarked against your sector</li>
+          <li>Personalised recommendations report</li>
+          <li>Response within one business day</li>
+        </ul>
+      </div>
+      <div class="assess-card">
+        <p class="assess-q">What best describes your current ERP situation?</p>
+        <div class="assess-options">
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">On a legacy system that needs replacing</a>
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">Mid-implementation or recently live</a>
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">Post-implementation, looking to optimise</a>
+          <a href="../../ai-readiness-assessment.html" class="assess-opt">Exploring AI and automation capabilities</a>
+        </div>
+        <a href="../../ai-readiness-assessment.html" class="btn btn-gw btn-lg" style="width:100%;justify-content:center;display:flex">Start the Full Assessment →</a>
+        <p class="assess-note">Free. No commitment. Results within one business day.</p>
       </div>
     </div>
   </section>

@@ -28,7 +28,7 @@ const FOOTER_COLS = [
       { name: "Stage 2 — Intelligent Automation",    href: "the-journey/stage-2-intelligent-automation/" },
       { name: "Stage 3 — AI-Augmented Finance",      href: "the-journey/stage-3-ai-augmented-finance/" },
       { name: "Stage 4 — Agentic Finance Operations",href: "the-journey/stage-4-agentic-finance-operations/" },
-      { name: "AI Readiness Assessment",             href: "the-journey/ai-readiness-assessment/" },
+      { name: "AI Readiness Assessment",             href: "ai-readiness-assessment.html" },
       { name: "Agentic Finance Governance",          href: "the-journey/agentic-finance-governance/" },
       { name: "Finance Operations Review",           href: "the-journey/finance-operations-review/" },
       { name: "ISV Partner Ecosystem",               href: "the-journey/isv-partner-ecosystem/" },
@@ -93,7 +93,7 @@ const Footer = ({ onAssess, basePath = "./" }) => (
             marginTop: 20, fontFamily: "var(--font-sans)", fontSize: 15,
             color: "rgba(255,255,255,0.6)", lineHeight: 1.6, maxWidth: 400,
           }}>
-            AI-enabled Sage ERP and finance transformation partner. Implementing <a href="#" style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage X3</a> and <a href="#" style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage Intacct</a>, extending with proprietary <a href="#" style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>X3CloudDocs</a> automation IP, and leveraging AI to help ambitious organisations scale their finance and operations functions with confidence.
+            AI-enabled Sage ERP and finance transformation partner. Implementing <a href={basePath + "solutions/sage-x3/"} style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage X3</a> and <a href={basePath + "solutions/sage-intacct/"} style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>Sage Intacct</a>, extending with proprietary <a href={basePath + "solutions/x3clouddocs/"} style={{color:"rgba(255,255,255,0.7)",fontWeight:600}}>X3CloudDocs</a> automation IP, and leveraging AI to help ambitious organisations scale their finance and operations functions with confidence.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 10 }}>
             {[
@@ -120,9 +120,14 @@ const Footer = ({ onAssess, basePath = "./" }) => (
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 22, lineHeight: 1.2, color: "#fff" }}>
             Ready to build the infrastructure your next chapter actually needs?
           </div>
-          <Button variant="accent" size="lg" icon="→" onClick={onAssess}>
-            Assess Your AI Readiness
-          </Button>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <Button variant="accent" size="lg" icon="→" href={basePath + "ai-readiness-assessment.html"}>
+              Assess Your AI Readiness
+            </Button>
+            <Button variant="ghostWhite" size="lg" href={basePath + "contact/"}>
+              Contact Us
+            </Button>
+          </div>
           <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "rgba(255,255,255,0.35)" }}>
             Free. No commitment. Results within one business day.
           </div>

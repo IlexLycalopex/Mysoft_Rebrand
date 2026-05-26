@@ -29,7 +29,7 @@
   .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
                color: rgba(255,255,255,0.72); max-width: 640px; margin: 0; }
 
-  .sec { padding: 80px 32px; }
+  .sec { padding: 100px 32px; }
   .sec-alt { background: var(--white); }
   .sec-hdr { margin-bottom: 40px; }
   .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
@@ -43,7 +43,7 @@
   .card { background: var(--white); border: 1px solid var(--line);
           border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); }
   .card-icon { width: 44px; height: 44px; border-radius: var(--radius-md);
-               background: var(--bg); color: var(--navy);
+               background: var(--navy); color: #fff;
                display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
   .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1rem;
              color: var(--navy); margin: 0 0 10px; line-height: 1.35; }
@@ -59,8 +59,8 @@
   .tier:last-child { border-right: none; }
   .tier-badge { width: 44px; height: 44px; border-radius: var(--radius-md);
                 display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-  .tier-badge-1 { background: var(--bg); color: var(--navy); border: 1px solid var(--line); }
-  .tier-badge-2 { background: rgba(0,192,207,0.1); color: var(--cyan); }
+  .tier-badge-1 { background: var(--navy); color: #fff; }
+  .tier-badge-2 { background: var(--navy); color: #fff; }
   .tier-badge-3 { background: var(--navy); color: #fff; }
   .tier-label { font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
                 color: var(--fg-3); margin: 0 0 8px; display: block; }
@@ -111,6 +111,11 @@
   .btn-gw:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.08); }
   .btn-invert { background: #fff; color: var(--navy); }
   .btn-invert:hover { background: var(--bg); }
+  .hero-stats { display: flex; align-items: center; margin-top: 40px; flex-wrap: wrap; row-gap: 10px; }
+  .hero-stats span { font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+                     color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
+                     padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
+  .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -153,12 +158,12 @@
           <div class="tier-badge tier-badge-1" data-icon="wrench"></div>
           <span class="tier-label">Tier 1</span>
           <h3>Break-Fix Support</h3>
-          <p>Reactive incident resolution. You raise a ticket, we resolve the issue. No ongoing retainer, no monthly commitment — pay per incident or on a pre-purchased block basis.</p>
+          <p>Reactive incident resolution on a fixed percentage retainer. The retainer covers unlimited break-fix support incidents — you raise a ticket, we resolve the issue, with no per-incident charge and no usage cap.</p>
           <ul>
-            <li>P1–P4 priority framework</li>
+            <li>Fixed % retainer — unlimited incidents included</li>
+            <li>P1–P4 priority framework with SLA commitment</li>
             <li>Email, phone, and portal access</li>
-            <li>Named ticket with SLA commitment</li>
-            <li>Issue resolved, ticket closed</li>
+            <li>Named ticket assigned to a consultant</li>
             <li>Available to all Mysoft customers</li>
           </ul>
         </div>
@@ -166,12 +171,12 @@
           <div class="tier-badge tier-badge-2" data-icon="headphones"></div>
           <span class="tier-label">Tier 2</span>
           <h3>Service Desk</h3>
-          <p>A structured, retained service desk with named consultants who know your system. Monthly SLA reporting, proactive health-check calls, and a defined scope that goes beyond pure incident resolution.</p>
+          <p>Available as a fully retained service or on a pay-per-user or pre-purchased block basis. Named consultants, structured SLA reporting, and a defined scope that goes well beyond pure incident resolution.</p>
           <ul>
+            <li>Retained, per-user, or block-hours pricing</li>
             <li>Named consultant assigned to your account</li>
             <li>Monthly support review and SLA reporting</li>
             <li>Minor configuration and user setup included</li>
-            <li>Proactive system health checks</li>
             <li>Priority routing ahead of break-fix tickets</li>
           </ul>
         </div>
@@ -188,6 +193,12 @@
             <li>Strategic advisory at each review point</li>
           </ul>
         </div>
+      </div>
+      <div class="hero-stats">
+        <span>Sage Platinum Club 2025</span>
+        <span>20 Years&#39; Experience</span>
+        <span>UK + North America</span>
+        <span>98% SLA Met</span>
       </div>
     </div>
   </section>

@@ -4,21 +4,22 @@
 // Mega-menu link with hover state.
 // it.href (relative to site root) is set only for pages that exist;
 // basePath converts root-relative paths to the depth of the current page.
-const MegaLink = ({ it, basePath = "./" }) => {
+const MegaLink = ({ it, basePath = "./", onAssess }) => {
   const [hovered, setHovered] = React.useState(false);
   const href = it.href ? basePath + it.href : null;
+  const interactive = !!href || !!it.isAssess;
   return (
     <a
       href={href || undefined}
-      style={{ textDecoration: "none", display: "block", cursor: href ? "pointer" : "default" }}
-      onClick={e => { if (!href) e.preventDefault(); }}
-      onMouseEnter={() => setHovered(!!href)}
+      style={{ textDecoration: "none", display: "block", cursor: interactive ? "pointer" : "default" }}
+      onClick={e => { if (!href) { e.preventDefault(); if (it.isAssess) onAssess && onAssess(); } }}
+      onMouseEnter={() => setHovered(interactive)}
       onMouseLeave={() => setHovered(false)}
     >
       <div style={{
         fontFamily: "var(--font-sans)", fontSize: 13.5, fontWeight: 500,
         lineHeight: 1.3, display: "flex", alignItems: "center", gap: 5,
-        color: hovered ? "var(--cyan)" : href ? "var(--navy)" : "var(--fg-3)",
+        color: hovered ? "var(--cyan)" : interactive ? "var(--navy)" : "var(--fg-3)",
         transition: "color 140ms var(--ease-out)",
       }}>
         {it.name}
@@ -130,7 +131,6 @@ const NAV_ITEMS = {
       ]},
       { t: "Credentials", l: [
         { name: "Sage Platinum Club 2025",         sub: "Highest partner tier",              href: "about/sage-platinum-club-2025/" },
-        { name: "Excellence Partner of the Year",  sub: null },
         { name: "Customer Transformation Stories", sub: "Measurable outcomes",               href: "insights/customer-transformation-stories/" },
         { name: "Support Portal",                  sub: "Break-fix, service desk, managed",  href: "about/support-portal/" },
       ]},
@@ -393,7 +393,7 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
                 }}>{col.t}</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {col.l.map((it, li) => (
-                    <MegaLink key={li} it={it} basePath={basePath} />
+                    <MegaLink key={li} it={it} basePath={basePath} onAssess={onAssess} />
                   ))}
                 </div>
               </div>

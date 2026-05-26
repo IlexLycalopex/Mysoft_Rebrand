@@ -30,7 +30,7 @@
                color: rgba(255,255,255,0.72); max-width: 640px; margin: 0; }
   .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  .sec { padding: 80px 32px; }
+  .sec { padding: 100px 32px; }
   .sec-alt { background: var(--white); }
   .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
                  letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan);
@@ -123,6 +123,21 @@
   .btn-gw:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.08); }
   .btn-invert { background: #fff; color: var(--navy); }
   .btn-invert:hover { background: var(--bg); }
+  .hero-stats { display: flex; align-items: center; margin-top: 40px; flex-wrap: wrap; row-gap: 10px; }
+  .hero-stats span { font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+                     color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
+                     padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
+  .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
+  .plat-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+  .plat-thumb { border-radius: var(--radius-lg); overflow: hidden; position: relative; }
+  .plat-thumb-img { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; }
+  .plat-thumb-placeholder { background: linear-gradient(135deg, var(--navy) 0%, #0a2a35 100%);
+                              aspect-ratio: 16/9; display: flex; flex-direction: column;
+                              align-items: center; justify-content: center; gap: 12px; }
+  .plat-thumb-label { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem;
+                       color: #fff; letter-spacing: -0.01em; }
+  .plat-thumb-sub { font-family: var(--font-sans); font-size: 12px;
+                     color: rgba(255,255,255,0.35); letter-spacing: 0.06em; text-transform: uppercase; }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -142,11 +157,17 @@
         <span>Solutions</span>
       </div>
       <span class="hero-eyebrow">Solutions</span>
-      <h1 class="hero-h1">Compare Sage Intacct and Sage X3.</h1>
+      <h1 class="hero-h1">Compare <span style="color:var(--cyan)">Sage Intacct</span> and <span style="color:var(--cyan)">Sage X3</span>.</h1>
       <p class="hero-lede">Two leading Sage platforms. Different architectures, different strengths, different ideal customers. This comparison is designed to help you self-identify the right platform — not to sell you a preference. Mysoft implements both.</p>
       <div class="btn-group" style="margin-top:32px">
         <a href="../insights/erp-selection-framework/" class="btn btn-invert btn-lg">ERP Selection Framework</a>
         <a href="../the-journey/finance-operations-review/" class="btn btn-gw btn-lg">Talk to a Consultant</a>
+      </div>
+      <div class="hero-stats">
+        <span>Sage Platinum Club 2025</span>
+        <span>20 Years&#39; Experience</span>
+        <span>UK + North America</span>
+        <span>98% SLA Met</span>
       </div>
     </div>
   </section>

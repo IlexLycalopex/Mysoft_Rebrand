@@ -29,7 +29,7 @@
   .hero-lede { font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65;
                color: rgba(255,255,255,0.72); max-width: 640px; margin: 0; }
 
-  .sec { padding: 80px 32px; }
+  .sec { padding: 100px 32px; }
   .sec-alt { background: var(--white); }
   .sec-hdr { margin-bottom: 40px; }
   .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
@@ -94,6 +94,17 @@
   .btn-gw:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.08); }
   .btn-invert { background: #fff; color: var(--navy); }
   .btn-invert:hover { background: var(--bg); }
+  .hero-stats { display: flex; align-items: center; margin-top: 40px; flex-wrap: wrap; row-gap: 10px; }
+  .hero-stats span { font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+                     color: rgba(255,255,255,0.45); letter-spacing: 0.03em; line-height: 1.4;
+                     padding-left: 20px; margin-left: 20px; border-left: 1px solid rgba(255,255,255,0.15); }
+  .hero-stats span:first-child { padding-left: 0; margin-left: 0; border-left: none; }
+  .product-placeholder { background: linear-gradient(135deg, var(--navy) 0%, #0a2a35 100%);
+                          border-radius: var(--radius-lg); aspect-ratio: 16/9;
+                          display: flex; align-items: center; justify-content: center;
+                          color: rgba(255,255,255,0.2); font-family: var(--font-sans);
+                          font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+                          border: 1px solid rgba(255,255,255,0.06); }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
 </style>
@@ -136,6 +147,19 @@
         <p>X3CloudDocs — our proprietary document automation and management product — is the top-rated product on the Sage X3 Marketplace and the clearest evidence of our commitment to building capabilities that no other partner has. It is not licensed-in technology. It is Mysoft-developed, Mysoft-owned IP that delivers competitive advantage for every Sage X3 customer we work with.</p>
         <p>Our current positioning is unambiguous: we are an AI-enabled finance and operations transformation partner. Not a software reseller. Not a VAR with a technology dependency. A transformation partner with the IP, the methodology, and the delivery capability to move finance and operations functions from where they are to where they need to be.</p>
       </div>
+      <div class="hero-stats">
+        <span>Sage Platinum Club 2025</span>
+        <span>20 Years&#39; Experience</span>
+        <span>UK + North America</span>
+        <span>98% SLA Met</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual placeholder -->
+  <section class="sec sec-alt">
+    <div class="container">
+      <div class="product-placeholder" style="max-width:1000px;margin:0 auto;aspect-ratio:21/9">Mysoft Team — Photo Coming Soon</div>
     </div>
   </section>
 

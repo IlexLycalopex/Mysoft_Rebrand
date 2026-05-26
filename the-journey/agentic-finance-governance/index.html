@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Agentic Finance Governance Framework — Mysoft</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The Mysoft Agentic Finance Governance Framework v1.1 defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.">
+<meta name="description" content="The Mysoft Agentic Finance Governance Framework defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.">
 <link rel="stylesheet" href="../../colors_and_type.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -50,7 +50,7 @@
   .btn-navy:hover { background: var(--navy-400); }
 
   /* Sections */
-  .sec { padding: 80px 32px; }
+  .sec { padding: 100px 32px; }
   .sec-alt { background: var(--white); }
   .sec-hdr { margin-bottom: 48px; }
   .sec-eyebrow { font-family: var(--font-sans); font-weight: 500; font-size: 11px;
@@ -72,19 +72,19 @@
                        letter-spacing: -0.015em; color: var(--navy); margin: 0 0 12px; }
   .principle-body p { font-size: 15px; line-height: 1.7; color: var(--fg-2); margin: 0; }
 
-  /* Governance layers */
-  .layers { display: flex; flex-direction: column; gap: 12px; }
-  .layer { display: flex; gap: 0; border: 1px solid var(--line);
-           border-radius: 4px; overflow: hidden; background: var(--white); }
-  .layer-label { background: var(--navy); color: #fff; padding: 24px 20px;
-                 font-family: var(--font-sans); font-weight: 700; font-size: 11px;
-                 letter-spacing: 0.14em; text-transform: uppercase;
-                 display: flex; align-items: center; justify-content: center;
-                 width: 88px; flex-shrink: 0; text-align: center; line-height: 1.4; }
-  .layer-content { padding: 24px 28px; }
-  .layer-content h3 { font-family: var(--font-display); font-weight: 600; font-size: 17px;
-                      letter-spacing: -0.01em; color: var(--navy); margin: 0 0 8px; }
-  .layer-content p { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+  /* Governance layer tabs */
+  .layer-tabs-nav { display: flex; border-bottom: 2px solid var(--line); margin-bottom: 0; overflow-x: auto; }
+  .layer-tab-btn { font-family: var(--font-sans); font-weight: 600; font-size: 13px;
+                   padding: 14px 24px; border: none; background: none; cursor: pointer;
+                   color: var(--fg-3); border-bottom: 2px solid transparent; margin-bottom: -2px;
+                   transition: color 140ms, border-color 140ms; white-space: nowrap; letter-spacing: 0.01em; }
+  .layer-tab-btn.active { color: var(--navy); border-bottom-color: var(--cyan); }
+  .layer-tab-btn:hover:not(.active) { color: var(--fg-2); }
+  .layer-panel { display: none; padding: 40px 0 0; }
+  .layer-panel.active { display: block; }
+  .layer-panel h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px;
+                    letter-spacing: -0.01em; color: var(--navy); margin: 0 0 16px; }
+  .layer-panel p { font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 0; max-width: 720px; }
 
   /* Tier table */
   .tier-table-full { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -137,10 +137,16 @@
     </nav>
     <span class="hero-eyebrow">The Journey — Frameworks &amp; Tools</span>
     <h1 class="hero-h1">Agentic Finance Governance Framework</h1>
-    <p class="hero-lede">AI in finance without governance is a control failure waiting to happen. The Mysoft Agentic Finance Governance Framework v1.1 defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.</p>
+    <p class="hero-lede">AI in finance without governance is a control failure waiting to happen. The Mysoft Agentic Finance Governance Framework defines the authority structures, audit requirements, and review cadences that make AI-augmented finance sustainable and auditable.</p>
     <div class="btn-group">
       <a href="../../the-journey/finance-operations-review/" class="btn btn-invert">Request a Governance Review</a>
       <a href="../../ai-readiness-assessment.html" class="btn btn-gw">Take the Assessment</a>
+    </div>
+    <div class="hero-stats">
+      <span>Sage Platinum Club 2025</span>
+      <span>20 Years&#39; Experience</span>
+      <span>UK + North America</span>
+      <span>98% SLA Met</span>
     </div>
   </div>
 </section>
@@ -151,7 +157,7 @@
     <div class="sec-hdr">
       <span class="sec-eyebrow">Design Principles</span>
       <h2 class="sec-h2">Five principles that define the framework</h2>
-      <p class="sec-lede">The Governance Framework v1.1 is built on five design principles that apply across all four maturity stages — from basic automation at Stage 2 through to fully agentic operations at Stage 4.</p>
+      <p class="sec-lede">The Governance Framework is built on five design principles that apply across all four maturity stages — from basic automation at Stage 2 through to fully agentic operations at Stage 4.</p>
     </div>
     <div class="principles">
       <div class="principle">
@@ -200,36 +206,28 @@
       <span class="sec-eyebrow">Governance Layers</span>
       <h2 class="sec-h2">Four layers of control</h2>
     </div>
-    <div class="layers">
-      <div class="layer">
-        <div class="layer-label">Layer 1</div>
-        <div class="layer-content">
-          <h3>Process governance</h3>
-          <p>Defines which processes are eligible for automation, the entry conditions that must be satisfied before automation is activated, and the process documentation requirements that enable exception handling. No process is automated without a completed process governance record.</p>
-        </div>
+      <div class="layer-tabs-nav" role="tablist">
+        <button class="layer-tab-btn active" data-tab="layer1" role="tab" aria-selected="true">Layer 1 — Process</button>
+        <button class="layer-tab-btn" data-tab="layer2" role="tab">Layer 2 — Authority</button>
+        <button class="layer-tab-btn" data-tab="layer3" role="tab">Layer 3 — Audit</button>
+        <button class="layer-tab-btn" data-tab="layer4" role="tab">Layer 4 — Review</button>
       </div>
-      <div class="layer">
-        <div class="layer-label">Layer 2</div>
-        <div class="layer-content">
-          <h3>Authority governance</h3>
-          <p>The Tiered Approval Model — four tiers mapped to transaction type, value band, and risk category. Tier 1 (fully automated, no human review required); Tier 2 (automated with exception review); Tier 3 (automated with Finance Manager approval); Tier 4 (CFO sign-off required). Every automated transaction sits within a defined tier.</p>
-        </div>
+      <div id="layer1" class="layer-panel active" role="tabpanel">
+        <h3>Process governance</h3>
+        <p>Defines which processes are eligible for automation, the entry conditions that must be satisfied before automation is activated, and the process documentation requirements that enable exception handling. No process is automated without a completed process governance record.</p>
       </div>
-      <div class="layer">
-        <div class="layer-label">Layer 3</div>
-        <div class="layer-content">
-          <h3>Audit governance</h3>
-          <p>Defines the audit trail requirements for each process type, the retention period for AI decision records, the access controls on audit data, and the evidence pack format required for external audit. Designed to satisfy Big Four audit methodology requirements.</p>
-        </div>
+      <div id="layer2" class="layer-panel" role="tabpanel">
+        <h3>Authority governance</h3>
+        <p>The Tiered Approval Model — four tiers mapped to transaction type, value band, and risk category. Tier 1 (fully automated, no human review required); Tier 2 (automated with exception review); Tier 3 (automated with Finance Manager approval); Tier 4 (CFO sign-off required). Every automated transaction sits within a defined tier.</p>
       </div>
-      <div class="layer">
-        <div class="layer-label">Layer 4</div>
-        <div class="layer-content">
-          <h3>Review governance</h3>
-          <p>The Quarterly AI Optimisation Review (QAOR) structure — agenda, metrics, attendees, escalation criteria, and output documentation. Includes the annual governance framework review process that assesses whether the current framework remains appropriate for the organisation's maturity stage.</p>
-        </div>
+      <div id="layer3" class="layer-panel" role="tabpanel">
+        <h3>Audit governance</h3>
+        <p>Defines the audit trail requirements for each process type, the retention period for AI decision records, the access controls on audit data, and the evidence pack format required for external audit. Designed to satisfy Big Four audit methodology requirements.</p>
       </div>
-    </div>
+      <div id="layer4" class="layer-panel" role="tabpanel">
+        <h3>Review governance</h3>
+        <p>The Quarterly AI Optimisation Review (QAOR) structure — agenda, metrics, attendees, escalation criteria, and output documentation. Includes the annual governance framework review process that assesses whether the current framework remains appropriate for the organisation's maturity stage.</p>
+      </div>
   </div>
 </section>
 
@@ -279,7 +277,7 @@
         </tbody>
       </table>
     </div>
-    <p class="source-note">Source: Mysoft Agentic Finance AI Governance Framework v1.1, Layer 2.</p>
+    <p class="source-note">Source: Mysoft Agentic Finance AI Governance Framework, Layer 2.</p>
   </div>
 </section>
 
@@ -323,7 +321,7 @@
   <div style="max-width:640px; margin:0 auto;">
     <span class="sec-eyebrow">Governance Assessment</span>
     <h2>Understand your current governance posture</h2>
-    <p>We offer a structured governance assessment for finance leaders who want to understand how their current AI controls compare to the Mysoft Governance Framework v1.1 — and where the gaps are before they become audit findings.</p>
+    <p>We offer a structured governance assessment for finance leaders who want to understand how their current AI controls compare to the Mysoft Governance Framework — and where the gaps are before they become audit findings.</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="../../the-journey/finance-operations-review/" class="btn btn-invert btn-lg">Request a Governance Review</a>
       <a href="../stage-2-intelligent-automation/" class="btn btn-gw btn-lg">Return to Stage 2</a>
@@ -333,6 +331,17 @@
 
 <div id="footer-root"></div>
 
+<script>
+  document.querySelectorAll('.layer-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.layer-tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.layer-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 <script src="../../vendor/react.development.js"></script>
 <script src="../../vendor/react-dom.development.js"></script>
 <script src="../../vendor/babel.min.js"></script>
