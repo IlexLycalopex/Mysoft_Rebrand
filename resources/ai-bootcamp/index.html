@@ -1,0 +1,1629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI Bootcamp | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Everything finance professionals need to know about AI — without the hype. Concepts, risks, governance, and a clear path forward from Mysoft.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/ai-bootcamp">
+<meta property="og:title" content="AI Bootcamp | Mysoft">
+<meta property="og:description" content="Everything finance professionals need to know about AI — without the hype. Concepts, risks, governance, and a clear path forward from Mysoft.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-h);
+}
+
+/* Button interactions */
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-accent:hover     { opacity: 0.88; }
+.btn-ghost:hover      { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover     { background: var(--bg) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+.nav-active { color: var(--cyan) !important; }
+
+/* Section nav */
+.section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+  padding: 0 32px;
+  box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none;
+  display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none;
+  padding: 0 32px;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Page sections */
+.bootcamp-sec { padding: 100px 32px; }
+.bootcamp-sec-alt { background: #fff; }
+.bootcamp-sec-navy { background: var(--navy); color: #fff; }
+.bootcamp-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+/* Hero */
+.hero-bootcamp { background: var(--navy); padding: 96px 32px 88px; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.hero-breadcrumb a { color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 140ms; }
+.hero-breadcrumb a:hover { opacity: 1; }
+.hero-breadcrumb-sep { opacity: 0.4; }
+
+/* Eyebrow on dark */
+.eyebrow-dark {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 14px;
+}
+
+/* Tables */
+.comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.5;
+  vertical-align: top; min-width: 160px;
+}
+.comparison-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.comparison-table tr:nth-child(even) td { background: var(--bg); }
+.comparison-table tr:nth-child(odd) td { background: #fff; }
+.comparison-table td:first-child {
+  font-weight: 600; color: var(--navy); font-size: 13px;
+  background: var(--bg) !important; white-space: nowrap;
+}
+
+/* Accordion */
+.accordion-group { border: 1px solid var(--border-1); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.accordion-group-header {
+  padding: 18px 24px; background: var(--bg);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; transition: background 140ms;
+}
+.accordion-group-header:hover { background: #eaedef; }
+.accordion-group-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.accordion-term {
+  border-top: 1px solid var(--border-1); padding: 0;
+  background: #fff;
+}
+.accordion-term-header {
+  padding: 16px 24px; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; user-select: none;
+  transition: background 140ms;
+}
+.accordion-term-header:hover { background: rgba(0,182,237,0.03); }
+.accordion-term-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3;
+}
+.accordion-term-body {
+  padding: 0 24px 20px;
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2);
+}
+.accordion-chevron { flex-shrink: 0; transition: transform 220ms var(--ease-out); color: var(--muted); }
+.accordion-chevron.open { transform: rotate(180deg); }
+
+/* Callout / pull quote */
+.pull-quote {
+  border-left: 4px solid var(--yellow);
+  background: var(--navy); color: #fff;
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.pull-quote-light {
+  border-left: 4px solid var(--yellow);
+  background: var(--bg); color: var(--navy);
+  padding: 28px 32px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+/* Vignette cards */
+.vignette-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--yellow); border-radius: 4px;
+  padding: 20px 24px;
+}
+.vignette-label {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 6px;
+}
+.vignette-scenario { font-weight: 600; color: var(--navy); font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
+.vignette-risk { font-size: 13.5px; color: var(--fg-2); line-height: 1.55; }
+
+/* Feature cards (RAG/MCP/Agents) */
+.feature-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column;
+}
+.feature-card-icon {
+  width: 48px; height: 48px; border-radius: 4px;
+  background: rgba(0,182,237,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-shrink: 0;
+}
+.feature-card-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 8px;
+}
+.feature-card-h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.2rem; color: var(--navy);
+  line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em;
+}
+.feature-card-body {
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2); flex: 1;
+}
+.feature-card-callout {
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--border-1);
+  font-family: var(--font-sans); font-size: 13.5px;
+  line-height: 1.6; color: var(--fg-2);
+}
+.feature-card-callout strong { color: var(--navy); }
+
+/* Myth bust */
+.myth-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--border-1); border-radius: 4px;
+  overflow: hidden; margin-bottom: 8px;
+}
+.myth-cell {
+  padding: 16px 20px; font-size: 14px; line-height: 1.55;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.myth-cell:first-child { background: rgba(198,54,45,0.04); border-right: 1px solid var(--border-1); }
+.myth-cell:last-child { background: rgba(31,138,91,0.04); }
+
+/* Governance principles cards */
+.principle-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+}
+.principle-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.8rem; color: var(--cyan); letter-spacing: -0.03em;
+  line-height: 1; margin-bottom: 12px;
+}
+.principle-icon { margin-bottom: 10px; color: var(--cyan); }
+.principle-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1rem; color: var(--navy); line-height: 1.3;
+  margin-bottom: 8px;
+}
+.principle-desc {
+  font-family: var(--font-sans); font-size: 13.5px;
+  line-height: 1.6; color: var(--fg-2);
+}
+
+/* Governance layers table */
+.layers-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.layers-table th, .layers-table td { padding: 16px 20px; text-align: left; border: 1px solid var(--border-1); line-height: 1.5; }
+.layers-table th { background: var(--navy); color: #fff; font-weight: 600; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+.layers-table tr:nth-child(even) td { background: var(--bg); }
+.layers-table tr:nth-child(odd) td { background: #fff; }
+.layers-table td:first-child { font-weight: 600; color: var(--navy); }
+
+/* Questions list */
+.question-item {
+  display: flex; gap: 20px; padding: 24px 28px;
+  border-bottom: 1px solid var(--border-1);
+  background: #fff; align-items: flex-start;
+}
+.question-item:first-child { border-top: 1px solid var(--border-1); border-radius: 4px 4px 0 0; }
+.question-item:last-child { border-radius: 0 0 4px 4px; border-bottom: 1px solid var(--border-1); }
+.question-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.4rem; color: var(--cyan); letter-spacing: -0.02em;
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.question-text { flex: 1; }
+.question-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3; margin-bottom: 8px;
+}
+.question-body { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.65; color: var(--fg-2); }
+
+/* Use case cards */
+.usecase-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; overflow: hidden; display: flex; flex-direction: column;
+}
+.usecase-card-head { background: var(--navy); padding: 20px 24px; }
+.stage-pill {
+  display: inline-flex; align-items: center;
+  background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 10px;
+}
+.usecase-card-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.05rem; color: #fff; line-height: 1.3;
+}
+.usecase-card-body { padding: 24px 24px 20px; flex: 1; }
+.usecase-card-body p {
+  font-family: var(--font-sans); font-size: 14px; line-height: 1.7;
+  color: var(--fg-2); margin: 0 0 14px;
+}
+.usecase-card-body p:last-child { margin-bottom: 0; }
+.usecase-card-footer {
+  padding: 16px 24px; border-top: 1px solid var(--border-1);
+  background: var(--bg);
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--muted);
+}
+.usecase-card-footer a { color: var(--cyan); text-decoration: none; font-weight: 500; }
+.usecase-card-footer a:hover { text-decoration: underline; }
+
+/* Learning journey */
+.journey-step {
+  display: flex; flex-direction: column; align-items: center; flex: 1; position: relative;
+}
+.journey-step-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  position: relative; z-index: 2; flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+}
+.journey-connector {
+  position: absolute; top: 22px; left: calc(50% + 22px);
+  right: calc(-50% + 22px); height: 1px; background: var(--border-1);
+}
+.journey-step-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); margin-top: 14px; text-align: center;
+  line-height: 1.3;
+}
+.journey-step-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-3);
+  line-height: 1.5; text-align: center; margin-top: 6px; max-width: 160px;
+}
+.journey-step-link {
+  margin-top: 10px; font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; color: var(--cyan); text-decoration: none; text-align: center;
+}
+.journey-step-link:hover { text-decoration: underline; }
+
+/* Stat card */
+.stat-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.stat-card-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Section headings */
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0;
+}
+.sec-h2-white {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: #fff; margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .bootcamp-sec { padding: 80px 24px; }
+  .hero-bootcamp { padding: 80px 24px 72px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .grid-3-resp { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3-rag { grid-template-columns: 1fr !important; }
+  .myth-row { grid-template-columns: 1fr !important; }
+  .myth-cell:first-child { border-right: none; border-bottom: 1px solid var(--border-1); }
+  .layers-table-wrap { overflow-x: auto; }
+  .journey-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+  .journey-step { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; flex: none !important; width: 100% !important; }
+  .journey-connector { display: none !important; }
+  .journey-step-circle { flex-shrink: 0 !important; }
+  .journey-step-label, .journey-step-desc, .journey-step-link { text-align: left !important; max-width: none !important; }
+  .two-col-sage { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 767px) {
+  .bootcamp-sec { padding: 64px 20px; }
+  .hero-bootcamp { padding: 64px 20px 56px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .grid-3-resp { grid-template-columns: 1fr !important; }
+  .principles-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .questions-note { text-align: center; }
+}
+@media (max-width: 480px) {
+  .principles-grid { grid-template-columns: 1fr !important; }
+  .question-item { padding: 18px 20px; }
+  .question-num { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const ICON_PATHS = {
+  TrendingUp:    `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  Users:         `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  Shield:        `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+  ChevronDown:   `<polyline points="6 9 12 15 18 9"/>`,
+  Zap:           `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
+  BarChart2:     `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+  Sparkles:      `<path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>`,
+  Search:        `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+  GitBranch:     `<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>`,
+  Cpu:           `<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>`,
+  X:             `<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>`,
+  Check:         `<polyline points="20 6 9 17 4 12"/>`,
+  FileText:      `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>`,
+  RefreshCw:     `<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>`,
+  AlertTriangle: `<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>`,
+  Layers:        `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  FileSearch:    `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11.5" cy="14.5" r="2.5"/><polyline points="13.25 16.25 15 18"/>`,
+  ArrowRight:    `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`,
+  Eye:           `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`,
+  Building2:     `<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>`,
+  Download:      `<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>`,
+  BookOpen:      `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>`,
+  MessageSquare: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
+  ClipboardList: `<rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="12" y1="11" x2="16" y2="11"/><line x1="12" y1="16" x2="16" y2="16"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="8" y1="16" x2="8.01" y2="16"/>`,
+};
+
+const Icon = ({ name, size = 20, color = "currentColor", strokeWidth = 1.75, style = {} }) => (
+  <svg
+    viewBox="0 0 24 24" width={size} height={size}
+    fill="none" stroke={color}
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+    style={style}
+    dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }}
+  />
+);
+
+// ─── SECTION NAV ─────────────────────────────────────────────────────────────
+
+const NAV_ITEMS = [
+  { id: 's1',  label: 'Why Now' },
+  { id: 's2',  label: 'Glossary' },
+  { id: 's3',  label: 'AI vs ML vs Automation' },
+  { id: 's4',  label: 'How LLMs Work' },
+  { id: 's5',  label: 'RAG, MCP & Agents' },
+  { id: 's6',  label: 'Hallucinations & Risk' },
+  { id: 's7',  label: 'Generic vs Embedded AI' },
+  { id: 's8',  label: 'Sage & Mysoft Approach' },
+  { id: 's9',  label: 'Learning Journey' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}
+            >{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select
+          className="section-nav-select"
+          value={active}
+          onChange={e => scrollTo(e.target.value)}
+        >
+          {NAV_ITEMS.map(({ id, label }) => (
+            <option key={id} value={id}>{label}</option>
+          ))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+// ─── HERO ─────────────────────────────────────────────────────────────────────
+
+const HeroSection = () => (
+  <section className="hero-bootcamp">
+    <div className="container">
+      <div className="hero-breadcrumb">
+        <a href="../../">Home</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span>Resources</span>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>AI Bootcamp</span>
+      </div>
+
+      <div style={{ maxWidth: 880 }}>
+        <span className="eyebrow-dark">AI BOOTCAMP</span>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.05,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 24px',
+        }}>
+          AI in plain English — for finance<br />professionals who need more than hype
+        </h1>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: 680, margin: '0 0 12px',
+        }}>
+          Boards are asking CFOs to form views on artificial intelligence. Finance teams are being asked to evaluate it, govern it, and in some cases deploy it. This page provides the conceptual grounding to do all three with confidence — from core vocabulary through to governance frameworks, with no agenda beyond clarity.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 14, color: 'rgba(255,255,255,0.4)',
+          margin: 0,
+        }}>
+          Eight sections. Start anywhere. Return often.
+        </p>
+
+        <div style={{
+          marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          {[
+            { n: '8', l: 'Core sections', sub: 'From vocabulary to governance' },
+            { n: '5', l: 'Glossary groups', sub: 'Over 20 defined terms' },
+            { n: '4', l: 'Governance principles', sub: 'Mysoft framework' },
+            { n: '10', l: 'Vendor questions', sub: 'Shareable checklist' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              paddingLeft: i > 0 ? 32 : 0,
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '2rem', color: '#fff', letterSpacing: '-0.03em', lineHeight: 1,
+              }}>{s.n}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 5 }}>{s.l}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11.5, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 1: WHY NOW ───────────────────────────────────────────────────────────
+
+const WhyNowSection = () => (
+  <section id="s1" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE CONTEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why AI is no longer a technology question for finance leaders
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Finance has always had to absorb technology change. What is different about AI — and specifically about the generative AI wave of the past two to three years — is the pace at which it has moved from experimentation to operational expectation. In 2023, most board conversations about AI were speculative. By 2025, mid-market CFOs are being asked not whether to adopt AI, but to explain their governance position on AI that is already in use across their organisations.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The challenge is that AI has arrived faster than the vocabulary, the governance models, and the regulatory frameworks that would normally accompany a technology of this significance. Finance professionals are expected to evaluate vendor claims, challenge consultants, and brief non-executive directors — often without a reliable foundation to work from.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          This page is designed to close that gap. It covers the concepts, the risks, the distinctions that matter commercially, and the governance frameworks that turn AI from a liability into a controlled asset. It is written for CFOs, Finance Directors, and finance teams — not for technologists.
+        </p>
+        <div className="pull-quote-light" style={{ margin: '32px 0 0' }}>
+          The honest assessment for UK mid-market finance: the window to build AI capability in a considered, staged, governed way is open now. Organisations that act thoughtfully in the next 12 to 18 months will be materially better positioned than those that either move without a framework or wait for certainty that will not come.
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'TrendingUp', stat: 'AI moving from experiment to deployment',
+            copy: 'Mid-market boards are now requiring CFOs to present AI strategy — not explore it.',
+          },
+          {
+            icon: 'Users', stat: 'Finance talent constraints are structural',
+            copy: 'UK finance hiring costs and availability are not improving. AI-enabled teams do more with the same headcount — not less.',
+          },
+          {
+            icon: 'Shield', stat: 'Governance is the differentiator',
+            copy: 'Most organisations deploying AI are not deploying governance alongside it. That is a material audit and compliance risk.',
+          },
+        ].map((c, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-card-icon">
+              <Icon name={c.icon} size={20} color="var(--navy)" />
+            </div>
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15, color: 'var(--navy)', lineHeight: 1.3, marginBottom: 6,
+              }}>{c.stat}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{c.copy}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: GLOSSARY ──────────────────────────────────────────────────────────
+
+const GLOSSARY_GROUPS = [
+  {
+    id: 'g1', title: 'Foundations',
+    terms: [
+      { term: 'Artificial Intelligence (AI)', def: 'The broad category. Any technique that enables machines to perform tasks that would otherwise require human judgement — pattern recognition, language understanding, decision-making. "AI" in common usage now usually refers to machine learning or generative AI specifically.' },
+      { term: 'Machine Learning (ML)', def: 'A subset of AI in which systems learn from data rather than following explicit rules. A machine learning model trained on historical invoice data can learn to flag anomalies — without a programmer specifying every rule. Accuracy improves with more and better training data.' },
+      { term: 'Natural Language Processing (NLP)', def: 'AI techniques that enable machines to understand, interpret, and generate human language. The foundation of chatbots, document processing, and conversational interfaces in finance systems.' },
+      { term: 'Large Language Model (LLM)', def: 'A type of AI model trained on vast quantities of text — books, articles, websites, code — to understand and generate language. GPT-4 (OpenAI), Claude (Anthropic), and Gemini (Google) are examples. LLMs power most modern AI assistants and embedded AI features in enterprise software.' },
+      { term: 'Generative AI', def: 'AI that creates new content — text, images, code, data — rather than simply classifying or analysing existing content. LLMs are the dominant form of generative AI relevant to finance. The "generative" distinction matters because it introduces outputs that are probabilistic, not deterministic.' },
+      { term: 'Automation', def: 'Rule-based processing in which a computer executes a defined sequence of steps without human intervention. Invoice routing, approval workflows, and scheduled reports are automation. Automation is deterministic: given the same input, it always produces the same output. It is not AI, though AI is increasingly used to design and optimise automated workflows.' },
+    ],
+  },
+  {
+    id: 'g2', title: 'How Models Work',
+    terms: [
+      { term: 'Prompt', def: 'The instruction or question given to an AI model. Prompt quality directly affects output quality — a poorly framed prompt produces a poorly framed response. "Prompt engineering" is the emerging practice of designing effective instructions for AI systems.' },
+      { term: 'Context Window', def: 'The amount of information an LLM can hold in its working memory at one time. Measured in "tokens" (roughly three to four characters each). A large context window allows an AI to analyse a full contract or financial report in one go. When inputs exceed the context window, earlier information is dropped — a source of errors in long documents.' },
+      { term: 'Token', def: 'The basic unit of text processed by an LLM. Not equivalent to a word — punctuation, spaces, and word fragments are all tokens. Most LLM pricing is per-token. Understanding token limits matters when processing large financial documents.' },
+      { term: 'Embedding', def: 'A numerical representation of text that captures semantic meaning — allowing AI to find conceptually similar content even when the wording differs. Embeddings are the mechanism behind AI search, document matching, and retrieval systems.' },
+      { term: 'Vector Database', def: 'A database that stores embeddings, enabling fast semantic search. When an AI system retrieves relevant context from your documents before answering — rather than relying on training data — a vector database is usually involved.' },
+      { term: 'Fine-tuning', def: 'Adapting a pre-trained model using a smaller, domain-specific dataset to improve performance on particular tasks. A model fine-tuned on finance documents performs better on finance queries. Fine-tuning is resource-intensive and requires careful governance of training data.' },
+    ],
+  },
+  {
+    id: 'g3', title: 'Enterprise & Integration',
+    terms: [
+      { term: 'RAG (Retrieval-Augmented Generation)', def: 'A technique that retrieves relevant, current information from a specified source before generating a response. RAG is significant for enterprise use because it grounds AI answers in your actual data — reducing hallucination and keeping responses current without retraining the model.' },
+      { term: 'MCP (Model Context Protocol)', def: 'An open standard developed by Anthropic that governs how AI models connect to external tools and data sources. MCP defines the permissions, boundaries, and interaction patterns for AI operating within enterprise systems. Relevant to finance teams evaluating how AI integrates with their ERP.' },
+      { term: 'AI Agent / Agentic Workflow', def: 'An AI system that executes a sequence of actions to complete a goal, rather than responding to a single prompt. An AI agent processing month-end accruals might retrieve transaction data, calculate adjustments, draft journal entries, flag exceptions, and route for approval — as a single governed workflow.' },
+      { term: 'Orchestration', def: 'The coordination of multiple AI agents or automated steps into a coherent workflow. An orchestration layer manages sequencing, error handling, and escalation logic.' },
+    ],
+  },
+  {
+    id: 'g4', title: 'Risk & Governance',
+    terms: [
+      { term: 'Hallucination', def: 'When an AI model generates content that is factually incorrect, invented, or unsupported — presented with apparent confidence. Hallucinations arise because LLMs predict plausible text rather than retrieve verified facts. In finance contexts, hallucinations can produce incorrect figures, non-existent references, or invented regulatory citations.' },
+      { term: 'Human-in-the-Loop', def: 'A governance design principle in which human review and approval is embedded at defined points within an AI-assisted workflow — particularly for high-value or high-risk decisions. Not a binary choice (fully automated vs. fully manual) but a tiered structure calibrated to risk level.' },
+      { term: 'Audit Trail', def: 'A timestamped, tamper-evident record of every action taken within a system — including AI-executed actions. In a governed AI deployment, the audit trail records what the AI did, on what data, at what time, and who reviewed or approved the output. Essential for regulatory compliance and external audit.' },
+      { term: 'AI Trust Label', def: "A framework for evaluating and communicating the trustworthiness of AI features in enterprise software. Covers data handling, transparency, auditability, human oversight mechanisms, and compliance alignment." },
+      { term: 'Tiered Approval', def: 'A governance model in which AI actions are subject to different levels of human oversight depending on value, risk, and exception status. Tier 1 actions may be fully automated; Tier 4 actions require CFO or FD sign-off. Tiered approval is central to Mysoft\'s governance framework.' },
+    ],
+  },
+  {
+    id: 'g5', title: 'Sage-Specific',
+    terms: [
+      { term: 'Authentic Intelligence', def: "Sage's organising AI philosophy — AI that is purposeful, transparent, and accountable, designed to serve genuine business outcomes rather than to demonstrate technological capability. Authentic Intelligence underpins Sage's approach to embedded AI across its product suite." },
+      { term: 'Sage AI Copilot', def: 'An embedded AI assistant in Sage Intacct that enables natural language queries, automated insight generation, and workflow initiation — all within the governed Intacct environment and subject to the system\'s existing permissions and audit infrastructure.' },
+      { term: 'Intelligent GL (General Ledger)', def: 'An AI capability within Sage Intacct that applies machine learning to transaction coding, anomaly detection, and reconciliation — reducing manual processing time and improving coding accuracy over time.' },
+      { term: 'Sage Intacct AI Automation', def: 'Embedded AI capabilities that automate high-volume transactional processes (accounts payable, accounts receivable, expense processing) within Sage Intacct, with configurable approval thresholds and complete audit trail generation.' },
+    ],
+  },
+];
+
+const GlossarySection = () => {
+  const [openGroups, setOpenGroups] = React.useState({ g1: true });
+  const [openTerms, setOpenTerms] = React.useState({});
+
+  const toggleGroup = (id) => setOpenGroups(prev => ({ ...prev, [id]: !prev[id] }));
+  const toggleTerm = (key) => setOpenTerms(prev => ({ ...prev, [key]: !prev[key] }));
+
+  return (
+    <section id="s2" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 52px' }}>
+          <span className="sec-eyebrow">GLOSSARY</span>
+          <h2 className="sec-h2" style={{ marginBottom: 16 }}>The vocabulary of AI — defined without jargon</h2>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            Every field develops its own shorthand. AI has developed several at once. These definitions prioritise practical understanding over technical precision — each one answers the question a finance professional actually needs answered.
+          </p>
+        </div>
+
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          {GLOSSARY_GROUPS.map(group => (
+            <div key={group.id} className="accordion-group">
+              <div
+                className="accordion-group-header"
+                onClick={() => toggleGroup(group.id)}
+              >
+                <span className="accordion-group-title">{group.title}</span>
+                <span className={'accordion-chevron' + (openGroups[group.id] ? ' open' : '')}>
+                  <Icon name="ChevronDown" size={16} color="var(--muted)" />
+                </span>
+              </div>
+              {openGroups[group.id] && group.terms.map((t, i) => {
+                const key = group.id + '-' + i;
+                const isOpen = openTerms[key];
+                return (
+                  <div key={key} className="accordion-term">
+                    <div className="accordion-term-header" onClick={() => toggleTerm(key)}>
+                      <span className="accordion-term-name">{t.term}</span>
+                      <span className={'accordion-chevron' + (isOpen ? ' open' : '')}>
+                        <Icon name="ChevronDown" size={15} color="var(--muted)" />
+                      </span>
+                    </div>
+                    {isOpen && (
+                      <div className="accordion-term-body">{t.def}</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 3: AI VS ML VS AUTOMATION ───────────────────────────────────────────
+
+const ComparisonSection = () => (
+  <section id="s3" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">UNDERSTANDING THE LANDSCAPE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          AI, machine learning, and automation — what the distinction actually means
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          These three terms are used interchangeably in vendor marketing and board conversations. They are not the same thing. Understanding the difference is not an academic exercise — it determines the risk profile, governance requirements, and realistic expectations of what any given system can and cannot do.
+        </p>
+      </div>
+
+      <div className="comparison-table-wrap" style={{ marginBottom: 48 }}>
+        <table className="comparison-table">
+          <thead>
+            <tr>
+              <th style={{ width: 160 }}></th>
+              <th>Automation</th>
+              <th>Machine Learning</th>
+              <th>Generative AI / LLMs</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['How it works', 'Follows explicit, pre-programmed rules', 'Learns statistical patterns from training data', 'Predicts and generates text or content based on training'],
+              ['Output type', 'Deterministic — same input always produces same output', 'Statistical — outputs are probabilistic within a trained range', 'Probabilistic — outputs vary; no guaranteed correctness'],
+              ['Finance example', 'Invoice routed to approver when over £10,000', 'Anomaly detected in supplier payment pattern', 'Period-end commentary drafted from financial data'],
+              ['Risk profile', 'Low — failure modes are predictable and defined', 'Medium — performance degrades if training data is stale or biased', 'Higher — hallucination risk; requires governance and verification'],
+              ['When it fails', 'Rule not defined for edge case', 'Training data gap or distribution shift', 'Model generates confident but incorrect output'],
+              ['Governance requirement', 'Workflow design and exception mapping', 'Model monitoring and data quality controls', 'Human-in-the-loop, audit trail, tiered approval'],
+            ].map(([label, ...cells], i) => (
+              <tr key={i}>
+                <td>{label}</td>
+                {cells.map((c, j) => <td key={j}>{c}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'Zap', title: 'Automation — the foundation',
+            copy: "Automation is the starting point, not the destination. Invoice processing rules, approval workflows, and scheduled reports are automation. They are deterministic, auditable, and well-understood. In Mysoft's maturity framework, Stage 2 delivers intelligent automation — removing the manual transactional layer before AI is introduced. This sequencing is deliberate: governance-ready automation is the foundation on which AI operates safely.",
+          },
+          {
+            icon: 'BarChart2', title: 'Machine learning — pattern intelligence',
+            copy: 'Machine learning operates on data at scale to surface patterns no human could monitor manually. Anomaly detection in supplier payments, predictive cash flow modelling, and spend categorisation are all ML applications. ML models require ongoing monitoring — they can degrade silently if the underlying data patterns change. In Sage Intacct, Intelligent GL uses machine learning to improve coding accuracy over time — a practical finance use case that compounds value with use.',
+          },
+          {
+            icon: 'Sparkles', title: 'Generative AI — capability and risk in equal measure',
+            copy: 'Large language models can summarise reports, answer complex queries, draft commentary, and orchestrate multi-step workflows. They can also generate incorrect figures with apparent confidence. The governance and verification structures that surround AI determine whether it is an asset or a liability — the technology alone does not. This is the central argument for a staged, governed approach to AI deployment in finance.',
+          },
+        ].map((c, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, padding: '28px 24px',
+          }}>
+            <div style={{
+              width: 40, height: 40, borderRadius: 4, background: 'rgba(0,182,237,0.08)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16,
+            }}>
+              <Icon name={c.icon} size={20} color="var(--cyan)" />
+            </div>
+            <h3 style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: 15.5, color: 'var(--navy)', margin: '0 0 10px', lineHeight: 1.3,
+            }}>{c.title}</h3>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{c.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 4: HOW LLMs WORK ────────────────────────────────────────────────────
+
+const MYTHS = [
+  ['LLMs are a database — they store and retrieve facts accurately', 'LLMs generate plausible text based on statistical patterns. They do not verify facts against a source of truth.'],
+  ['AI is always improving with use', 'Standard LLMs do not learn from your queries. Their knowledge is fixed at training cutoff unless updated or augmented.'],
+  ['Confident output means correct output', 'LLMs express uncertainty poorly. A hallucinated figure can appear with the same fluency as a correct one.'],
+  ['AI understands your documents', 'AI processes text tokens. It does not have contextual understanding of your business, your chart of accounts, or your regulatory obligations unless that context is provided explicitly.'],
+  ['AI can replace human judgement on material decisions', 'AI can surface options, draft outputs, and process volume. Material decisions — ones that affect financial statements, compliance, or stakeholder commitments — require human authority.'],
+];
+
+const LLMsSection = () => (
+  <section id="s4" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">HOW IT WORKS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Inside a large language model — what it actually does, and what it does not
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Large language models are trained on enormous quantities of text — books, articles, websites, code repositories, and structured documents. Through that training process, the model learns to predict: given this sequence of words and context, what should come next? That prediction capability, applied at scale with billions of parameters, produces outputs that can appear remarkably coherent, knowledgeable, and creative.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          It is important to understand what this is and is not. An LLM does not "know" things the way a database knows things. A database retrieves a stored fact. An LLM generates a plausible continuation of a prompt, informed by statistical patterns learned during training. The distinction matters because it means LLMs can — and regularly do — generate text that is fluent, confident, and wrong.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The model's working memory is its context window: the text it can process at one time. Modern LLMs have large context windows — enough to hold a substantial financial report or a full contract — but they are not unlimited. When input exceeds the context window, earlier content is dropped silently. For long documents, this can mean the model answers based on partial information without flagging the gap.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 36px' }}>
+          Training data has a cutoff date. An LLM trained on data through a given point does not have access to anything published after that date unless it is provided within the prompt or via a retrieval mechanism. For finance professionals evaluating current regulatory guidance or market conditions, this matters.
+        </p>
+
+        <div className="pull-quote">
+          "The right question is not 'is this AI accurate?' — it is 'what happens when it is not, and who is accountable?'"
+        </div>
+
+        <h3 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: '1.35rem', color: 'var(--navy)', margin: '48px 0 20px',
+          letterSpacing: '-0.015em',
+        }}>What LLMs are not</h3>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0,
+            background: 'var(--bg)', borderRadius: 4, overflow: 'hidden',
+            border: '1px solid var(--border-1)',
+          }}>
+            <div style={{
+              padding: '10px 16px', background: 'var(--navy)', color: '#fff',
+              fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11.5,
+              letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: 8,
+              borderRight: '1px solid rgba(255,255,255,0.1)',
+            }}>
+              <Icon name="X" size={13} color="rgba(255,255,255,0.6)" /> Myth
+            </div>
+            <div style={{
+              padding: '10px 16px', background: 'var(--navy)', color: '#fff',
+              fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11.5,
+              letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: 8,
+            }}>
+              <Icon name="Check" size={13} color="var(--cyan)" /> Reality
+            </div>
+          </div>
+          {MYTHS.map(([myth, reality], i) => (
+            <div key={i} className="myth-row">
+              <div className="myth-cell">
+                <Icon name="X" size={16} color="var(--danger)" style={{ flexShrink: 0, marginTop: 1 }} />
+                <span style={{ fontFamily: 'var(--font-sans)', color: 'var(--fg-1)' }}>{myth}</span>
+              </div>
+              <div className="myth-cell">
+                <Icon name="Check" size={16} color="var(--success)" style={{ flexShrink: 0, marginTop: 1 }} />
+                <span style={{ fontFamily: 'var(--font-sans)', color: 'var(--fg-2)' }}>{reality}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 5: RAG, MCP & AGENTS ────────────────────────────────────────────────
+
+const RAGSection = () => (
+  <section id="s5" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 52px' }}>
+        <span className="sec-eyebrow">CORE CONCEPTS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>RAG, MCP, and Agents — the three ideas that define enterprise AI</h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+          These three concepts sit at the intersection of AI capability and enterprise deployment. Understanding them is not optional for finance leaders evaluating AI vendors — they define whether an AI system is safe, auditable, and fit for your environment.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="grid-3-rag">
+        {[
+          {
+            icon: 'Search', eyebrow: 'RETRIEVAL-AUGMENTED GENERATION',
+            title: 'RAG — AI that answers from your data, not from memory',
+            body: (
+              <>
+                <p>A large language model trained on general data does not know your chart of accounts, your supplier base, your intercompany structure, or your latest board pack. It can generate fluent, plausible-sounding responses about these things, but they will be fabricated.</p>
+                <p>Retrieval-Augmented Generation solves this problem. Before generating a response, a RAG system retrieves relevant, current information from a specified source — your ERP, your document management system, your knowledge base — and provides that information to the model as context. The model then generates its response grounded in your actual data.</p>
+                <p>The practical implication: a RAG-enabled AI assistant querying your Sage Intacct data answers questions about your accounts, not about accounts in general. It can surface your specific aged debtors, your supplier payment terms, your actual cash position — because it is working from retrieved facts, not trained approximations.</p>
+              </>
+            ),
+            callout: <><strong>Why it matters for finance:</strong> RAG is the mechanism that makes AI answers trustworthy enough to use in operational finance contexts. Without it, AI is a general knowledge tool. With it, AI can act as an informed assistant with access to your specific financial data. Verify whether any AI system you evaluate uses RAG — and ask what data sources it retrieves from and whether retrieval is auditable.</>,
+          },
+          {
+            icon: 'GitBranch', eyebrow: 'MODEL CONTEXT PROTOCOL',
+            title: 'MCP — the standard that governs how AI connects to your systems',
+            body: (
+              <>
+                <p>Model Context Protocol is an open standard, developed by Anthropic and adopted across the AI industry, that defines how AI models connect to external tools, data sources, and systems. It is, in essence, the governance infrastructure for AI integration.</p>
+                <p>Before MCP, AI integrations were bespoke — each connection between an AI model and an enterprise system required custom engineering with inconsistent security and permission models. MCP standardises those connections: it defines what data the AI can access, what actions it can take, what permissions are required, and how those boundaries are enforced.</p>
+                <p>For finance and IT leaders, MCP matters because it makes AI integrations auditable and governable. An AI system operating through MCP connections has defined, inspectable permissions — you can see exactly what it can and cannot access. An AI system operating outside a standards-based protocol is harder to audit and harder to govern.</p>
+              </>
+            ),
+            callout: <><strong>Why it matters for finance:</strong> When evaluating AI systems for finance use, ask whether the integration with your ERP and financial data uses a standards-based protocol. Bespoke, undocumented integrations create governance and audit risks that are difficult to quantify. MCP-compliant integrations can be inspected, restricted, and documented as part of your AI governance framework.</>,
+          },
+          {
+            icon: 'Cpu', eyebrow: 'AI AGENTS',
+            title: 'Agents — AI that acts, not just answers',
+            body: (
+              <>
+                <p>An AI agent is an AI system capable of executing a sequence of actions to complete a defined goal — not just generating a single response. Where a conversational AI answers one question at a time, an AI agent can plan a workflow, execute multiple steps, call external tools, evaluate results, and continue until the goal is achieved.</p>
+                <p>In a finance context, an agentic AP workflow might: retrieve open purchase orders, match against incoming invoices, identify discrepancies, calculate payment proposals within defined approval thresholds, route exceptions to the appropriate reviewer, and post approved transactions to the general ledger — as a single governed, auditable process.</p>
+                <p>The capabilities are significant. So are the risks. An AI agent that can take actions — post transactions, send communications, approve payments — requires a governance framework that is qualitatively different from one applied to a conversational AI that generates text.</p>
+              </>
+            ),
+            callout: <><strong>Why it matters for finance:</strong> Agentic AI represents the next material step in finance automation. At Mysoft, this is Stage 4 of our AI maturity framework — and we do not deploy agentic capabilities until a client has the governance foundation, data quality, and operational discipline that Stages 1 to 3 establish. The technology is ready; the governance readiness of most finance functions is not yet. That gap is where implementation risk lives.</>,
+          },
+        ].map((c, i) => (
+          <div key={i} className="feature-card">
+            <div className="feature-card-icon">
+              <Icon name={c.icon} size={22} color="var(--cyan)" />
+            </div>
+            <div className="feature-card-eyebrow">{c.eyebrow}</div>
+            <h3 className="feature-card-h3">{c.title}</h3>
+            <div className="feature-card-body" style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)' }}>
+              {c.body}
+            </div>
+            <div className="feature-card-callout">{c.callout}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 6: HALLUCINATIONS & RISK ────────────────────────────────────────────
+
+const HallucinationsSection = () => (
+  <section id="s6" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">RISK & TRUST</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Hallucinations, over-reliance, and the real risks of trusting AI in finance
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The term "hallucination" in AI refers to a specific failure mode: an AI model generates output that is factually incorrect, invented, or unsupported — and presents it with apparent confidence. There is no visible uncertainty, no caveat, no signal that the output should be verified. The model simply predicts the next plausible token, and sometimes that prediction is wrong.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Hallucinations arise from the fundamental architecture of large language models. Because LLMs are statistical prediction engines rather than fact retrieval systems, they do not "know" when they do not know something. A model asked about a regulatory requirement it has not seen in its training data will not say "I don't have that information." It will generate a plausible-sounding response — and that response may bear no relationship to the actual requirement.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          For finance professionals, the implications are not abstract. Finance involves material figures, regulatory obligations, contractual commitments, and statements that carry legal weight. An AI-generated figure in a board report, a fabricated regulatory citation in a compliance document, or an incorrect intercompany balance in a reconciliation are not theoretical risks — they are the specific failure modes that arise when AI is deployed without verification structures.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 36px' }}>
+          The problem is compounded by two behaviours that research consistently identifies in human-AI interaction. The first is over-reliance: users defer to AI output without checking it, particularly when the AI presents its answer with apparent confidence. The second is automation bias: humans given an AI-generated recommendation are less likely to identify errors than humans working without AI assistance. Both behaviours are well-documented and both are design problems, not user problems.
+        </p>
+
+        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.25rem', color: 'var(--navy)', margin: '0 0 16px', letterSpacing: '-0.01em' }}>
+          Three scenarios that illustrate the risk
+        </h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 48 }}>
+          {[
+            {
+              label: 'Vignette 1 — Commentary',
+              scenario: 'AI drafts period-end commentary citing a 12% improvement in operating margin.',
+              risk: 'Figure is based on misinterpreted data pulled from context. Reviewed and signed without verification. Posted to board pack.',
+            },
+            {
+              label: 'Vignette 2 — Tax position',
+              scenario: 'AI asked to summarise VAT obligations for a new trading entity.',
+              risk: 'Model generates a confident summary based on general training data. Specific exemptions applicable to the entity are not referenced. Tax position filed incorrectly.',
+            },
+            {
+              label: 'Vignette 3 — Payment run',
+              scenario: 'AI agent processes a payment run without human review, operating within configured approval thresholds.',
+              risk: 'A supplier bank account has been updated fraudulently. The agent has no mechanism to flag account changes. Payment authorised and processed.',
+            },
+          ].map((v, i) => (
+            <div key={i} className="vignette-card">
+              <div className="vignette-label">{v.label}</div>
+              <div className="vignette-scenario">{v.scenario}</div>
+              <div className="vignette-risk"><strong style={{ color: 'var(--danger)' }}>Risk:</strong> {v.risk}</div>
+            </div>
+          ))}
+        </div>
+
+        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.25rem', color: 'var(--navy)', margin: '0 0 8px', letterSpacing: '-0.01em' }}>
+          The governance response
+        </h3>
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: 'var(--fg-2)', margin: '0 0 24px' }}>
+          These risks are not arguments against AI in finance. They are arguments for a specific type of AI deployment — one with verification structures built in from the start, not added later.
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 40 }}>
+          {[
+            { icon: 'Users', title: 'Human-in-the-loop by design.', copy: 'Define which AI actions require human review before execution. Tiered approval models calibrate oversight to risk level — not every action requires CFO sign-off, but every material action requires a human checkpoint.' },
+            { icon: 'FileText', title: 'Audit trail by default.', copy: 'Every AI-executed action should generate a timestamped, tamper-evident record. The audit trail should capture what the AI did, on what data, at what time, and what human action followed. This is the minimum requirement for regulatory defensibility.' },
+            { icon: 'RefreshCw', title: 'Verification checkpoints.', copy: 'AI-generated figures in financial statements, board reports, or regulatory filings should be subject to the same verification process as any other input. The AI is an input mechanism, not a verification mechanism.' },
+            { icon: 'AlertTriangle', title: 'Exception escalation.', copy: 'Governance frameworks should define what constitutes an exception — transactions outside normal parameters, anomalous patterns, confidence thresholds — and route exceptions to human review automatically. AI handles volume; humans govern exceptions.' },
+          ].map((item, i) => (
+            <div key={i} style={{
+              display: 'flex', gap: 16, padding: '18px 20px',
+              background: '#fff', border: '1px solid var(--border-1)',
+              borderRadius: 4, alignItems: 'flex-start',
+            }}>
+              <div style={{
+                width: 36, height: 36, borderRadius: 4,
+                background: 'rgba(0,182,237,0.08)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+              }}>
+                <Icon name={item.icon} size={18} color="var(--cyan)" />
+              </div>
+              <div>
+                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14.5, color: 'var(--navy)' }}>
+                  {item.title}
+                </span>{' '}
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.6 }}>{item.copy}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="pull-quote">
+          "AI is not a risk to finance operations. Ungoverned AI is. The distinction is a framework decision, not a technology decision."
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 7: GENERIC VS EMBEDDED AI ───────────────────────────────────────────
+
+const GenericVsEmbeddedSection = () => (
+  <section id="s7" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">CHOOSING THE RIGHT TOOL</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          Generic AI tools versus embedded finance AI — different tools, different risk profiles
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          The AI landscape available to a finance team today includes both general-purpose AI tools and AI capabilities embedded within finance systems. These are not interchangeable. Understanding the difference is a prerequisite for making defensible decisions about what AI your organisation should use, where, and under what governance.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          This is not a case for or against any specific tool. General-purpose AI has legitimate uses in a finance context — research, drafting, learning, ideation. The risk arises when general-purpose tools are used for tasks that require access to verified financial data, auditability, or compliance alignment — tasks they were not designed to perform.
+        </p>
+      </div>
+
+      <div className="comparison-table-wrap" style={{ marginBottom: 40 }}>
+        <table className="comparison-table">
+          <thead>
+            <tr>
+              <th style={{ width: 180 }}>Dimension</th>
+              <th>Generic AI Tools (e.g. ChatGPT, Copilot)</th>
+              <th>Embedded Finance AI (e.g. Sage Intacct)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Data access', 'Works with data you paste or upload to the prompt. No direct ERP integration. Data leaves your controlled environment.', 'Integrated within your ERP. Works with your live financial data within the system\'s permission and security framework.'],
+              ['Data security', 'Data submitted to general-purpose AI may be used to train future models (depending on provider and plan). Review data processing agreements carefully.', 'Data remains within the ERP environment. Governed by the same data handling policies as your financial system.'],
+              ['Auditability', 'Conversations are not part of your financial audit trail. AI-generated outputs used in financial processes are not traceable within your systems of record.', 'AI actions are logged within the ERP audit trail. Timestamped, permission-controlled, available to auditors in a structured format.'],
+              ['ERP integration', 'None. Output must be manually transferred to your financial systems.', 'Native. AI-generated entries, approvals, and workflow actions are executed within the ERP and reflected in your financial data immediately.'],
+              ['Compliance alignment', 'Not designed for accounting standards, VAT rules, or financial reporting obligations. No guarantee of regulatory currency.', 'Developed and maintained by software providers with regulatory obligations and customer commitments. Updated as requirements change.'],
+              ['Accountability', 'No defined accountability for AI output that enters your financial processes. Accountability lies entirely with the person who used the tool and applied the output.', 'AI actions are attributed to defined system users. Governance frameworks can assign accountability at every workflow stage.'],
+            ].map(([dim, generic, embedded], i) => (
+              <tr key={i}>
+                <td>{dim}</td>
+                <td>{generic}</td>
+                <td>{embedded}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{
+          background: '#fff', border: '1px solid var(--border-1)',
+          borderRadius: 4, padding: '28px 32px',
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 12,
+            letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: 10,
+          }}>THE PRACTICAL RECOMMENDATION</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 14px' }}>
+            The right question is not which tool is better — it is which tool is appropriate for which task. A finance team using a general-purpose AI to draft a conference agenda, research an accounting standard, or prepare talking points for a board meeting is operating within reasonable risk parameters. The same team using a general-purpose AI to generate journal entries, draft statutory accounts, or process payment runs has a governance gap that no technology preference resolves.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            Map your AI use cases before selecting your tools. Define which tasks require ERP integration and audit trail. Use embedded AI for those tasks. Use general-purpose AI for tasks where the output is informational and will be verified before it enters your systems of record.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 8: SAGE'S APPROACH ───────────────────────────────────────────────────
+
+const SageApproachSection = () => (
+  <section id="s8" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">SAGE'S APPROACH</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Authentic Intelligence and the Sage AI Trust label</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Sage's position in the AI landscape is shaped by two commitments that matter to enterprise finance customers: a philosophy about what AI should be, and a framework for validating that the AI in their products meets it.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 32 }} className="two-col-sage">
+        <div style={{ background: '#fff', border: '1px solid var(--border-1)', borderRadius: 4, padding: '32px 28px' }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+            letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: 10,
+          }}>THE PHILOSOPHY</div>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.25rem',
+            color: 'var(--navy)', margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.015em',
+          }}>Authentic Intelligence — purposeful, transparent, accountable</h3>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 14px' }}>
+            Sage describes its approach to AI as "Authentic Intelligence" — a deliberate framing that positions AI not as a demonstration of technological sophistication, but as a tool that should serve genuine business outcomes in a trustworthy way.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 14px' }}>
+            The Authentic Intelligence philosophy has three components. First, AI should be purposeful — solving real problems for real users, not deployed because AI is available. Second, it should be transparent — users should understand what the AI is doing, what data it is working with, and how conclusions are reached. Third, it should be accountable — there should be a clear governance chain for every AI action, from configuration through to audit.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            For finance leaders evaluating AI in their ERP, the Authentic Intelligence commitment is a useful benchmark. Ask any AI vendor the same three questions: Is this AI purposeful? Is it transparent? Is it accountable?
+          </p>
+        </div>
+
+        <div style={{ background: '#fff', border: '1px solid var(--border-1)', borderRadius: 4, padding: '32px 28px' }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+            letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: 10,
+          }}>THE FRAMEWORK</div>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.25rem',
+            color: 'var(--navy)', margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.015em',
+          }}>The Sage AI Trust label — what it covers and what it means</h3>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+            The Sage AI Trust label is Sage's published commitment to customers about how AI features in its products are designed, governed, and validated. It covers six dimensions:
+          </p>
+          {[
+            ['Transparency', 'AI features disclose what they do, what data they use, and what they cannot do.'],
+            ['Security and privacy', 'AI operates within the system\'s existing data governance. Customer data is not used to train AI models without explicit consent.'],
+            ['Fairness', 'AI features are designed to avoid bias that could affect financial decisions or customer treatment.'],
+            ['Reliability', 'AI outputs are validated for accuracy within defined confidence thresholds. Where confidence is low, the system flags for human review.'],
+            ['Human oversight', 'AI features support human decision-making; they do not replace it. Material actions require human authority within the approval framework.'],
+            ['Compliance alignment', 'AI features are developed and maintained in accordance with applicable accounting standards, data protection obligations, and regulatory requirements.'],
+          ].map(([dim, desc], i) => (
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
+              <Icon name="Check" size={14} color="var(--success)" style={{ flexShrink: 0, marginTop: 2 }} />
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, lineHeight: 1.55, color: 'var(--fg-2)' }}>
+                <strong style={{ color: 'var(--navy)' }}>{dim}:</strong> {desc}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{
+          background: 'var(--bg)', border: '1px solid var(--border-1)',
+          borderLeft: '4px solid var(--cyan)', borderRadius: 4, padding: '24px 28px',
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+            letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 8,
+          }}>MYSOFT COMMENTARY</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 10px' }}>
+            The Authentic Intelligence philosophy and the AI Trust label provide the platform-level foundation. The governance framework that Mysoft builds around Sage Intacct deployments extends and operationalises that foundation at the customer level — adding the process governance maps, tiered approval structures, audit trail protocols, and quarterly review cycles that translate platform commitments into operational practice.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--navy)', fontWeight: 500, margin: 0 }}>
+            The platform is trustworthy by design. The deployment determines whether that trust is realised in practice.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 9: GOVERNANCE FRAMEWORK ─────────────────────────────────────────────
+
+const GovernanceSection = () => (
+  <section className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 52 }}>
+        <span className="sec-eyebrow">OUR FRAMEWORK</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          The Mysoft AI Governance Framework — how we deploy AI responsibly
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          Most AI conversations in finance focus on capability. The more important conversation is about governance: the controls, accountability structures, and review cycles that determine whether AI creates value or creates risk.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          Mysoft's AI Governance Framework is proprietary IP developed for Sage Intacct deployments at Stages 3 and 4 of our AI maturity ladder. It has been built to meet the standards that CFOs, Finance Directors, external auditors, and regulators will increasingly require of organisations using AI in their finance operations. It is not an afterthought to deployment — it is the design foundation on which deployment is built.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The framework is built on five non-negotiable principles and delivered through four governance layers.
+        </p>
+      </div>
+
+      <h3 style={{
+        fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.35rem',
+        color: 'var(--navy)', margin: '0 0 24px', letterSpacing: '-0.015em',
+      }}>Five principles</h3>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16, marginBottom: 56 }} className="principles-grid">
+        {[
+          { num: '01', icon: 'Layers',      title: 'Governance before deployment',    desc: 'AI is introduced only after the operational foundation (Stage 1) and process workflows (Stage 2) are in place. There are no shortcuts.' },
+          { num: '02', icon: 'Users',       title: 'Human authority is non-negotiable', desc: 'Every AI-executed action has a defined human owner. Automation handles volume. Humans govern exceptions.' },
+          { num: '03', icon: 'FileSearch',  title: 'Auditability is built in, not retrofitted', desc: 'Every AI action generates a complete audit trail within Sage Intacct. Retrofitting audit capability after deployment is not acceptable.' },
+          { num: '04', icon: 'ArrowRight',  title: 'Incrementalism reduces risk',     desc: 'AI is introduced in defined stages, each validated before the next is activated. No customer progresses to Stage 4 without demonstrated Stage 3 governance maturity.' },
+          { num: '05', icon: 'Eye',         title: 'Transparency to the board',       desc: 'CFOs must be able to articulate the AI governance model to auditors, non-executives, and regulators. If you cannot explain it, it is not governed.' },
+        ].map((p, i) => (
+          <div key={i} className="principle-card">
+            <div className="principle-num">{p.num}</div>
+            <div className="principle-icon"><Icon name={p.icon} size={20} color="var(--cyan)" /></div>
+            <div className="principle-title">{p.title}</div>
+            <div className="principle-desc">{p.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <h3 style={{
+        fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.35rem',
+        color: 'var(--navy)', margin: '0 0 20px', letterSpacing: '-0.015em',
+      }}>Four governance layers</h3>
+
+      <div className="layers-table-wrap">
+        <table className="layers-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Focus</th>
+              <th>What it delivers</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['1. Process Governance', 'Workflow mapping and AI action classification', 'Every process mapped as: routine low-risk (fully automated), routine elevated value (automated + notification), or exception/anomaly (escalated to human review).'],
+              ['2. Authority & Approval', 'Tiered Approval Model', 'Four tiers of human oversight calibrated to transaction value and risk: Tier 1 fully automated through to Tier 4 requiring CFO/FD sign-off.'],
+              ['3. Audit Trail & Control', 'Complete action logging', 'Timestamped record of every AI action within Sage Intacct. CFO/FD have full read access. External auditors have structured access during audit periods.'],
+              ['4. Model Review Cycle', 'Quarterly AI Optimisation Review (QAOR)', 'Regular calibration of exception rates, assessment of new Intacct AI capabilities, audit trail review, and next-stage roadmap alignment.'],
+            ].map(([layer, focus, delivers], i) => (
+              <tr key={i}>
+                <td>{layer}</td>
+                <td>{focus}</td>
+                <td>{delivers}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{
+        marginTop: 40, padding: '32px', background: 'var(--navy)', borderRadius: 4,
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap',
+      }}>
+        <div>
+          <div style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.15rem',
+            color: '#fff', marginBottom: 6, letterSpacing: '-0.01em',
+          }}>Download the Mysoft AI Governance Framework</div>
+          <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>
+            Available to customers and prospects engaged in AI readiness conversations.
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: 12, flexShrink: 0, flexWrap: 'wrap' }}>
+          <Button variant="invert" size="md" icon="→" href="../../contact/">Download the Framework</Button>
+          <Button variant="ghostWhite" size="md" href="../../insights/">Read the governance blog series</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 10: QUESTIONS TO ASK ─────────────────────────────────────────────────
+
+const VendorQuestionsSection = () => (
+  <section className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">BUYER INTELLIGENCE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Ten questions to ask before committing to any AI solution</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 12px' }}>
+          The AI vendor landscape is crowded and claims are rarely backed by specifics. Finance leaders evaluating AI solutions need a consistent framework for separating substantive capability from marketing positioning.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 36px' }}>
+          These ten questions are designed to expose the gaps. A vendor that cannot answer them clearly has not built governance into their product. A vendor that answers them in detail has.
+        </p>
+
+        <div style={{ border: '1px solid var(--border-1)', borderRadius: 4, overflow: 'hidden' }}>
+          {[
+            ['How does your AI access our financial data, and what data does it send outside our controlled environment?', 'This question establishes data handling. The answer should specify exactly what data the AI touches, where it is processed, and whether it is used for model training. "It\'s all secure" is not an answer.'],
+            ['Can you show me the audit trail that your AI generates?', 'Ask for a demonstration, not a description. The audit trail should be exportable, timestamped, and structured in a format your external auditors can inspect. If it does not exist as a demonstration, it does not exist in practice.'],
+            ['What happens when your AI produces an incorrect output that reaches our financial statements?', "This question tests accountability. The vendor's answer should include specific governance mechanisms — not just statements about accuracy. Who is responsible? What is the remediation process? What is the contractual position?"],
+            ['How do you prevent your AI from hallucinating in the context of our specific financial data?', 'Look for specific technical answers: RAG, confidence thresholds, retrieval source citation, human-in-the-loop checkpoints. "Our model is very accurate" is not an answer to this question.'],
+            ['What human approval is required before your AI takes a material action — posting a journal, approving a payment, generating a financial report?', 'The answer should describe a tiered approval model with specific thresholds, not a binary automated/manual choice. Ask how those thresholds are configured and who controls them.'],
+            ['How does your AI handle an edge case it has not been trained for?', 'Well-designed AI systems escalate to human review when confidence is low or when an input falls outside known parameters. Poorly designed systems generate outputs regardless. The answer reveals whether exception handling is designed in or assumed away.'],
+            ['How do you ensure your AI remains compliant as accounting standards and regulatory requirements change?', 'AI trained on a historical dataset does not automatically update when HMRC guidance changes or a new accounting standard is issued. Ask how regulatory currency is maintained and what the update mechanism is.'],
+            ['Can your AI\'s permission model be configured to match our internal approval authorities?', 'AI operating within a finance system should respect the same authorisation hierarchy as your finance team. An AI that can initiate a transaction a human user could not is a governance failure.'],
+            ['What is your process for the quarterly review and optimisation of AI performance?', 'AI deployments degrade without active monitoring. Ask whether there is a structured review cycle, what it covers, and who is responsible for it — both on the vendor side and on the customer side.'],
+            ['How do you support us in presenting our AI governance model to our auditors and board?', 'This is the question that reveals whether the vendor thinks of governance as a compliance checkbox or as an ongoing advisory responsibility. The answer should describe specific deliverables: governance documentation, audit trail formatting, board reporting templates.'],
+          ].map(([title, body], i) => (
+            <div key={i} className="question-item">
+              <div className="question-num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="question-text">
+                <div className="question-title">{title}</div>
+                <div className="question-body">{body}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, margin: '20px 0 0', fontStyle: 'italic' }} className="questions-note">
+          This checklist is intended to be shared. Download or copy it for use in vendor evaluation conversations, procurement processes, or board briefings.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 11: AI IN PRACTICE ───────────────────────────────────────────────────
+
+const UseCasesSection = () => (
+  <section className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">IN PRACTICE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>What AI looks like in a finance team — three scenarios</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Abstract concepts become clearer with concrete examples. These three scenarios illustrate how AI, automation, and governance interact in practice at different stages of maturity — drawing on the capabilities available within Sage Intacct and the Mysoft implementation framework.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="grid-3-resp">
+        {[
+          {
+            stage: 'STAGE 2 — INTELLIGENT AUTOMATION',
+            title: 'AP automation with exception handling',
+            body: [
+              'A manufacturing business processing 2,400 supplier invoices per month has moved from a paper-based approval process to AP automation within Sage Intacct. Invoices received digitally are matched against purchase orders automatically. Three-way matching — invoice, PO, and goods receipt — is completed without manual intervention for invoices within defined tolerance thresholds.',
+              'Exceptions — invoices with no matching PO, variances outside tolerance, or new supplier accounts — are routed to a human review queue with full context attached. The finance team\'s time moves from data entry to exception review. Processing time falls from 14 days to 3 days. The audit trail captures every action: automated match, exception flag, human decision, and posting. No AI hallucination risk applies — this is rule-based automation operating within defined parameters.',
+            ],
+            footer: 'Stage 2 — Intelligent Automation.',
+          },
+          {
+            stage: 'STAGE 3 — AI-AUGMENTED FINANCE',
+            title: 'AI-assisted period-end close and commentary',
+            body: [
+              'A professional services firm using Sage Intacct Copilot has integrated AI assistance into its period-end close process. At month end, the finance manager queries the AI assistant in natural language: "Summarise the material variances in operating expenditure against budget this month and identify the top three drivers."',
+              'The AI retrieves the relevant data from Intacct, identifies the variances, and drafts a structured commentary. The finance manager reviews, adjusts one figure, and incorporates the commentary into the board pack in under 15 minutes, rather than 2 hours. The Intacct audit trail records the query, the AI response, the human edit, and the final version. The process is faster and the human remains accountable for the output.',
+            ],
+            footer: 'Stage 3 — AI-Augmented Finance.',
+          },
+          {
+            stage: 'STAGE 4 — AGENTIC FINANCE OPERATIONS',
+            title: 'Agentic payment processing with tiered approval',
+            body: [
+              'A SaaS business at Stage 4 maturity has deployed an agentic payment workflow within Sage Intacct. On the first working day of the month, the AI agent executes a structured sequence: retrieve all approved invoices due for payment, check each supplier\'s bank details against the verified supplier master, calculate the payment proposal within the configured Tier 1 threshold (payments below £5,000 to verified suppliers with a 12-month payment history), generate the BACS file for Tier 1 payments, and route the full payment register to the Finance Director for Tier 2 and above review.',
+              'The Finance Director reviews 23 items flagged for human decision — new suppliers, amounts above threshold, and three anomalies flagged by the agent as outside normal parameters — and approves 19, queries 3, and rejects 1. Total review time: 28 minutes. The payment run completes. The full audit trail is logged: every agent action, every human decision, every exception flag.',
+            ],
+            footer: 'Stage 4 — Agentic Finance Operations. Governance maturity at Stages 1 to 3 is a prerequisite.',
+          },
+        ].map((c, i) => (
+          <div key={i} className="usecase-card">
+            <div className="usecase-card-head">
+              <div className="stage-pill">{c.stage}</div>
+              <div className="usecase-card-title">{c.title}</div>
+            </div>
+            <div className="usecase-card-body">
+              {c.body.map((p, j) => <p key={j}>{p}</p>)}
+            </div>
+            <div className="usecase-card-footer">
+              {c.footer} <a href="../../the-journey/">See the maturity framework →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 12: LEARNING JOURNEY ─────────────────────────────────────────────────
+
+const LearningJourneySection = () => (
+  <section id="s9" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }}>
+        <span className="sec-eyebrow">WHERE TO GO NEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Your learning journey — from foundation to strategy</h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+          The AI Bootcamp is the starting point. These are the next steps — structured to build from conceptual understanding through to strategic readiness.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'flex', alignItems: 'flex-start', gap: 0, position: 'relative',
+        padding: '0 20px',
+      }} className="journey-wrap">
+        {[
+          {
+            num: 1, active: true,
+            label: 'AI Bootcamp',
+            desc: 'Core vocabulary, concepts, risks, and governance foundations.',
+            link: null, linkLabel: 'You are here',
+          },
+          {
+            num: 2, active: false,
+            label: 'AI Readiness Assessment',
+            desc: 'A 13-question diagnostic across five dimensions. 10 minutes. No registration required.',
+            link: '../../ai-readiness-assessment.html', linkLabel: 'Take the assessment →',
+          },
+          {
+            num: 3, active: false,
+            label: 'CFO Strategy Blog Series',
+            desc: 'Four articles on how finance functions scale and build the operational foundation for growth.',
+            link: '../../insights/cfo-strategy/', linkLabel: 'Read the series →',
+          },
+          {
+            num: 4, active: false,
+            label: 'Operational Transformation',
+            desc: 'Use-case focused articles on AP automation, AI-assisted close, FP&A, and agentic workflows.',
+            link: '../../insights/operational-transformation/', linkLabel: 'Read the series →',
+          },
+          {
+            num: 5, active: false,
+            label: 'Talk to Mysoft',
+            desc: 'A conversation about where your organisation is and what a structured path forward looks like.',
+            link: '../../contact/', linkLabel: 'Book a conversation →',
+          },
+        ].map((step, i, arr) => (
+          <div key={i} className="journey-step">
+            {i < arr.length - 1 && <div className="journey-connector" />}
+            <div className="journey-step-circle" style={{
+              background: step.active ? 'var(--cyan)' : 'var(--navy)',
+              color: '#fff',
+              boxShadow: step.active ? '0 0 0 6px rgba(0,182,237,0.15)' : 'none',
+            }}>{step.num}</div>
+            <div className="journey-step-label" style={{ color: step.active ? 'var(--cyan)' : 'var(--navy)' }}>
+              {step.label}
+            </div>
+            <div className="journey-step-desc">{step.desc}</div>
+            {step.link ? (
+              <a href={step.link} className="journey-step-link">{step.linkLabel}</a>
+            ) : (
+              <span style={{
+                marginTop: 10, fontFamily: 'var(--font-sans)', fontWeight: 600,
+                fontSize: 12, color: 'var(--muted)', textAlign: 'center',
+              }}>{step.linkLabel}</span>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div style={{
+        marginTop: 56, maxWidth: 640, margin: '56px auto 0', textAlign: 'center',
+        background: 'var(--bg)', border: '1px solid var(--border-1)',
+        borderRadius: 4, padding: '24px 28px',
+      }}>
+        <div style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 15,
+          color: 'var(--navy)', marginBottom: 8, letterSpacing: '-0.01em',
+        }}>Not sure where you are on the maturity ladder?</div>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.6, margin: '0 0 16px' }}>
+          The AI Readiness Assessment takes ten minutes and establishes exactly where your finance function sits — and what gaps are most material to address first.
+        </p>
+        <Button variant="primary" size="md" icon="→" href="../../ai-readiness-assessment.html">Take the assessment</Button>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 13: FINAL CTA ────────────────────────────────────────────────────────
+
+const FinalCTASection = ({ onAssess }) => (
+  <section className="bootcamp-sec bootcamp-sec-navy">
+    <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', padding: '0 32px' }}>
+      <h2 style={{
+        fontFamily: 'var(--font-display)', fontWeight: 600,
+        fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.1,
+        letterSpacing: '-0.025em', color: '#fff', margin: '0 0 20px',
+      }}>Where does your finance function stand?</h2>
+      <p style={{
+        fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.2vw, 1.1rem)',
+        lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', margin: '0 0 36px',
+      }}>
+        The AI Readiness Assessment takes ten minutes and identifies where you sit on the maturity ladder, what gaps are material, and what a realistic next step looks like. It is the most useful thing you can do with the next quarter of an hour if AI strategy is on your agenda.
+      </p>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <Button variant="invert" size="lg" icon="→" href="../../ai-readiness-assessment.html">
+          Take the AI Readiness Assessment
+        </Button>
+        <Button variant="ghostWhite" size="lg" href="../../contact/">
+          Talk to us about your AI strategy
+        </Button>
+      </div>
+      <p style={{
+        fontFamily: 'var(--font-sans)', fontSize: 12.5, color: 'rgba(255,255,255,0.35)',
+        margin: '24px 0 0', fontStyle: 'italic',
+      }}>
+        No sales pitch. No obligation. A conversation about your situation.
+      </p>
+    </div>
+  </section>
+);
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToAssess = () => {
+    window.location.href = '../../ai-readiness-assessment.html';
+  };
+
+  return (
+    <>
+      <NavBar basePath="../../" onAssess={scrollToAssess} />
+      <SectionNav />
+      <main>
+        <HeroSection />
+        <WhyNowSection />
+        <GlossarySection />
+        <ComparisonSection />
+        <LLMsSection />
+        <RAGSection />
+        <HallucinationsSection />
+        <GenericVsEmbeddedSection />
+        <SageApproachSection />
+        <GovernanceSection />
+        <VendorQuestionsSection />
+        <UseCasesSection />
+        <LearningJourneySection />
+        <FinalCTASection onAssess={scrollToAssess} />
+      </main>
+      <Footer basePath="../../" onAssess={scrollToAssess} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
