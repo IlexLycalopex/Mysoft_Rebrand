@@ -1,0 +1,1528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Financial Management System Bootcamp | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What a financial management system is, how it differs from ERP and accounting software, what Sage Intacct delivers, and how to select the right platform for a growing finance function.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/fms-bootcamp">
+<meta property="og:title" content="Financial Management System Bootcamp | Mysoft">
+<meta property="og:description" content="What a financial management system is, how it differs from ERP and accounting software, what Sage Intacct delivers, and how to select the right platform for a growing finance function.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-h);
+}
+
+/* Button interactions */
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-accent:hover     { opacity: 0.88; }
+.btn-ghost:hover      { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover     { background: var(--bg) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+.nav-active { color: var(--cyan) !important; }
+
+/* Section nav */
+.section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+  padding: 0 32px;
+  box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none;
+  display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none;
+  padding: 0 32px;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Page sections */
+.bootcamp-sec { padding: 100px 32px; }
+.bootcamp-sec-alt { background: #fff; }
+.bootcamp-sec-navy { background: var(--navy); color: #fff; }
+.bootcamp-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+/* Hero */
+.hero-bootcamp { background: var(--navy); padding: 96px 32px 88px; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.hero-breadcrumb a { color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 140ms; }
+.hero-breadcrumb a:hover { opacity: 1; }
+.hero-breadcrumb-sep { opacity: 0.4; }
+
+/* Eyebrow on dark */
+.eyebrow-dark {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 14px;
+}
+
+/* Tables */
+.comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.5;
+  vertical-align: top; min-width: 160px;
+}
+.comparison-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.comparison-table tr:nth-child(even) td { background: var(--bg); }
+.comparison-table tr:nth-child(odd) td { background: #fff; }
+.comparison-table td:first-child {
+  font-weight: 600; color: var(--navy); font-size: 13px;
+  background: var(--bg) !important; white-space: nowrap;
+}
+
+/* Accordion */
+.accordion-group { border: 1px solid var(--border-1); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.accordion-group-header {
+  padding: 18px 24px; background: var(--bg);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; transition: background 140ms;
+}
+.accordion-group-header:hover { background: #eaedef; }
+.accordion-group-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.accordion-term {
+  border-top: 1px solid var(--border-1); padding: 0;
+  background: #fff;
+}
+.accordion-term-header {
+  padding: 16px 24px; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; user-select: none;
+  transition: background 140ms;
+}
+.accordion-term-header:hover { background: rgba(0,182,237,0.03); }
+.accordion-term-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3;
+}
+.accordion-term-body {
+  padding: 0 24px 20px;
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2);
+}
+.accordion-chevron { flex-shrink: 0; transition: transform 220ms var(--ease-out); color: var(--muted); }
+.accordion-chevron.open { transform: rotate(180deg); }
+
+/* Callout / pull quote */
+.pull-quote {
+  border-left: 4px solid var(--yellow);
+  background: var(--navy); color: #fff;
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.pull-quote-light {
+  border-left: 4px solid var(--yellow);
+  background: var(--bg); color: var(--navy);
+  padding: 28px 32px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+/* Feature cards */
+.feature-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column;
+}
+.feature-card-icon {
+  width: 48px; height: 48px; border-radius: 4px;
+  background: rgba(0,182,237,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-shrink: 0;
+}
+.feature-card-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 8px;
+}
+.feature-card-h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.2rem; color: var(--navy);
+  line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em;
+}
+.feature-card-body {
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2); flex: 1;
+}
+
+/* Stat card */
+.stat-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.stat-card-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Questions list */
+.question-item {
+  display: flex; gap: 20px; padding: 24px 28px;
+  border-bottom: 1px solid var(--border-1);
+  background: #fff; align-items: flex-start;
+}
+.question-item:first-child { border-top: 1px solid var(--border-1); border-radius: 4px 4px 0 0; }
+.question-item:last-child { border-radius: 0 0 4px 4px; border-bottom: 1px solid var(--border-1); }
+.question-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.4rem; color: var(--cyan); letter-spacing: -0.02em;
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.question-text { flex: 1; }
+.question-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3; margin-bottom: 8px;
+}
+.question-body { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.65; color: var(--fg-2); }
+
+/* Learning journey */
+.journey-step {
+  display: flex; flex-direction: column; align-items: center; flex: 1; position: relative;
+}
+.journey-step-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  position: relative; z-index: 2; flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+}
+.journey-connector {
+  position: absolute; top: 22px; left: calc(50% + 22px);
+  right: calc(-50% + 22px); height: 1px; background: var(--border-1);
+}
+.journey-step-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); margin-top: 14px; text-align: center;
+  line-height: 1.3;
+}
+.journey-step-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-3);
+  line-height: 1.5; text-align: center; margin-top: 6px; max-width: 160px;
+}
+.journey-step-link {
+  margin-top: 10px; font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; color: var(--cyan); text-decoration: none; text-align: center;
+}
+.journey-step-link:hover { text-decoration: underline; }
+
+/* Sector tag pill */
+.sector-tag {
+  display: inline-flex; align-items: center;
+  background: var(--navy); color: rgba(255,255,255,0.85);
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+  margin-top: 16px;
+}
+
+/* Section headings */
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0;
+}
+.sec-h2-white {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: #fff; margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .bootcamp-sec { padding: 80px 24px; }
+  .hero-bootcamp { padding: 80px 24px 72px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .grid-3-resp { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .journey-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+  .journey-step { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; flex: none !important; width: 100% !important; }
+  .journey-connector { display: none !important; }
+  .journey-step-circle { flex-shrink: 0 !important; }
+  .journey-step-label, .journey-step-desc, .journey-step-link { text-align: left !important; max-width: none !important; }
+  .two-col-compare { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 767px) {
+  .bootcamp-sec { padding: 64px 20px; }
+  .hero-bootcamp { padding: 64px 20px 56px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .grid-3-resp { grid-template-columns: 1fr !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .questions-note { text-align: center; }
+}
+@media (max-width: 480px) {
+  .question-item { padding: 18px 20px; }
+  .question-num { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const ICON_PATHS = {
+  TrendingUp:    `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  FileText:      `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>`,
+  Clock:         `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+  BookOpen:      `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>`,
+  FileCheck:     `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/>`,
+  GitBranch:     `<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>`,
+  Briefcase:     `<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
+  DollarSign:    `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
+  CreditCard:    `<rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>`,
+  BarChart2:     `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+  PieChart:      `<path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>`,
+  Layers:        `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  Sparkles:      `<path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>`,
+  Plug:          `<path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8H6a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V9a1 1 0 0 0-1-1z"/>`,
+  X:             `<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>`,
+  Check:         `<polyline points="20 6 9 17 4 12"/>`,
+  ChevronDown:   `<polyline points="6 9 12 15 18 9"/>`,
+  ArrowRight:    `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`,
+};
+
+const Icon = ({ name, size = 20, color = "currentColor", strokeWidth = 1.75, style = {} }) => (
+  <svg
+    viewBox="0 0 24 24" width={size} height={size}
+    fill="none" stroke={color}
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+    style={style}
+    dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }}
+  />
+);
+
+// ─── SECTION NAV ─────────────────────────────────────────────────────────────
+
+const FMS_NAV_ITEMS = [
+  { id: 's1',  label: 'Why FMS' },
+  { id: 's2',  label: 'Glossary' },
+  { id: 's3',  label: 'FMS vs Alternatives' },
+  { id: 's4',  label: 'Core Capabilities' },
+  { id: 's5',  label: 'Multi-Entity' },
+  { id: 's6',  label: 'Dimensional Reporting' },
+  { id: 's7',  label: 'Cloud-Native vs Hosted' },
+  { id: 's8',  label: 'AI-Ready Finance' },
+  { id: 's9',  label: 'Vendor Questions' },
+  { id: 's10', label: 'Sage Intacct' },
+  { id: 's11', label: 'Learning Journey' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    FMS_NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {FMS_NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}
+            >{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select
+          className="section-nav-select"
+          value={active}
+          onChange={e => scrollTo(e.target.value)}
+        >
+          {FMS_NAV_ITEMS.map(({ id, label }) => (
+            <option key={id} value={id}>{label}</option>
+          ))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+// ─── HERO ─────────────────────────────────────────────────────────────────────
+
+const HeroSection = () => (
+  <section className="hero-bootcamp">
+    <div className="container">
+      <div className="hero-breadcrumb">
+        <a href="../../">Home</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span>Resources</span>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>FMS Bootcamp</span>
+      </div>
+
+      <div style={{ maxWidth: 880 }}>
+        <span className="eyebrow-dark">FMS BOOTCAMP</span>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.05,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 24px',
+        }}>
+          Financial management systems — what finance leaders need to know before selecting one
+        </h1>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: 680, margin: '0 0 12px',
+        }}>
+          For finance-led organisations — professional services, SaaS, technology, not-for-profit, legal — the financial management system is the single most consequential technology decision the CFO owns. This page explains what an FMS is, how it differs from accounting software and ERP, what to evaluate in a selection process, and what a modern cloud-native platform makes possible.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 14, color: 'rgba(255,255,255,0.4)',
+          margin: 0,
+        }}>
+          Eleven sections. Built for CFOs and Finance Directors making a real decision.
+        </p>
+
+        <div style={{
+          marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          {[
+            { n: '11', l: 'Core sections', sub: 'From vocabulary to vendor selection' },
+            { n: '4',  l: 'Glossary groups', sub: 'Over 20 defined terms' },
+            { n: '4',  l: 'Maturity stages', sub: 'AI readiness framework' },
+            { n: '10', l: 'Vendor questions', sub: 'Shareable checklist' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              paddingLeft: i > 0 ? 32 : 0,
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '2rem', color: '#fff', letterSpacing: '-0.03em', lineHeight: 1,
+              }}>{s.n}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 5 }}>{s.l}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11.5, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 1: WHY FMS NOW ───────────────────────────────────────────────────────
+
+const WhyFMSSection = () => (
+  <section id="s1" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE CONTEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why finance leaders are replacing their accounting systems — and why now
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The shift from accounting software to financial management systems is not a trend — it is a structural consequence of how finance functions are being asked to operate. CFOs who were once expected to produce accurate monthly accounts are now expected to provide real-time insight, model multiple scenarios, manage complex multi-entity structures, and advise the board on strategic options with data that is current, trusted, and actionable.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Most mid-market accounting software was not built for this. It was built for bookkeeping: recording transactions accurately and producing compliant statutory accounts. It does that reasonably well. What it does not do — and was never designed to do — is provide a real-time, multi-dimensional view of a business with complex entity structures, project-level profitability, and the kind of reporting granularity that a modern finance function needs to influence operational decision-making.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The consequence is a gap between what a CFO is expected to deliver and what the finance system can support. That gap is filled, in most mid-market businesses, by spreadsheets. Spreadsheets for consolidation, spreadsheets for reporting, spreadsheets for budgeting, spreadsheets for modelling. Each spreadsheet is a manual effort, a version control risk, and a source of errors that the finance team has to find before the numbers reach the board.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The financial management system is the alternative to that gap. It provides the structure, the integration, the dimensionality, and increasingly the AI-enabled intelligence that allows a finance function to operate at the pace and analytical depth the business requires — without the spreadsheet layer that currently sits between the accounting system and the board.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 0' }}>
+          The timing question is straightforward: the right time to replace an accounting system is before the gap between capability and expectation becomes a material operational constraint. For most mid-market CFOs reading this page, that point has either arrived or is approaching.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'FileText',
+            stat: 'Multi-entity complexity is the most common trigger',
+            copy: 'Businesses with more than two legal entities, trading currencies, or intercompany relationships consistently find standalone accounting software reaches its ceiling at this point.',
+          },
+          {
+            icon: 'Clock',
+            stat: 'Close cycle times are a direct productivity measure',
+            copy: 'Finance functions on modern FMS platforms consistently achieve shorter month-end close cycles — freeing capacity for analysis rather than reconciliation.',
+          },
+          {
+            icon: 'TrendingUp',
+            stat: 'AI capability requires a clean financial data foundation',
+            copy: 'The AI-enabled finance function — scenario modelling, intelligent GL, AI-assisted close — requires a data model that standalone accounting systems cannot provide.',
+          },
+        ].map((c, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-card-icon">
+              <Icon name={c.icon} size={20} color="var(--navy)" />
+            </div>
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15, color: 'var(--navy)', lineHeight: 1.3, marginBottom: 6,
+              }}>{c.stat}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{c.copy}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: GLOSSARY ──────────────────────────────────────────────────────────
+
+const FMS_GLOSSARY_GROUPS = [
+  {
+    id: 'fg1', title: 'Foundations',
+    terms: [
+      { term: 'Financial Management System (FMS)', def: 'A software platform designed to manage the full complexity of a finance function — general ledger, accounts payable, accounts receivable, cash management, multi-entity consolidation, project accounting, and advanced reporting — without the operational modules (manufacturing, logistics, WMS) that a full ERP includes. An FMS is the appropriate system for businesses whose primary complexity is financial rather than operational.' },
+      { term: 'Cloud-Native', def: 'Software built from the ground up for cloud delivery — not legacy on-premise software adapted to run on cloud infrastructure. Cloud-native architecture enables continuous product updates, elastic scaling, and API-first integration design. The distinction from "cloud-hosted" is significant. See Section 7.' },
+      { term: 'General Ledger (GL)', def: 'The master record of all financial transactions. Every financial event in a business — revenue, cost, asset purchase, liability — is recorded in the general ledger. The GL structure determines the granularity and flexibility of financial reporting.' },
+      { term: 'Chart of Accounts', def: 'The structured list of GL accounts. In an FMS, the chart of accounts is complemented by dimensional analysis — allowing financial data to be sliced and reported across multiple attributes without requiring a separate account code for every combination.' },
+      { term: 'Real-Time', def: 'Financial data that is updated immediately as transactions are processed — rather than after a batch processing run or period-end update.' },
+    ],
+  },
+  {
+    id: 'fg2', title: 'Financial Structure',
+    terms: [
+      { term: 'Multi-Entity', def: 'The ability of an FMS to manage multiple legal entities — subsidiaries, holding companies, joint ventures, trading entities — within a single system. This is the most common functional reason for replacing standalone accounting software.' },
+      { term: 'Intercompany', def: 'Transactions that occur between legal entities within the same group — loans, management charges, shared services recharges, intercompany trading. In an FMS, intercompany is managed within the system, with automatic elimination in consolidated reporting.' },
+      { term: 'Consolidation', def: 'The process of combining the financial statements of multiple entities into a group-level view, eliminating intercompany transactions. In a modern FMS, consolidation is a system function — available in real time, with full audit trail.' },
+      { term: 'Multi-Currency', def: 'The ability to record transactions in multiple currencies, maintain entity-level functional currencies, revalue foreign currency balances at period end, and report in a group presentation currency.' },
+      { term: 'Revenue Recognition', def: 'The accounting process of recording revenue in the period it is earned. For SaaS, professional services, and subscription businesses, revenue recognition is complex — driven by contract terms, delivery milestones, and accounting standards (IFRS 15, ASC 606).' },
+      { term: 'Project Accounting', def: 'Tracking costs, revenues, budgets, and profitability at the individual project or engagement level. Essential for professional services, engineering, and any business that delivers work on a project basis.' },
+    ],
+  },
+  {
+    id: 'fg3', title: 'Reporting & Analysis',
+    terms: [
+      { term: 'Dimensions', def: 'Attributes attached to financial transactions that allow multi-dimensional analysis of financial data — without requiring a separate GL account for every combination. Common dimensions include: department, project, product line, geography, customer, and funding source.' },
+      { term: 'Consolidation Reporting', def: 'Reports that aggregate financial data across multiple entities, currencies, and time periods — with intercompany eliminations applied — to produce a group-level view.' },
+      { term: 'Budgeting & Forecasting', def: 'Within an FMS, the ability to maintain budgets, rolling forecasts, and scenarios within the same system as actuals — enabling real-time variance analysis without exporting to spreadsheets.' },
+      { term: 'KPI Dashboard', def: 'A real-time visual display of key financial and operational metrics drawn directly from the FMS data.' },
+      { term: 'Close Management', def: 'The structured process of completing period-end financial activities tracked within the FMS with task assignment, status visibility, and audit trail.' },
+    ],
+  },
+  {
+    id: 'fg4', title: 'Cloud & Integration',
+    terms: [
+      { term: 'API', def: 'A defined interface for data exchange between software systems. A modern FMS exposes APIs that allow integration with CRM systems, payroll platforms, expense management tools, BI platforms, banking feeds, and specialist ISV applications.' },
+      { term: 'Webhooks', def: 'A mechanism by which an FMS automatically sends data to an external system when a defined event occurs. Webhooks enable real-time data flows without polling or batch processes.' },
+      { term: 'SSO (Single Sign-On)', def: 'Authentication technology that allows users to access the FMS using their existing organisational identity without a separate username and password.' },
+      { term: 'Data Warehouse / BI Integration', def: 'The connection between an FMS and a business intelligence platform or data warehouse — allowing financial data to be combined with operational data for cross-functional analysis.' },
+    ],
+  },
+];
+
+const GlossarySection = () => {
+  const [openGroups, setOpenGroups] = React.useState({ fg1: true });
+  const [openTerms, setOpenTerms] = React.useState({});
+
+  const toggleGroup = (id) => setOpenGroups(prev => ({ ...prev, [id]: !prev[id] }));
+  const toggleTerm = (key) => setOpenTerms(prev => ({ ...prev, [key]: !prev[key] }));
+
+  return (
+    <section id="s2" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 52px' }}>
+          <span className="sec-eyebrow">GLOSSARY</span>
+          <h2 className="sec-h2" style={{ marginBottom: 16 }}>The vocabulary of financial management systems — defined clearly</h2>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            FMS platforms have their own vocabulary — partly inherited from accounting, partly specific to the capabilities that distinguish FMS from simpler tools. These definitions give CFOs and Finance Directors the language to evaluate platforms, challenge vendors, and assess fit.
+          </p>
+        </div>
+
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          {FMS_GLOSSARY_GROUPS.map(group => (
+            <div key={group.id} className="accordion-group">
+              <div
+                className="accordion-group-header"
+                onClick={() => toggleGroup(group.id)}
+              >
+                <span className="accordion-group-title">{group.title}</span>
+                <span className={'accordion-chevron' + (openGroups[group.id] ? ' open' : '')}>
+                  <Icon name="ChevronDown" size={16} color="var(--muted)" />
+                </span>
+              </div>
+              {openGroups[group.id] && group.terms.map((t, i) => {
+                const key = group.id + '-' + i;
+                const isOpen = openTerms[key];
+                return (
+                  <div key={key} className="accordion-term">
+                    <div className="accordion-term-header" onClick={() => toggleTerm(key)}>
+                      <span className="accordion-term-name">{t.term}</span>
+                      <span className={'accordion-chevron' + (isOpen ? ' open' : '')}>
+                        <Icon name="ChevronDown" size={15} color="var(--muted)" />
+                      </span>
+                    </div>
+                    {isOpen && (
+                      <div className="accordion-term-body">{t.def}</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 3: FMS VS ALTERNATIVES ───────────────────────────────────────────────
+
+const FMSvsSection = () => (
+  <section id="s3" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">CHOOSING THE RIGHT SYSTEM</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          Financial management system versus accounting software and full ERP — the distinctions that matter
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Finance leaders selecting a system face a fundamental structural question before they evaluate any vendor: is the right tool an accounting package, a full ERP, or a financial management system? These are not points on a scale — they are genuinely different system types designed for different business profiles and different complexity levels. Getting this choice wrong is expensive.
+        </p>
+      </div>
+
+      <div className="comparison-table-wrap" style={{ marginBottom: 48 }}>
+        <table className="comparison-table">
+          <thead>
+            <tr>
+              <th style={{ width: 180 }}>Dimension</th>
+              <th>Accounting Software</th>
+              <th>Full ERP</th>
+              <th>Financial Management System</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Primary purpose', 'Bookkeeping and statutory compliance', 'End-to-end operational and financial integration', 'Advanced financial management for complex, finance-led businesses'],
+              ['Multi-entity', 'Single entity (typically); manual workarounds', 'Yes — but with operational module overhead', 'Native — designed for multi-entity, multi-currency, multi-jurisdiction'],
+              ['Operational modules', 'None', 'Full (procurement, inventory, production, logistics, HR)', 'None or limited — finance-first by design'],
+              ['Dimensional reporting', 'Limited — typically department-level only', 'Varies by platform', 'Native — unlimited dimensions, real-time, cross-entity'],
+              ['Project accounting', 'Basic or absent', 'Available as a module, often at additional cost', 'Native in modern platforms'],
+              ['Revenue recognition', 'Manual or basic', 'Varies significantly by platform', 'Automated per contract type; IFRS 15 / ASC 606 compliant'],
+              ['AI capability', 'Minimal', 'Growing', 'Growing — FMS is the AI data layer for finance-led businesses'],
+              ['Typical user count', '1–20 finance users', '20–500+ across operations and finance', '5–100 finance users'],
+              ['Implementation time', 'Days to weeks', '6–18 months', '3–6 months'],
+              ['Best fit', 'Early-stage businesses, simple structures', 'Manufacturing, distribution, wholesale', 'Professional services, SaaS, technology, NFP, legal'],
+            ].map(([label, ...cells], i) => (
+              <tr key={i}>
+                <td>{label}</td>
+                {cells.map((c, j) => <td key={j}>{c}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {[
+            {
+              heading: 'When accounting software is right',
+              body: 'For businesses in early stages with a single legal entity, straightforward revenue streams, and a small finance team focused on compliance and bookkeeping, accounting software remains the appropriate choice. The complexity it cannot handle has not yet materialised. The decision to move to an FMS is typically triggered by growth — more entities, more complexity, more reporting demand — rather than by dissatisfaction with the software itself.',
+            },
+            {
+              heading: 'When full ERP is right',
+              body: 'Businesses with significant operational complexity — manufacturing, distribution, wholesale, businesses with substantial inventory management, procurement, or production planning requirements — need the operational modules that a full ERP provides. For these businesses, finance is part of a wider operational integration requirement. An FMS operating alongside separate operational systems will create integration overhead that an ERP resolves natively.',
+            },
+            {
+              heading: 'When a financial management system is right',
+              body: 'Finance-led businesses — professional services, SaaS, technology, not-for-profit, legal, real estate — where the primary complexity is financial rather than operational are the natural FMS constituency. Multi-entity structures, complex revenue streams, project-level profitability, and the need for board-quality dimensional reporting without operational overhead are the defining characteristics. If your business generates revenue through intellectual effort, contracts, or services rather than physical goods, an FMS is almost certainly the appropriate architecture.',
+            },
+          ].map((item, i) => (
+            <div key={i} style={{
+              background: '#fff', border: '1px solid var(--border-1)',
+              borderRadius: 4, padding: '24px 28px',
+            }}>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15.5, color: 'var(--navy)', margin: '0 0 10px', lineHeight: 1.3,
+              }}>{item.heading}</h3>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 4: CORE FMS CAPABILITIES ─────────────────────────────────────────────
+
+const CoreCapabilitiesSection = () => (
+  <section id="s4" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 52px' }}>
+        <span className="sec-eyebrow">WHAT FMS DELIVERS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Core financial management system capabilities — explained</h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+          A modern FMS provides capabilities that go significantly beyond those of accounting software. These are the functional areas that determine whether an FMS delivers the analytical depth and operational efficiency a finance function needs.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'BookOpen', eyebrow: 'CORE FINANCIAL OPERATIONS', title: 'General Ledger & Financial Close',
+            body: 'The GL in a modern FMS is structured around dimensions rather than account codes. Close management tools track period-end tasks with assignment, status visibility, and complete audit trail, replacing the spreadsheet checklists. Real-time trial balance eliminates the wait for month-end reports.',
+            tag: 'All sectors',
+          },
+          {
+            icon: 'FileCheck', eyebrow: 'PAYABLES', title: 'Accounts Payable Automation',
+            body: 'Modern FMS platforms automate the AP cycle from invoice receipt through approval workflow to payment processing. Configurable approval thresholds, three-way matching, and exception routing reduce manual processing time.',
+            tag: 'All sectors',
+          },
+          {
+            icon: 'TrendingUp', eyebrow: 'RECEIVABLES', title: 'Accounts Receivable & Collections',
+            body: 'AR management covers customer invoicing, cash application, credit management, collections workflow, and aged debtor reporting. Automated dunning sequences reduce manual follow-up.',
+            tag: 'All sectors',
+          },
+          {
+            icon: 'GitBranch', eyebrow: 'GROUP STRUCTURE', title: 'Multi-Entity Management',
+            body: 'Multi-entity capability allows a finance team to manage multiple legal entities within a single system, with shared chart of accounts, intercompany trading, and automated consolidation.',
+            tag: 'Groups, multi-site businesses',
+          },
+          {
+            icon: 'Briefcase', eyebrow: 'PROJECT FINANCE', title: 'Project & Grant Accounting',
+            body: 'Project accounting tracks costs, revenues, budgets, and profitability at individual project level. Grant accounting extends this to fund management — tracking restricted and unrestricted income.',
+            tag: 'Professional services, NFP, public sector',
+          },
+          {
+            icon: 'DollarSign', eyebrow: 'REVENUE', title: 'Revenue Recognition',
+            body: 'Automated revenue recognition applies the correct accounting treatment to each contract type in compliance with IFRS 15 and ASC 606.',
+            tag: 'SaaS, professional services, subscription businesses',
+          },
+          {
+            icon: 'CreditCard', eyebrow: 'TREASURY', title: 'Cash & Treasury Management',
+            body: 'Cash management covers bank reconciliation, cash flow forecasting, multi-currency cash position, and payment processing.',
+            tag: 'All sectors',
+          },
+          {
+            icon: 'BarChart2', eyebrow: 'PLANNING', title: 'Budgeting & Forecasting',
+            body: 'Integrated budgeting allows finance teams to maintain annual budgets, rolling forecasts, and scenarios within the FMS — with real-time variance reporting.',
+            tag: 'All sectors',
+          },
+          {
+            icon: 'PieChart', eyebrow: 'ANALYTICS', title: 'Reporting & Analytics',
+            body: 'Native reporting delivers dimensional, multi-entity, multi-period financial reports. Integration with BI platforms (Power BI, Velixo, Swoop Analytics) extends analytics capability.',
+            tag: 'All sectors',
+          },
+        ].map((c, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, padding: '28px 24px',
+            display: 'flex', flexDirection: 'column',
+          }}>
+            <div style={{
+              width: 40, height: 40, borderRadius: 4, background: 'rgba(0,182,237,0.08)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14,
+            }}>
+              <Icon name={c.icon} size={20} color="var(--cyan)" />
+            </div>
+            <div style={{
+              fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 10,
+              letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: 6,
+            }}>{c.eyebrow}</div>
+            <h3 style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: 15.5, color: 'var(--navy)', margin: '0 0 10px', lineHeight: 1.3,
+            }}>{c.title}</h3>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0, flex: 1 }}>{c.body}</p>
+            <span className="sector-tag">{c.tag}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 5: MULTI-ENTITY ──────────────────────────────────────────────────────
+
+const MultiEntitySection = () => (
+  <section id="s5" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">THE MULTI-ENTITY CHALLENGE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Multi-entity management — why it breaks accounting software and how FMS solves it
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The multi-entity problem is structural, not incidental. Accounting software is built around a single legal entity. The chart of accounts, the period-end process, the reporting structure, the user access model — all designed for one set of books. When a business grows to two or more entities, the software does not scale gracefully. It requires separate installations, separate period-ends, and a manual consolidation process that sits entirely outside the system.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The consequences are predictable: consolidation in a spreadsheet maintained by one person, intercompany transactions identified and eliminated manually, foreign currency revaluation performed outside the system, and a group P&L that is available days or weeks after period end. For a business with three entities this is painful. For a business with ten it is unsustainable.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          A modern FMS solves this natively. Multi-entity is not a module or an add-on — it is the architectural foundation. All entities exist within one system, share a common data model, trade intercompany within the platform, and consolidate automatically. The finance function manages one system, not three. The group P&L is available in real time, not on day four.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 48 }} className="grid-2-resp">
+        <div style={{
+          background: '#fff', border: '2px dashed rgba(198,54,45,0.4)',
+          borderRadius: 4, padding: '28px 24px',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <Icon name="X" size={20} color="var(--danger)" />
+            <span style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: 15, color: 'var(--danger)', lineHeight: 1.2,
+            }}>Without an FMS</span>
+          </div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            Three separate accounting system instances for three trading entities. Each entity closes independently. At period end, finance exports trial balances from all three, imports into a consolidation spreadsheet maintained by one team member. Intercompany transactions are identified manually — a process that takes two days. Foreign currency balances are revalued manually. Consolidated P&L and balance sheet are complete four working days after period end.
+          </p>
+        </div>
+
+        <div style={{
+          background: '#fff', border: '2px solid rgba(31,138,91,0.5)',
+          borderRadius: 4, padding: '28px 24px',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <Icon name="Check" size={20} color="var(--success)" />
+            <span style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: 15, color: 'var(--success)', lineHeight: 1.2,
+            }}>With a modern FMS</span>
+          </div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            All three entities within one system. Each entity has its own chart of accounts, local currency, and entity-level user permissions. Intercompany transactions are recorded once and automatically reflected in both entities. Foreign currency revaluation runs at period end. Consolidated P&L, balance sheet, and cash flow are available in real time. Period-end close is completed in two days.
+          </p>
+        </div>
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <h3 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: '1.2rem', color: 'var(--navy)', margin: '0 0 20px', letterSpacing: '-0.01em',
+        }}>Multi-entity complexity tiers</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {[
+            {
+              tier: 'Tier 1',
+              label: 'Two to four UK entities, same currency',
+              desc: 'Standard multi-entity FMS capability. Resolved by most modern FMS platforms.',
+            },
+            {
+              tier: 'Tier 2',
+              label: 'Five to fifteen entities, multi-currency, multiple jurisdictions',
+              desc: 'Requires robust multi-currency revaluation, jurisdiction-specific tax treatment. Verify platform capability.',
+            },
+            {
+              tier: 'Tier 3',
+              label: 'Complex group structures, minority interests, partial consolidation',
+              desc: 'Requires advanced consolidation functionality. Verify with detailed scenario testing.',
+            },
+          ].map((item, i) => (
+            <div key={i} style={{
+              display: 'flex', gap: 20, padding: '20px 24px',
+              background: '#fff', border: '1px solid var(--border-1)',
+              borderRadius: 4, alignItems: 'flex-start',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '1.1rem', color: 'var(--cyan)', letterSpacing: '-0.02em',
+                lineHeight: 1, flexShrink: 0, width: 56, paddingTop: 2,
+              }}>{item.tier}</div>
+              <div>
+                <div style={{
+                  fontFamily: 'var(--font-display)', fontWeight: 600,
+                  fontSize: 14.5, color: 'var(--navy)', marginBottom: 4, lineHeight: 1.3,
+                }}>{item.label}</div>
+                <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 6: DIMENSIONAL REPORTING ─────────────────────────────────────────────
+
+const DimensionalReportingSection = () => (
+  <section id="s6" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">REPORTING ARCHITECTURE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Dimensional reporting — the capability that replaces your reporting spreadsheets
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Traditional chart-of-accounts-only reporting requires a separate GL account for every combination of financial category and reporting attribute. A business wanting to report staff costs by department, by project, and by geography simultaneously would need hundreds of account codes. The chart of accounts becomes a maintenance burden, and multi-dimensional analysis becomes practically impossible.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Dimensional reporting resolves this architecturally. Dimensions are attributes attached to transactions at the point of entry — department, project, product line, geography, funding source, customer. Any transaction can carry multiple dimensions simultaneously. Reports can then slice and filter across any combination of dimensions, in real time, without requiring additional account codes or manual exports. The result is financial data that is genuinely multi-dimensional — available at the level of granularity the business needs, when it needs it.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 48 }} className="grid-2-resp">
+        {[
+          {
+            dimension: 'Department',
+            question: 'What are total staff costs by department this quarter, and how do they compare to budget?',
+            answer: 'Every cost transaction tagged with department dimension. Real-time comparison to budget.',
+          },
+          {
+            dimension: 'Project / Engagement',
+            question: 'What is the profitability of our top 10 client engagements this year?',
+            answer: 'Revenue and costs tagged with engagement dimension. Project P&L at individual level.',
+          },
+          {
+            dimension: 'Product line / Service type',
+            question: 'Which of our three service lines is generating the highest contribution margin?',
+            answer: 'Revenue and direct costs tagged with service line dimension.',
+          },
+          {
+            dimension: 'Geography / Market',
+            question: 'How does performance in North America compare to UK?',
+            answer: 'All transactions tagged with geographic dimension.',
+          },
+          {
+            dimension: 'Funding source / Grant',
+            question: 'What expenditure has been charged against the UKRI grant?',
+            answer: 'All expenditure tagged with funding source dimension. Real-time grant utilisation.',
+          },
+          {
+            dimension: 'Customer',
+            question: 'What is the total cost-to-serve for our five largest customers?',
+            answer: 'Revenue, direct costs, and allocated overheads tagged with customer dimension.',
+          },
+        ].map((c, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, padding: '20px 24px',
+          }}>
+            <div style={{
+              fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+              letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: 8,
+            }}>{c.dimension}</div>
+            <p style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: 14, color: 'var(--navy)', lineHeight: 1.4, margin: '0 0 8px',
+            }}>{c.question}</p>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6, margin: 0 }}>{c.answer}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div className="pull-quote">
+          "The alternative to dimensional reporting is a reporting spreadsheet. Most finance teams have one. It is usually maintained by one person, is several versions behind the general ledger, and breaks when that person takes holiday. Dimensional reporting in a modern FMS replaces the spreadsheet with a governed, real-time, audit-trailed system report. The value is not just the time saved — it is the trust the data earns."
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 7: CLOUD-NATIVE VS CLOUD-HOSTED ──────────────────────────────────────
+
+const CloudNativeSection = () => (
+  <section id="s7" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">DEPLOYMENT DECISION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          Cloud-native versus cloud-hosted — a distinction that matters more than vendors admit
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          When a vendor describes their platform as "cloud," the term covers two meaningfully different realities. Cloud-native means the software was designed and built from the ground up for cloud delivery. Cloud-hosted means legacy on-premise software has been moved to run on cloud infrastructure. From the outside, both feel like SaaS. The operational and strategic differences become visible over time — particularly in how updates are delivered, how AI capabilities are introduced, and how much upgrade overhead falls on the customer.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 40 }} className="two-col-compare grid-2-resp">
+        {[
+          {
+            heading: 'Cloud-Native FMS',
+            highlight: true,
+            rows: [
+              ['What it means', 'Software built from the ground up to run in a cloud environment'],
+              ['How updates work', 'New features deployed continuously, no upgrade projects'],
+              ['AI capability', 'AI capabilities deployed incrementally, arrive faster'],
+              ['Integration', 'API-first design, integration designed in'],
+              ['Customisation', 'Configuration-based'],
+              ['Best for', 'Businesses prioritising continuous improvement, low IT overhead, AI readiness'],
+            ],
+          },
+          {
+            heading: 'Cloud-Hosted FMS',
+            highlight: false,
+            rows: [
+              ['What it means', 'Legacy on-premise software deployed on cloud infrastructure'],
+              ['How updates work', 'Major version upgrades still required as discrete projects'],
+              ['AI capability', 'AI features must be retrofitted to legacy architecture'],
+              ['Integration', 'Possible but typically requires more custom engineering'],
+              ['Customisation', 'May support code-level customisation'],
+              ['Best for', 'Businesses with specific customisation requirements or data residency constraints'],
+            ],
+          },
+        ].map((col, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, overflow: 'hidden',
+          }}>
+            <div style={{
+              background: col.highlight ? 'var(--navy)' : 'var(--bg)',
+              padding: '18px 24px',
+            }}>
+              <span style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 16, color: col.highlight ? '#fff' : 'var(--navy)',
+                letterSpacing: '-0.01em',
+              }}>{col.heading}</span>
+            </div>
+            {col.rows.map(([label, val], j) => (
+              <div key={j} style={{
+                display: 'flex', padding: '14px 24px', gap: 16,
+                borderTop: '1px solid var(--border-1)',
+                background: j % 2 === 0 ? '#fff' : 'var(--bg)',
+              }}>
+                <div style={{
+                  fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 12.5,
+                  color: 'var(--navy)', flexShrink: 0, width: 120, lineHeight: 1.4,
+                }}>{label}</div>
+                <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.55 }}>{val}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <h3 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.15rem',
+          color: 'var(--navy)', margin: '0 0 16px', letterSpacing: '-0.01em',
+        }}>Three decision questions</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {[
+            'How frequently does your business expect to adopt new finance technology capabilities over the next three years?',
+            'Do you have specific requirements that demand code-level customisation of the financial system?',
+            'Is your IT team resourced to manage version upgrade projects every 18 to 24 months?',
+          ].map((q, i) => (
+            <div key={i} style={{
+              display: 'flex', gap: 16, padding: '16px 20px',
+              background: '#fff', border: '1px solid var(--border-1)',
+              borderRadius: 4, alignItems: 'flex-start',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '1.1rem', color: 'var(--cyan)', letterSpacing: '-0.02em',
+                lineHeight: 1, flexShrink: 0, width: 20, paddingTop: 2,
+              }}>{i + 1}</div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>{q}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 8: AI-READY FINANCE ──────────────────────────────────────────────────
+
+const AIReadyFinanceSection = () => (
+  <section id="s8" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">THE AI DIMENSION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          How your financial management system becomes the foundation for AI-enabled finance
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          AI in finance is not a feature. It is an infrastructure requirement. The AI capabilities that are increasingly available to finance teams — intelligent GL coding, AI-assisted close, natural language reporting, anomaly detection, agentic workflows — all depend on a financial data model that is clean, trusted, dimensional, and real-time. That data model is only available if the underlying FMS is architected correctly.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          A finance team running on accounting software cannot access most of these capabilities — not because the AI tools do not exist, but because the data foundation is not there. Multi-entity consolidation in a spreadsheet, dimensional analysis performed manually, period-end data available only after close — none of this provides the real-time, structured, auditable data layer that AI requires to operate reliably.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'flex', alignItems: 'flex-start', gap: 0, position: 'relative',
+        padding: '0 20px', marginBottom: 48,
+      }} className="journey-wrap">
+        {[
+          {
+            num: 1, active: true,
+            label: 'Operational Foundation',
+            desc: 'The FMS is live. Financial data is clean and trusted. Period-end close managed within the system.',
+            role: 'FMS role: System of record.',
+          },
+          {
+            num: 2, active: false,
+            label: 'Intelligent Automation',
+            desc: 'AP and AR workflows automated. Bank reconciliation via bank feeds. Manual transactional effort materially reduced.',
+            role: 'FMS role: Automation engine.',
+          },
+          {
+            num: 3, active: false,
+            label: 'AI-Augmented Finance',
+            desc: 'AI capabilities embedded — Intelligent GL coding, AI-assisted close, natural language reporting, anomaly detection.',
+            role: 'FMS role: Intelligence platform.',
+          },
+          {
+            num: 4, active: false,
+            label: 'Agentic Finance Operations',
+            desc: 'Governed agentic workflows execute multi-step finance processes.',
+            role: 'FMS role: Governance infrastructure.',
+          },
+        ].map((step, i, arr) => (
+          <div key={i} className="journey-step">
+            {i < arr.length - 1 && <div className="journey-connector" />}
+            <div className="journey-step-circle" style={{
+              background: step.active ? 'var(--cyan)' : 'var(--navy)',
+              color: '#fff',
+              boxShadow: step.active ? '0 0 0 6px rgba(0,182,237,0.15)' : 'none',
+            }}>{step.num}</div>
+            <div className="journey-step-label" style={{ color: step.active ? 'var(--cyan)' : 'var(--navy)' }}>
+              {step.label}
+            </div>
+            <div className="journey-step-desc">{step.desc}</div>
+            <span style={{
+              marginTop: 8, fontFamily: 'var(--font-sans)', fontWeight: 600,
+              fontSize: 11.5, color: 'var(--muted)', textAlign: 'center', display: 'block',
+            }}>{step.role}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div className="pull-quote-light">
+          Selecting an FMS is no longer purely a finance operations decision. It is also an AI infrastructure decision. A CFO choosing between a cloud-native FMS and a cloud-hosted predecessor is choosing between a platform that will support an incremental AI capability roadmap and one that will require significant upgrade investment before any AI capability arrives. That distinction is worth making explicit in the selection process.
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 9: VENDOR QUESTIONS ──────────────────────────────────────────────────
+
+const VendorQuestionsSection = () => (
+  <section id="s9" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">BUYER INTELLIGENCE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Ten questions to ask before selecting a financial management system</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 12px' }}>
+          FMS vendor selection processes frequently focus on feature checklists. Feature checklists are necessary but not sufficient. The questions below are designed to test whether a vendor's capability is genuine, whether their implementation methodology is sound, and whether the platform will serve your finance function over a five-year horizon — not just on day one.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 36px' }}>
+          These questions work best when asked in live system demonstrations — not in slide deck presentations.
+        </p>
+
+        <div style={{ border: '1px solid var(--border-1)', borderRadius: 4, overflow: 'hidden' }}>
+          {[
+            [
+              'How do you handle multi-entity consolidation — and can you demonstrate a group consolidation in a live system?',
+              'Not in a slide deck — in the live system, against a scenario with your number of entities, currencies, and intercompany relationships.',
+            ],
+            [
+              'What does your dimensional reporting architecture look like, and how many dimensions can be applied to a single transaction?',
+              'Ask for a demonstration of multi-dimensional reporting across at least three dimensions simultaneously.',
+            ],
+            [
+              'Is this system cloud-native or cloud-hosted — and what is the difference in how product updates reach our system?',
+              'Cloud-native means continuous updates. Cloud-hosted means version upgrades as projects.',
+            ],
+            [
+              'What is your AI roadmap for the next 24 months, and which features will be available on our deployment model?',
+              'Distinguish between features available now, in beta, on the roadmap, and aspirational.',
+            ],
+            [
+              'How does your revenue recognition engine handle [your specific contract type]?',
+              'For SaaS and professional services businesses, provide two or three of your actual contract types.',
+            ],
+            [
+              'What is the API coverage of your platform — which financial objects are accessible via API, and what is the rate limit?',
+              'API coverage determines integration capability.',
+            ],
+            [
+              'What is your standard implementation methodology and typical timeline for a business of our size?',
+              'Ask for references from implementations of comparable scope.',
+            ],
+            [
+              'How do you support the finance team through period-end close?',
+              'Ask for a demonstration of the close management workflow.',
+            ],
+            [
+              'What does your post-implementation customer success model look like?',
+              'The right answer describes a structured programme: regular check-ins, optimisation reviews, new capability rollout support.',
+            ],
+            [
+              'How do your pricing and licence tiers work — and what features require upgrades as we grow?',
+              'Model the five-year total cost of ownership.',
+            ],
+          ].map(([title, body], i) => (
+            <div key={i} className="question-item">
+              <div className="question-num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="question-text">
+                <div className="question-title">{title}</div>
+                <div className="question-body">{body}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, margin: '20px 0 0', fontStyle: 'italic' }} className="questions-note">
+          This list is designed to be used in vendor briefings and procurement panels.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 10: SAGE INTACCT ────────────────────────────────────────────────────
+
+const SageIntacctSection = () => (
+  <section id="s10" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">THE MYSOFT RECOMMENDATION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Where Sage Intacct fits — and why Mysoft recommends it for finance-led mid-market businesses
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Sage Intacct is a cloud-native financial management system designed for the financial complexity of mid-market businesses where finance is the primary operational centre of gravity. It is the leading FMS recommendation for professional services, SaaS and technology, not-for-profit, and legal businesses — sectors characterised by multi-entity structures, complex revenue streams, project-level profitability requirements, and the need for board-quality financial insight without the operational overhead of a full ERP.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Sage Intacct is cloud-native — built for the cloud from the ground up, not adapted from an on-premise predecessor. This means continuous product updates, API-first integration design, and an AI roadmap that is delivered incrementally without upgrade projects. Sage Copilot, Intelligent GL, and AI-powered AP and AR automation are embedded capabilities, not add-ons.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Mysoft is a leading UK Sage Intacct implementation partner, with a structured four-stage AI maturity framework that takes clients from implementation through to AI-augmented finance operations.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 48 }} className="grid-2-resp">
+        {[
+          {
+            icon: 'GitBranch',
+            title: 'Multi-entity native',
+            body: 'Sage Intacct was designed for multi-entity management — consolidated reporting, intercompany trading, multi-currency, and entity-level security are foundational.',
+          },
+          {
+            icon: 'Layers',
+            title: 'Dimensional depth',
+            body: 'Unlimited dimensions allow financial data to be analysed by any combination of entity, department, project, customer, product line, geography, or funding source.',
+          },
+          {
+            icon: 'Sparkles',
+            title: 'AI embedded, not bolted on',
+            body: "Sage Copilot, Intelligent GL, and AI-powered automation are built into the Intacct platform — within the system's permission and audit framework.",
+          },
+          {
+            icon: 'Plug',
+            title: 'Open ecosystem',
+            body: "Sage Intacct's API-first design and a curated partner ISV ecosystem — Velixo, Swoop Analytics, Payhawk, WebExpenses, TrueCommerce — extend the platform's native capabilities.",
+          },
+        ].map((c, i) => (
+          <div key={i} style={{
+            background: 'var(--bg)', border: '1px solid var(--border-1)',
+            borderRadius: 4, padding: '28px 24px', display: 'flex', gap: 20, alignItems: 'flex-start',
+          }}>
+            <div style={{
+              width: 44, height: 44, borderRadius: 4, background: 'rgba(0,182,237,0.1)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+            }}>
+              <Icon name={c.icon} size={22} color="var(--cyan)" />
+            </div>
+            <div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15.5, color: 'var(--navy)', margin: '0 0 8px', lineHeight: 1.3,
+              }}>{c.title}</h3>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{c.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{
+          background: 'var(--bg)', border: '1px solid var(--border-1)',
+          borderLeft: '4px solid var(--cyan)', borderRadius: 4, padding: '24px 28px', marginBottom: 32,
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+            letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 8,
+          }}>MYSOFT'S ROLE</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 10px' }}>
+            Mysoft's role is not simply to implement Sage Intacct. It is to configure the platform for the specific commercial and reporting requirements of each client, build the integration architecture that connects Intacct to the rest of the finance technology stack, and provide the ongoing advisory and optimisation support that determines whether the platform continues to deliver value as the business evolves.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--navy)', fontWeight: 500, margin: 0 }}>
+            The platform is the foundation. The implementation is what determines whether that foundation supports a finance function that operates at the level the business requires.
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button variant="primary" size="md" icon="→" href="../../contact/">Speak to Mysoft about Sage Intacct</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 11: LEARNING JOURNEY ─────────────────────────────────────────────────
+
+const LearningJourneySection = () => (
+  <section id="s11" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }}>
+        <span className="sec-eyebrow">WHERE TO GO NEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Your learning journey — from FMS fundamentals to finance transformation</h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+          The FMS Bootcamp is the starting point. These are the next steps — structured to build from system understanding through to operational transformation readiness.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'flex', alignItems: 'flex-start', gap: 0, position: 'relative',
+        padding: '0 20px',
+      }} className="journey-wrap">
+        {[
+          {
+            num: 1, active: true,
+            label: 'FMS Bootcamp',
+            desc: 'What a financial management system is, how to select one, and where Sage Intacct fits.',
+            link: null, linkLabel: 'You are here',
+          },
+          {
+            num: 2, active: false,
+            label: 'AI Bootcamp',
+            desc: 'How AI is changing financial management — from intelligent GL to agentic finance operations.',
+            link: '../../resources/ai-bootcamp/', linkLabel: 'Read the AI Bootcamp →',
+          },
+          {
+            num: 3, active: false,
+            label: 'AI Readiness Assessment',
+            desc: 'Where does your finance function sit on the AI maturity ladder?',
+            link: '../../ai-readiness-assessment.html', linkLabel: 'Take the assessment →',
+          },
+          {
+            num: 4, active: false,
+            label: 'eInvoicing Bootcamp',
+            desc: 'How electronic invoicing connects with your financial management system.',
+            link: '../../resources/einvoicing-bootcamp/', linkLabel: 'Read the eInvoicing Bootcamp →',
+          },
+          {
+            num: 5, active: false,
+            label: 'Talk to Mysoft',
+            desc: 'A conversation about your finance function\'s requirements and what a Sage Intacct implementation could look like.',
+            link: '../../contact/', linkLabel: 'Book a conversation →',
+          },
+        ].map((step, i, arr) => (
+          <div key={i} className="journey-step">
+            {i < arr.length - 1 && <div className="journey-connector" />}
+            <div className="journey-step-circle" style={{
+              background: step.active ? 'var(--cyan)' : 'var(--navy)',
+              color: '#fff',
+              boxShadow: step.active ? '0 0 0 6px rgba(0,182,237,0.15)' : 'none',
+            }}>{step.num}</div>
+            <div className="journey-step-label" style={{ color: step.active ? 'var(--cyan)' : 'var(--navy)' }}>
+              {step.label}
+            </div>
+            <div className="journey-step-desc">{step.desc}</div>
+            {step.link ? (
+              <a href={step.link} className="journey-step-link">{step.linkLabel}</a>
+            ) : (
+              <span style={{
+                marginTop: 10, fontFamily: 'var(--font-sans)', fontWeight: 600,
+                fontSize: 12, color: 'var(--muted)', textAlign: 'center',
+              }}>{step.linkLabel}</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 12: FINAL CTA ────────────────────────────────────────────────────────
+
+const FinalCTASection = () => (
+  <section className="bootcamp-sec bootcamp-sec-navy">
+    <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', padding: '0 32px' }}>
+      <h2 style={{
+        fontFamily: 'var(--font-display)', fontWeight: 600,
+        fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.1,
+        letterSpacing: '-0.025em', color: '#fff', margin: '0 0 20px',
+      }}>What would your finance function look like on a modern FMS?</h2>
+      <p style={{
+        fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.2vw, 1.1rem)',
+        lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', margin: '0 0 36px',
+      }}>
+        Most CFOs who have made the transition from accounting software to a modern financial management system describe the same realisation: the effort that was going into reconciliation and reporting maintenance is now available for the work that actually matters. A conversation with Mysoft starts with understanding what your finance function currently looks like and where the constraints are.
+      </p>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <Button variant="invert" size="lg" icon="→" href="../../contact/">
+          Book a conversation with Mysoft
+        </Button>
+        <Button variant="ghostWhite" size="lg" href="../../solutions/sage-intacct/">
+          Explore Sage Intacct
+        </Button>
+      </div>
+      <p style={{
+        fontFamily: 'var(--font-sans)', fontSize: 12.5, color: 'rgba(255,255,255,0.35)',
+        margin: '24px 0 0', fontStyle: 'italic',
+      }}>
+        No commitment required. A conversation about your finance function and your options.
+      </p>
+    </div>
+  </section>
+);
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToAssess = () => {
+    window.location.href = '../../ai-readiness-assessment.html';
+  };
+
+  return (
+    <>
+      <NavBar basePath="../../" onAssess={scrollToAssess} />
+      <SectionNav />
+      <main>
+        <HeroSection />
+        <WhyFMSSection />
+        <GlossarySection />
+        <FMSvsSection />
+        <CoreCapabilitiesSection />
+        <MultiEntitySection />
+        <DimensionalReportingSection />
+        <CloudNativeSection />
+        <AIReadyFinanceSection />
+        <VendorQuestionsSection />
+        <SageIntacctSection />
+        <LearningJourneySection />
+        <FinalCTASection />
+      </main>
+      <Footer basePath="../../" onAssess={scrollToAssess} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
