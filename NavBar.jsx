@@ -113,8 +113,13 @@ const NAV_ITEMS = {
         { name: "Strategic Insight",         sub: "Agentic AI — reality versus hype",     href: "insights/strategic-insight/" },
         { name: "Events & Webinars",         sub: "ERP selection events and roundtables", href: "insights/events-webinars/" },
       ]},
+      { t: "Bootcamps", l: [
+        { name: "AI Bootcamp",          sub: "AI in plain English for finance",      href: "resources/ai-bootcamp/" },
+        { name: "ERP Bootcamp",         sub: "ERP selection and implementation",     href: "resources/erp-bootcamp/" },
+        { name: "FMS Bootcamp",         sub: "Financial management systems",         href: "resources/fms-bootcamp/" },
+        { name: "eInvoicing Bootcamp",  sub: "eInvoicing mandates and standards",    href: "resources/einvoicing-bootcamp/" },
+      ]},
       { t: "Resources", l: [
-        { name: "AI Bootcamp",                      sub: "AI in plain English for finance", href: "resources/ai-bootcamp/" },
         { name: "AI-Ready Finance Guide",           sub: "Gated — free download",          href: "insights/ai-ready-finance-guide/" },
         { name: "ERP Selection Framework",          sub: "Six-stage evaluation process",   href: "insights/erp-selection-framework/" },
         { name: "Customer Transformation Stories",  sub: "Measurable outcomes",            href: "insights/customer-transformation-stories/" },

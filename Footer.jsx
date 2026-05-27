@@ -53,6 +53,9 @@ const FOOTER_COLS = [
     t: "Insights",
     l: [
       { name: "AI Bootcamp",                href: "resources/ai-bootcamp/" },
+      { name: "ERP Bootcamp",               href: "resources/erp-bootcamp/" },
+      { name: "FMS Bootcamp",               href: "resources/fms-bootcamp/" },
+      { name: "eInvoicing Bootcamp",        href: "resources/einvoicing-bootcamp/" },
       { name: "CFO Strategy",              href: "insights/cfo-strategy/" },
       { name: "Operational Transformation", href: "insights/operational-transformation/" },
       { name: "Strategic Insight",          href: "insights/strategic-insight/" },
