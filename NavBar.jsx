@@ -201,8 +201,8 @@ const MobileNavSection = ({ itemKey, item, basePath, onAssess, onClose }) => {
           {item.cols.map((col, ci) => (
             <div key={ci} style={{ marginBottom: 16 }}>
               <div style={{
-                fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 500,
-                letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--cyan)",
+                fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 600,
+                letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--navy)",
                 marginBottom: 10,
               }}>{col.t}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -367,32 +367,32 @@ const NavBar = ({ onAssess, basePath = "./" }) => {
         )}
       </div>
 
-      {/* Desktop mega-panel */}
+      {/* Desktop mega-panel — position:fixed so it is never clipped by the nav's layout */}
       {!isMobile && open && (
         <div
           onMouseEnter={cancelClose}
           onMouseLeave={scheduleClose}
           style={{
-            position: "absolute", top: "100%", left: 0, right: 0,
+            position: "fixed", top: "var(--nav-h)", left: 0, right: 0, zIndex: 99,
             background: "#fff", borderTop: "1px solid var(--border-1)",
             boxShadow: "var(--shadow-md)",
           }}
         >
           <div style={{
             maxWidth: "var(--container)", margin: "0 auto",
-            padding: "32px 32px 36px",
+            padding: "36px 32px 40px",
             display: "grid",
             gridTemplateColumns: `repeat(${NAV_ITEMS[open].cols.length}, 1fr) 1.2fr`,
-            gap: 32,
+            gap: 40,
           }}>
             {NAV_ITEMS[open].cols.map((col, ci) => (
               <div key={ci}>
                 <div style={{
-                  fontFamily: "var(--font-sans)", fontWeight: 500,
+                  fontFamily: "var(--font-sans)", fontWeight: 600,
                   fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase",
-                  color: "var(--cyan)", marginBottom: 16,
+                  color: "var(--navy)", marginBottom: 18,
                 }}>{col.t}</div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                   {col.l.map((it, li) => (
                     <MegaLink key={li} it={it} basePath={basePath} onAssess={onAssess} />
                   ))}
