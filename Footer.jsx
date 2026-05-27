@@ -52,6 +52,7 @@ const FOOTER_COLS = [
   {
     t: "Insights",
     l: [
+      { name: "AI Bootcamp",                href: "resources/ai-bootcamp/" },
       { name: "CFO Strategy",              href: "insights/cfo-strategy/" },
       { name: "Operational Transformation", href: "insights/operational-transformation/" },
       { name: "Strategic Insight",          href: "insights/strategic-insight/" },
