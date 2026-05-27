@@ -1,0 +1,1666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ERP Bootcamp | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Everything operations and finance leaders need to know about ERP — what it is, how to select it, what implementation really involves, and how to make it work. From Mysoft.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/erp-bootcamp">
+<meta property="og:title" content="ERP Bootcamp | Mysoft">
+<meta property="og:description" content="Everything operations and finance leaders need to know about ERP — what it is, how to select it, what implementation really involves, and how to make it work. From Mysoft.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-h);
+}
+
+/* Button interactions */
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-accent:hover     { opacity: 0.88; }
+.btn-ghost:hover      { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover     { background: var(--bg) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+.nav-active { color: var(--cyan) !important; }
+
+/* Section nav */
+.section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+  padding: 0 32px;
+  box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none;
+  display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none;
+  padding: 0 32px;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Page sections */
+.bootcamp-sec { padding: 100px 32px; }
+.bootcamp-sec-alt { background: #fff; }
+.bootcamp-sec-navy { background: var(--navy); color: #fff; }
+.bootcamp-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+/* Hero */
+.hero-bootcamp { background: var(--navy); padding: 96px 32px 88px; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.hero-breadcrumb a { color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 140ms; }
+.hero-breadcrumb a:hover { opacity: 1; }
+.hero-breadcrumb-sep { opacity: 0.4; }
+
+/* Eyebrow on dark */
+.eyebrow-dark {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 14px;
+}
+
+/* Tables */
+.comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.5;
+  vertical-align: top; min-width: 160px;
+}
+.comparison-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.comparison-table tr:nth-child(even) td { background: var(--bg); }
+.comparison-table tr:nth-child(odd) td { background: #fff; }
+.comparison-table td:first-child {
+  font-weight: 600; color: var(--navy); font-size: 13px;
+  background: var(--bg) !important; white-space: nowrap;
+}
+
+/* Accordion */
+.accordion-group { border: 1px solid var(--border-1); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.accordion-group-header {
+  padding: 18px 24px; background: var(--bg);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; transition: background 140ms;
+}
+.accordion-group-header:hover { background: #eaedef; }
+.accordion-group-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.accordion-term {
+  border-top: 1px solid var(--border-1); padding: 0;
+  background: #fff;
+}
+.accordion-term-header {
+  padding: 16px 24px; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; user-select: none;
+  transition: background 140ms;
+}
+.accordion-term-header:hover { background: rgba(0,182,237,0.03); }
+.accordion-term-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3;
+}
+.accordion-term-body {
+  padding: 0 24px 20px;
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2);
+}
+.accordion-chevron { flex-shrink: 0; transition: transform 220ms var(--ease-out); color: var(--muted); }
+.accordion-chevron.open { transform: rotate(180deg); }
+
+/* Callout / pull quote */
+.pull-quote {
+  border-left: 4px solid var(--yellow);
+  background: var(--navy); color: #fff;
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.pull-quote-light {
+  border-left: 4px solid var(--yellow);
+  background: var(--bg); color: var(--navy);
+  padding: 28px 32px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+/* Vignette cards */
+.vignette-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--yellow); border-radius: 4px;
+  padding: 20px 24px;
+}
+.vignette-label {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 6px;
+}
+.vignette-scenario { font-weight: 600; color: var(--navy); font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
+.vignette-risk { font-size: 13.5px; color: var(--fg-2); line-height: 1.55; }
+
+/* Feature cards */
+.feature-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column;
+}
+.feature-card-icon {
+  width: 48px; height: 48px; border-radius: 4px;
+  background: rgba(0,182,237,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-shrink: 0;
+}
+.feature-card-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 8px;
+}
+.feature-card-h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.2rem; color: var(--navy);
+  line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em;
+}
+.feature-card-body {
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2); flex: 1;
+}
+.feature-card-callout {
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--border-1);
+  font-family: var(--font-sans); font-size: 13.5px;
+  line-height: 1.6; color: var(--fg-2);
+}
+.feature-card-callout strong { color: var(--navy); }
+
+/* Myth bust */
+.myth-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--border-1); border-radius: 4px;
+  overflow: hidden; margin-bottom: 8px;
+}
+.myth-cell {
+  padding: 16px 20px; font-size: 14px; line-height: 1.55;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.myth-cell:first-child { background: rgba(198,54,45,0.04); border-right: 1px solid var(--border-1); }
+.myth-cell:last-child { background: rgba(31,138,91,0.04); }
+
+/* Governance principles cards */
+.principle-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+}
+.principle-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.8rem; color: var(--cyan); letter-spacing: -0.03em;
+  line-height: 1; margin-bottom: 12px;
+}
+.principle-icon { margin-bottom: 10px; color: var(--cyan); }
+.principle-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1rem; color: var(--navy); line-height: 1.3;
+  margin-bottom: 8px;
+}
+.principle-desc {
+  font-family: var(--font-sans); font-size: 13.5px;
+  line-height: 1.6; color: var(--fg-2);
+}
+
+/* Layers table */
+.layers-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.layers-table th, .layers-table td { padding: 16px 20px; text-align: left; border: 1px solid var(--border-1); line-height: 1.5; }
+.layers-table th { background: var(--navy); color: #fff; font-weight: 600; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+.layers-table tr:nth-child(even) td { background: var(--bg); }
+.layers-table tr:nth-child(odd) td { background: #fff; }
+.layers-table td:first-child { font-weight: 600; color: var(--navy); }
+
+/* Questions list */
+.question-item {
+  display: flex; gap: 20px; padding: 24px 28px;
+  border-bottom: 1px solid var(--border-1);
+  background: #fff; align-items: flex-start;
+}
+.question-item:first-child { border-top: 1px solid var(--border-1); border-radius: 4px 4px 0 0; }
+.question-item:last-child { border-radius: 0 0 4px 4px; border-bottom: 1px solid var(--border-1); }
+.question-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.4rem; color: var(--cyan); letter-spacing: -0.02em;
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.question-text { flex: 1; }
+.question-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3; margin-bottom: 8px;
+}
+.question-body { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.65; color: var(--fg-2); }
+
+/* Use case cards */
+.usecase-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; overflow: hidden; display: flex; flex-direction: column;
+}
+.usecase-card-head { background: var(--navy); padding: 20px 24px; }
+.stage-pill {
+  display: inline-flex; align-items: center;
+  background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 10px;
+}
+.usecase-card-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.05rem; color: #fff; line-height: 1.3;
+}
+.usecase-card-body { padding: 24px 24px 20px; flex: 1; }
+.usecase-card-body p {
+  font-family: var(--font-sans); font-size: 14px; line-height: 1.7;
+  color: var(--fg-2); margin: 0 0 14px;
+}
+.usecase-card-body p:last-child { margin-bottom: 0; }
+.usecase-card-footer {
+  padding: 16px 24px; border-top: 1px solid var(--border-1);
+  background: var(--bg);
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--muted);
+}
+.usecase-card-footer a { color: var(--cyan); text-decoration: none; font-weight: 500; }
+.usecase-card-footer a:hover { text-decoration: underline; }
+
+/* Learning journey */
+.journey-step {
+  display: flex; flex-direction: column; align-items: center; flex: 1; position: relative;
+}
+.journey-step-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  position: relative; z-index: 2; flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+}
+.journey-connector {
+  position: absolute; top: 22px; left: calc(50% + 22px);
+  right: calc(-50% + 22px); height: 1px; background: var(--border-1);
+}
+.journey-step-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); margin-top: 14px; text-align: center;
+  line-height: 1.3;
+}
+.journey-step-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-3);
+  line-height: 1.5; text-align: center; margin-top: 6px; max-width: 160px;
+}
+.journey-step-link {
+  margin-top: 10px; font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; color: var(--cyan); text-decoration: none; text-align: center;
+}
+.journey-step-link:hover { text-decoration: underline; }
+
+/* Stat card */
+.stat-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.stat-card-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Section headings */
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0;
+}
+.sec-h2-white {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: #fff; margin: 0;
+}
+
+/* Module tag pill */
+.module-tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+  margin-bottom: 12px;
+}
+.module-tag-finance { background: rgba(0,26,34,0.08); color: var(--navy); }
+.module-tag-operations { background: rgba(0,182,237,0.1); color: var(--cyan); }
+.module-tag-both { background: rgba(31,138,91,0.1); color: var(--success); }
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .bootcamp-sec { padding: 80px 24px; }
+  .hero-bootcamp { padding: 80px 24px 72px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .grid-3-resp { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3-rag { grid-template-columns: 1fr !important; }
+  .myth-row { grid-template-columns: 1fr !important; }
+  .myth-cell:first-child { border-right: none; border-bottom: 1px solid var(--border-1); }
+  .layers-table-wrap { overflow-x: auto; }
+  .journey-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+  .journey-step { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; flex: none !important; width: 100% !important; }
+  .journey-connector { display: none !important; }
+  .journey-step-circle { flex-shrink: 0 !important; }
+  .journey-step-label, .journey-step-desc, .journey-step-link { text-align: left !important; max-width: none !important; }
+  .two-col-sage { grid-template-columns: 1fr !important; }
+  .three-col-deploy { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 767px) {
+  .bootcamp-sec { padding: 64px 20px; }
+  .hero-bootcamp { padding: 64px 20px 56px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .grid-3-resp { grid-template-columns: 1fr !important; }
+  .principles-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .questions-note { text-align: center; }
+}
+@media (max-width: 480px) {
+  .principles-grid { grid-template-columns: 1fr !important; }
+  .question-item { padding: 18px 20px; }
+  .question-num { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const ICON_PATHS = {
+  TrendingUp:    `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  Users:         `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  Shield:        `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+  ChevronDown:   `<polyline points="6 9 12 15 18 9"/>`,
+  Zap:           `<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>`,
+  BarChart2:     `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+  Search:        `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+  GitBranch:     `<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>`,
+  Cpu:           `<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>`,
+  X:             `<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>`,
+  Check:         `<polyline points="20 6 9 17 4 12"/>`,
+  FileText:      `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>`,
+  RefreshCw:     `<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>`,
+  AlertTriangle: `<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>`,
+  Layers:        `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  FileSearch:    `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11.5" cy="14.5" r="2.5"/><polyline points="13.25 16.25 15 18"/>`,
+  ArrowRight:    `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`,
+  Eye:           `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`,
+  Building2:     `<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>`,
+  Download:      `<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>`,
+  BookOpen:      `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>`,
+  MessageSquare: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>`,
+  ClipboardList: `<rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="12" y1="11" x2="16" y2="11"/><line x1="12" y1="16" x2="16" y2="16"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="8" y1="16" x2="8.01" y2="16"/>`,
+  DollarSign:    `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
+  ShoppingCart:  `<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>`,
+  Package:       `<line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>`,
+  Settings:      `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>`,
+  Briefcase:     `<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
+  UserCheck:     `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/>`,
+  Globe:         `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`,
+  Clock:         `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+  Warehouse:     `<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>`,
+};
+
+const Icon = ({ name, size = 20, color = "currentColor", strokeWidth = 1.75, style = {} }) => (
+  <svg
+    viewBox="0 0 24 24" width={size} height={size}
+    fill="none" stroke={color}
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+    style={style}
+    dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }}
+  />
+);
+
+// ─── SECTION NAV ─────────────────────────────────────────────────────────────
+
+const ERP_NAV_ITEMS = [
+  { id: 's1',  label: 'Why ERP' },
+  { id: 's2',  label: 'Glossary' },
+  { id: 's3',  label: 'What ERP Is' },
+  { id: 's4',  label: 'ERP vs Alternatives' },
+  { id: 's5',  label: 'Core Modules' },
+  { id: 's6',  label: 'Cloud vs On-Premise' },
+  { id: 's7',  label: 'Selection' },
+  { id: 's8',  label: 'Implementation' },
+  { id: 's9',  label: 'When to Replace' },
+  { id: 's10', label: 'Vendor Questions' },
+  { id: 's11', label: 'Learning Journey' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    ERP_NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {ERP_NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}
+            >{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select
+          className="section-nav-select"
+          value={active}
+          onChange={e => scrollTo(e.target.value)}
+        >
+          {ERP_NAV_ITEMS.map(({ id, label }) => (
+            <option key={id} value={id}>{label}</option>
+          ))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+// ─── HERO ─────────────────────────────────────────────────────────────────────
+
+const HeroSection = () => (
+  <section className="hero-bootcamp">
+    <div className="container">
+      <div className="hero-breadcrumb">
+        <a href="../../">Home</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <a href="../../resources/">Resources</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>ERP Bootcamp</span>
+      </div>
+
+      <div style={{ maxWidth: 880 }}>
+        <span className="eyebrow-dark">ERP BOOTCAMP</span>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.05,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 24px',
+        }}>
+          Enterprise resource planning — what every operations and finance leader needs to know
+        </h1>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: 680, margin: '0 0 12px',
+        }}>
+          ERP is the operational backbone of mid-market businesses. It is also one of the most significant and consequential technology decisions an organisation makes. This page provides the grounding to make that decision well — from first principles through selection, implementation, and the AI-enabled future of operational systems.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 14, color: 'rgba(255,255,255,0.4)',
+          margin: 0,
+        }}>
+          Eleven sections. No vendor agenda. Start anywhere.
+        </p>
+
+        <div style={{
+          marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          {[
+            { n: '11', l: 'Core sections', sub: 'From vocabulary to implementation' },
+            { n: '5', l: 'Glossary groups', sub: 'Over 30 defined terms' },
+            { n: '10', l: 'Vendor questions', sub: 'Shareable checklist' },
+            { n: '1', l: 'Selection framework', sub: 'Five-step process' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              paddingLeft: i > 0 ? 32 : 0,
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '2rem', color: '#fff', letterSpacing: '-0.03em', lineHeight: 1,
+              }}>{s.n}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 5 }}>{s.l}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11.5, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 1: WHY ERP ───────────────────────────────────────────────────────────
+
+const WhyERPSection = () => (
+  <section id="s1" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE CONTEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why the ERP decision has never mattered more
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          ERP has been a fixture of mid-market operations for three decades. What has changed is the strategic weight the decision now carries. In a business environment defined by margin pressure, supply chain complexity, and the expectation that finance and operations deliver real-time insight rather than periodic reporting, the choice of ERP system determines whether an organisation can operate at the pace and scale its growth ambitions require.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The ERP landscape has also changed materially. Cloud-native systems have displaced the on-premise implementations that characterised the previous generation. AI capabilities are being built into ERP platforms at a pace that means the system selected today will be the AI infrastructure of the organisation in five years. And the partner ecosystem — the consultants, integrators, and ISV add-ons that surround a core ERP platform — has become as important a selection consideration as the software itself.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The consequence of getting ERP selection wrong is significant and well-documented. Failed or underperforming ERP implementations are among the most common causes of operational disruption in mid-market businesses. The failure modes are rarely technical — they are process, governance, and partner quality failures. Understanding those failure modes before entering a selection process is the single most valuable thing a finance or operations leader can do.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          This page covers the full picture: what ERP is and is not, how to evaluate it, what implementation actually involves, and how to ensure the system you select is the right foundation for the next chapter of your business.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'BarChart2', stat: 'ERP is now a system of intelligence',
+            copy: 'The best ERP platforms in 2026 are AI orchestration layers as much as transaction processing systems. Selection decisions made without this frame will age badly.',
+          },
+          {
+            icon: 'AlertTriangle', stat: 'Implementation failure is avoidable',
+            copy: 'The majority of ERP implementation failures trace to three causes: scope definition, data quality, and partner capability. All three are within a buyer\'s control.',
+          },
+          {
+            icon: 'Clock', stat: 'The cost of inaction compounds',
+            copy: 'Every year on an underperforming ERP system is a year of operational inefficiency, limited insight, and delayed AI readiness. The cost is rarely visible on a P&L — until it is.',
+          },
+        ].map((c, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-card-icon">
+              <Icon name={c.icon} size={20} color="var(--navy)" />
+            </div>
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15, color: 'var(--navy)', lineHeight: 1.3, marginBottom: 6,
+              }}>{c.stat}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{c.copy}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: GLOSSARY ──────────────────────────────────────────────────────────
+
+const ERP_GLOSSARY_GROUPS = [
+  {
+    id: 'eg1', title: 'Foundations',
+    terms: [
+      { term: 'Enterprise Resource Planning (ERP)', def: 'A software platform that integrates core business processes — finance, procurement, inventory, production, sales, and human resources — into a single system of record. The defining characteristic of ERP is integration: data entered in one module is immediately available to all others.' },
+      { term: 'System of Record', def: 'The authoritative, single source of truth for a given category of business data. In an ERP environment, the system of record for stock levels, supplier balances, and production orders is the ERP — not a spreadsheet.' },
+      { term: 'Master Data', def: 'The core reference data that underpins ERP operations: customers, suppliers, products, chart of accounts, cost centres, and employees. Master data quality is the single largest determinant of ERP implementation success.' },
+      { term: 'Transactional Data', def: 'The day-to-day operational records generated by business activity: purchase orders, sales orders, invoices, stock movements, production works orders, payroll runs.' },
+      { term: 'Chart of Accounts', def: 'The structured list of financial accounts used to classify and record every financial transaction.' },
+    ],
+  },
+  {
+    id: 'eg2', title: 'Architecture & Deployment',
+    terms: [
+      { term: 'Cloud ERP', def: 'ERP software delivered as a service over the internet, hosted and maintained by the software provider. Encompasses both cloud-native systems and cloud-hosted systems.' },
+      { term: 'On-Premise ERP', def: 'ERP software installed and run on the organisation\'s own servers, managed by internal IT or a managed service provider.' },
+      { term: 'SaaS (Software as a Service)', def: 'A software delivery model in which the application is hosted by the provider and accessed via a web browser.' },
+      { term: 'Multi-tenant', def: 'A cloud architecture in which multiple customers share the same underlying infrastructure. Most true cloud ERP platforms are multi-tenant.' },
+      { term: 'Single-tenant / Private Cloud', def: 'A cloud deployment in which a customer\'s environment is isolated on dedicated infrastructure.' },
+      { term: 'Hybrid ERP', def: 'A deployment model combining on-premise and cloud elements.' },
+    ],
+  },
+  {
+    id: 'eg3', title: 'Modules & Data',
+    terms: [
+      { term: 'Module', def: 'A functional area of ERP software covering a specific business domain: finance, procurement, inventory, production, sales order management, CRM, HR, payroll.' },
+      { term: 'General Ledger (GL)', def: 'The master financial record of an organisation — the foundation of the finance module.' },
+      { term: 'Accounts Payable (AP)', def: 'The module governing supplier invoices, payment processing, and supplier account management.' },
+      { term: 'Accounts Receivable (AR)', def: 'The module governing customer invoicing, cash application, credit management, and collections.' },
+      { term: 'Bill of Materials (BOM)', def: 'In manufacturing ERP, a structured list of components, sub-assemblies, and raw materials required to produce a finished product.' },
+      { term: 'Works Order / Production Order', def: 'An instruction to produce a specified quantity of a product, generated from a sales order or production plan.' },
+      { term: 'MRP (Material Requirements Planning)', def: 'A calculation engine within manufacturing ERP that determines what materials are needed, in what quantities, and at what time.' },
+    ],
+  },
+  {
+    id: 'eg4', title: 'Integration & Extension',
+    terms: [
+      { term: 'API', def: 'A defined interface through which two software systems exchange data. Modern ERP platforms expose APIs that allow integration with e-commerce platforms, CRM systems, logistics providers, and specialist applications.' },
+      { term: 'ISV (Independent Software Vendor)', def: 'A third-party software company that builds specialist applications designed to integrate with a core ERP platform. Mysoft manages a curated partner ISV ecosystem for Sage X3.' },
+      { term: 'EDI (Electronic Data Interchange)', def: 'A structured, standard format for the electronic exchange of business documents between organisations.' },
+      { term: 'Middleware / Integration Layer', def: 'Software that manages the flow of data between ERP and other systems.' },
+    ],
+  },
+  {
+    id: 'eg5', title: 'Implementation',
+    terms: [
+      { term: 'Go-live', def: 'The point at which the new ERP system becomes the live system of record, replacing the previous system.' },
+      { term: 'Data Migration', def: 'The process of extracting data from legacy systems, cleansing it, transforming it, and loading it into the new ERP. Consistently the most underestimated task in ERP implementation.' },
+      { term: 'UAT (User Acceptance Testing)', def: 'A structured phase in which business users test the configured system against defined scenarios before go-live.' },
+      { term: 'Change Management', def: 'The structured process of preparing an organisation for the operational and behavioural changes that a new ERP requires.' },
+      { term: 'Hypercare', def: 'An intensive post-go-live support period, typically four to eight weeks, of elevated partner support.' },
+      { term: 'Fit-Gap Analysis', def: 'A structured assessment of how well a software system\'s standard functionality meets an organisation\'s requirements.' },
+    ],
+  },
+];
+
+const GlossarySection = () => {
+  const [openGroups, setOpenGroups] = React.useState({ eg1: true });
+  const [openTerms, setOpenTerms] = React.useState({});
+
+  const toggleGroup = (id) => setOpenGroups(prev => ({ ...prev, [id]: !prev[id] }));
+  const toggleTerm = (key) => setOpenTerms(prev => ({ ...prev, [key]: !prev[key] }));
+
+  return (
+    <section id="s2" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 52px' }}>
+          <span className="sec-eyebrow">GLOSSARY</span>
+          <h2 className="sec-h2" style={{ marginBottom: 16 }}>The vocabulary of ERP — defined clearly</h2>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            ERP comes with its own dense vocabulary of acronyms and architecture terms. These definitions cut through the shorthand to give operations and finance leaders the working understanding they need to evaluate systems, challenge vendors, and lead implementations.
+          </p>
+        </div>
+
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          {ERP_GLOSSARY_GROUPS.map(group => (
+            <div key={group.id} className="accordion-group">
+              <div
+                className="accordion-group-header"
+                onClick={() => toggleGroup(group.id)}
+              >
+                <span className="accordion-group-title">{group.title}</span>
+                <span className={'accordion-chevron' + (openGroups[group.id] ? ' open' : '')}>
+                  <Icon name="ChevronDown" size={16} color="var(--muted)" />
+                </span>
+              </div>
+              {openGroups[group.id] && group.terms.map((t, i) => {
+                const key = group.id + '-' + i;
+                const isOpen = openTerms[key];
+                return (
+                  <div key={key} className="accordion-term">
+                    <div className="accordion-term-header" onClick={() => toggleTerm(key)}>
+                      <span className="accordion-term-name">{t.term}</span>
+                      <span className={'accordion-chevron' + (isOpen ? ' open' : '')}>
+                        <Icon name="ChevronDown" size={15} color="var(--muted)" />
+                      </span>
+                    </div>
+                    {isOpen && (
+                      <div className="accordion-term-body">{t.def}</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 3: WHAT ERP IS ───────────────────────────────────────────────────────
+
+const WhatERPIsSection = () => {
+  const myths = [
+    ['ERP is a finance system', 'ERP spans finance, operations, procurement, production, and logistics. Finance is one module — not the whole system.'],
+    ['ERP fixes broken processes', 'ERP reflects your processes in software. Broken processes implemented in ERP become expensive, automated broken processes. Process design precedes system configuration.'],
+    ['ERP implementation is an IT project', 'ERP implementation is a business transformation project that IT supports. The most common failure causes are process, data, and change management — not technology.'],
+    ['ERP is a one-time investment', 'ERP requires ongoing investment in maintenance, upgrades, user training, and optimisation.'],
+    ['Any ERP will do the same job', 'ERP platforms vary significantly in their sector focus, module depth, scalability, integration capability, and partner ecosystem.'],
+  ];
+
+  return (
+    <section id="s3" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0 }}>
+          <span className="sec-eyebrow">FOUNDATIONS</span>
+          <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+            What ERP is — and what it is not
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            Enterprise resource planning is, at its simplest, the software infrastructure of a business. It is the system that records what the business buys, makes, sells, and owns — and makes that record available in real time to everyone who needs it. In a business operating without ERP, or on an inadequate ERP, the equivalent information lives in spreadsheets, email threads, separate accounting systems, and the knowledge of individual team members. The information exists — it is just fragmented, delayed, and difficult to trust.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            ERP solves the fragmentation problem by establishing a single system of record. A purchase order raised in procurement is immediately visible to finance, warehouse, and production. When the goods arrive, the warehouse receipt updates stock, triggers the three-way match in accounts payable, and feeds through to cost of goods calculations in the management accounts. No re-entry, no delay, no reconciliation between systems. This is the foundational value of ERP.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 32px' }}>
+            What has changed since the first generation of ERP systems is the layer of intelligence that sits on top of that transactional foundation. Modern ERP platforms use machine learning to improve demand forecasting, AI to automate invoice processing and exception handling, and analytical tools to surface operational insights. The ERP is no longer purely a system of record — it is increasingly a system of intelligence. This is the frame through which ERP selection decisions in 2026 should be made.
+          </p>
+
+          <div className="pull-quote" style={{ marginBottom: 48 }}>
+            "The ERP you select today will be the AI infrastructure of your business in five years. The question is not whether your ERP can process transactions — it is whether it can support the intelligence layer your business will need."
+          </div>
+
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1.35rem', color: 'var(--navy)', margin: '0 0 20px',
+            letterSpacing: '-0.015em',
+          }}>What ERP is not</h3>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0,
+              background: 'var(--bg)', borderRadius: 4, overflow: 'hidden',
+              border: '1px solid var(--border-1)',
+            }}>
+              <div style={{
+                padding: '10px 16px', background: 'var(--navy)', color: '#fff',
+                fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11.5,
+                letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: 8,
+                borderRight: '1px solid rgba(255,255,255,0.1)',
+              }}>
+                <Icon name="X" size={13} color="rgba(255,255,255,0.6)" /> Myth
+              </div>
+              <div style={{
+                padding: '10px 16px', background: 'var(--navy)', color: '#fff',
+                fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11.5,
+                letterSpacing: '0.08em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: 8,
+              }}>
+                <Icon name="Check" size={13} color="var(--cyan)" /> Reality
+              </div>
+            </div>
+            {myths.map(([myth, reality], i) => (
+              <div key={i} className="myth-row">
+                <div className="myth-cell">
+                  <Icon name="X" size={16} color="var(--danger)" style={{ flexShrink: 0, marginTop: 1 }} />
+                  <span style={{ fontFamily: 'var(--font-sans)', color: 'var(--fg-1)' }}>{myth}</span>
+                </div>
+                <div className="myth-cell">
+                  <Icon name="Check" size={16} color="var(--success)" style={{ flexShrink: 0, marginTop: 1 }} />
+                  <span style={{ fontFamily: 'var(--font-sans)', color: 'var(--fg-2)' }}>{reality}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 4: ERP VS ALTERNATIVES ───────────────────────────────────────────────
+
+const ERPvsAlternativesSection = () => (
+  <section id="s4" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">CHOOSING THE RIGHT SYSTEM</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          ERP versus standalone accounting, point solutions, and financial management systems
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The ERP category is frequently conflated with neighbouring categories: standalone accounting software, specialist point solutions, and financial management systems. They are not the same thing, they do not suit the same businesses, and selecting the wrong category is as consequential as selecting the wrong product within a category. This comparison clarifies the distinctions.
+        </p>
+      </div>
+
+      <div className="comparison-table-wrap" style={{ marginBottom: 48 }}>
+        <table className="comparison-table">
+          <thead>
+            <tr>
+              <th style={{ width: 180 }}>Dimension</th>
+              <th>Standalone Accounting</th>
+              <th>Point Solutions</th>
+              <th>Financial Management System</th>
+              <th>ERP</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Primary focus', 'Financial bookkeeping and reporting', 'One specialist function', 'Advanced financial management', 'End-to-end operational and financial integration'],
+              ['Integration', 'Minimal — silos by design', 'Varies; typically integrates with accounting via API', 'Deep financial integration; limited operational scope', 'Full integration across all operational and financial domains'],
+              ['Operational scope', 'None', 'Single function', 'Finance, reporting, multi-entity', 'Finance + procurement + inventory + production + logistics + HR'],
+              ['Scalability', 'Limited', 'Function-specific ceiling', 'High for finance; limited for operations', 'High across all operational domains'],
+              ['AI readiness', 'Low', 'Point AI features within specific function', 'High for finance AI', 'High across all functions'],
+              ['Implementation time', 'Weeks', 'Weeks', '3–6 months', '6–18 months'],
+              ['Typical fit', 'Start-up to early growth', 'Specialist needs', 'Finance-led businesses: professional services, SaaS, NFP', 'Manufacturing, distribution, wholesale, multi-site'],
+            ].map(([label, ...cells], i) => (
+              <tr key={i}>
+                <td>{label}</td>
+                {cells.map((c, j) => <td key={j}>{c}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {[
+            {
+              title: 'When standalone accounting is right',
+              body: 'Businesses in early growth with fewer than 20 employees, straightforward stock management, and no production complexity are well served by standalone accounting software. The operational overhead is low, implementation is fast, and the cost is proportionate. The signal to move on is when spreadsheets become the operational system and reconciliation consumes finance team capacity.',
+            },
+            {
+              title: 'When point solutions are right',
+              body: 'Point solutions address a specific, well-defined problem: expense management, contract management, EDI, or specialist inventory. They are the right choice when a business has a mature operational foundation and a single gap. They become a problem when multiple point solutions accumulate without a central system of record — creating the fragmentation that ERP is designed to solve.',
+            },
+            {
+              title: 'When a financial management system is right',
+              body: 'Financial management systems — such as Sage Intacct — are designed for finance-led businesses: professional services, SaaS companies, not-for-profit organisations, and multi-entity structures where financial sophistication is the primary need and operational complexity (manufacturing, distribution) is limited. If the core challenge is financial consolidation, project accounting, or multi-entity reporting rather than operational integration, an FMS may be the more appropriate choice.',
+            },
+            {
+              title: 'When ERP is right',
+              body: 'ERP is the right choice when operational and financial integration is the core requirement. Manufacturing businesses need production planning connected to procurement and finance. Distributors need inventory management connected to sales order processing and logistics. Businesses operating across multiple sites need a single operational system that consolidates across entities. When any of these requirements are present, ERP is the appropriate category — and the selection question becomes which ERP, not whether ERP.',
+            },
+          ].map((item, i) => (
+            <div key={i} style={{
+              background: 'var(--bg)', border: '1px solid var(--border-1)',
+              borderRadius: 4, padding: '24px 28px',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15.5, color: 'var(--navy)', marginBottom: 10, lineHeight: 1.3,
+              }}>{item.title}</div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 5: CORE ERP MODULES ──────────────────────────────────────────────────
+
+const CoreModulesSection = () => {
+  const modules = [
+    { icon: 'DollarSign', name: 'Financial Management', tag: 'Finance', tagClass: 'module-tag-finance', body: 'The financial backbone of ERP — general ledger, accounts payable, accounts receivable, fixed assets, cash management. Financial data is driven directly from operational transactions, eliminating the reconciliation layer.' },
+    { icon: 'ShoppingCart', name: 'Procurement', tag: 'Both', tagClass: 'module-tag-both', body: 'Manages the full purchase-to-pay cycle: supplier management, purchase requisitions, purchase orders, goods receipt, three-way matching. Integration with inventory means a purchase order automatically drives stock requirements.' },
+    { icon: 'Package', name: 'Inventory Management', tag: 'Operations', tagClass: 'module-tag-operations', body: 'Tracks stock across locations, warehouses, and valuation methods. Manages goods-in, putaway, picking, despatch, and stock adjustments. Real-time stock visibility is foundational to working capital management.' },
+    { icon: 'FileText', name: 'Sales Order Management', tag: 'Both', tagClass: 'module-tag-both', body: 'Manages the order-to-cash cycle: customer orders, pricing, credit checking, availability reservation, despatch, invoicing. A confirmed sales order immediately commits stock and creates a receivable.' },
+    { icon: 'Settings', name: 'Production Planning & Manufacturing', tag: 'Operations', tagClass: 'module-tag-operations', body: 'Covers works orders, bill of materials, MRP, capacity planning, shop floor scheduling, and production costing. The operational core for manufacturing businesses.' },
+    { icon: 'Warehouse', name: 'Warehouse Management (WMS)', tag: 'Operations', tagClass: 'module-tag-operations', body: 'Manages physical logistics within a warehouse: location management, directed put-away, pick-and-pack, barcode scanning. Often delivered by specialist ISV solutions integrated with core ERP.' },
+    { icon: 'Briefcase', name: 'Project Management', tag: 'Both', tagClass: 'module-tag-both', body: 'For businesses delivering projects, tracks costs, revenues, resources, and milestones against budgets. Enables project-level profitability reporting.' },
+    { icon: 'Users', name: 'Customer Relationship Management (CRM)', tag: 'Both', tagClass: 'module-tag-both', body: 'Manages commercial relationships: contacts, opportunities, quotes, activities, and pipeline. Many businesses use specialist CRM (Salesforce, HubSpot) integrated to ERP.' },
+    { icon: 'UserCheck', name: 'Human Resources & Payroll', tag: 'Finance', tagClass: 'module-tag-finance', body: 'Employee records, contracts, absence management, and payroll processing. Often managed in specialist systems with integration to ERP for headcount costs.' },
+  ];
+
+  return (
+    <section id="s5" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 52px' }}>
+          <span className="sec-eyebrow">WHAT ERP COVERS</span>
+          <h2 className="sec-h2" style={{ marginBottom: 16 }}>Core ERP modules — what each one does and why it matters</h2>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            A full ERP platform covers eight to twelve functional domains. Not every business activates every module. These are the core modules relevant to mid-market manufacturing, distribution, and mixed-model businesses.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="grid-3-resp">
+          {modules.map((m, i) => (
+            <div key={i} style={{
+              background: '#fff', border: '1px solid var(--border-1)',
+              borderRadius: 4, padding: '28px 24px',
+            }}>
+              <div style={{
+                width: 44, height: 44, borderRadius: 4,
+                background: 'rgba(0,182,237,0.08)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16,
+              }}>
+                <Icon name={m.icon} size={20} color="var(--cyan)" />
+              </div>
+              <div className={'module-tag ' + m.tagClass}>{m.tag}</div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15.5, color: 'var(--navy)', margin: '0 0 10px', lineHeight: 1.3,
+              }}>{m.name}</h3>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{m.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 6: CLOUD VS ON-PREMISE ───────────────────────────────────────────────
+
+const DeploymentSection = () => (
+  <section id="s6" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">DEPLOYMENT OPTIONS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          Cloud, on-premise, and hybrid — choosing the right deployment model
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Deployment model selection was, for most of ERP's history, primarily a technical decision. It is now a commercial and strategic one. Cloud-native ERP has reached a maturity level that makes it the default recommendation for most mid-market businesses — but data sovereignty requirements, regulatory constraints, and deep customisation needs mean on-premise remains the right choice for specific organisations. Understanding the tradeoffs is essential before entering a vendor evaluation.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }} className="three-col-deploy">
+        {[
+          {
+            name: 'Cloud-Native ERP',
+            bestFor: 'Growth businesses prioritising continuous improvement, low infrastructure overhead, and AI-readiness',
+            rows: [
+              ['What it is', 'Software built specifically for cloud delivery. Provider manages infrastructure, security, updates.'],
+              ['Advantages', 'Lower upfront cost; automatic updates; elastic scaling; accessible anywhere; provider responsible for security.'],
+              ['Considerations', 'Customisation constrained; data residency; internet dependency; long-term subscription costs.'],
+            ],
+          },
+          {
+            name: 'On-Premise ERP',
+            bestFor: 'Organisations with specific data sovereignty, compliance, or deep customisation requirements',
+            rows: [
+              ['What it is', 'ERP installed on servers owned by the organisation.'],
+              ['Advantages', 'Complete control over data location; supports deep customisation; no subscription dependency; works without internet.'],
+              ['Considerations', 'Higher upfront capital cost; internal IT required; upgrade projects as separate initiatives; AI capability may lag.'],
+            ],
+          },
+          {
+            name: 'Hybrid ERP',
+            bestFor: 'Organisations in transition, or with requirements that split naturally',
+            rows: [
+              ['What it is', 'Combination of on-premise core ERP and cloud-delivered modules.'],
+              ['Advantages', 'Gradual transition; preserves on-premise investment; can address specific data residency.'],
+              ['Considerations', 'Integration complexity; two environments to govern; typically a transition state, not a destination.'],
+            ],
+          },
+        ].map((card, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, overflow: 'hidden',
+          }}>
+            <div style={{ background: 'var(--navy)', padding: '20px 24px' }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: '1.05rem', color: '#fff', lineHeight: 1.25, marginBottom: 6,
+              }}>{card.name}</div>
+              <div style={{
+                fontFamily: 'var(--font-sans)', fontSize: 12.5,
+                color: 'rgba(255,255,255,0.65)', lineHeight: 1.5,
+              }}>Best for: {card.bestFor}</div>
+            </div>
+            <div style={{ padding: '0' }}>
+              {card.rows.map(([label, text], j) => (
+                <div key={j} style={{
+                  padding: '16px 20px',
+                  borderBottom: j < card.rows.length - 1 ? '1px solid var(--border-1)' : 'none',
+                }}>
+                  <div style={{
+                    fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11,
+                    letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 5,
+                  }}>{label}</div>
+                  <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, lineHeight: 1.6, color: 'var(--fg-2)' }}>{text}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{
+          background: 'var(--bg)', border: '1px solid var(--border-1)',
+          borderRadius: 4, padding: '28px 32px',
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 12,
+            letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: 16,
+          }}>DEPLOYMENT DECISION FRAMEWORK</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {[
+              { n: '1', q: 'Do you have specific data sovereignty or regulatory requirements?', a: 'If yes — on-premise or private cloud may be required.' },
+              { n: '2', q: 'Do you have internal IT resource to manage infrastructure?', a: 'If no — cloud-native reduces operational burden.' },
+              { n: '3', q: 'Do you require deep customisation of the ERP code base?', a: 'If yes — on-premise provides flexibility.' },
+              { n: '4', q: 'Is AI capability in your ERP a 1-to-3-year priority?', a: 'If yes — cloud-native is strongly favoured.' },
+            ].map((item, i) => (
+              <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <div style={{
+                  width: 28, height: 28, borderRadius: '50%', background: 'var(--navy)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 12, color: '#fff',
+                }}>{item.n}</div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 14, color: 'var(--navy)', lineHeight: 1.4, marginBottom: 3 }}>{item.q}</div>
+                  <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.55 }}>{item.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 7: SELECTION PROCESS ─────────────────────────────────────────────────
+
+const SelectionSection = () => (
+  <section id="s7" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">MAKING THE DECISION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          How to run an ERP selection process that produces the right outcome
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          Poorly designed ERP selection processes produce poor outcomes — not because the buyer chose a bad product, but because the evaluation was structured to assess the wrong things. A vendor's ability to run a polished demonstration is not correlated with their ability to deliver a successful implementation. The process described below is designed to assess the things that matter: functional fit against your actual requirements, partner capability, implementation methodology, and five-year cost.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The total timeline, including internal decision-making, is typically 14 to 20 weeks. Organisations that compress this timeline consistently report worse outcomes than those that invest the time in a structured process.
+        </p>
+      </div>
+
+      <div style={{ position: 'relative', marginBottom: 48 }}>
+        {[
+          { step: 1, title: 'Requirements definition', duration: '4–6 weeks', body: 'Before looking at any software, document what your business requires. Map processes across every functional domain. Involve the people who run the processes — not just the senior team. Requirements should be classified as must-have, important, and nice-to-have. This document becomes the evaluation framework for everything that follows.' },
+          { step: 2, title: 'Market assessment and longlist', duration: '2–3 weeks', body: 'Identify ERP vendors appropriate for your business size, sector, and complexity. Produce a longlist of five to seven systems. Research partner credentials, references, and methodology. The partner landscape matters as much as the software — a strong platform with an inadequate partner will underperform a lesser platform with an excellent one.' },
+          { step: 3, title: 'RFP and shortlisting', duration: '3–4 weeks', body: 'Issue a structured Request for Proposal to three to four vendors. Cover functional fit, deployment options, methodology, references, data migration approach, training, support model, and TCO over five years. Score responses against your requirements. Shortlist two to three vendors for demonstration.' },
+          { step: 4, title: 'Scripted demonstrations', duration: '2–3 weeks', body: 'Ask each shortlisted vendor to demonstrate against your specific scenarios — not their standard sales demo. Provide a scripted demonstration guide. Evaluate whether the system handles your actual processes, not idealised ones. Involve process owners in scoring, not just the selection committee.' },
+          { step: 5, title: 'Reference checks, TCO analysis, and selection', duration: '2–3 weeks', body: 'Speak to at least three reference customers in your sector who have been live for 18 months or more. Build a five-year total cost of ownership model covering licence, implementation, training, internal resource, integration, and ongoing support. Make the selection decision on the basis of this structured analysis.' },
+        ].map((s, i) => (
+          <div key={i} style={{
+            display: 'flex', gap: 24, marginBottom: i < 4 ? 24 : 0, alignItems: 'flex-start',
+          }}>
+            <div style={{
+              width: 48, height: 48, borderRadius: '50%', background: 'var(--navy)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+              fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 18, color: '#fff',
+            }}>{s.step}</div>
+            <div style={{
+              background: '#fff', border: '1px solid var(--border-1)',
+              borderRadius: 4, padding: '20px 24px', flex: 1,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8, flexWrap: 'wrap' }}>
+                <span style={{
+                  fontFamily: 'var(--font-display)', fontWeight: 600,
+                  fontSize: 15.5, color: 'var(--navy)', lineHeight: 1.3,
+                }}>{s.title}</span>
+                <span style={{
+                  fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 600,
+                  letterSpacing: '0.1em', textTransform: 'uppercase',
+                  color: 'var(--muted)', background: 'var(--bg)',
+                  padding: '3px 8px', borderRadius: 3,
+                }}>{s.duration}</span>
+              </div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{s.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{
+          background: '#fff', border: '1px solid var(--border-1)',
+          borderLeft: '4px solid var(--yellow)', borderRadius: 4, padding: '28px 32px',
+        }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1.2rem', color: 'var(--navy)', margin: '0 0 20px', lineHeight: 1.3,
+            letterSpacing: '-0.01em',
+          }}>Where selection processes fail — the three most common errors</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {[
+              { title: 'Error 1: Demonstrations before requirements', body: 'Beginning vendor conversations or demonstrations before requirements are defined anchors the selection process on vendor-chosen capabilities. Vendors will demonstrate what they do well. Your requirements should define the agenda. Define requirements first. Always.' },
+              { title: 'Error 2: Evaluating software, ignoring the partner', body: 'ERP is not a software purchase — it is a partnership decision. The ERP platform determines the ceiling of what is possible. The implementation partner determines whether you reach it. Reference checks, methodology assessment, and team continuity commitments should carry as much weight as software scoring.' },
+              { title: 'Error 3: Optimising for upfront cost', body: 'ERP selection is a five-to-ten-year decision. An implementation that is under-scoped to reduce the initial quote will consistently cost more over its lifetime than one scoped correctly from the outset. Scope gaps and stabilisation effort from underspecified implementations reliably exceed any savings made at selection.' },
+            ].map((item, i) => (
+              <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                <Icon name="AlertTriangle" size={16} color="var(--yellow)" style={{ flexShrink: 0, marginTop: 2 }} />
+                <div>
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14.5, color: 'var(--navy)' }}>{item.title} — </span>
+                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.65 }}>{item.body}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 8: IMPLEMENTATION ────────────────────────────────────────────────────
+
+const ImplementationSection = () => (
+  <section id="s8" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">IMPLEMENTATION REALITIES</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          What ERP implementation actually involves — and where projects fail
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          ERP implementation has a well-earned reputation for complexity. That reputation is not entirely undeserved — but it frequently obscures the more useful insight that implementation failure is predictable and preventable. The same failure modes appear across failed implementations: inadequate requirements, poor data quality, insufficient business engagement, and partners who overpromise and underdeliver. None of these are technology failures.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Understanding the phases of implementation, the risks at each phase, and the business behaviours that prevent failure is worth more than any technical knowledge of the ERP platform itself. Implementation is a business project that happens to involve technology.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 48 }} className="grid-3-resp">
+        {[
+          {
+            phase: 1, name: 'Discovery and design', duration: '6–10 weeks',
+            body: 'Map processes in detail, design system configuration, define data migration requirements, agree project plan and governance structure.',
+            risk: 'Inadequate time investment by the business. Process mapping shortcuts create configuration gaps that surface at testing.',
+          },
+          {
+            phase: 2, name: 'Build and configuration', duration: '8–16 weeks',
+            body: 'Configure system against agreed design. Where gaps exist between standard functionality and requirements, decide: adapt process, extend system with configuration, or custom development.',
+            risk: 'Scope creep. Each "small addition" adds to build time, testing requirements, and implementation cost.',
+          },
+          {
+            phase: 3, name: 'Testing and training', duration: '4–8 weeks',
+            body: 'User acceptance testing against defined test scripts covering every operational scenario. Role-specific end-user training delivered before go-live.',
+            risk: 'Inadequate UAT investment. Teams that skip or compress testing pay for it in post-go-live stabilisation.',
+          },
+          {
+            phase: 4, name: 'Go-live and hypercare', duration: 'Go-live day + 4–8 weeks',
+            body: 'Data cut-over, parallel running where appropriate, activating the system for live transactions. Elevated partner support during hypercare period.',
+            risk: 'Underestimating the human factor. Training completed weeks before go-live decays. Support resource in hypercare is not optional.',
+          },
+        ].map((p, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, overflow: 'hidden',
+          }}>
+            <div style={{ background: 'var(--navy)', padding: '16px 20px' }}>
+              <div style={{
+                fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+                letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 4,
+              }}>Phase {p.phase}</div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: '0.95rem', color: '#fff', lineHeight: 1.3, marginBottom: 4,
+              }}>{p.name}</div>
+              <div style={{
+                fontFamily: 'var(--font-sans)', fontSize: 11.5,
+                color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em',
+              }}>{p.duration}</div>
+            </div>
+            <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--border-1)' }}>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>{p.body}</p>
+            </div>
+            <div style={{ padding: '14px 20px', background: 'rgba(198,54,45,0.03)' }}>
+              <div style={{
+                fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+                letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--danger)', marginBottom: 4,
+              }}>Key risk</div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13, lineHeight: 1.6, color: 'var(--fg-2)', margin: 0 }}>{p.risk}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div className="pull-quote">
+          "ERP implementations do not fail because the software does not work. They fail because the data was not ready, the processes were not designed, the people were not prepared, or the partner did not have the depth they claimed. All four are within the buyer's control."
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 9: WHEN TO REPLACE ───────────────────────────────────────────────────
+
+const WhenToReplaceSection = () => (
+  <section id="s9" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+        <span className="sec-eyebrow">MAKING THE CASE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          Replace, upgrade, or optimise — how to assess your current ERP
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          Sunk cost bias is pervasive in ERP decisions. Organisations that have invested significantly in an ERP implementation are reluctant to acknowledge that the investment is not delivering the expected return — and that the cost of staying on an inadequate system may exceed the cost of replacing it. The three distinct diagnoses are: the system is adequate but poorly configured (optimise), the system is adequate but an older version (upgrade), or the system is fundamentally inadequate for the current or future business (replace).
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The signals below are designed to help distinguish between these diagnoses. Not every signal is definitive — context matters. But patterns of signals are meaningful, and patterns that include multiple replace signals warrant a structured assessment.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 48 }} className="grid-2-resp">
+        {[
+          {
+            border: 'var(--cyan)', signal: 'Optimise / upgrade signal',
+            title: 'Reports take hours to produce, require significant manual effort, or are distrusted',
+            body: 'This is frequently a configuration and process issue rather than a platform limitation. Assess chart of accounts structure, reporting hierarchy, data quality, and whether the reporting module has been fully implemented. Optimise first before concluding the platform is inadequate.',
+          },
+          {
+            border: 'var(--cyan)', signal: 'Optimise / upgrade signal',
+            title: 'Significant operational data lives in spreadsheets outside the ERP',
+            body: 'If the ERP is not the system of record for core operational data, this is a critical adequacy signal. Investigate root cause before assuming replacement — it may be a configuration gap, a training gap, or a process design issue that can be resolved without platform change.',
+          },
+          {
+            border: 'var(--yellow)', signal: 'Replace signal',
+            title: 'The business has outgrown the ERP\'s transaction volume, user count, or entity structure',
+            body: 'Scalability ceiling reached. If system performance is degrading under load, multi-entity management requires manual consolidation, or the user count is approaching licence limits, replacement is appropriate. This is a structural constraint, not a configuration issue.',
+          },
+          {
+            border: 'var(--yellow)', signal: 'Replace signal',
+            title: 'The implementation partner is no longer actively developing the platform',
+            body: 'Partner and platform lifecycle risk. If the ERP vendor is investing in a successor product, or the partner ecosystem has materially contracted, assess migration risk now rather than after support is withdrawn or capabilities stagnate.',
+          },
+          {
+            border: 'var(--yellow)', signal: 'Replace signal',
+            title: 'Integration with modern cloud tools requires significant custom development',
+            body: 'Technical debt accumulation. If connecting the ERP to e-commerce, logistics, or analytics tools requires bespoke integration work rather than standard APIs, the platform is behind the market. API-first cloud ERP eliminates most of this overhead.',
+          },
+          {
+            border: 'var(--cyan)', signal: 'Optimise / upgrade signal',
+            title: 'Business processes have changed materially since implementation but ERP configuration has not',
+            body: 'Configuration drift. Assess whether a structured configuration review and optimisation engagement can restore alignment between the system and the business before committing to replacement. Many businesses find significant value in their existing platform after a structured optimisation.',
+          },
+        ].map((item, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderLeft: `4px solid ${item.border}`, borderRadius: 4, padding: '20px 24px',
+          }}>
+            <div style={{
+              fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: item.border === 'var(--cyan)' ? 'var(--cyan)' : 'var(--warning, #B45309)',
+              marginBottom: 8,
+            }}>{item.signal}</div>
+            <div style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600,
+              fontSize: 14.5, color: 'var(--navy)', lineHeight: 1.35, marginBottom: 10,
+            }}>{item.title}</div>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>{item.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The cost of staying on an inadequate ERP is real but rarely visible on a P&L. It accrues as operational inefficiency, delayed decision-making from poor data, integration debt, and AI readiness that never arrives. A structured assessment of the three options — optimise, upgrade, replace — should be the starting point for any ERP conversation, not the vendor demonstrations.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 10: VENDOR QUESTIONS ─────────────────────────────────────────────────
+
+const VendorQuestionsSection = () => (
+  <section id="s10" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">BUYER INTELLIGENCE</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Ten questions to ask before committing to an ERP system</h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 12px' }}>
+          ERP vendor conversations are structured to create confidence rather than reveal risk. The questions below are designed to reverse that dynamic — to surface the specific commitments, methodologies, and failure modes that determine whether an implementation succeeds. A vendor that answers them clearly and specifically is demonstrating operational competence. A vendor that deflects or generalises is demonstrating the opposite.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 36px' }}>
+          These questions are as much about the implementation partner as the software. In most mid-market ERP decisions, the partner is the more important variable.
+        </p>
+
+        <div style={{ border: '1px solid var(--border-1)', borderRadius: 4, overflow: 'hidden' }}>
+          {[
+            ['What percentage of your implementations in our sector complete on time and within budget?', 'Ask for the number, not a narrative. A partner with strong delivery credentials will be able to cite it. Vagueness here is itself a data point.'],
+            ['How do you handle scope change during implementation?', 'Understand the mechanism before the project starts. Is there a formal change control process? How are changes priced? What is the escalation path for scope disputes?'],
+            ['Who specifically will be on our implementation team — and what is your policy on team continuity?', 'Ask for CVs of the proposed team. Ask for a contractual commitment on team continuity. Consultant turnover mid-implementation is one of the most disruptive and common risks in ERP delivery.'],
+            ['What is your standard approach to data migration?', 'Data migration is consistently the most underestimated task in ERP implementation. Ask for the methodology, the tools, the data quality assessment process, and how many migration cycles are included in the project scope.'],
+            ['What does your post-go-live support model look like for the first 12 months?', 'The transition from implementation team to support team is a high-risk period. Understand when it happens, who is involved, what SLAs apply, and how institutional knowledge is transferred.'],
+            ['What is your software provider\'s AI roadmap for the next two years?', 'AI capability development is cloud-first and accelerating. The ERP selected today will be the AI infrastructure of the business in five years. Ask for specifics, not marketing language.'],
+            ['How does your system handle our specific operational requirements [top 3 non-negotiable requirements]?', 'Specify your three most critical non-standard requirements. Ask for a demonstration in the scripted demo, not verbal confirmation. "That can be configured" is not a demonstration.'],
+            ['What does total cost of ownership look like over five years?', 'The implementation quote is not the total cost. Ask for a five-year TCO model that includes licence, implementation, internal resource, training, integration, upgrades, and ongoing support.'],
+            ['What is your approach to system upgrades?', 'For cloud-native ERP, upgrades should be continuous and included. For on-premise and hosted systems, upgrade management is a recurring cost and effort. Understand the model before committing.'],
+            ['Can you provide three reference customers in our sector live 18+ months?', 'Insist on direct access, not a mediated reference call. Speak to the Finance Director or Operations Director, not the project manager. Ask about the implementation experience, not just the current system state.'],
+          ].map(([title, body], i) => (
+            <div key={i} className="question-item">
+              <div className="question-num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="question-text">
+                <div className="question-title">{title}</div>
+                <div className="question-body">{body}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, margin: '20px 0 0', fontStyle: 'italic' }} className="questions-note">
+          This checklist is designed to be shared — use it in vendor briefings, procurement panels, and board presentations.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SAGE X3 POSITIONED ───────────────────────────────────────────────────────
+
+const SageX3Section = () => (
+  <section className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">THE MYSOFT RECOMMENDATION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          Where Sage X3 fits — and why Mysoft recommends it for mid-market manufacturing and distribution
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          Sage X3 is a mid-market ERP platform with particular depth in manufacturing, distribution, and wholesale. It covers the full operational and financial scope — production planning, MRP, multi-site inventory, procurement, sales order management, financial management, and reporting — in a single integrated system.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          Sage X3 is available as a cloud-hosted deployment and, for organisations with specific requirements, on-premise. The platform has a strong track record in process manufacturing, discrete manufacturing, distribution, and wholesale.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Mysoft's position as a leading UK Sage X3 partner reflects 20+ years of sector-specific implementation experience and the development of X3CloudDocs — Mysoft's own IP add-on for document management, purchase invoice automation, and electronic document exchange. X3CloudDocs is the top-rated product in the Sage X3 Marketplace.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 40 }} className="two-col-sage">
+        {[
+          {
+            icon: 'Settings', title: 'Production depth without ERP complexity',
+            body: "Sage X3's MRP, BOM management, and works order processing are designed for mid-market manufacturing scale — comprehensive enough for complex production environments, without the overhead and implementation complexity of tier-1 platforms.",
+          },
+          {
+            icon: 'Globe', title: 'Multi-site and multi-currency natively',
+            body: 'For businesses operating across multiple sites, legal entities, or international markets, Sage X3 handles structural complexity — multi-site inventory, intercompany trading, multi-currency — without bolt-on configuration or separate integration layers.',
+          },
+          {
+            icon: 'Zap', title: 'Automation-ready from day one',
+            body: 'X3CloudDocs extends Sage X3 with purchase invoice automation, supplier and customer onboarding automation, and electronic document management — reducing manual document processing from day one of the live system.',
+          },
+          {
+            icon: 'TrendingUp', title: 'AI-ready foundation',
+            body: 'The clean, integrated data model of a well-implemented Sage X3 deployment is the foundation for AI-augmented operations. When AI capabilities are deployed on a coherent, reliable system of record, they compound in value over time.',
+          },
+        ].map((item, i) => (
+          <div key={i} style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderRadius: 4, padding: '28px 24px', display: 'flex', gap: 20, alignItems: 'flex-start',
+          }}>
+            <div style={{
+              width: 44, height: 44, borderRadius: 4,
+              background: 'rgba(0,182,237,0.08)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+            }}>
+              <Icon name={item.icon} size={20} color="var(--cyan)" />
+            </div>
+            <div>
+              <h3 style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15.5, color: 'var(--navy)', margin: '0 0 10px', lineHeight: 1.3,
+              }}>{item.title}</h3>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="narrow" style={{ padding: 0 }}>
+        <div style={{
+          background: 'var(--bg)', border: '1px solid var(--border-1)',
+          borderLeft: '4px solid var(--cyan)', borderRadius: 4, padding: '24px 28px', marginBottom: 32,
+        }}>
+          <div style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10,
+            letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 8,
+          }}>MYSOFT'S ROLE</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 10px' }}>
+            Mysoft implements, supports, and continuously develops Sage X3 for mid-market manufacturing and distribution businesses. Our engagements combine sector-specific implementation methodology, proprietary automation IP in X3CloudDocs, and long-term strategic partnership with customers whose ERP is central to their operational capability.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--navy)', fontWeight: 500, margin: 0 }}>
+            The platform is the foundation. The implementation and the ongoing relationship determine whether that foundation becomes a competitive advantage.
+          </p>
+        </div>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button variant="primary" size="md" icon="→" href="../../contact/">Speak to Mysoft about Sage X3</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 11: LEARNING JOURNEY ─────────────────────────────────────────────────
+
+const LearningJourneySection = () => (
+  <section id="s11" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }}>
+        <span className="sec-eyebrow">WHERE TO GO NEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 16 }}>Your learning journey — from ERP fundamentals to implementation readiness</h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+          The ERP Bootcamp is the starting point. These are the next steps — structured to build from operational foundations through to strategic readiness and implementation decision.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'flex', alignItems: 'flex-start', gap: 0, position: 'relative',
+        padding: '0 20px',
+      }} className="journey-wrap">
+        {[
+          {
+            num: 1, active: true,
+            label: 'ERP Bootcamp',
+            desc: 'What ERP is, how to select it, what implementation involves, and where X3 fits.',
+            link: null, linkLabel: 'You are here',
+          },
+          {
+            num: 2, active: false,
+            label: 'AI Bootcamp',
+            desc: 'How AI is changing ERP — from intelligent automation to agentic operations.',
+            link: '../../resources/ai-bootcamp/', linkLabel: 'Read the AI Bootcamp →',
+          },
+          {
+            num: 3, active: false,
+            label: 'AI Readiness Assessment',
+            desc: 'Where does your organisation sit on the AI maturity ladder?',
+            link: '../../ai-readiness-assessment.html', linkLabel: 'Take the assessment →',
+          },
+          {
+            num: 4, active: false,
+            label: 'eInvoicing Bootcamp',
+            desc: 'How electronic invoicing integrates with ERP — the regulatory context and what X3CloudDocs delivers.',
+            link: '../../resources/einvoicing-bootcamp/', linkLabel: 'Read the eInvoicing Bootcamp →',
+          },
+          {
+            num: 5, active: false,
+            label: 'Talk to Mysoft',
+            desc: 'A conversation about your operational requirements and what a Sage X3 implementation could look like.',
+            link: '../../contact/', linkLabel: 'Book a conversation →',
+          },
+        ].map((step, i, arr) => (
+          <div key={i} className="journey-step">
+            {i < arr.length - 1 && <div className="journey-connector" />}
+            <div className="journey-step-circle" style={{
+              background: step.active ? 'var(--cyan)' : 'var(--navy)',
+              color: '#fff',
+              boxShadow: step.active ? '0 0 0 6px rgba(0,182,237,0.15)' : 'none',
+            }}>{step.num}</div>
+            <div className="journey-step-label" style={{ color: step.active ? 'var(--cyan)' : 'var(--navy)' }}>
+              {step.label}
+            </div>
+            <div className="journey-step-desc">{step.desc}</div>
+            {step.link ? (
+              <a href={step.link} className="journey-step-link">{step.linkLabel}</a>
+            ) : (
+              <span style={{
+                marginTop: 10, fontFamily: 'var(--font-sans)', fontWeight: 600,
+                fontSize: 12, color: 'var(--muted)', textAlign: 'center',
+              }}>{step.linkLabel}</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── FINAL CTA ────────────────────────────────────────────────────────────────
+
+const FinalCTASection = () => (
+  <section className="bootcamp-sec bootcamp-sec-navy">
+    <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', padding: '0 32px' }}>
+      <h2 style={{
+        fontFamily: 'var(--font-display)', fontWeight: 600,
+        fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.1,
+        letterSpacing: '-0.025em', color: '#fff', margin: '0 0 20px',
+      }}>Ready to define your ERP requirements?</h2>
+      <p style={{
+        fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.2vw, 1.1rem)',
+        lineHeight: 1.65, color: 'rgba(255,255,255,0.72)', margin: '0 0 36px',
+      }}>
+        The first step is rarely a software decision. It is a process conversation — understanding what your business actually requires from an ERP, where your current system is constraining you, and what the realistic path to a better operational foundation looks like.
+      </p>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <Button variant="invert" size="lg" icon="→" href="../../contact/">
+          Book a requirements conversation
+        </Button>
+        <Button variant="ghostWhite" size="lg" href="../../solutions/sage-x3/">
+          Explore Sage X3
+        </Button>
+      </div>
+      <p style={{
+        fontFamily: 'var(--font-sans)', fontSize: 12.5, color: 'rgba(255,255,255,0.35)',
+        margin: '24px 0 0', fontStyle: 'italic',
+      }}>
+        No commitment required. A conversation about your operational needs and your options.
+      </p>
+    </div>
+  </section>
+);
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToContact = () => {
+    window.location.href = '../../contact/';
+  };
+
+  return (
+    <>
+      <NavBar basePath="../../" onAssess={scrollToContact} />
+      <SectionNav />
+      <main>
+        <HeroSection />
+        <WhyERPSection />
+        <GlossarySection />
+        <WhatERPIsSection />
+        <ERPvsAlternativesSection />
+        <CoreModulesSection />
+        <DeploymentSection />
+        <SelectionSection />
+        <ImplementationSection />
+        <WhenToReplaceSection />
+        <VendorQuestionsSection />
+        <SageX3Section />
+        <LearningJourneySection />
+        <FinalCTASection />
+      </main>
+      <Footer basePath="../../" onAssess={scrollToContact} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
