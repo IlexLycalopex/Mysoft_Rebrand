@@ -1,0 +1,1714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>eInvoicing Bootcamp | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What electronic invoicing is, why it is becoming mandatory, what the standards mean for your business, and how to prepare — from Mysoft, the team behind X3CloudDocs.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/einvoicing-bootcamp">
+<meta property="og:title" content="eInvoicing Bootcamp | Mysoft">
+<meta property="og:description" content="What electronic invoicing is, why it is becoming mandatory, what the standards mean for your business, and how to prepare — from Mysoft, the team behind X3CloudDocs.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-h);
+}
+
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-accent:hover     { opacity: 0.88; }
+.btn-ghost:hover      { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover     { background: var(--bg) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+.nav-active { color: var(--cyan) !important; }
+
+.section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+  padding: 0 32px;
+  box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none;
+  display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none;
+  padding: 0 32px;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.bootcamp-sec { padding: 100px 32px; }
+.bootcamp-sec-alt { background: #fff; }
+.bootcamp-sec-navy { background: var(--navy); color: #fff; }
+.bootcamp-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+.hero-bootcamp { background: var(--navy); padding: 96px 32px 88px; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.hero-breadcrumb a { color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 140ms; }
+.hero-breadcrumb a:hover { opacity: 1; }
+.hero-breadcrumb-sep { opacity: 0.4; }
+
+.eyebrow-dark {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 14px;
+}
+
+.comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.5;
+  vertical-align: top; min-width: 140px;
+}
+.comparison-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.comparison-table tr:nth-child(even) td { background: var(--bg); }
+.comparison-table tr:nth-child(odd) td { background: #fff; }
+.comparison-table td:first-child {
+  font-weight: 600; color: var(--navy); font-size: 13px;
+  background: var(--bg) !important; white-space: nowrap;
+}
+
+.accordion-group { border: 1px solid var(--border-1); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.accordion-group-header {
+  padding: 18px 24px; background: var(--bg);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; transition: background 140ms;
+}
+.accordion-group-header:hover { background: #eaedef; }
+.accordion-group-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.accordion-term {
+  border-top: 1px solid var(--border-1); padding: 0;
+  background: #fff;
+}
+.accordion-term-header {
+  padding: 16px 24px; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; user-select: none;
+  transition: background 140ms;
+}
+.accordion-term-header:hover { background: rgba(0,182,237,0.03); }
+.accordion-term-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3;
+}
+.accordion-term-body {
+  padding: 0 24px 20px;
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2);
+}
+.accordion-chevron { flex-shrink: 0; transition: transform 220ms var(--ease-out); color: var(--muted); }
+.accordion-chevron.open { transform: rotate(180deg); }
+
+.pull-quote {
+  border-left: 4px solid var(--yellow);
+  background: var(--navy); color: #fff;
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.feature-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column;
+}
+.feature-card-icon {
+  width: 48px; height: 48px; border-radius: 4px;
+  background: rgba(0,182,237,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-shrink: 0;
+}
+.feature-card-h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.2rem; color: var(--navy);
+  line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em;
+}
+.feature-card-body {
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2); flex: 1;
+}
+
+.stat-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.stat-card-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.question-item {
+  display: flex; gap: 20px; padding: 24px 28px;
+  border-bottom: 1px solid var(--border-1);
+  background: #fff; align-items: flex-start;
+}
+.question-item:first-child { border-top: 1px solid var(--border-1); border-radius: 4px 4px 0 0; }
+.question-item:last-child { border-radius: 0 0 4px 4px; border-bottom: 1px solid var(--border-1); }
+.question-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.4rem; color: var(--cyan); letter-spacing: -0.02em;
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.question-text { flex: 1; }
+.question-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3; margin-bottom: 8px;
+}
+.question-body { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.65; color: var(--fg-2); }
+
+.journey-step {
+  display: flex; flex-direction: column; align-items: center; flex: 1; position: relative;
+}
+.journey-step-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  position: relative; z-index: 2; flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+}
+.journey-connector {
+  position: absolute; top: 22px; left: calc(50% + 22px);
+  right: calc(-50% + 22px); height: 1px; background: var(--border-1);
+}
+.journey-step-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); margin-top: 14px; text-align: center;
+  line-height: 1.3;
+}
+.journey-step-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-3);
+  line-height: 1.5; text-align: center; margin-top: 6px; max-width: 160px;
+}
+.journey-step-link {
+  margin-top: 10px; font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; color: var(--cyan); text-decoration: none; text-align: center;
+}
+.journey-step-link:hover { text-decoration: underline; }
+
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0;
+}
+.sec-h2-white {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: #fff; margin: 0;
+}
+
+/* Spectrum scale */
+.spectrum-wrap {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin: 40px 0 0; position: relative;
+}
+.spectrum-point {
+  background: #fff; border: 1px solid var(--border-1);
+  padding: 24px 20px; position: relative;
+}
+.spectrum-point:not(:first-child) { border-left: none; }
+.spectrum-point-num {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.8rem; color: var(--border-1); letter-spacing: -0.03em;
+  line-height: 1; margin-bottom: 10px;
+}
+.spectrum-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); line-height: 1.3; margin-bottom: 8px;
+}
+.spectrum-desc {
+  font-family: var(--font-sans); font-size: 13px;
+  color: var(--fg-2); line-height: 1.55; margin-bottom: 12px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-sans); font-weight: 600; font-size: 10.5px;
+  padding: 3px 9px; border-radius: 999px; margin: 2px 0;
+}
+.chip-bad  { background: rgba(216,10,72,0.08); color: #D80A48; }
+.chip-good { background: rgba(0,182,237,0.1); color: #007da8; }
+.chip-part { background: rgba(248,197,86,0.15); color: #8a6600; }
+
+/* Callout card (yellow border) */
+.callout-yellow {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--yellow);
+  border-radius: 4px; padding: 24px 28px;
+}
+.callout-cyan {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--cyan);
+  border-radius: 4px; padding: 28px 32px;
+}
+
+/* Myth bust */
+.myth-table-wrap { overflow-x: auto; }
+.myth-table { width: 100%; border-collapse: collapse; }
+.myth-table td {
+  padding: 14px 20px; border: 1px solid var(--border-1);
+  font-family: var(--font-sans); font-size: 14px; line-height: 1.55;
+  vertical-align: top;
+}
+.myth-table tr:nth-child(odd) td { background: #fff; }
+.myth-table tr:nth-child(even) td { background: var(--bg); }
+.myth-table td:first-child { width: 36px; }
+.myth-table td:nth-child(2) { color: var(--fg-2); font-style: italic; }
+.myth-table td:nth-child(3) { color: var(--fg-1); }
+
+/* Timeline */
+.timeline-list { list-style: none; padding: 0; margin: 0; position: relative; }
+.timeline-list::before {
+  content: ''; position: absolute; left: 56px; top: 0; bottom: 0;
+  width: 1px; background: var(--border-1);
+}
+.timeline-item {
+  display: flex; gap: 24px; align-items: flex-start;
+  padding: 0 0 32px; position: relative;
+}
+.timeline-date {
+  flex-shrink: 0; width: 56px; text-align: right;
+  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  color: var(--navy); line-height: 1.2; padding-top: 2px;
+}
+.timeline-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  margin-top: 4px; position: relative; z-index: 1;
+}
+.timeline-content { flex: 1; }
+.timeline-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); margin-bottom: 4px; line-height: 1.3;
+}
+.timeline-body { font-family: var(--font-sans); font-size: 13.5px; color: var(--fg-2); line-height: 1.6; }
+.timeline-scope {
+  display: inline-block; margin-top: 6px;
+  font-family: var(--font-sans); font-weight: 600; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--navy); color: rgba(255,255,255,0.8);
+  padding: 3px 9px; border-radius: 999px;
+}
+
+/* Integration model card */
+.model-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 32px 28px;
+}
+.model-card-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.05rem; color: var(--navy); line-height: 1.3; margin: 0 0 16px;
+}
+.model-card dl { margin: 0; }
+.model-card dt {
+  font-family: var(--font-sans); font-weight: 600; font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  margin: 14px 0 4px;
+}
+.model-card dd {
+  font-family: var(--font-sans); font-size: 13.5px; color: var(--fg-2);
+  line-height: 1.6; margin: 0;
+}
+
+/* AP/AR comparison */
+.compare-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 32px 28px;
+}
+.compare-card-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.1rem; color: var(--navy); margin: 0 0 20px; line-height: 1.3;
+}
+.compare-steps { list-style: none; padding: 0; margin: 0 0 20px; counter-reset: step; }
+.compare-steps li {
+  counter-increment: step; display: flex; gap: 12px; align-items: flex-start;
+  padding: 8px 0; border-bottom: 1px solid var(--border-1); font-size: 13.5px;
+  color: var(--fg-2); line-height: 1.5;
+}
+.compare-steps li:last-child { border-bottom: none; }
+.compare-steps li::before {
+  content: counter(step); flex-shrink: 0;
+  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  color: var(--cyan); width: 20px;
+}
+.compare-sub-title {
+  font-family: var(--font-sans); font-weight: 600; font-size: 11px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 16px 0 8px;
+}
+.compare-bullets { list-style: none; padding: 0; margin: 0; }
+.compare-bullets li {
+  font-family: var(--font-sans); font-size: 13.5px; color: var(--fg-2);
+  line-height: 1.55; padding: 4px 0 4px 18px; position: relative;
+}
+.compare-bullets li::before {
+  content: '–'; position: absolute; left: 0; color: var(--cyan);
+}
+
+/* Business case table */
+.bc-table-wrap { overflow-x: auto; }
+.bc-table { width: 100%; border-collapse: collapse; }
+.bc-table th, .bc-table td {
+  padding: 14px 18px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.55;
+  vertical-align: top; font-size: 13.5px;
+  font-family: var(--font-sans);
+}
+.bc-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.bc-table tr:nth-child(even) td { background: var(--bg); }
+.bc-table tr:nth-child(odd) td { background: #fff; }
+.bc-table td:first-child { font-weight: 600; color: var(--navy); min-width: 180px; }
+.bc-table td:last-child { color: var(--fg-2); font-size: 13px; min-width: 240px; }
+
+@media (max-width: 1023px) {
+  .bootcamp-sec { padding: 80px 24px; }
+  .hero-bootcamp { padding: 80px 24px 72px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .grid-3-resp { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .journey-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+  .journey-step { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; flex: none !important; width: 100% !important; }
+  .journey-connector { display: none !important; }
+  .journey-step-circle { flex-shrink: 0 !important; }
+  .journey-step-label, .journey-step-desc, .journey-step-link { text-align: left !important; max-width: none !important; }
+  .two-col-compare { grid-template-columns: 1fr !important; }
+  .spectrum-wrap { grid-template-columns: repeat(2, 1fr) !important; }
+  .spectrum-point:not(:first-child) { border-left: 1px solid var(--border-1); }
+  .spectrum-point:nth-child(2) { border-left: none; }
+}
+@media (max-width: 767px) {
+  .bootcamp-sec { padding: 64px 20px; }
+  .hero-bootcamp { padding: 64px 20px 56px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .grid-3-resp { grid-template-columns: 1fr !important; }
+  .spectrum-wrap { grid-template-columns: 1fr !important; }
+  .spectrum-point:not(:first-child) { border-left: 1px solid var(--border-1) !important; border-top: none; }
+}
+@media (max-width: 480px) {
+  .question-item { padding: 18px 20px; }
+  .question-num { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const ICON_PATHS = {
+  TrendingUp:  `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  FileText:    `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>`,
+  Clock:       `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+  BookOpen:    `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>`,
+  FileCheck:   `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/>`,
+  GitBranch:   `<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>`,
+  Briefcase:   `<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>`,
+  DollarSign:  `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
+  BarChart2:   `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+  Layers:      `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  X:           `<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>`,
+  Check:       `<polyline points="20 6 9 17 4 12"/>`,
+  ChevronDown: `<polyline points="6 9 12 15 18 9"/>`,
+  ArrowRight:  `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`,
+  Globe:       `<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>`,
+  Building2:   `<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>`,
+  ShoppingCart:`<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>`,
+  UserPlus:    `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>`,
+  Send:        `<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>`,
+  Archive:     `<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/>`,
+};
+
+const Icon = ({ name, size = 20, color = 'currentColor', strokeWidth = 1.75, style = {} }) => (
+  <svg
+    viewBox="0 0 24 24" width={size} height={size}
+    fill="none" stroke={color}
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+    style={style}
+    dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }}
+  />
+);
+
+// ─── SECTION NAV ─────────────────────────────────────────────────────────────
+
+const EINVOICING_NAV_ITEMS = [
+  { id: 's1',  label: 'Why Now' },
+  { id: 's2',  label: 'Glossary' },
+  { id: 's3',  label: 'What eInvoicing Is' },
+  { id: 's4',  label: 'Standards' },
+  { id: 's5',  label: 'Regulatory Landscape' },
+  { id: 's6',  label: 'AP & AR' },
+  { id: 's7',  label: 'ERP Integration' },
+  { id: 's8',  label: 'The Business Case' },
+  { id: 's9',  label: 'Vendor Questions' },
+  { id: 's10', label: 'X3CloudDocs' },
+  { id: 's11', label: 'Learning Journey' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    EINVOICING_NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {EINVOICING_NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}
+            >{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select
+          className="section-nav-select"
+          value={active}
+          onChange={e => scrollTo(e.target.value)}
+        >
+          {EINVOICING_NAV_ITEMS.map(({ id, label }) => (
+            <option key={id} value={id}>{label}</option>
+          ))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+// ─── HERO ────────────────────────────────────────────────────────────────────
+
+const HeroSection = () => (
+  <section className="hero-bootcamp">
+    <div className="container">
+      <div className="hero-breadcrumb">
+        <a href="../../">Home</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span>Resources</span>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>eInvoicing Bootcamp</span>
+      </div>
+
+      <div style={{ maxWidth: 880 }}>
+        <span className="eyebrow-dark">EINVOICING BOOTCAMP</span>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.05,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 24px',
+        }}>
+          Electronic invoicing — what finance teams need to know before it becomes mandatory
+        </h1>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: 700, margin: '0 0 12px',
+        }}>
+          Electronic invoicing is moving from competitive advantage to regulatory requirement. EU member states are mandating it for B2B transactions. The UK is following. Large buyers in retail and public sector already require it. This page explains what eInvoicing is, what the standards mean in practice, what the regulatory timeline looks like, and how to ensure your business is ready — whether you are on Sage X3, Sage Intacct, or evaluating your options.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 14, color: 'rgba(255,255,255,0.4)',
+          margin: 0,
+        }}>
+          Ten sections. Built for finance and operations leaders who need to act, not just understand.
+        </p>
+
+        <div style={{
+          marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          {[
+            { n: '10', l: 'Core sections', sub: 'From vocabulary to vendor selection' },
+            { n: '4',  l: 'Glossary groups', sub: 'Over 20 defined terms' },
+            { n: '10', l: 'Regulatory entries', sub: '2014 through 2030' },
+            { n: '10', l: 'Vendor questions', sub: 'Shareable checklist' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              paddingLeft: i > 0 ? 32 : 0,
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '2rem', color: '#fff', letterSpacing: '-0.03em', lineHeight: 1,
+              }}>{s.n}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 5 }}>{s.l}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11.5, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 1: WHY NOW ───────────────────────────────────────────────────────────
+
+const WhyNowSection = () => (
+  <section id="s1" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE CONTEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why eInvoicing is no longer a technology choice
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Electronic invoicing has been discussed in finance circles for decades. EDI systems, supplier portals, and automated AP workflows have existed in various forms since the 1980s. What has changed — materially and irreversibly — is the regulatory landscape. Governments across the EU have concluded that mandatory eInvoicing is the most effective mechanism for closing the VAT gap, reducing tax fraud, and improving the quality of economic data available to fiscal authorities. The mandates are no longer proposals; they are law, with implementation dates that are approaching faster than most mid-market finance teams have planned for.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The EU's VAT in the Digital Age (ViDA) initiative, adopted in 2024, requires structured eInvoicing for domestic and cross-border B2B transactions across all member states, with a phased rollout from 2027 to 2030. Individual member states — Germany, France, Belgium, Poland, and others — have already enacted domestic eInvoicing mandates with their own timelines. UK businesses trading with EU counterparties, or operating subsidiaries within the EU, are not exempt from these requirements simply by virtue of being UK-based.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          In the UK, the trajectory is clear even if the mandate is not yet equivalent to the EU position. HMRC's Making Tax Digital programme continues to expand the requirement for digital record-keeping and digital submission. The UK government has signalled continued interest in eInvoicing infrastructure, and the adoption of the Peppol network by UK public sector buyers is already creating de facto requirements for businesses that sell to government.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Beyond the regulatory picture, commercial requirements are accelerating independently. Large retailers — Tesco, Marks &amp; Spencer, Amazon, and most major supermarkets — have mandated electronic invoice submission from their supplier bases, often through specific EDI standards or supplier portals. Failure to comply results in invoice rejection, delayed payment, and ultimately supplier relationship risk. For businesses in food, FMCG, wholesale, or distribution, eInvoicing is already a trading requirement for significant portions of their customer base.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The honest assessment: eInvoicing readiness is not a question of if. It is a question of when, and whether you arrive prepared or reactive.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'Globe',
+            stat: 'EU B2B eInvoicing mandates from 2027',
+            copy: 'ViDA requires structured electronic invoices for all intra-EU B2B transactions. Member state domestic mandates are already live in Germany, France, Belgium, and others.',
+          },
+          {
+            icon: 'Building2',
+            stat: 'UK public sector already on Peppol',
+            copy: 'UK government buyers are adopting Peppol for invoice receipt. Suppliers who cannot exchange Peppol invoices face increasing friction in public sector trading.',
+          },
+          {
+            icon: 'ShoppingCart',
+            stat: 'Major retail buyers mandate it now',
+            copy: 'Most large UK and EU retailers already require EDI or structured electronic invoices from suppliers. Invoice rejection rates for non-compliant formats are rising.',
+          },
+        ].map((c, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-card-icon">
+              <Icon name={c.icon} size={20} color="var(--navy)" />
+            </div>
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15, color: 'var(--navy)', lineHeight: 1.3, marginBottom: 6,
+              }}>{c.stat}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{c.copy}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: GLOSSARY ──────────────────────────────────────────────────────────
+
+const GLOSSARY_GROUPS = [
+  {
+    id: 'eg1', title: 'Foundations',
+    terms: [
+      { term: 'eInvoicing (Electronic Invoicing)', def: 'The exchange of invoice documents between a supplier and a buyer in a structured electronic format — not as a PDF attachment to an email, and not as a scanned paper document. The defining characteristic of a true eInvoice is that it is machine-readable: the data within it can be processed automatically by the recipient\'s financial system without manual re-entry or interpretation.' },
+      { term: 'Structured Invoice', def: 'An invoice formatted according to a defined data standard — such as UBL 2.1 or UN/CEFACT CII — in which every data field (supplier name, buyer reference, line items, VAT amount, payment terms) occupies a defined position in a defined format. Structured invoices can be processed automatically by ERP and financial management systems. PDFs, Word documents, and scanned images are not structured invoices.' },
+      { term: 'Unstructured Invoice', def: 'An invoice in a format designed for human reading — a PDF, a Word document, a printed paper invoice. Unstructured invoices require manual data entry or OCR (optical character recognition) processing before they can be recorded in a financial system. They are not eInvoices in the regulatory or technical sense, even when sent electronically.' },
+      { term: 'Hybrid Invoice', def: 'An invoice format that combines a human-readable document (typically a PDF) with an embedded structured data file. ZUGFeRD (used in Germany) and Factur-X (used in France) are the most common hybrid formats. The PDF is presented to human recipients; the embedded XML data is processed by financial systems. Hybrid formats reduce the implementation barrier for recipients who are not yet ready to receive and process fully structured invoices.' },
+      { term: 'PDF Invoice', def: 'A portable document format invoice. Despite being sent electronically — by email or supplier portal — a PDF invoice is not an eInvoice. It requires manual data entry or OCR processing to record in a financial system. PDF invoices are not compliant with EU eInvoicing mandates, even when sent through an electronic channel.' },
+    ],
+  },
+  {
+    id: 'eg2', title: 'Standards & Formats',
+    terms: [
+      { term: 'Peppol (Pan-European Public Procurement On-Line)', def: 'An international network and set of standards for the electronic exchange of business documents — invoices, purchase orders, despatch advice — between organisations. Peppol defines both the transport network (how documents are securely exchanged) and the document standards (the format the documents must conform to). Adopted by public sector buyers across the EU, UK, Australia, Singapore, and other countries.' },
+      { term: 'Peppol BIS (Business Interoperability Specifications)', def: 'The document format specifications that govern eInvoices exchanged on the Peppol network. Peppol BIS Billing 3.0 is the current standard for invoices, based on UBL 2.1 and compliant with the European e-Invoice standard (EN 16931). A Peppol BIS invoice can be exchanged with any organisation connected to the Peppol network, regardless of their ERP or financial system.' },
+      { term: 'Peppol Access Point', def: 'A certified service provider that connects an organisation to the Peppol network, handling the routing, security, and delivery of electronic documents. To send or receive Peppol invoices, an organisation must either have their own access point or use a certified access point provider. X3CloudDocs connects Sage X3 customers to the Peppol network via a certified access point.' },
+      { term: 'UBL 2.1 (Universal Business Language)', def: 'An XML-based standard for structured business documents, developed by OASIS. UBL 2.1 defines the data model for invoices, purchase orders, and other commercial documents exchanged electronically. It is the foundation of the Peppol BIS standard and the European standard EN 16931.' },
+      { term: 'UN/CEFACT CII (Cross Industry Invoice)', def: 'An alternative XML standard for structured invoices, developed by the United Nations. CII is used as the alternative to UBL in some national implementations of EN 16931 — notably in Germany (ZUGFeRD) and France (Factur-X). Some eInvoicing platforms support both UBL and CII; others support only one.' },
+      { term: 'EN 16931', def: 'The European standard for the semantic data model of a core electronic invoice — defining what data elements a compliant eInvoice must contain and how they should be expressed. All eInvoices exchanged under EU mandate must comply with EN 16931. National implementations (Peppol BIS, XRechnung, ChorusPro, FatturaPA) are all built on this standard.' },
+      { term: 'EDI (Electronic Data Interchange)', def: 'A set of standards for the structured electronic exchange of business documents between organisations — predating the internet and XML. EDI standards (EDIFACT, ANSI X12) are used primarily in retail and logistics supply chains, where large buyers mandate EDI-compliant document exchange from their suppliers. EDI and Peppol/UBL-based eInvoicing are parallel approaches — EDI is established in B2B supply chains; Peppol is dominant in public sector and cross-border B2B.' },
+      { term: 'ZUGFeRD / Factur-X', def: 'A hybrid invoice format used in Germany (ZUGFeRD) and France (Factur-X) that combines a PDF document with an embedded XML data file conforming to UN/CEFACT CII. The same file serves both human and machine readers. ZUGFeRD is mandatory for B2G (business-to-government) invoices in Germany; the B2B mandate is following.' },
+      { term: 'XRechnung', def: 'Germany\'s national eInvoicing standard for B2G transactions — mandatory for all invoices to German federal government buyers. Based on EN 16931 and UBL 2.1 or UN/CEFACT CII. German businesses invoicing public sector customers must submit XRechnung-compliant invoices through the central invoice portal (ZRE or OZG-RE).' },
+      { term: 'FatturaPA', def: 'Italy\'s national eInvoicing format, mandatory for all B2B and B2C domestic invoicing in Italy since 2019. All Italian invoices must be exchanged through the Sistema di Interscambio (SdI) — Italy\'s government-operated invoice clearance system. One of the most mature mandatory eInvoicing systems in the EU, and a model for the broader ViDA rollout.' },
+    ],
+  },
+  {
+    id: 'eg3', title: 'Regulatory & Compliance',
+    terms: [
+      { term: 'ViDA (VAT in the Digital Age)', def: 'The EU legislative initiative adopted in 2024 that introduces mandatory structured eInvoicing and digital VAT reporting for intra-EU B2B transactions. ViDA has three pillars: digital reporting requirements (replacing EC Sales Lists and Intrastat), deemed supplier rules for platform economy businesses, and the single EU VAT registration. The eInvoicing and digital reporting pillar requires real-time or near-real-time reporting of invoice data to tax authorities.' },
+      { term: 'CTC (Continuous Transaction Control)', def: 'A model of VAT compliance in which invoice data is reported to, or cleared by, tax authorities at or near the time of transaction — rather than in periodic returns. Italy\'s SdI and Spain\'s SII are examples. Under ViDA\'s digital reporting requirements, some form of CTC will apply across EU member states from 2030.' },
+      { term: 'B2G (Business to Government)', def: 'Invoices issued by a business to a government or public sector buyer. B2G eInvoicing mandates are already live across the EU and increasingly in the UK. If you invoice any public sector organisation in the UK or EU, you are likely already subject to eInvoicing requirements.' },
+      { term: 'B2B (Business to Business)', def: 'Invoices exchanged between private sector businesses. B2B eInvoicing mandates are the next wave — live in Italy (2019), France (2026), Germany (2027), and rolling out across the EU under ViDA by 2030. UK B2B eInvoicing is not yet mandated but the direction of travel is clear.' },
+      { term: 'Making Tax Digital (MTD)', def: 'HMRC\'s programme requiring businesses to maintain digital records and submit VAT returns through compatible software. MTD for VAT is mandatory for all VAT-registered businesses. MTD for Income Tax is being rolled out for self-employed individuals and landlords. MTD does not currently mandate eInvoicing but is part of the same direction of digitisation.' },
+      { term: 'VAT Gap', def: 'The difference between the VAT revenue a government expects to collect and the amount actually collected. EU governments cite the VAT gap — estimated at €89 billion across the EU in 2021 (European Commission) — as the primary driver of eInvoicing mandates. Structured eInvoicing provides tax authorities with transaction-level data that makes VAT evasion significantly harder to sustain.' },
+    ],
+  },
+  {
+    id: 'eg4', title: 'Integration & Process',
+    terms: [
+      { term: 'AP Automation (Accounts Payable Automation)', def: 'The use of technology to automate the processing of supplier invoices — from receipt, through matching and approval, to payment — reducing manual data entry and processing time. eInvoicing is the upstream input that enables AP automation: structured invoices arrive in machine-readable format, ready for automated matching without OCR or manual keying.' },
+      { term: 'OCR (Optical Character Recognition)', def: 'Technology that converts scanned or image-based documents into machine-readable text. OCR is a workaround for the absence of structured eInvoicing — it attempts to extract invoice data from PDFs or scans rather than receiving it in structured format. OCR is inherently error-prone and will be displaced by structured eInvoicing as mandates take effect.' },
+      { term: 'Supplier Portal', def: 'A web-based platform through which suppliers submit invoices to a buyer — typically provided or mandated by large buyers (retailers, public sector bodies). Supplier portals vary in their support for structured formats — some accept only PDF upload (unstructured); others accept EDI or Peppol-format invoices. Compliance with a buyer\'s supplier portal is often a trading condition.' },
+      { term: 'Three-Way Matching', def: 'The automated process of validating a supplier invoice against the corresponding purchase order and goods receipt — confirming that what was ordered, what was received, and what is being invoiced are consistent. Three-way matching is a core AP automation control, and it is most reliably automated when the input invoice is structured and machine-readable.' },
+      { term: 'Peppol ID', def: 'A unique identifier that locates an organisation on the Peppol network — enabling other Peppol participants to send electronic documents directly to that organisation without manual routing. A Peppol ID is analogous to an email address, but for structured business documents. UK organisations can register a Peppol ID through a certified access point provider.' },
+    ],
+  },
+];
+
+const AccordionGroup = ({ group }) => {
+  const [open, setOpen] = React.useState(false);
+  const [openTerms, setOpenTerms] = React.useState({});
+
+  const toggleTerm = (i) => setOpenTerms(prev => ({ ...prev, [i]: !prev[i] }));
+
+  return (
+    <div className="accordion-group">
+      <div className="accordion-group-header" onClick={() => setOpen(o => !o)}>
+        <span className="accordion-group-title">{group.title}</span>
+        <Icon
+          name="ChevronDown" size={18}
+          color="var(--muted)"
+          style={{ transition: 'transform 220ms', transform: open ? 'rotate(180deg)' : 'none' }}
+        />
+      </div>
+      {open && group.terms.map((t, i) => (
+        <div key={i} className="accordion-term">
+          <div className="accordion-term-header" onClick={() => toggleTerm(i)}>
+            <span className="accordion-term-name">{t.term}</span>
+            <Icon
+              name="ChevronDown" size={16}
+              color="var(--muted)"
+              style={{ transition: 'transform 220ms', transform: openTerms[i] ? 'rotate(180deg)' : 'none', flexShrink: 0, marginTop: 2 }}
+            />
+          </div>
+          {openTerms[i] && (
+            <div className="accordion-term-body">{t.def}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const GlossarySection = () => (
+  <section id="s2" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+        <span className="sec-eyebrow" style={{ display: 'inline-block' }}>GLOSSARY</span>
+        <h2 className="sec-h2" style={{ maxWidth: 640, margin: '0 auto 16px' }}>
+          The vocabulary of eInvoicing — defined clearly
+        </h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.65, color: 'var(--fg-2)', maxWidth: 640, margin: '0 auto' }}>
+          Electronic invoicing has a dense technical vocabulary drawn from accounting, XML standards, and EU regulatory frameworks. These definitions give finance teams the working understanding needed to evaluate solutions, engage with IT, and respond to customer and regulatory requirements.
+        </p>
+      </div>
+      {GLOSSARY_GROUPS.map(g => <AccordionGroup key={g.id} group={g} />)}
+    </div>
+  </section>
+);
+
+// ─── SEC 3: WHAT EINVOICING IS ────────────────────────────────────────────────
+
+const WhatIsSection = () => {
+  const spectrum = [
+    {
+      num: '01', label: 'Paper invoice',
+      desc: 'Printed document sent by post or handed over. Requires manual data entry by the recipient.',
+      chips: [
+        { type: 'bad', text: 'Non-compliant (regulatory mandates)' },
+        { type: 'bad', text: 'Non-compliant (AP automation)' },
+      ],
+    },
+    {
+      num: '02', label: 'PDF invoice by email',
+      desc: 'Document designed for human reading, sent electronically. Requires OCR or manual entry by the recipient. Not a structured format.',
+      chips: [
+        { type: 'bad', text: 'Non-compliant (regulatory mandates)' },
+        { type: 'part', text: 'Partial (AP automation — OCR only)' },
+      ],
+    },
+    {
+      num: '03', label: 'Hybrid invoice (PDF + embedded XML)',
+      desc: 'Human-readable PDF with machine-readable XML embedded. ZUGFeRD / Factur-X format. Recipient can choose to process either layer.',
+      chips: [
+        { type: 'part', text: 'Compliant (where ZUGFeRD/Factur-X required)' },
+        { type: 'part', text: 'Partial (AP automation — XML quality dependent)' },
+      ],
+    },
+    {
+      num: '04', label: 'Fully structured eInvoice (UBL / Peppol)',
+      desc: 'Machine-readable XML invoice exchanged via Peppol network or direct API. No human intervention required for processing. Full regulatory compliance.',
+      chips: [
+        { type: 'good', text: 'Compliant (all EU and UK mandates)' },
+        { type: 'good', text: 'Compliant (AP automation — fully automated)' },
+      ],
+    },
+  ];
+
+  const myths = [
+    {
+      myth: 'Sending a PDF invoice by email is electronic invoicing',
+      reality: 'A PDF is a document for human reading. It is not a structured eInvoice. It does not satisfy EU eInvoicing mandates and does not enable automated AP processing at the recipient.',
+    },
+    {
+      myth: 'Using a supplier portal means you are eInvoicing',
+      reality: 'Supplier portals vary significantly. Some accept only PDF uploads — which is not eInvoicing. Others accept structured formats. Check the technical specification of any portal you use.',
+    },
+    {
+      myth: 'eInvoicing only matters for businesses with EU operations',
+      reality: 'Domestic UK mandates are less advanced than the EU, but UK businesses trading with EU counterparties, UK public sector buyers, or large retail buyers are already affected.',
+    },
+    {
+      myth: 'eInvoicing is an IT project',
+      reality: 'eInvoicing implementation involves IT, but the driving decisions — which customers and suppliers to onboard, what approval workflows to configure, how to handle exceptions — are finance and operations decisions.',
+    },
+    {
+      myth: 'OCR software is equivalent to eInvoicing',
+      reality: 'OCR converts unstructured invoices into machine-readable data — an error-prone workaround for the absence of structured invoicing. It is not eInvoicing and does not satisfy regulatory requirements for structured invoice exchange.',
+    },
+  ];
+
+  return (
+    <section id="s3" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0 }}>
+          <span className="sec-eyebrow">FOUNDATIONS</span>
+          <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+            What eInvoicing actually is — and what it is not
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            Electronic invoicing is frequently confused with adjacent concepts — PDF invoices sent by email, scanned invoice processing, or supplier portals that accept document uploads. These things are electronic in the sense that a computer is involved somewhere. They are not eInvoicing in the regulatory or technical sense.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            The defining characteristic of a true eInvoice is that it is structured: every field of invoice data — supplier details, buyer references, line item descriptions, quantities, unit prices, VAT rates, payment terms, due dates — is expressed in a defined, machine-readable format. When a structured eInvoice is received by a financial system, the data is processed automatically. No human reads the invoice and types the data into a system. No OCR interprets a scanned image and guesses at field values. The data arrives in the format the system expects, in the right fields, ready for validation and matching.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            This distinction is not semantic. It is the difference between a process that requires human touchpoints at multiple stages and a process that runs automatically, with human involvement reserved for exceptions. It is also the difference between a document that satisfies a regulatory mandate and one that does not.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The second important distinction is between eInvoicing as a sending capability and eInvoicing as a receiving capability. Most businesses focus initially on sending eInvoices — complying with customer mandates or regulatory requirements. The receiving side — processing eInvoices from suppliers in structured format — is equally important and often more immediately impactful, because it directly enables AP automation. Both are addressed by a complete eInvoicing solution.
+          </p>
+        </div>
+
+        <div style={{ marginTop: 48 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11,
+            letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)',
+            margin: '0 0 16px',
+          }}>The Spectrum — from paper to fully structured</h3>
+          <div className="spectrum-wrap">
+            {spectrum.map((pt, i) => (
+              <div key={i} className="spectrum-point">
+                <div className="spectrum-point-num">{pt.num}</div>
+                <div className="spectrum-label">{pt.label}</div>
+                <div className="spectrum-desc">{pt.desc}</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                  {pt.chips.map((c, j) => (
+                    <span key={j} className={`chip chip-${c.type}`}>{c.text}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ marginTop: 56 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1.25rem', color: 'var(--navy)', margin: '0 0 20px',
+          }}>What eInvoicing is not</h3>
+          <div className="myth-table-wrap">
+            <table className="myth-table">
+              <tbody>
+                {myths.map((m, i) => (
+                  <tr key={i}>
+                    <td style={{ textAlign: 'center', paddingTop: 16 }}>
+                      <Icon name="X" size={16} color="#D80A48" />
+                    </td>
+                    <td>{m.myth}</td>
+                    <td>{m.reality}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 4: STANDARDS ─────────────────────────────────────────────────────────
+
+const StandardsSection = () => {
+  const rows = [
+    ['Peppol BIS Billing 3.0', 'UBL 2.1 XML', 'Peppol network', 'EU, UK, Australia, Singapore, global', 'B2G (mandatory in most EU states); B2B (growing); cross-border'],
+    ['EN 16931', 'UBL 2.1 or CII XML', 'Any compliant network', 'EU (all member states)', 'B2G (mandatory across EU); B2B (ViDA mandate from 2028)'],
+    ['XRechnung', 'UBL 2.1 or CII XML', 'ZRE / OZG-RE portals', 'Germany', 'B2G mandatory; B2B mandate from 2027'],
+    ['ZUGFeRD / Factur-X', 'PDF + embedded CII XML', 'Email or any channel', 'Germany / France', 'B2G (mandatory in some contexts); B2B (ChorusPro mandate in France from 2026)'],
+    ['FatturaPA / SdI', 'Italian XML via SdI clearance', 'SdI (government system)', 'Italy', 'B2B and B2C mandatory since 2019'],
+    ['EDIFACT / ANSI X12', 'EDI', 'VAN or direct connection', 'UK, EU, North America', 'B2B — mandated by large buyers in retail and distribution supply chains'],
+  ];
+
+  return (
+    <section id="s4" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">STANDARDS</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            The eInvoicing standards landscape — what you need to know and what you can ignore
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The eInvoicing standards landscape can appear bewildering: multiple XML formats, multiple networks, multiple national implementations, and multiple regulatory frameworks in different states of maturity. The practical reality for most UK mid-market businesses is simpler than the full picture suggests. This section explains the standards that matter and why.
+          </p>
+        </div>
+
+        <div className="comparison-table-wrap" style={{ marginBottom: 40 }}>
+          <table className="comparison-table">
+            <thead>
+              <tr>
+                <th>Standard</th>
+                <th>Format</th>
+                <th>Network / Platform</th>
+                <th>Primary Geography</th>
+                <th>Scope</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  {r.map((cell, j) => (
+                    <td key={j} style={j === 0 ? { fontWeight: 600, color: 'var(--navy)', fontSize: 13 } : {}}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="narrow" style={{ padding: 0, marginBottom: 32 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1rem',
+            color: 'var(--navy)', margin: '0 0 12px',
+          }}>A note on the UK position</h3>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The UK is not party to EU legislation and ViDA does not apply domestically. However, UK businesses are affected in three ways: UK subsidiaries of businesses with EU operations must comply with EU member state mandates; UK businesses exporting to EU counterparties may be required to exchange Peppol-compliant invoices; and UK public sector buyers are increasingly adopting Peppol as their preferred eInvoicing channel. The UK government has expressed support for Peppol adoption and continues to expand Making Tax Digital. Domestic UK B2B eInvoicing mandates are not yet in place, but the infrastructure is developing.
+          </p>
+        </div>
+
+        <div className="callout-cyan" style={{ maxWidth: 800 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.1rem',
+            color: 'var(--navy)', margin: '0 0 14px',
+          }}>Why Peppol is the standard to focus on</h3>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: '0 0 12px' }}>
+            For most UK mid-market businesses, Peppol is the most important eInvoicing standard to understand and implement. It is the standard used by UK public sector buyers — NHS, central government departments, and local authorities are adopting Peppol. If you sell to any public sector customer, Peppol readiness is increasingly relevant.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: '0 0 12px' }}>
+            It is the standard used across EU member states for cross-border B2B eInvoicing under ViDA — a single Peppol implementation covers cross-border exchange with any EU counterparty on the network.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: '0 0 12px' }}>
+            It is network-based rather than bilateral — once connected to the Peppol network via an access point provider, you can exchange structured invoices with any other Peppol participant without separate technical integration for each trading partner.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            It is the standard built into X3CloudDocs — Mysoft's eInvoicing and document automation solution for Sage X3 connects directly to the Peppol network, enabling Peppol-compliant invoice exchange without additional infrastructure.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 5: REGULATORY LANDSCAPE ─────────────────────────────────────────────
+
+const RegulatorySection = () => {
+  const timeline = [
+    { year: '2014', title: 'EU Directive 2014/55/EU', body: 'Requirement for EU public sector buyers to accept eInvoices in EN 16931-compliant format. Foundation directive for all subsequent B2G mandates.', scope: 'B2G', state: 'past' },
+    { year: '2018–19', title: 'Italy: FatturaPA mandate', body: 'Italy introduces mandatory B2B and B2C eInvoicing through the SdI system — the first EU country to mandate B2B eInvoicing comprehensively.', scope: 'B2G + B2B + B2C', state: 'past' },
+    { year: '2020', title: 'EU B2G acceptance deadline', body: 'All EU central government buyers required to accept Peppol BIS Billing 3.0 eInvoices. Sub-central government acceptance extended to 2020.', scope: 'B2G', state: 'past' },
+    { year: '2022', title: 'UK: Crown Commercial Service Peppol adoption', body: 'UK government buyers begin adopting Peppol for invoice receipt. Suppliers are encouraged — not yet mandated — to send Peppol-compliant invoices.', scope: 'B2G', state: 'past' },
+    { year: '2024', title: 'EU: ViDA adopted', body: 'Council of the EU adopts the VAT in the Digital Age package. Structured eInvoicing and digital reporting requirements confirmed for cross-border B2B transactions from 2028.', scope: 'Cross-border B2B', state: 'past' },
+    { year: '2025', title: 'Belgium: B2B mandate', body: 'Belgium introduces mandatory B2B eInvoicing for domestic transactions. Peppol BIS Billing 3.0 is the required format.', scope: 'B2B domestic', state: 'current' },
+    { year: '2026', title: 'France: B2B mandate (phased)', body: 'France begins phased rollout of mandatory B2B eInvoicing. Large enterprises first, followed by mid-market and SMEs. ChorusPro / Factur-X / Peppol accepted.', scope: 'B2B domestic (phased)', state: 'near' },
+    { year: '2027', title: 'Germany: B2B mandate', body: 'Germany introduces mandatory eInvoicing for domestic B2B transactions. All businesses must be capable of receiving structured eInvoices; sending mandated for large enterprises first.', scope: 'B2B domestic', state: 'near' },
+    { year: '2028', title: 'EU ViDA: Cross-border digital reporting begins', body: 'Digital reporting requirements for intra-EU B2B transactions take effect. Structured eInvoice data must be reported to tax authorities in near real time.', scope: 'Cross-border B2B', state: 'future' },
+    { year: '2030', title: 'EU ViDA: Full implementation', body: 'All EU member states required to have implemented domestic eInvoicing and digital reporting aligned with ViDA requirements. Legacy paper and PDF invoicing effectively eliminated for B2B.', scope: 'All EU B2B', state: 'future' },
+  ];
+
+  const dotColor = (state) => {
+    if (state === 'past') return 'var(--muted)';
+    if (state === 'current') return 'var(--cyan)';
+    return 'var(--navy)';
+  };
+
+  const callouts = [
+    {
+      title: 'Germany (2027)',
+      body: 'German B2B mandate requires all businesses to be capable of receiving structured eInvoices from January 2027. Sending mandated in phases. Businesses with German trading partners or German subsidiaries should begin preparation now — the receiving infrastructure must be in place before suppliers start sending. XRechnung and ZUGFeRD are the primary formats; Peppol is also accepted.',
+    },
+    {
+      title: 'France (2026)',
+      body: 'France\'s phased rollout begins 2026 with large enterprises. UK businesses with French subsidiaries or significant French customer/supplier relationships should map their exposure now. Factur-X (PDF+XML hybrid) and Peppol BIS are the primary formats. The French tax authority platform (PPF) provides a central clearance mechanism.',
+    },
+    {
+      title: 'EU Cross-Border (2028)',
+      body: 'Any UK business with intra-EU B2B trading relationships — selling or buying across EU borders — will need to comply with ViDA digital reporting requirements from 2028. This is not a domestic UK requirement; it is an EU requirement that applies to the transaction regardless of where the UK business is based. Peppol infrastructure is the practical route to compliance for most mid-market businesses.',
+    },
+  ];
+
+  return (
+    <section id="s5" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+          <span className="sec-eyebrow">THE REGULATORY PICTURE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            The eInvoicing mandate timeline — what is live, what is coming, and when
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The pace of eInvoicing regulation across Europe has accelerated materially since 2022. This timeline covers the key dates for businesses with UK and EU operations.
+          </p>
+        </div>
+
+        <ul className="timeline-list" style={{ marginBottom: 56 }}>
+          {timeline.map((t, i) => (
+            <li key={i} className="timeline-item">
+              <div className="timeline-date" style={{ color: t.state === 'past' ? 'var(--muted)' : 'var(--navy)' }}>{t.year}</div>
+              <div className="timeline-dot" style={{ background: dotColor(t.state) }} />
+              <div className="timeline-content">
+                <div className="timeline-title" style={{ color: t.state === 'past' ? 'var(--fg-2)' : 'var(--navy)' }}>{t.title}</div>
+                <div className="timeline-body">{t.body}</div>
+                <span className="timeline-scope">{t.scope}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <h3 style={{
+          fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11,
+          letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)',
+          margin: '0 0 16px',
+        }}>Key jurisdiction notes</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }} className="grid-3-resp">
+          {callouts.map((c, i) => (
+            <div key={i} className="callout-yellow">
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: '1rem', color: 'var(--navy)', margin: '0 0 10px',
+              }}>{c.title}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, lineHeight: 1.65, color: 'var(--fg-2)' }}>{c.body}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="narrow" style={{ padding: 0 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1.1rem', color: 'var(--navy)', margin: '0 0 14px',
+          }}>The UK outlook</h3>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 14px' }}>
+            The UK is not subject to EU mandates, but the direction of domestic regulation is clear. Making Tax Digital continues to expand digital record-keeping requirements. HMRC has expressed interest in eInvoicing as a tool for improving tax compliance data quality. The UK government's 2023 consultation on eInvoicing signalled appetite for future mandates without committing to a timetable.
+          </p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The practical recommendation for UK businesses: build Peppol infrastructure now. It satisfies existing B2G requirements, positions the business for future UK mandates, and handles EU cross-border compliance — one investment that covers multiple regulatory exposures. Waiting for a UK domestic mandate to be confirmed before beginning implementation creates a preparation window that is likely to be shorter than the time needed to implement properly.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 6: AP & AR ───────────────────────────────────────────────────────────
+
+const APARSection = () => (
+  <section id="s6" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">AP AND AR</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          eInvoicing on both sides — what it means for accounts payable and accounts receivable
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 16px' }}>
+          eInvoicing is often discussed as a single concept, but in practice it addresses two distinct business processes: receiving structured invoices from suppliers (accounts payable) and sending structured invoices to customers (accounts receivable). A complete eInvoicing programme addresses both — and the two sides have different drivers, different timelines, and different value propositions.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Most businesses experience eInvoicing pressure from two directions simultaneously: customers demanding structured invoices in specific formats, and suppliers (or their mandating governments) requiring structured invoice exchange for regulatory compliance. Understanding each side separately allows finance teams to prioritise implementation based on where the most immediate obligation or opportunity lies.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }} className="two-col-compare">
+        <div className="compare-card">
+          <div className="compare-card-title">AP eInvoicing — receiving structured invoices from suppliers</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.6, margin: '0 0 16px' }}>
+            AP eInvoicing is the capability to receive invoices from suppliers in structured electronic format — Peppol BIS, UBL, ZUGFeRD, EDI — and process them automatically within your financial system, without manual data entry or OCR.
+          </p>
+          <div className="compare-sub-title">The process with AP eInvoicing in place</div>
+          <ol className="compare-steps">
+            <li>Supplier generates invoice in their system in a supported structured format</li>
+            <li>Invoice is transmitted to your system — via Peppol network, EDI connection, or API</li>
+            <li>Your ERP or FMS receives the structured invoice and automatically populates the AP record</li>
+            <li>Three-way matching runs automatically against purchase order and goods receipt</li>
+            <li>Matched invoices below the approval threshold proceed to payment queue automatically</li>
+            <li>Exceptions — discrepancies, missing POs, new suppliers — route to human review queue</li>
+            <li>Approved invoices are posted to the GL; payment is scheduled per terms</li>
+            <li>Complete audit trail from invoice receipt to payment posting</li>
+          </ol>
+          <div className="compare-sub-title">What changes</div>
+          <ul className="compare-bullets">
+            <li>Invoice processing time falls from days to hours for straight-through invoices</li>
+            <li>Data entry errors are eliminated for structured invoices</li>
+            <li>Processing cost per invoice falls significantly</li>
+            <li>Finance team attention moves from data entry to exception management</li>
+          </ul>
+          <div className="compare-sub-title">Implementation considerations</div>
+          <ul className="compare-bullets">
+            <li>Supplier readiness is the key variable — not all suppliers can currently send structured invoices</li>
+            <li>A phased supplier onboarding programme is required; start with high-volume suppliers</li>
+            <li>OCR and manual processing continue for suppliers not yet on eInvoicing</li>
+            <li>Exception handling rules must be defined before automation is activated</li>
+          </ul>
+        </div>
+
+        <div className="compare-card">
+          <div className="compare-card-title">AR eInvoicing — sending structured invoices to customers</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.6, margin: '0 0 16px' }}>
+            AR eInvoicing is the capability to generate invoices in structured electronic format and deliver them to customers via the channels they require — Peppol network, EDI, supplier portals, or direct API — rather than sending PDFs by email.
+          </p>
+          <div className="compare-sub-title">The process with AR eInvoicing in place</div>
+          <ol className="compare-steps">
+            <li>Invoice is generated in your ERP or FMS in the normal way</li>
+            <li>The eInvoicing system automatically converts the invoice to the required structured format based on the customer's configured delivery channel</li>
+            <li>Invoice is transmitted directly to the customer's financial system via the configured channel</li>
+            <li>Delivery confirmation is received and logged</li>
+            <li>Invoice status updates (received, matched, approved, queued for payment) are visible in real time where the customer's system supports status return</li>
+            <li>Disputes or queries arrive with structured reference data rather than unformatted email</li>
+          </ol>
+          <div className="compare-sub-title">What changes</div>
+          <ul className="compare-bullets">
+            <li>Invoice delivery is confirmed automatically — no chasing bounced emails or lost PDFs</li>
+            <li>Customer AP processing is faster — structured invoices process automatically, reducing payment delays caused by data entry queues</li>
+            <li>Compliance with customer mandates (retail EDI, public sector Peppol) is automated rather than managed manually per customer</li>
+            <li>Regulatory compliance for EU and UK mandates is handled at the system level</li>
+          </ul>
+          <div className="compare-sub-title">Implementation considerations</div>
+          <ul className="compare-bullets">
+            <li>Customer channel requirements vary — map your customer base by required format before implementation</li>
+            <li>Some customers require onboarding to their specific EDI specification or supplier portal</li>
+            <li>AR eInvoicing implementation typically runs in parallel with existing PDF invoicing during transition</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style={{
+        marginTop: 32, background: 'var(--bg)', border: '1px solid var(--border-1)',
+        borderRadius: 4, padding: '24px 28px',
+      }}>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          <strong style={{ color: 'var(--navy)' }}>The bidirectional picture:</strong> A complete eInvoicing programme covers both sides. In practice, most businesses start with the side where regulatory pressure or commercial obligation is most immediate — often AR, because a major customer has mandated it, or AP, because a government-mandated supplier is now sending structured invoices that the current system cannot process. The right implementation partner will plan both sides from the outset, even if the rollout is phased.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 7: ERP INTEGRATION ───────────────────────────────────────────────────
+
+const ERPIntegrationSection = () => {
+  const models = [
+    {
+      title: 'Standalone eInvoicing tool',
+      items: [
+        { label: 'Model', text: 'A separate eInvoicing platform, not integrated with your ERP. Invoices are generated in your ERP, exported as files, uploaded to the eInvoicing platform for transmission. Received eInvoices are downloaded from the platform and manually entered into the ERP.' },
+        { label: 'Integration depth', text: 'None — file transfer and manual entry at both ends.' },
+        { label: 'Governance implications', text: 'The eInvoicing platform and the ERP maintain separate records. The audit trail in the ERP does not include the eInvoicing exchange history. Disputes are harder to resolve because the transmission record and the ERP record are separate.' },
+        { label: 'Automation achieved', text: 'Partial — the transmission format may be compliant, but the AP and AR processes remain manual at the ERP end.' },
+        { label: 'Best fit', text: 'Businesses with immediate regulatory compliance pressure and no current ERP integration capability. Acceptable as a short-term bridge; not a long-term solution.' },
+      ],
+    },
+    {
+      title: 'ERP-integrated eInvoicing (middleware / connector)',
+      items: [
+        { label: 'Model', text: 'An eInvoicing platform integrated with the ERP via API or middleware — invoices flow automatically between the ERP and the eInvoicing network. AP invoices received on the network are automatically created in the ERP; AR invoices generated in the ERP are automatically transmitted.' },
+        { label: 'Integration depth', text: 'Good — automated data flow in both directions, with status updates returned to the ERP.' },
+        { label: 'Governance implications', text: 'ERP audit trail includes invoice transmission and receipt status. AP three-way matching can be triggered by structured invoice data automatically. Exception handling is manageable within ERP workflows.' },
+        { label: 'Automation achieved', text: 'High — straight-through processing for invoices within configured parameters. Exceptions route to human review within the ERP workflow.' },
+        { label: 'Best fit', text: 'Most mid-market businesses implementing eInvoicing alongside a modern ERP. This is the target architecture for X3CloudDocs on Sage X3.' },
+      ],
+    },
+    {
+      title: 'Native ERP eInvoicing',
+      items: [
+        { label: 'Model', text: 'eInvoicing capability built natively into the ERP platform — no separate platform required. The ERP generates, transmits, receives, and processes structured eInvoices entirely within its own architecture.' },
+        { label: 'Integration depth', text: 'Complete — eInvoicing is not a connected system but a feature of the ERP itself.' },
+        { label: 'Governance implications', text: 'Full audit trail within the ERP. No data movement between systems. Permission model, approval workflows, and exception handling are all within the ERP\'s governance framework.' },
+        { label: 'Automation achieved', text: 'Maximum — the entire invoice lifecycle from generation to posting is managed within one system.' },
+        { label: 'Best fit', text: 'Businesses whose ERP vendor provides mature native eInvoicing capability in their market. Less common currently — most ERP platforms achieve this through integrated ISV solutions rather than fully native capability.' },
+      ],
+    },
+  ];
+
+  const principles = [
+    'AP invoices received in structured format automatically created as ERP transactions — no manual entry',
+    'Three-way matching triggered automatically by structured invoice data',
+    'Transmission confirmation and invoice status visible within the ERP — not only in a separate portal',
+    'AR invoices generated in the ERP transmitted automatically in the customer\'s required format',
+    'Exceptions managed within ERP approval workflows — not requiring export to a separate system',
+    'Complete audit trail from invoice generation or receipt through to payment — all within the ERP record',
+  ];
+
+  return (
+    <section id="s7" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">INTEGRATION</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            How eInvoicing connects to your ERP — three models and what they mean
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            eInvoicing does not exist in isolation. It is most valuable when the structured invoice data flows directly into and out of the ERP or financial management system that governs your financial records — without manual extraction, file transfers, or re-entry. How the eInvoicing capability connects to your ERP determines the degree of automation, the completeness of the audit trail, and the governance integrity of the end-to-end process.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 48 }} className="grid-3-resp">
+          {models.map((m, i) => (
+            <div key={i} className="model-card">
+              <div className="model-card-title">{m.title}</div>
+              <dl>
+                {m.items.map((item, j) => (
+                  <React.Fragment key={j}>
+                    <dt>{item.label}</dt>
+                    <dd>{item.text}</dd>
+                  </React.Fragment>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          background: '#fff', border: '1px solid var(--border-1)',
+          borderRadius: 4, padding: '28px 32px',
+        }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1rem', color: 'var(--navy)', margin: '0 0 16px',
+          }}>What good ERP integration looks like in practice</h3>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, color: 'var(--fg-2)', lineHeight: 1.6, margin: '0 0 16px' }}>
+            Regardless of the integration model, a well-integrated eInvoicing solution should deliver:
+          </p>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+            {principles.map((p, i) => (
+              <li key={i} style={{
+                display: 'flex', gap: 12, alignItems: 'flex-start',
+                padding: '6px 0', borderBottom: i < principles.length - 1 ? '1px solid var(--border-1)' : 'none',
+              }}>
+                <Icon name="Check" size={16} color="var(--cyan)" style={{ flexShrink: 0, marginTop: 2 }} />
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: 'var(--fg-2)', lineHeight: 1.55 }}>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 8: BUSINESS CASE ─────────────────────────────────────────────────────
+
+const BusinessCaseSection = () => {
+  const rows = [
+    ['AP processing cost reduction', 'Structured invoices process automatically without manual entry or OCR. Finance team time moves from data entry to exception management.', 'Cost per invoice processed typically falls by 60–80% for straight-through invoices. Based on Billentis and CODA benchmarks — validate against your own cost per invoice.'],
+    ['AP processing speed', 'Automated three-way matching and approval workflows reduce invoice cycle time from receipt to payment authorisation.', 'Invoice cycle time typically falls from 10–14 days to 2–4 days for straight-through invoices.'],
+    ['Error rate reduction', 'Structured invoice data eliminates transcription errors from manual entry or OCR interpretation. Discrepancies are flagged by the matching engine rather than discovered at payment.', 'Error rates on manually entered invoices typically run at 1–3%. Structured eInvoicing reduces this to near zero for data entry errors.'],
+    ['Cash flow and supplier relationship', 'Faster AP processing enables businesses to capture early payment discounts from suppliers who offer them, and to negotiate improved terms. Supplier satisfaction improves when invoice queries are reduced.', 'Early payment discount capture depends on terms available — model against your supplier base.'],
+    ['AR payment speed', 'Structured invoices processed automatically by customer AP systems reduce the delay caused by manual entry queues. Delivery confirmation eliminates disputes about whether invoices were received.', 'DSO improvement varies by customer AP maturity — typically 2–5 days for customers who process structured invoices automatically.'],
+    ['Regulatory compliance', 'eInvoicing infrastructure satisfies current and forthcoming EU and UK mandates without separate compliance investment for each jurisdiction.', 'Cost of non-compliance varies by member state — Germany imposes fines for B2G non-compliance; Italy\'s SdI rejection means invoices have no legal standing.'],
+  ];
+
+  return (
+    <section id="s8" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">THE BUSINESS CASE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            The financial case for eInvoicing — beyond compliance
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            eInvoicing is frequently framed purely as a compliance obligation. That framing is accurate but incomplete. For mid-market businesses, the compliance driver provides the mandate to invest in infrastructure that delivers a return well beyond regulatory adherence. Understanding the full business case — not just the compliance case — makes the investment decision easier to justify to a board and easier to scope correctly.
+          </p>
+        </div>
+
+        <div className="bc-table-wrap" style={{ marginBottom: 40 }}>
+          <table className="bc-table">
+            <thead>
+              <tr>
+                <th>Benefit Category</th>
+                <th>How It Is Realised</th>
+                <th>Indicative Metric</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  <td>{r[0]}</td>
+                  <td style={{ color: 'var(--fg-2)' }}>{r[1]}</td>
+                  <td>{r[2]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="pull-quote" style={{ marginBottom: 32, maxWidth: 800 }}>
+          "The cost of eInvoicing non-compliance is not always a fine. Sometimes it is an invoice that has no legal standing. Sometimes it is a trading relationship with a major buyer that cannot continue. Sometimes it is a government contract that cannot be won. The question is not whether to implement eInvoicing — it is whether to do so on your timeline or someone else's."
+        </div>
+
+        <div className="narrow" style={{ padding: 0 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1rem', color: 'var(--navy)', margin: '0 0 12px',
+          }}>A note on implementation cost</h3>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            eInvoicing implementation cost varies significantly with the integration depth and the number of trading partners to be onboarded. A standalone compliance solution (receive and transmit Peppol invoices for a single entity) can be implemented quickly and at modest cost. A fully integrated AP and AR eInvoicing programme across multiple entities and a diverse supplier and customer base is a more substantial project — but one that delivers correspondingly greater return. Any business case should model the full five-year return, including both the operational savings and the avoided compliance cost, rather than evaluating the implementation cost in isolation.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 9: VENDOR QUESTIONS ──────────────────────────────────────────────────
+
+const VendorQuestionsSection = () => {
+  const questions = [
+    {
+      title: 'Which eInvoicing standards and formats do you support — and are they certified by the relevant standards bodies or network operators?',
+      body: 'Ask for the specific certification status: Peppol access point certification, EN 16931 compliance, EDI accreditation. A vendor who cannot point to specific certifications for the standards they claim to support is a vendor whose claims should be independently verified.',
+    },
+    {
+      title: 'How does your solution integrate with our ERP — and what is the technical architecture of that integration?',
+      body: 'Ask for specifics: API, middleware, file transfer, native module. Understand what data flows in which direction, how frequently, and what happens when the integration fails. A vendor who describes integration vaguely is likely describing something less robust than you require.',
+    },
+    {
+      title: 'What does the supplier onboarding process look like — and how do you handle suppliers who cannot send structured invoices?',
+      body: 'Supplier readiness is the biggest variable in AP eInvoicing success. Understand what the vendor provides to support supplier onboarding, what formats they accept as inputs from suppliers not yet on Peppol, and how OCR or PDF fallback is handled for legacy suppliers.',
+    },
+    {
+      title: 'Which EU member state mandates does your solution currently support — and what is your roadmap for ViDA compliance by 2028?',
+      body: 'If you have EU operations or cross-border trading relationships, verify compliance with the specific member state formats you require. Ask for the roadmap with committed dates, not aspirational statements.',
+    },
+    {
+      title: 'How does your solution handle exceptions — invoices that fail matching, invoices from new suppliers, invoices with discrepancies?',
+      body: 'Exception handling is where eInvoicing programmes succeed or fail operationally. Understand the exception workflow: who is notified, how, with what information, within what SLA, and how resolution is recorded in the audit trail.',
+    },
+    {
+      title: 'What does the audit trail look like — and is it accessible within our ERP or only in your platform?',
+      body: 'The audit trail should be within your ERP\'s record — not only accessible via the vendor\'s portal. If the audit trail lives only in the vendor\'s system, you have a dependency on that relationship continuing and a gap in your ERP\'s financial record.',
+    },
+    {
+      title: 'How do you handle multi-entity and multi-jurisdiction requirements — can a single implementation serve our group?',
+      body: 'For businesses with multiple entities, trading currencies, or jurisdictions, verify that the vendor\'s solution manages entity-level configuration — separate Peppol IDs, jurisdiction-specific formats, entity-level reporting — within a single implementation.',
+    },
+    {
+      title: 'What is your Peppol access point certification status — and who is the network operator you are accredited by?',
+      body: 'Peppol access point providers must be certified by a national Peppol authority. Ask for the specific certification and the authority that granted it. Unaccredited providers cannot legally operate as Peppol access points.',
+    },
+    {
+      title: 'What happens to our data and our trading partner connections if we end our contract with you?',
+      body: 'Data portability is a significant vendor lock-in risk in eInvoicing. Understand what your Peppol ID status would be, whether you could transfer connections to another access point, and what happens to your historical invoice archive if the vendor relationship ends.',
+    },
+    {
+      title: 'What ongoing support does the solution provide as regulatory requirements change?',
+      body: 'eInvoicing regulation is evolving rapidly. Understand how the vendor tracks and implements regulatory changes, who bears the cost of compliance updates, and what the notification process is when a mandate change affects your configuration.',
+    },
+  ];
+
+  return (
+    <section id="s9" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">BUYER INTELLIGENCE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            Ten questions to ask before selecting an eInvoicing solution
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            eInvoicing vendor claims vary widely in their specificity. These questions test whether a vendor can deliver on the compliance, integration, and operational requirements that matter.
+          </p>
+        </div>
+
+        <div>
+          {questions.map((q, i) => (
+            <div key={i} className="question-item">
+              <div className="question-num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="question-text">
+                <div className="question-title">{q.title}</div>
+                <div className="question-body">{q.body}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--muted)',
+          margin: '20px 0 0', textAlign: 'center',
+        }}>
+          This list is intended for use in vendor briefings, procurement panels, and board presentations.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 10: X3CLOUDDOCS ─────────────────────────────────────────────────────
+
+const X3CloudDocsSection = () => {
+  const RED = '#D80A48';
+
+  const features = [
+    {
+      icon: 'FileCheck',
+      title: 'Purchase Invoice Automation',
+      body: 'Automates the full AP invoice processing cycle within Sage X3 — from receipt of structured eInvoices via Peppol, through automated three-way matching, configurable approval workflows, and exception routing, to payment posting. Straight-through processing for matched invoices; human review queue for exceptions. Complete audit trail in Sage X3.',
+    },
+    {
+      icon: 'UserPlus',
+      title: 'Supplier and Customer Onboarding Automation',
+      body: 'Manages the structured onboarding of new suppliers and customers — collecting required information, validating against business registers and VAT databases, and creating verified master data records in Sage X3. Reduces onboarding time from days to hours and eliminates the manual data entry and validation that creates master data errors at the root.',
+    },
+    {
+      icon: 'Send',
+      title: 'Peppol eInvoicing Exchange',
+      body: 'Connects Sage X3 to the Peppol network via a certified access point — enabling compliant structured eInvoice exchange with any Peppol participant, including UK public sector buyers, EU counterparties, and private sector businesses on the network. Supports Peppol BIS Billing 3.0, and handles format translation for EDI-mandating customers where required.',
+    },
+    {
+      icon: 'Archive',
+      title: 'Electronic Document Management',
+      body: 'Manages the complete lifecycle of commercial documents — purchase orders, invoices, delivery notes, contracts — within Sage X3. Documents are stored, indexed, and retrievable within the ERP record, with version control and access permissions managed within the Sage X3 security framework. Eliminates the paper and email document management that sits outside the ERP in most mid-market businesses.',
+    },
+  ];
+
+  return (
+    <section id="s10" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div style={{
+          background: '#fff', border: '1px solid var(--border-1)',
+          borderLeft: `4px solid ${RED}`,
+          borderRadius: 4, padding: '28px 32px', marginBottom: 40, maxWidth: 880,
+        }}>
+          <span style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 11,
+            letterSpacing: '0.18em', textTransform: 'uppercase',
+            color: RED, display: 'block', marginBottom: 12,
+          }}>MYSOFT OWN IP</span>
+          <h2 className="sec-h2">
+            X3CloudDocs — Mysoft's eInvoicing and document automation platform for Sage
+          </h2>
+        </div>
+
+        <div className="narrow" style={{ padding: 0, marginBottom: 48 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            X3CloudDocs is Mysoft's own IP — a document management and intelligent automation platform built natively for Sage X3, and the top-rated product in the Sage X3 Marketplace. It addresses the full eInvoicing and document automation challenge for mid-market businesses: structured eInvoice exchange via the Peppol network, purchase invoice automation, supplier and customer onboarding automation, and electronic document management — all within the Sage X3 environment.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            X3CloudDocs is not a third-party integration or a generic eInvoicing tool reskinned for Sage. It was built specifically for Sage X3 by a team with 20+ years of Sage X3 implementation experience. The integration with Sage X3 is native — invoice data flows directly into Sage X3 without middleware, file transfers, or manual intervention. The audit trail is within Sage X3. The approval workflows are within Sage X3. The exception handling is within Sage X3.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            For businesses on Sage X3, X3CloudDocs is the most direct route to Peppol-compliant eInvoicing and AP automation — without the integration complexity and ongoing maintenance burden of a third-party eInvoicing connector.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 40 }} className="grid-2-resp">
+          {features.map((f, i) => (
+            <div key={i} className="feature-card">
+              <div className="feature-card-icon" style={{ background: `rgba(216,10,72,0.07)` }}>
+                <Icon name={f.icon} size={22} color={RED} />
+              </div>
+              <h3 className="feature-card-h3">{f.title}</h3>
+              <p className="feature-card-body">{f.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          background: 'var(--bg)', border: '1px solid var(--border-1)',
+          borderRadius: 4, padding: '24px 28px', maxWidth: 800, marginBottom: 24,
+        }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1rem', color: 'var(--navy)', margin: '0 0 10px',
+          }}>Integration scope</h3>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            X3CloudDocs is built natively for Sage X3. Mysoft is also able to advise on eInvoicing integration for Sage Intacct deployments, using the Intacct platform's native AP automation capabilities and certified third-party eInvoicing connectors. Contact Mysoft to discuss the right approach for your platform.
+          </p>
+        </div>
+
+        <div style={{ maxWidth: 800 }}>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 24px' }}>
+            X3CloudDocs is Mysoft's own IP — which means that when you work with Mysoft on an X3CloudDocs implementation, you are working directly with the people who built it. There is no third-party vendor in the support chain. Implementation, configuration, and ongoing optimisation are all delivered by the same team.
+          </p>
+          <Button variant="primary" onClick={() => { window.location.href = '../../contact/'; }}>
+            Speak to Mysoft about X3CloudDocs
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 11: LEARNING JOURNEY ─────────────────────────────────────────────────
+
+const LearningJourneySection = () => {
+  const steps = [
+    {
+      num: 1, label: 'eInvoicing Bootcamp', active: true,
+      desc: 'What eInvoicing is, why it is becoming mandatory, the standards landscape, and where X3CloudDocs fits.',
+      linkText: 'You are here',
+      href: null,
+    },
+    {
+      num: 2, label: 'ERP Bootcamp', active: false,
+      desc: 'How eInvoicing integrates with a full ERP system — and what Sage X3 delivers as the operational platform.',
+      linkText: 'Read the ERP Bootcamp',
+      href: '../../resources/erp-bootcamp/',
+    },
+    {
+      num: 3, label: 'FMS Bootcamp', active: false,
+      desc: 'How eInvoicing connects to a financial management system — and what Sage Intacct\'s AP automation delivers.',
+      linkText: 'Read the FMS Bootcamp',
+      href: '../../resources/fms-bootcamp/',
+    },
+    {
+      num: 4, label: 'AI Bootcamp', active: false,
+      desc: 'How AI is changing invoice processing — from OCR replacement to agentic AP workflows.',
+      linkText: 'Read the AI Bootcamp',
+      href: '../../resources/ai-bootcamp/',
+    },
+    {
+      num: 5, label: 'Talk to Mysoft', active: false,
+      desc: 'A conversation about your eInvoicing requirements, your trading partner landscape, and what X3CloudDocs can deliver.',
+      linkText: 'Book a conversation',
+      href: '../../contact/',
+    },
+  ];
+
+  return (
+    <section id="s11" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span className="sec-eyebrow" style={{ display: 'inline-block' }}>WHERE TO GO NEXT</span>
+          <h2 className="sec-h2" style={{ maxWidth: 600, margin: '0 auto' }}>
+            Your learning journey — from eInvoicing fundamentals to implementation readiness
+          </h2>
+        </div>
+
+        <div className="journey-wrap" style={{ display: 'flex', gap: 0, alignItems: 'flex-start' }}>
+          {steps.map((s, i) => (
+            <div key={i} className="journey-step">
+              {i < steps.length - 1 && <div className="journey-connector" />}
+              <div
+                className="journey-step-circle"
+                style={s.active
+                  ? { background: 'var(--cyan)', color: '#fff', boxShadow: '0 0 0 6px rgba(0,182,237,0.15)' }
+                  : { background: 'var(--navy)', color: 'rgba(255,255,255,0.7)' }
+                }
+              >
+                {s.num}
+              </div>
+              <div className="journey-step-label">{s.label}</div>
+              <div className="journey-step-desc">{s.desc}</div>
+              {s.href
+                ? <a href={s.href} className="journey-step-link">{s.linkText} →</a>
+                : <span className="journey-step-link" style={{ color: 'var(--muted)', cursor: 'default' }}>{s.linkText}</span>
+              }
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── FINAL CTA ────────────────────────────────────────────────────────────────
+
+const FinalCTASection = ({ onAssess }) => (
+  <section className="bootcamp-sec bootcamp-sec-navy">
+    <div className="container" style={{ textAlign: 'center' }}>
+      <div style={{ maxWidth: 640, margin: '0 auto' }}>
+        <h2 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', lineHeight: 1.1,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 20px',
+        }}>
+          Is your business ready for eInvoicing mandates?
+        </h2>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.7,
+          color: 'rgba(255,255,255,0.7)', margin: '0 0 36px',
+        }}>
+          The timelines are set. The standards are confirmed. The question for mid-market businesses is not whether to implement eInvoicing — it is whether to do so before or after the mandate lands. Businesses that implement on their own timeline, with considered supplier onboarding and ERP integration, consistently achieve better outcomes than those reacting to a compliance deadline.
+        </p>
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Button variant="primary" onClick={onAssess}>
+            Speak to Mysoft about eInvoicing readiness
+          </Button>
+          <Button variant="ghostWhite" onClick={() => { window.location.href = '../../resources/x3clouddocs/'; }}>
+            Learn about X3CloudDocs
+          </Button>
+        </div>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.35)',
+          margin: '24px 0 0',
+        }}>
+          No commitment required. A conversation about your trading partner requirements and your options.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToAssess = () => { window.location.href = '../../contact/'; };
+  return (
+    <>
+      <NavBar basePath="../../" onAssess={scrollToAssess} />
+      <SectionNav />
+      <main>
+        <HeroSection />
+        <WhyNowSection />
+        <GlossarySection />
+        <WhatIsSection />
+        <StandardsSection />
+        <RegulatorySection />
+        <APARSection />
+        <ERPIntegrationSection />
+        <BusinessCaseSection />
+        <VendorQuestionsSection />
+        <X3CloudDocsSection />
+        <LearningJourneySection />
+        <FinalCTASection onAssess={scrollToAssess} />
+      </main>
+      <Footer basePath="../../" onAssess={scrollToAssess} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+</html>
