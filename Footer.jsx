@@ -60,6 +60,7 @@ const FOOTER_COLS = [
       { name: "Operational Transformation", href: "insights/operational-transformation/" },
       { name: "Strategic Insight",          href: "insights/strategic-insight/" },
       { name: "Events & Webinars",          href: "insights/events-webinars/" },
+      { name: "AI Bootcamp",                 href: "resources/ai-bootcamp/" },
       { name: "AI-Ready Finance Guide",     href: "insights/ai-ready-finance-guide/" },
       { name: "ERP Selection Framework",    href: "insights/erp-selection-framework/" },
       { name: "Customer Stories",           href: "insights/customer-transformation-stories/" },

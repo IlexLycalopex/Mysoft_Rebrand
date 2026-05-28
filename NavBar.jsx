@@ -120,6 +120,7 @@ const NAV_ITEMS = {
         { name: "eInvoicing Bootcamp",  sub: "eInvoicing mandates and standards",    href: "resources/einvoicing-bootcamp/" },
       ]},
       { t: "Resources", l: [
+        { name: "AI Bootcamp",                      sub: "AI in plain English for finance", href: "resources/ai-bootcamp/" },
         { name: "AI-Ready Finance Guide",           sub: "Gated — free download",          href: "insights/ai-ready-finance-guide/" },
         { name: "ERP Selection Framework",          sub: "Six-stage evaluation process",   href: "insights/erp-selection-framework/" },
         { name: "Customer Transformation Stories",  sub: "Measurable outcomes",            href: "insights/customer-transformation-stories/" },
