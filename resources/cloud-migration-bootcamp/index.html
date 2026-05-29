@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cloud Migration Bootcamp | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What moving your ERP to the cloud actually involves: the business case, the technical realities, the risks, and how to make the transition successfully. From Mysoft, a leading UK Sage X3 partner.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/cloud-migration-bootcamp">
+<meta property="og:title" content="Cloud Migration Bootcamp | Mysoft">
+<meta property="og:description" content="What moving your ERP to the cloud actually involves: the business case, the technical realities, the risks, and how to make the transition successfully. From Mysoft, a leading UK Sage X3 partner.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-h);
+}
+
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-accent:hover     { opacity: 0.88; }
+.btn-ghost:hover      { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover     { background: var(--bg) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+.nav-active { color: var(--cyan) !important; }
+
+.section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+  padding: 0 32px;
+  box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none;
+  display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none;
+  padding: 0 32px;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.bootcamp-sec { padding: 100px 32px; }
+.bootcamp-sec-alt { background: #fff; }
+.bootcamp-sec-navy { background: var(--navy); color: #fff; }
+.bootcamp-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+.hero-bootcamp { background: var(--navy); padding: 96px 32px 88px; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.hero-breadcrumb a { color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 140ms; }
+.hero-breadcrumb a:hover { opacity: 1; }
+.hero-breadcrumb-sep { opacity: 0.4; }
+
+.eyebrow-dark {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 14px;
+}
+
+.comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.5;
+  vertical-align: top; min-width: 140px;
+}
+.comparison-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.comparison-table tr:nth-child(even) td { background: var(--bg); }
+.comparison-table tr:nth-child(odd) td { background: #fff; }
+.comparison-table td:first-child {
+  font-weight: 600; color: var(--navy); font-size: 13px;
+  background: var(--bg) !important; white-space: nowrap;
+}
+
+.accordion-group { border: 1px solid var(--border-1); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.accordion-group-header {
+  padding: 18px 24px; background: var(--bg);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; transition: background 140ms;
+}
+.accordion-group-header:hover { background: #eaedef; }
+.accordion-group-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.accordion-term {
+  border-top: 1px solid var(--border-1); padding: 0;
+  background: #fff;
+}
+.accordion-term-header {
+  padding: 16px 24px; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; user-select: none;
+  transition: background 140ms;
+}
+.accordion-term-header:hover { background: rgba(0,182,237,0.03); }
+.accordion-term-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3;
+}
+.accordion-term-body {
+  padding: 0 24px 20px;
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2);
+}
+
+.pull-quote {
+  border-left: 4px solid var(--yellow);
+  background: var(--navy); color: #fff;
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.feature-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column;
+}
+.feature-card-icon {
+  width: 48px; height: 48px; border-radius: 4px;
+  background: rgba(0,182,237,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-shrink: 0;
+}
+.feature-card-h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.2rem; color: var(--navy);
+  line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em;
+}
+.feature-card-body {
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2); flex: 1;
+}
+
+.stat-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.stat-card-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.question-item {
+  display: flex; gap: 20px; padding: 24px 28px;
+  border-bottom: 1px solid var(--border-1);
+  background: #fff; align-items: flex-start;
+}
+.question-item:first-child { border-top: 1px solid var(--border-1); border-radius: 4px 4px 0 0; }
+.question-item:last-child { border-radius: 0 0 4px 4px; border-bottom: 1px solid var(--border-1); }
+.question-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.4rem; color: var(--cyan); letter-spacing: -0.02em;
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.question-text { flex: 1; }
+.question-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.4;
+}
+
+.journey-step {
+  display: flex; flex-direction: column; align-items: center; flex: 1; position: relative;
+}
+.journey-step-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  position: relative; z-index: 2; flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+}
+.journey-connector {
+  position: absolute; top: 22px; left: calc(50% + 22px);
+  right: calc(-50% + 22px); height: 1px; background: var(--border-1);
+}
+.journey-step-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); margin-top: 14px; text-align: center;
+  line-height: 1.3;
+}
+.journey-step-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-3);
+  line-height: 1.5; text-align: center; margin-top: 6px; max-width: 160px;
+}
+.journey-step-link {
+  margin-top: 10px; font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; color: var(--cyan); text-decoration: none; text-align: center;
+}
+.journey-step-link:hover { text-decoration: underline; }
+
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0;
+}
+
+.callout-yellow {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--yellow);
+  border-radius: 4px; padding: 24px 28px;
+}
+.callout-cyan {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--cyan);
+  border-radius: 4px; padding: 24px 28px;
+}
+
+.bc-table-wrap { overflow-x: auto; }
+.bc-table { width: 100%; border-collapse: collapse; }
+.bc-table th, .bc-table td {
+  padding: 14px 18px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.55;
+  vertical-align: top; font-size: 13.5px;
+  font-family: var(--font-sans);
+}
+.bc-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.bc-table tr:nth-child(even) td { background: var(--bg); }
+.bc-table tr:nth-child(odd) td { background: #fff; }
+.bc-table td:first-child { font-weight: 600; color: var(--navy); min-width: 110px; }
+
+/* Phase timeline */
+.phase-item {
+  display: flex; gap: 24px; align-items: flex-start;
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 32px; margin-bottom: 16px;
+}
+.phase-num {
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 17px;
+}
+.phase-content { flex: 1; }
+.phase-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.1rem; color: var(--navy); margin: 0 0 8px; line-height: 1.3;
+}
+.phase-body { font-family: var(--font-sans); font-size: 14.5px; color: var(--fg-2); line-height: 1.6; margin: 0 0 12px; }
+.phase-risk {
+  border-left: 3px solid var(--yellow);
+  background: rgba(248,197,86,0.08);
+  padding: 10px 16px; border-radius: 0 4px 4px 0;
+  font-family: var(--font-sans); font-size: 13px; line-height: 1.55; color: var(--fg-2);
+}
+.phase-risk strong { color: var(--navy); }
+
+@media (max-width: 1023px) {
+  .bootcamp-sec { padding: 80px 24px; }
+  .hero-bootcamp { padding: 80px 24px 72px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .grid-3-resp { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .journey-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+  .journey-step { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; flex: none !important; width: 100% !important; }
+  .journey-connector { display: none !important; }
+  .journey-step-circle { flex-shrink: 0 !important; }
+  .journey-step-label, .journey-step-desc, .journey-step-link { text-align: left !important; max-width: none !important; }
+}
+@media (max-width: 767px) {
+  .bootcamp-sec { padding: 64px 20px; }
+  .hero-bootcamp { padding: 64px 20px 56px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .grid-3-resp { grid-template-columns: 1fr !important; }
+  .phase-item { padding: 22px 20px; gap: 16px; }
+}
+@media (max-width: 480px) {
+  .question-item { padding: 18px 20px; }
+  .question-num { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const ICON_PATHS = {
+  TrendingUp:  `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  Clock:       `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+  DollarSign:  `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
+  Cloud:       `<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>`,
+  Check:       `<polyline points="20 6 9 17 4 12"/>`,
+  ChevronDown: `<polyline points="6 9 12 15 18 9"/>`,
+  ArrowRight:  `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`,
+};
+
+const Icon = ({ name, size = 20, color = 'currentColor', strokeWidth = 1.75, style = {} }) => (
+  <svg
+    viewBox="0 0 24 24" width={size} height={size}
+    fill="none" stroke={color}
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+    style={style}
+    dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }}
+  />
+);
+
+// ─── SECTION NAV ─────────────────────────────────────────────────────────────
+
+const CM_NAV_ITEMS = [
+  { id: 's1',  label: 'Why Cloud' },
+  { id: 's2',  label: 'Glossary' },
+  { id: 's3',  label: 'Migration vs Reimplementation' },
+  { id: 's4',  label: 'The Business Case' },
+  { id: 's5',  label: 'What It Involves' },
+  { id: 's6',  label: 'Risk & Change' },
+  { id: 's7',  label: 'Customisation & Integration' },
+  { id: 's8',  label: 'When Not To Migrate' },
+  { id: 's9',  label: 'Vendor Questions' },
+  { id: 's10', label: 'Mysoft Approach' },
+  { id: 's11', label: 'Learning Journey' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    CM_NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {CM_NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}
+            >{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select
+          className="section-nav-select"
+          value={active}
+          onChange={e => scrollTo(e.target.value)}
+        >
+          {CM_NAV_ITEMS.map(({ id, label }) => (
+            <option key={id} value={id}>{label}</option>
+          ))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+// ─── HERO ────────────────────────────────────────────────────────────────────
+
+const HeroSection = () => (
+  <section className="hero-bootcamp">
+    <div className="container">
+      <div className="hero-breadcrumb">
+        <a href="../../">Home</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span>Resources</span>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>Cloud Migration Bootcamp</span>
+      </div>
+
+      <div style={{ maxWidth: 880 }}>
+        <span className="eyebrow-dark">CLOUD MIGRATION BOOTCAMP</span>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.05,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 24px',
+        }}>
+          Moving your ERP to the cloud: what it actually involves, and how to get it right
+        </h1>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: 720, margin: '0 0 12px',
+        }}>
+          Cloud migration is one of the most consequential decisions a finance or operations leader makes about their technology, and one of the most commonly misunderstood. This Bootcamp cuts through the vendor narrative on both sides to explain what cloud migration actually involves for a mid-market business, what the genuine benefits and risks are, and what separates the migrations that deliver from the ones that create disruption. It is written for the leaders who carry the decision, not for the IT team that executes it.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 14, color: 'rgba(255,255,255,0.4)',
+          margin: 0,
+        }}>
+          Eleven sections. Built for the finance and operations leaders who own the decision.
+        </p>
+
+        <div style={{
+          marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          {[
+            { n: '11', l: 'Core sections', sub: 'From context to recommendation' },
+            { n: '4',  l: 'Glossary groups', sub: 'Cloud, migration, technical, commercial' },
+            { n: '6',  l: 'Project phases', sub: 'Assessment to optimisation' },
+            { n: '10', l: 'Vendor questions', sub: 'Shareable checklist' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              paddingLeft: i > 0 ? 32 : 0,
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '2rem', color: '#fff', letterSpacing: '-0.03em', lineHeight: 1,
+              }}>{s.n}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 5 }}>{s.l}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11.5, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 1: WHY CLOUD ─────────────────────────────────────────────────────────
+
+const WhyCloudSection = () => (
+  <section id="s1" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE CONTEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why the cloud migration conversation is now unavoidable
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The conversation has moved from whether to when, and it has done so for reasons that compound rather than stand still. Software vendors have shifted their investment to cloud-first development. On-premise platforms continue to be supported, but new capability, AI capability in particular, arrives in the cloud versions first and fastest. Each year on an on-premise system is therefore a year further from the infrastructure that new capability assumes.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The cost comparison has also moved. Once the full cost of on-premise is modelled honestly, including licence, hardware, data centre, backup, internal IT support, and the periodic upgrade projects, cloud subscription economics are competitive over a five-year horizon for most mid-market businesses, and frequently favourable beyond year three. The workforce has moved too: remote access, mobile capability, and the removal of VPN dependency are now baseline expectations for finance and operations teams, not differentiators.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          And the AI-enabled ERP, with intelligent accounts payable automation, AI-assisted forecasting, and emerging agentic workflows, is cloud-delivered. On-premise deployments reach these capabilities late, if at all. The risk of staying put is not static. It accumulates.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-3-resp">
+        {[
+          { icon: 'TrendingUp', stat: 'The AI capability gap.', copy: 'Cloud ERP receives AI features first; on-premise follows later or not at all. The gap widens with each release cycle, so the cost of deferral is not flat, it compounds.' },
+          { icon: 'Clock', stat: 'The support lifecycle.', copy: 'On-premise ERP versions carry defined support end-dates. Planning a migration ahead of support withdrawal is materially less disruptive and less expensive than a reactive migration forced by a deadline.' },
+          { icon: 'DollarSign', stat: 'Infrastructure cost.', copy: 'Cloud removes hardware procurement, data centre cost, and the recurring upgrade-project overhead. For most mid-market businesses the total cost of ownership comparison favours cloud beyond year three once on-premise costs are fully loaded.' },
+        ].map((c, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-card-icon">
+              <Icon name={c.icon} size={20} color="var(--navy)" />
+            </div>
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15, color: 'var(--navy)', lineHeight: 1.3, marginBottom: 6,
+              }}>{c.stat}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{c.copy}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: GLOSSARY ──────────────────────────────────────────────────────────
+
+const GLOSSARY_GROUPS = [
+  {
+    id: 'cg1', title: 'Cloud fundamentals',
+    terms: [
+      { term: 'Cloud', def: 'Computing delivered as a service over the internet rather than from servers you own and run.' },
+      { term: 'SaaS (Software as a Service)', def: 'Software delivered and maintained by the vendor over the internet, paid for by subscription, with updates applied centrally.' },
+      { term: 'Cloud-Native', def: 'Software designed from the outset to run in the cloud, typically multi-tenant, rather than on-premise software hosted remotely.' },
+      { term: 'Cloud-Hosted', def: 'On-premise software run on remote infrastructure. It removes some hardware burden but does not deliver the full benefits of a cloud-native platform.' },
+      { term: 'Multi-Tenant and Single-Tenant', def: 'Multi-tenant means many customers share one maintained instance of the software, each with their data isolated, which is how continuous updates become possible. Single-tenant means a dedicated instance per customer.' },
+      { term: 'Private Cloud and Public Cloud', def: 'Private cloud is infrastructure dedicated to one organisation; public cloud is shared, scalable infrastructure operated by a provider.' },
+    ],
+  },
+  {
+    id: 'cg2', title: 'Migration concepts',
+    terms: [
+      { term: 'Cloud Migration', def: 'Moving a system and its data from on-premise infrastructure to the cloud.' },
+      { term: 'Lift and Shift', def: 'Moving existing configuration to cloud infrastructure with minimal change.' },
+      { term: 'Re-platforming and Re-implementation', def: 'Re-platforming adapts the system to the new environment; re-implementation rebuilds it, rationalising configuration and redesigning processes.' },
+      { term: 'Data Migration', def: 'Moving data from the old system to the new, including the cleanse and validation that should accompany it.' },
+      { term: 'Cutover', def: 'The point at which the business stops using the old system and starts using the new one.' },
+      { term: 'Parallel Running', def: 'Operating old and new systems together for a period to validate the new one before full cutover.' },
+      { term: 'Go-Live', def: 'The point at which the new system becomes the system of record.' },
+    ],
+  },
+  {
+    id: 'cg3', title: 'Technical',
+    terms: [
+      { term: 'API (Application Programming Interface)', def: 'A defined way for systems to exchange data programmatically. In cloud ERP, integrations are built through APIs rather than direct database access.' },
+      { term: 'Integration and Middleware', def: 'Integration connects systems so they share data; middleware is the software layer that brokers those connections.' },
+      { term: 'Legacy System', def: 'An older system, often on-premise and heavily customised, that is costly to change and may block modernisation.' },
+      { term: 'Technical Debt', def: 'The accumulated cost of past configuration choices, customisations, and workarounds that were never rationalised.' },
+      { term: 'Customisation and Configuration', def: 'Configuration uses the system\'s built-in settings to meet a requirement; customisation changes the system itself through code. The distinction drives cost, upgradeability, and risk.' },
+      { term: 'Connector', def: 'A pre-built integration between two specific systems.' },
+    ],
+  },
+  {
+    id: 'cg4', title: 'Commercial',
+    terms: [
+      { term: 'TCO (Total Cost of Ownership)', def: 'The full cost of a system over its life, including licence or subscription, infrastructure, support, and upgrade projects, not just the headline price.' },
+      { term: 'Subscription Model and Perpetual Licence', def: 'Subscription is a recurring fee for ongoing access and updates; a perpetual licence is a one-off purchase, typically with separate maintenance and self-managed infrastructure.' },
+      { term: 'Managed Service', def: 'A model in which a partner or vendor runs the cloud infrastructure and system administration on the customer\'s behalf.' },
+      { term: 'SLA (Service Level Agreement)', def: 'The contractual commitment to availability, performance, and support response.' },
+    ],
+  },
+];
+
+const AccordionGroup = ({ group }) => {
+  const [open, setOpen] = React.useState(false);
+  const [openTerms, setOpenTerms] = React.useState({});
+
+  const toggleTerm = (i) => setOpenTerms(prev => ({ ...prev, [i]: !prev[i] }));
+
+  return (
+    <div className="accordion-group">
+      <div className="accordion-group-header" onClick={() => setOpen(o => !o)}>
+        <span className="accordion-group-title">{group.title}</span>
+        <Icon
+          name="ChevronDown" size={18}
+          color="var(--muted)"
+          style={{ transition: 'transform 220ms', transform: open ? 'rotate(180deg)' : 'none' }}
+        />
+      </div>
+      {open && group.terms.map((t, i) => (
+        <div key={i} className="accordion-term">
+          <div className="accordion-term-header" onClick={() => toggleTerm(i)}>
+            <span className="accordion-term-name">{t.term}</span>
+            <Icon
+              name="ChevronDown" size={16}
+              color="var(--muted)"
+              style={{ transition: 'transform 220ms', transform: openTerms[i] ? 'rotate(180deg)' : 'none', flexShrink: 0, marginTop: 2 }}
+            />
+          </div>
+          {openTerms[i] && (
+            <div className="accordion-term-body">{t.def}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const GlossarySection = () => (
+  <section id="s2" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+        <span className="sec-eyebrow" style={{ display: 'inline-block' }}>GLOSSARY</span>
+        <h2 className="sec-h2" style={{ maxWidth: 640, margin: '0 auto 16px' }}>
+          The vocabulary of cloud migration, defined clearly
+        </h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.65, color: 'var(--fg-2)', maxWidth: 640, margin: '0 auto' }}>
+          Cloud migration carries a vocabulary that mixes infrastructure, project method, and commercial terms. These definitions give finance and operations leaders the working understanding needed to challenge a plan and read a proposal critically.
+        </p>
+      </div>
+      {GLOSSARY_GROUPS.map(g => <AccordionGroup key={g.id} group={g} />)}
+
+      <div className="callout-cyan" style={{ marginTop: 32, maxWidth: 880 }}>
+        <h3 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.1rem',
+          color: 'var(--navy)', margin: '0 0 14px',
+        }}>The three definitions worth getting right</h3>
+        {[
+          ['Lift and shift versus re-implementation:', 'Lift and shift moves existing on-premise configuration to the cloud with minimal change. Re-implementation rebuilds the system in the cloud, rationalises configuration, and redesigns processes. Most ERP cloud projects require re-implementation rather than lift and shift, because the architectures differ too materially for a direct transfer. This single distinction determines scope, cost, and the benefit you can realise.'],
+          ['Technical debt:', 'The accumulated cost of years of configuration decisions, customisations, and workarounds that were never tidied up. A cloud project is the moment you either retire that debt or carry it into the new environment. That choice is deliberate and consequential, and it should be made on purpose rather than by default.'],
+          ['Managed service:', 'A model where a partner or vendor runs the cloud infrastructure and administration for you. It reduces the internal IT requirement but creates a dependency on the provider, so define the SLAs contractually rather than relying on goodwill.'],
+        ].map(([lead, body], i) => (
+          <p key={i} style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: i === 2 ? 0 : '0 0 12px' }}>
+            <strong style={{ color: 'var(--navy)' }}>{lead}</strong> {body}
+          </p>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 3: MIGRATION VS REIMPLEMENTATION ─────────────────────────────────────
+
+const MigrationVsReimpSection = () => {
+  const rows = [
+    ['Scope', 'Move existing configuration with minimal change', 'Rebuild and rationalise configuration and processes'],
+    ['Cost', 'Lower up front', 'Higher up front'],
+    ['Timeline', 'Shorter', 'Longer'],
+    ['Risk', 'Carries existing problems into the new environment', 'Higher project risk, lower long-term operating risk'],
+    ['Benefit', 'Continuity, fastest route off old infrastructure', 'Clean data model, rationalised processes, AI-ready foundation'],
+    ['Best for', 'Recent, well-governed configuration with little technical debt', 'The common mid-market case: accumulated customisation and process debt'],
+  ];
+
+  return (
+    <section id="s3" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">THE FUNDAMENTAL QUESTION</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            Migration or reimplementation: the decision that defines everything else
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            Most mid-market ERP cloud projects are re-implementations in practice, even when they are sold and budgeted as migrations. The reason is architectural. Cloud-native ERP, true multi-tenant SaaS, differs fundamentally from on-premise architecture. Configuration, customisation, and integration models do not transfer directly, so the work of standing up the cloud system is closer to building than to moving.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            That reframes the central question. It is not "how do we move what we have", it is "how much of what we have is intentional design, and how much is accumulated workaround and historical decision". A cloud project is the opportunity to answer that honestly and act on it. Re-implementation costs more and takes longer than a notional migration, but its benefit is also materially higher: a cleaner data model, rationalised processes, eliminated technical debt, and a cloud-native system actually built for future capability. The right starting position is to treat the project as a structured re-implementation with a phased scope, and to plan, budget, and communicate it as such, rather than discovering its true nature midway through.
+          </p>
+        </div>
+
+        <div className="comparison-table-wrap">
+          <table className="comparison-table">
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Migration (lift and shift)</th>
+                <th>Re-implementation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  {r.map((cell, j) => (<td key={j}>{cell}</td>))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 4: THE BUSINESS CASE ─────────────────────────────────────────────────
+
+const BusinessCaseSection = () => {
+  const rows = [
+    ['Cost', 'Lower fully-loaded TCO over five years', 'Model on-premise licence, hardware, hosting, backup, IT support, and upgrade projects against cloud subscription', 'Five-year TCO comparison for your configuration'],
+    ['Capability', 'AI and automation gains; continuous updates; integration ecosystem', 'Cost per invoice before and after AP automation; close-cycle days reduced', 'Processing cost per invoice; close-cycle days'],
+    ['Risk', 'Removes infrastructure dependency, support-lifecycle exposure, and upgrade debt', 'Compare planned migration cost against the cost and disruption of a forced migration at support withdrawal', 'Cost and downtime of reactive vs planned migration'],
+  ];
+
+  return (
+    <section id="s4" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">THE FINANCIAL CASE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            How to build the business case for cloud migration
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            A credible business case has three components: a cost comparison, a capability gain, and a risk reduction. Each needs to be quantified honestly, and the case is strongest when all three are presented together rather than leaning on cost alone.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            The cost comparison must model on-premise honestly. That means counting not just licence and maintenance but servers, data centre or hosting, backup, the internal IT time spent keeping it running, and the periodic upgrade projects that on-premise quietly requires every few years. Modelled that way, cloud subscription often looks more expensive in year one and competitive from year two onward, with the gap moving in cloud's favour as the deferred on-premise costs come due.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            The capability gain should be quantified specifically, and AI is where the concrete numbers live. What would accounts payable automation save in processing cost per invoice and in finance time? What would an AI-assisted close take off the close cycle? These are available from benchmarks and reference customers and belong in the case as figures, not adjectives.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The risk reduction is the hardest to quantify and the easiest to defer, which is exactly why it should be named explicitly. The cost of staying on an ageing, eventually unsupported on-premise system is real even when it is not yet visible. The sharpest framing for a CFO is a comparison of two migrations: a forced migration under time pressure when support is withdrawn, against a planned migration on your own timeline. The second is cheaper, calmer, and lower risk, and the choice between them is available now.
+          </p>
+        </div>
+
+        <div className="bc-table-wrap">
+          <table className="bc-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Benefit</th>
+                <th>How quantified</th>
+                <th>Indicative metric</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  {r.map((cell, j) => (<td key={j}>{cell}</td>))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 5: WHAT IT INVOLVES ──────────────────────────────────────────────────
+
+const WhatInvolvesSection = () => {
+  const phases = [
+    { n: 1, t: 'Assessment and scoping.', b: 'Current-state audit, customisation inventory, integration map, data quality assessment, deployment model selection, and partner selection.', r: 'underestimating the scope of customisation and the complexity of integrations.' },
+    { n: 2, t: 'Design.', b: 'Target architecture, process rationalisation, configuration design for a cloud-native environment, integration redesign, and data migration planning.', r: 'underinvesting in process rationalisation and carrying old processes into the new environment.' },
+    { n: 3, t: 'Build and configuration.', b: 'Cloud environment setup, system configuration, integration development, and data migration build.', r: 'integration re-engineering is consistently underestimated, so allow contingency here.' },
+    { n: 4, t: 'Testing.', b: 'System testing, integration testing, user acceptance testing, data validation, and performance testing.', r: 'inadequate UAT investment and compressed testing windows.' },
+    { n: 5, t: 'Cutover and go-live.', b: 'Data cutover, go-live, and hypercare.', r: 'data cutover timing and quality, the single highest-risk moment in the programme.' },
+    { n: 6, t: 'Optimisation.', b: 'Post-go-live stabilisation, the user adoption programme, and AI capability activation from Stage 2 onward.', r: 'treating go-live as the end of the project rather than the beginning of value.' },
+  ];
+
+  return (
+    <section id="s5" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">THE PROJECT</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            What a cloud migration project actually looks like: the phases, the effort, and the timeline
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            A cloud migration is a structured programme with six phases, each with its own deliverables and its own characteristic risk. Understanding the shape of it in advance is what allows a finance or operations leader to challenge a plan that compresses the wrong phase or underfunds the riskiest one.
+          </p>
+        </div>
+
+        <div style={{ marginBottom: 32 }}>
+          {phases.map((p, i) => (
+            <div key={i} className="phase-item">
+              <div className="phase-num">{p.n}</div>
+              <div className="phase-content">
+                <div className="phase-title">{p.t}</div>
+                <p className="phase-body">{p.b}</p>
+                <div className="phase-risk"><strong>Risk:</strong> {p.r}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="narrow" style={{ padding: 0 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            The recurring theme across the phases is that the early, less visible work, assessment and design, determines the risk carried by the later, more visible work. Programmes that rush assessment to reach build sooner pay for it at cutover.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 6: RISK & CHANGE ─────────────────────────────────────────────────────
+
+const RiskChangeSection = () => (
+  <section id="s6" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">MANAGING THE TRANSITION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          The risks that matter, and what to do about them
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The familiar ERP implementation risks all apply, with an extra layer: users are being asked to learn a new system and adjust to cloud-delivered software at the same time. That doubling deserves explicit management rather than optimism.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Change fatigue is a genuine risk, particularly in businesses that have recently implemented or upgraded an on-premise system. The "we have only just done this" reaction is predictable and needs to be addressed directly rather than dismissed. The access model itself is a second, often overlooked change: users moving from a locally installed client to a browser need training on the access model, not only on the functionality. Plan for it specifically.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Business continuity needs honest assessment because cloud ERP depends on connectivity. Evaluate the resilience of your connections, redundancy, and mobile or offline fallback before go-live rather than after the first outage. And data residency must be confirmed: establish where your cloud ERP data will be hosted and check that it meets your regulatory and contractual obligations, including UK and EU data residency requirements where they apply.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 7: CUSTOMISATION & INTEGRATION ───────────────────────────────────────
+
+const CustomisationSection = () => (
+  <section id="s7" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">TECHNICAL CONSIDERATIONS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          What happens to your customisations and integrations in the cloud
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Code-level customisations built for on-premise ERP frequently do not transfer to a cloud-native deployment. Every customisation needs to be inventoried and then triaged against three questions: is it still needed at all; is the requirement now met by standard configuration in the cloud version; and if it is genuinely still required, does it need re-engineering for the cloud architecture. This triage is not overhead. It is where a large part of the project's value is either captured or lost.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          It is also an opportunity. Many on-premise customisations were built to close gaps that standard product development has since filled. Migration is the natural trigger to reassess them, and retiring customisations that are no longer needed reduces ongoing maintenance cost and removes technical debt for good. Integrations require the same discipline. Direct database integrations, common on-premise, do not survive migration and must be rebuilt through APIs. That is both a modernisation opportunity and a significant scope item that has to be inventoried before the budget is set, not discovered during build. Finally, assess the cloud compatibility of every connected third-party application before committing to a timeline. Legacy applications that connect by direct database access will need migrating or replacing, and finding that out late is a common cause of overrun.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 8: WHEN NOT TO MIGRATE ───────────────────────────────────────────────
+
+const WhenNotSection = () => (
+  <section id="s8" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+        <span className="sec-eyebrow">HONEST COUNSEL</span>
+        <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+          When cloud migration is the wrong move right now
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Cloud migration is the right long-term direction for most mid-market businesses. That makes it more important, not less, to be honest about timing, because a poorly timed migration damages the case for the right one. There are four situations in which the answer is "prepare first" rather than "go now".
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          If your data quality is poor and unmeasured, migrating onto a poor data foundation produces a poorly functioning cloud system. A data readiness assessment should precede migration planning. If you have recently implemented or substantially upgraded within the past 18 to 24 months, change fatigue is a real risk, and a planned timeline that lets the organisation stabilise first will produce a better outcome. If you have deep, business-critical customisations with no cloud equivalent, the re-engineering cost needs honest assessment, because in some cases the gap is genuinely large and the business case has to be built carefully rather than assumed. And if your connectivity infrastructure cannot yet support cloud dependency, address resilience first.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          The honest position is that the question for almost every mid-market business is when and how ready, not whether. Mysoft will tell you plainly if you are not ready, and recommend a readiness programme rather than sell you a migration project you should not yet start.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="grid-3-resp">
+        <div className="callout-cyan">
+          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.05rem', color: 'var(--navy)', margin: '0 0 10px' }}>Migrate now</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            Data quality is measured and sound; the last major system change was more than two years ago; customisations are documented and mostly replaceable by standard configuration; connectivity is resilient.
+          </p>
+        </div>
+        <div className="callout-yellow">
+          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.05rem', color: 'var(--navy)', margin: '0 0 10px' }}>Prepare first</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            Data quality is poor or unmeasured; deep customisations have no clear cloud equivalent; connectivity resilience is unproven. Run a readiness programme before planning the migration.
+          </p>
+        </div>
+        <div className="callout-yellow">
+          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.05rem', color: 'var(--navy)', margin: '0 0 10px' }}>Reassess timing</div>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>
+            A major implementation or upgrade landed within the past 18 to 24 months. Allow the organisation to stabilise, then plan the migration on a deliberate timeline.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 9: VENDOR QUESTIONS ──────────────────────────────────────────────────
+
+const VendorQuestionsSection = () => {
+  const questions = [
+    'What is your specific experience with Sage X3 cloud migrations: how many have you completed, and what is your methodology?',
+    'Is this project a migration or a re-implementation? Be explicit about the distinction and its implications for scope, cost, and timeline.',
+    'How do you handle customisation assessment: what is your process for inventorying and rationalising on-premise customisations?',
+    'What is your approach to integration re-engineering: which integrations require rebuilding, and how are they scoped?',
+    'What does your data migration approach look like, and how do you assess data quality before migration begins?',
+    'What is the cutover plan: how long does data cutover take, and what is the business continuity position during it?',
+    'What post-go-live support is included, and for how long?',
+    'How do you handle the transition from on-premise support to cloud support: is there any gap in cover during the migration period?',
+    'What is the five-year total cost of ownership comparison, cloud subscription against on-premise, for our specific configuration?',
+    'What AI and automation capabilities become available to us in the cloud version that we cannot access on our current on-premise deployment?',
+  ];
+
+  return (
+    <section id="s9" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">BUYER INTELLIGENCE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            Ten questions to ask before committing to a cloud migration project
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            These questions separate a partner with real migration experience from one applying a generic method for the first time. Use them in the selection process, not after the contract is signed.
+          </p>
+        </div>
+
+        <div>
+          {questions.map((q, i) => (
+            <div key={i} className="question-item">
+              <div className="question-num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="question-text">
+                <div className="question-title">{q}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--muted)',
+          margin: '20px 0 0', textAlign: 'center',
+        }}>
+          This list is intended for use in vendor briefings, procurement panels, and board presentations.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 10: MYSOFT APPROACH ──────────────────────────────────────────────────
+
+const MysoftApproachSection = () => (
+  <section id="s10" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE MYSOFT RECOMMENDATION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          How Mysoft approaches Sage X3 cloud migrations
+        </h2>
+        {[
+          'Mysoft\'s position is that cloud migration for Sage X3 customers is a structured programme, not a technical exercise. The business case, the data readiness assessment, the customisation rationalisation, and the process redesign matter as much as the technical migration itself, and treating the work as purely technical is how migrations disappoint.',
+          'This is not new ground for Mysoft. The firm has worked with private-cloud deployments of Sage X3 for over a decade, and was an Early Adopter of Sage\'s native cloud X3 offering. That depth means the assessment, the migration approach, and the post-go-live optimisation are informed by real deployment experience across both private-cloud and native-cloud models, not by a methodology applied for the first time.',
+          'The methodology reflects that. It begins with a pre-migration assessment covering data quality, a customisation inventory, an integration map, and the business case. It moves into design, covering target architecture, process rationalisation, and the AI roadmap. It then runs a phased implementation, followed by hypercare, and into Stage 2 activation with X3CloudDocs and automation. Cloud is the gateway to the rest of the maturity ladder: Sage X3 cloud is the foundation for Stage 2 automation through X3CloudDocs and for Stage 3 AI-augmented operations through SEI and Phocas. On-premise customers cannot reach the full ladder, which is part of why the migration matters beyond infrastructure.',
+          'The counsel is honest by design. Mysoft conducts the pre-migration assessment before recommending a timeline and approach, and a business that is not ready receives a readiness programme rather than a migration project. That protects the customer and the eventual outcome.',
+        ].map((p, i, arr) => (
+          <p key={i} style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: i === arr.length - 1 ? '0 0 32px' : '0 0 20px' }}>{p}</p>
+        ))}
+        <Button variant="primary" onClick={() => { window.location.href = '../../contact/'; }}>
+          Book a migration assessment conversation
+        </Button>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 11: LEARNING JOURNEY ─────────────────────────────────────────────────
+
+const LearningJourneySection = () => {
+  const steps = [
+    { num: 1, label: 'Cloud Migration Bootcamp', active: true, desc: 'What migration involves, migration versus re-implementation, the business case, and the phases of the project.', linkText: 'You are here', href: null },
+    { num: 2, label: 'ERP Bootcamp', active: false, desc: 'What the destination platform delivers, and what Sage X3 looks like as a cloud-native ERP.', linkText: 'Read the ERP Bootcamp', href: '../../resources/erp-bootcamp/' },
+    { num: 3, label: 'eInvoicing Bootcamp', active: false, desc: 'A Stage 2 capability the cloud unlocks, and how X3CloudDocs delivers structured eInvoicing.', linkText: 'Read the eInvoicing Bootcamp', href: '../../resources/einvoicing-bootcamp/' },
+    { num: 4, label: 'AI Bootcamp', active: false, desc: 'The capabilities the cloud foundation makes reachable, from automation to AI-augmented finance.', linkText: 'Read the AI Bootcamp', href: '../../resources/ai-bootcamp/' },
+    { num: 5, label: 'Talk to Mysoft', active: false, desc: 'A migration assessment conversation about your readiness, your timeline, and the right approach.', linkText: 'Book a conversation', href: '../../contact/' },
+  ];
+
+  return (
+    <section id="s11" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span className="sec-eyebrow" style={{ display: 'inline-block' }}>WHERE TO GO NEXT</span>
+          <h2 className="sec-h2" style={{ maxWidth: 660, margin: '0 auto' }}>
+            Your learning journey, from migration fundamentals to a confident decision
+          </h2>
+        </div>
+
+        <div className="journey-wrap" style={{ display: 'flex', gap: 0, alignItems: 'flex-start' }}>
+          {steps.map((s, i) => (
+            <div key={i} className="journey-step">
+              {i < steps.length - 1 && <div className="journey-connector" />}
+              <div
+                className="journey-step-circle"
+                style={s.active
+                  ? { background: 'var(--cyan)', color: '#fff', boxShadow: '0 0 0 6px rgba(0,182,237,0.15)' }
+                  : { background: 'var(--navy)', color: 'rgba(255,255,255,0.7)' }
+                }
+              >
+                {s.num}
+              </div>
+              <div className="journey-step-label">{s.label}</div>
+              <div className="journey-step-desc">{s.desc}</div>
+              {s.href
+                ? <a href={s.href} className="journey-step-link">{s.linkText} →</a>
+                : <span className="journey-step-link" style={{ color: 'var(--muted)', cursor: 'default' }}>{s.linkText}</span>
+              }
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── FINAL CTA ────────────────────────────────────────────────────────────────
+
+const FinalCTASection = ({ onAssess }) => (
+  <section className="bootcamp-sec bootcamp-sec-navy">
+    <div className="container" style={{ textAlign: 'center' }}>
+      <div style={{ maxWidth: 640, margin: '0 auto' }}>
+        <h2 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', lineHeight: 1.1,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 20px',
+        }}>
+          Is your business ready to move to cloud ERP?
+        </h2>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.7,
+          color: 'rgba(255,255,255,0.7)', margin: '0 0 36px',
+        }}>
+          The direction is settled for most mid-market businesses. The question is timing and readiness, and the right way to answer it is a structured assessment of your data, your customisations, and your connectivity before any timeline is committed. A planned migration on your terms is cheaper and calmer than a forced one.
+        </p>
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Button variant="primary" onClick={onAssess}>
+            Book a migration assessment
+          </Button>
+          <Button variant="ghostWhite" onClick={() => { window.location.href = '../../resources/erp-bootcamp/'; }}>
+            Read the ERP Bootcamp
+          </Button>
+        </div>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.35)',
+          margin: '24px 0 0',
+        }}>
+          No commitment required. A conversation about your readiness and the right timeline.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToAssess = () => { window.location.href = '../../contact/'; };
+  return (
+    <>
+      <NavBar basePath="../../" onAssess={scrollToAssess} />
+      <SectionNav />
+      <main>
+        <HeroSection />
+        <WhyCloudSection />
+        <GlossarySection />
+        <MigrationVsReimpSection />
+        <BusinessCaseSection />
+        <WhatInvolvesSection />
+        <RiskChangeSection />
+        <CustomisationSection />
+        <WhenNotSection />
+        <VendorQuestionsSection />
+        <MysoftApproachSection />
+        <LearningJourneySection />
+        <FinalCTASection onAssess={scrollToAssess} />
+      </main>
+      <Footer basePath="../../" onAssess={scrollToAssess} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+</html>

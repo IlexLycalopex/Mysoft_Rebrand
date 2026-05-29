@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Master Data Management In Focus | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Why master data quality determines ERP and AI performance: and what a structured master data management programme looks like for mid-market businesses on Sage X3 or Sage Intacct.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/focus/master-data-management">
+<meta property="og:title" content="Master Data Management In Focus | Mysoft">
+<meta property="og:description" content="Why master data quality determines ERP and AI performance: and what a structured master data management programme looks like for mid-market businesses on Sage X3 or Sage Intacct.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../../colors_and_type.css">
+<link rel="stylesheet" href="../../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans); color: var(--fg-1);
+  -webkit-font-smoothing: antialiased; padding-top: var(--nav-h);
+}
+
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+
+.section-nav {
+  position: sticky; top: var(--nav-h); z-index: 90;
+  background: #fff; border-bottom: 1px solid var(--border-1);
+  padding: 0 32px; box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container); margin: 0 auto;
+  display: flex; align-items: center; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px; font-family: var(--font-sans);
+  font-size: 12.5px; font-weight: 500; color: var(--fg-2);
+  white-space: nowrap; cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none; display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none; padding: 0 32px; position: sticky; top: var(--nav-h); z-index: 90;
+  background: #fff; border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%; padding: 14px 16px; font-family: var(--font-sans);
+  font-size: 13px; font-weight: 500; color: var(--navy);
+  background: #fff; border: none; outline: none; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center;
+}
+
+.focus-header { background: var(--bg); padding: 56px 32px 48px; border-bottom: 1px solid var(--border-1); }
+.focus-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 22px; font-size: 12px; color: var(--muted); }
+.focus-breadcrumb a { color: var(--cyan); text-decoration: none; }
+.focus-breadcrumb-sep { opacity: 0.5; }
+.focus-chips { display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+.focus-chip {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-sans); font-weight: 600; font-size: 10.5px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 999px;
+}
+.focus-chip-type { background: var(--cyan); color: #fff; }
+.focus-chip-topic { background: transparent; color: var(--navy); border: 1px solid var(--border-2); }
+.focus-h1 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0 0 22px; max-width: 880px;
+}
+.focus-lede {
+  font-family: var(--font-sans); font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65; color: var(--fg-2); max-width: 820px; margin: 0;
+}
+
+.focus-sec { padding: 72px 32px; }
+.focus-sec-alt { background: #fff; }
+.focus-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: 880px; margin: 0 auto; }
+
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem); line-height: 1.15;
+  letter-spacing: -0.02em; color: var(--navy); margin: 0;
+}
+.focus-p { font-size: 16px; line-height: 1.7; color: var(--fg-2); margin: 0 0 20px; }
+.focus-p:last-child { margin-bottom: 0; }
+
+/* Four-domain cards */
+.domain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.domain-card {
+  background: #fff; border: 1px solid var(--border-1); border-radius: 4px;
+  padding: 26px 22px; display: flex; flex-direction: column;
+}
+.domain-name {
+  font-family: var(--font-display); font-weight: 600; font-size: 1.05rem;
+  color: var(--navy); margin: 0 0 16px; line-height: 1.3;
+}
+.domain-block { margin-bottom: 14px; }
+.domain-block:last-child { margin-bottom: 0; }
+.domain-block-label {
+  font-family: var(--font-sans); font-weight: 600; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px;
+}
+.domain-block-text { font-family: var(--font-sans); font-size: 12.5px; line-height: 1.55; color: var(--fg-2); }
+
+/* Four-stage programme */
+.stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.stage-card {
+  background: #fff; border: 1px solid var(--border-1); border-radius: 4px;
+  border-top: 3px solid var(--cyan); padding: 26px 22px;
+}
+.stage-num {
+  font-family: var(--font-display); font-weight: 700; font-size: 12px;
+  color: var(--cyan); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;
+}
+.stage-title { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--navy); margin: 0 0 10px; }
+.stage-body { font-family: var(--font-sans); font-size: 13px; line-height: 1.6; color: var(--fg-2); }
+
+.pull-quote-navy {
+  background: var(--navy); color: #fff;
+  border-left: 4px solid var(--x3cd-red);
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5; letter-spacing: -0.01em;
+}
+
+.next-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.next-step {
+  background: #fff; border: 1px solid var(--border-1); border-radius: 4px;
+  padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;
+}
+.next-step-num {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 15px;
+}
+.next-step-text { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--navy); line-height: 1.35; flex: 1; }
+.next-step-link { font-family: var(--font-sans); font-weight: 600; font-size: 13px; color: var(--cyan); text-decoration: none; }
+.next-step-link:hover { text-decoration: underline; }
+
+@media (max-width: 1023px) {
+  .focus-sec { padding: 56px 24px; }
+  .focus-header { padding: 44px 24px 40px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .domain-grid { grid-template-columns: repeat(2, 1fr); }
+  .stage-grid { grid-template-columns: repeat(2, 1fr); }
+  .next-steps-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .focus-sec { padding: 48px 20px; }
+  .focus-header { padding: 36px 20px 32px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .domain-grid { grid-template-columns: 1fr; }
+  .stage-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../../vendor/react.development.js"></script>
+<script src="../../../vendor/react-dom.development.js"></script>
+<script src="../../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../../Button.jsx"></script>
+<script type="text/babel" src="../../../NavBar.jsx"></script>
+<script type="text/babel" src="../../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+const MDM_NAV_ITEMS = [
+  { id: 's1', label: 'Why MDM Matters' },
+  { id: 's2', label: 'The Four Domains' },
+  { id: 's3', label: 'Common Failure Modes' },
+  { id: 's4', label: 'MDM as AI Foundation' },
+  { id: 's5', label: 'Governance' },
+  { id: 's6', label: 'The MDM Programme' },
+  { id: 's7', label: 'X3CloudDocs & SOA' },
+  { id: 's8', label: 'Next Steps' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => { entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); }); },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    MDM_NAV_ITEMS.forEach(({ id }) => { const el = document.getElementById(id); if (el) observer.observe(el); });
+    return () => observer.disconnect();
+  }, []);
+  const scrollTo = (id) => {
+    const el = document.getElementById(id); if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {MDM_NAV_ITEMS.map(({ id, label }) => (
+            <a key={id} href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}>{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select className="section-nav-select" value={active} onChange={e => scrollTo(e.target.value)}>
+          {MDM_NAV_ITEMS.map(({ id, label }) => (<option key={id} value={id}>{label}</option>))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+const FocusHeader = () => (
+  <header className="focus-header">
+    <div className="container">
+      <div className="focus-breadcrumb">
+        <a href="../../../">Home</a>
+        <span className="focus-breadcrumb-sep">/</span>
+        <span>Resources</span>
+        <span className="focus-breadcrumb-sep">/</span>
+        <span>In Focus</span>
+      </div>
+      <div className="focus-chips">
+        <span className="focus-chip focus-chip-type">In Focus</span>
+        <span className="focus-chip focus-chip-topic">Master Data Management</span>
+      </div>
+      <h1 className="focus-h1">
+        Master data: why it determines whether your ERP delivers, and what to do when it does not
+      </h1>
+      <p className="focus-lede">
+        Master data is the reference data that every transaction in your ERP depends on: your suppliers, your customers, your products, your chart of accounts. When it is clean, consistently governed, and trusted, the ERP works as designed. When it is duplicated, inconsistently coded, or ungoverned, every report, every automation, and every AI capability is affected. This page explains what master data management involves and why it is the foundation, not the detail, of ERP and AI performance.
+      </p>
+    </div>
+  </header>
+);
+
+// ─── SEC 1 ───────────────────────────────────────────────────────────────────
+
+const WhyMatterSection = () => (
+  <section id="s1" className="focus-sec focus-sec-light">
+    <div className="container">
+      <div className="narrow">
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why master data is the foundation that ERP and AI performance rests on
+        </h2>
+        <p className="focus-p">
+          Every ERP transaction depends on master data. A purchase order depends on a supplier record, a sales order depends on a customer record and a product record, a journal depends on the chart of accounts. The quality of each transaction is therefore bounded by the quality of the master data it references, which means master data is not a back-office detail. It is the substrate the whole system runs on.
+        </p>
+        <p className="focus-p">
+          Master data problems also compound rather than stay contained. A single duplicated supplier record means two payment histories, two credit limits, and two sets of tax codes. Automated three-way matching fails on the duplicate, accounts payable automation rejects invoices that reference a supplier not in the master, and AI coding models are confused by inconsistently coded data. One bad record becomes a chain of downstream failures.
+        </p>
+        <p className="focus-p">
+          There is an audit and fraud dimension too. Auditors ask how suppliers are approved. If the honest answer is that anyone in the accounts payable team can add a supplier by filling in a form, the audit-trail question follows immediately, because ungoverned master data is a control weakness, not just an operational inconvenience. And the evidence base is clear: inadequate data preparation consistently ranks among the leading causes of ERP implementations failing to meet their objectives, and poor master data is rarely the sole cause but is almost always a contributing factor.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: FOUR DOMAINS ──────────────────────────────────────────────────────
+
+const DomainsSection = () => {
+  const domains = [
+    {
+      name: 'Supplier (vendor) master',
+      covers: 'Supplier name, address, bank details, payment terms, VAT and tax status, currency, approved status, and category codes.',
+      failure: 'Duplicate suppliers under different or slightly varied names, stale bank details, ungoverned additions with no approval workflow, and inconsistent category coding.',
+      impact: 'Accounts payable automation failures, payments to the wrong destination, fraud vulnerability through unauthorised additions, and unreliable spend analysis.',
+    },
+    {
+      name: 'Customer master',
+      covers: 'Customer name, billing and delivery addresses, contact details, credit terms and limit, currency, price lists, and VAT status.',
+      failure: 'Duplicates from multiple entry points across sales, customer service, and accounts; inconsistent address formats; and stale credit limits.',
+      impact: 'Incorrect invoicing addresses, credit-limit failures, duplicate receivables records, and unreliable revenue reporting by customer.',
+    },
+    {
+      name: 'Product / item master',
+      covers: 'Product codes, descriptions, units of measure, bill-of-materials references in manufacturing, stock valuation method, sales and purchase price lists, and cost codes.',
+      failure: 'Proliferating product codes created rather than reusing existing ones, inconsistent description formats, stale pricing, and bill-of-materials inaccuracies in manufacturing.',
+      impact: 'Incorrect stock valuation, MRP failures in manufacturing, unreliable margin reporting, and accounts payable automation failures on product-code matching.',
+    },
+    {
+      name: 'Chart of accounts',
+      covers: 'Account codes, account names, account types across profit and loss and balance sheet, dimensional structure, and cost-centre mapping.',
+      failure: 'Account proliferation, where new codes are added for every minor variation instead of using dimensional analysis, inconsistent naming conventions, and redundant codes that are never retired.',
+      impact: 'Reporting complexity, dimensional analysis failures, budget mapping errors, and consolidation difficulty.',
+    },
+  ];
+
+  return (
+    <section id="s2" className="focus-sec focus-sec-alt">
+      <div className="container">
+        <div className="narrow" style={{ marginBottom: 40 }}>
+          <h2 className="sec-h2">
+            The four master data domains: what each covers, and where quality most often fails
+          </h2>
+        </div>
+        <div className="domain-grid">
+          {domains.map((d, i) => (
+            <div key={i} className="domain-card">
+              <h3 className="domain-name">{d.name}</h3>
+              <div className="domain-block">
+                <div className="domain-block-label">Covers</div>
+                <div className="domain-block-text">{d.covers}</div>
+              </div>
+              <div className="domain-block">
+                <div className="domain-block-label">Common failure</div>
+                <div className="domain-block-text">{d.failure}</div>
+              </div>
+              <div className="domain-block">
+                <div className="domain-block-label">Impact of poor quality</div>
+                <div className="domain-block-text">{d.impact}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 3 ───────────────────────────────────────────────────────────────────
+
+const FailureSection = () => (
+  <section id="s3" className="focus-sec focus-sec-light">
+    <div className="container">
+      <div className="narrow">
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          How master data problems arise, and why they are hard to see until they cause a problem
+        </h2>
+        <p className="focus-p">
+          Most master data problems come from a small set of recurring causes. The first is the absence of an approval workflow for additions: new suppliers, customers, and products are added by operational staff without structured review, so quality degrades continuously and invisibly. The second is data migration carrying the problem in: an implementation that migrates legacy data without a structured cleanse-and-deduplicate programme imports the existing problems at go-live, so the new system starts dirty on day one. The third is the absence of a periodic audit: data that was accurate at go-live drifts as suppliers change bank details, products are discontinued without being deactivated, and customers change legal names, and without scheduled review the drift accumulates silently. The fourth is multiple entry points with no governance: sales entering customers, accounts payable entering suppliers, and the warehouse entering products, each with different conventions, because consistency requires governance rather than instructions.
+        </p>
+        <p className="focus-p">
+          Underlying all four is a visibility problem. Master data quality issues are usually invisible until they cause an operational failure, an accounts payable rejection, a payment to a wrong bank account, or a stock variance that will not reconcile. By the time the symptom surfaces, the root cause is months old and the data is already widely corrupted, which is why prevention through governance is so much cheaper than remediation.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 4 ───────────────────────────────────────────────────────────────────
+
+const AIFoundationSection = () => (
+  <section id="s4" className="focus-sec focus-sec-alt">
+    <div className="container">
+      <div className="narrow">
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why clean master data is the prerequisite for AI in ERP
+        </h2>
+        <p className="focus-p">
+          AI capabilities in the ERP, invoice coding, anomaly detection, demand forecasting, and automated matching, all operate on master data. An AI model that learns to code invoices against a supplier master full of duplicates learns the duplicates, and a forecasting model that references a product master with inconsistent codes produces inconsistent forecasts. The model inherits the quality of the data beneath it, good or bad.
+        </p>
+        <p className="focus-p">
+          This is why data quality is one of the five domains in Mysoft's AI Readiness Assessment. A business with poor master data governance scores at Stage 1 regardless of its ERP sophistication or its AI ambition, and the assessment recommendation in that case is always to address master data before activating AI. The specific risk is worth stating plainly: AI confidence is not the same as AI accuracy. An accounts payable automation system coding invoices against a poor supplier master will code confidently and wrongly, and human-in-the-loop governance catches that only if the exception thresholds are configured to catch it. The practical implication is straightforward. Any business planning AI activation at Stage 2 or Stage 3 of the maturity ladder should conduct a master data audit before project initiation, and the audit scope and remediation estimate should sit inside the business case rather than emerge as a surprise during delivery.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 5 ───────────────────────────────────────────────────────────────────
+
+const GovernanceSection = () => (
+  <section id="s5" className="focus-sec focus-sec-light">
+    <div className="container">
+      <div className="narrow">
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Master data governance: what it requires, and what it produces
+        </h2>
+        <p className="focus-p">
+          Governance is not a system feature. It is a set of decisions about who is accountable, what the approval process is, and how compliance is monitored. The system enforces governance, but humans design it, and that distinction is where most governance efforts succeed or fail.
+        </p>
+        <p className="focus-p">
+          Four components make it work. Ownership means a named data owner for each domain, accountable for quality and compliance. An approval workflow means structured review and approval for all new additions and material changes. Naming conventions means documented, enforced standards for how master data is recorded. A periodic audit means a scheduled review of each domain for accuracy, completeness, and deduplication. In practice, an approval workflow looks like this: new supplier requests are initiated by accounts payable, reviewed by the finance manager for credit and payment terms, and approved by the finance director above a value threshold, with bank-detail changes requiring separate approval and a verification step. That is the minimum that withstands audit scrutiny. The data owner role is not a full-time position in a mid-market business. It is an accountability assigned to an existing role, the finance manager owning the supplier master, the commercial director owning the customer master. Accountability without a named owner is no accountability at all.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 6: PROGRAMME ─────────────────────────────────────────────────────────
+
+const ProgrammeSection = () => {
+  const stages = [
+    { n: 'Stage 1', t: 'Audit', b: 'Assess the current state through duplicate analysis, a completeness check, naming-convention compliance, and documentation of the approval workflow or its absence. The output is a prioritised list of quality issues by domain, with a remediation estimate.' },
+    { n: 'Stage 2', t: 'Cleanse', b: 'Systematically deduplicate, standardise, and enrich existing records, prioritising by impact so that high-volume suppliers and customers come first. Validate against external sources such as Companies House and the HMRC VAT register where relevant, and document the cleansed baseline.' },
+    { n: 'Stage 3', t: 'Govern', b: 'Implement approval workflows, naming conventions, and ownership accountability. For an ERP implementation, configure master data workflows before go-live; for an existing ERP, configure the workflows and communicate the changes with training. The governance design matters more than the tooling.' },
+    { n: 'Stage 4', t: 'Maintain', b: 'Run a periodic audit schedule, quarterly for high-volume domains and annually for lower-volume ones, with exception monitoring to flag records added outside the workflow or not updated for more than twelve months. Fold master data quality into the regular ERP optimisation review cycle so it does not drift again.' },
+  ];
+
+  return (
+    <section id="s6" className="focus-sec focus-sec-alt">
+      <div className="container">
+        <div className="narrow" style={{ marginBottom: 40 }}>
+          <h2 className="sec-h2">
+            What a master data management programme looks like: four stages
+          </h2>
+        </div>
+        <div className="stage-grid">
+          {stages.map((s, i) => (
+            <div key={i} className="stage-card">
+              <div className="stage-num">{s.n}</div>
+              <h3 className="stage-title">{s.t}</h3>
+              <p className="stage-body">{s.b}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 7: X3CLOUDDOCS & SOA ─────────────────────────────────────────────────
+
+const X3CloudDocsSection = () => {
+  const RED = 'var(--x3cd-red)';
+  return (
+    <section id="s7" className="focus-sec focus-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ marginBottom: 32 }}>
+          <div style={{
+            background: '#fff', border: '1px solid var(--border-1)',
+            borderLeft: `4px solid ${RED}`,
+            borderRadius: 4, padding: '24px 28px',
+          }}>
+            <span style={{
+              fontFamily: 'var(--font-sans)', fontWeight: 500, fontSize: 11,
+              letterSpacing: '0.18em', textTransform: 'uppercase',
+              color: RED, display: 'block', marginBottom: 10,
+            }}>THE MYSOFT APPROACH</span>
+            <h2 className="sec-h2">
+              How X3CloudDocs automates supplier and customer onboarding, without compromising governance
+            </h2>
+          </div>
+        </div>
+
+        <div className="narrow">
+          <p className="focus-p">
+            X3CloudDocs Supplier and Customer Onboarding Automation (SOA) automates the structured collection, validation, and approval of new supplier and customer data, creating governed master data records in Sage X3 without manual data entry. It applies the governance principles from the previous section as an automated workflow rather than as a manual discipline that depends on people remembering to follow it.
+          </p>
+          <p className="focus-p">
+            The process is straightforward in outline. A supplier submits their data through a structured onboarding form, the data is validated automatically against business registers and VAT databases, an approval workflow routes it for finance manager and finance director sign-off, and the approved record is created in Sage X3 with a complete audit trail. What it replaces is email-based onboarding, where a supplier sends bank details by email, the accounts payable team keys them in by hand, and the audit trail is an email thread.
+          </p>
+
+          <div className="pull-quote-navy" style={{ margin: '32px 0' }}>
+            Bank-detail changes are the most common accounts payable fraud vector. SOA requires re-verification of bank details through the structured workflow rather than email approval. That is a material fraud control, not just a process efficiency.
+          </div>
+
+          <p className="focus-p" style={{ marginBottom: 32 }}>
+            Mysoft's role places SOA within its Stage 2 X3CloudDocs implementation, alongside purchase invoice automation. Both capabilities depend on a clean supplier master to work correctly, and SOA is what creates and maintains that master, which is why the two are delivered together.
+          </p>
+
+          <Button variant="primary" onClick={() => { window.location.href = '../../../contact/'; }}>
+            Speak to Mysoft about X3CloudDocs
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 8: NEXT STEPS ────────────────────────────────────────────────────────
+
+const NextStepsSection = () => {
+  const steps = [
+    { n: 1, t: 'Read the ERP Bootcamp, or the FMS Bootcamp', link: 'Read the ERP Bootcamp', href: '../../../resources/erp-bootcamp/' },
+    { n: 2, t: 'Take the AI Readiness Assessment, where data quality is one of the five assessed domains', link: 'Start the assessment', href: '../../../ai-readiness-assessment.html' },
+    { n: 3, t: 'Book a conversation with Mysoft about data readiness', link: 'Get in touch', href: '../../../contact/' },
+  ];
+  return (
+    <section id="s8" className="focus-sec focus-sec-alt">
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: 44 }}>
+          <span className="sec-eyebrow" style={{ display: 'inline-block' }}>WHERE TO GO NEXT</span>
+          <h2 className="sec-h2" style={{ maxWidth: 560, margin: '0 auto' }}>Three steps from here</h2>
+        </div>
+        <div className="next-steps-grid">
+          {steps.map((s, i) => (
+            <div key={i} className="next-step">
+              <div className="next-step-num">{s.n}</div>
+              <div className="next-step-text">{s.t}</div>
+              <a href={s.href} className="next-step-link">{s.link} →</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToAssess = () => { window.location.href = '../../../contact/'; };
+  return (
+    <>
+      <NavBar basePath="../../../" onAssess={scrollToAssess} />
+      <SectionNav />
+      <main>
+        <FocusHeader />
+        <WhyMatterSection />
+        <DomainsSection />
+        <FailureSection />
+        <AIFoundationSection />
+        <GovernanceSection />
+        <ProgrammeSection />
+        <X3CloudDocsSection />
+        <NextStepsSection />
+      </main>
+      <Footer basePath="../../../" onAssess={scrollToAssess} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+</html>

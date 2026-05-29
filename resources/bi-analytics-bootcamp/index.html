@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BI &amp; Analytics Bootcamp | Mysoft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What business intelligence is, how it differs from ERP reporting, which tools matter for mid-market finance and operations, and how to build an analytics capability that actually gets used.">
+<link rel="canonical" href="https://mysoft.co.uk/resources/bi-analytics-bootcamp">
+<meta property="og:title" content="BI &amp; Analytics Bootcamp | Mysoft">
+<meta property="og:description" content="What business intelligence is, how it differs from ERP reporting, which tools matter for mid-market finance and operations, and how to build an analytics capability that actually gets used.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="../../responsive.css">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-h);
+}
+
+.btn { transition: background 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out), transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary:hover    { background: var(--navy-400) !important; }
+.btn-accent:hover     { opacity: 0.88; }
+.btn-ghost:hover      { border-color: var(--navy) !important; }
+.btn-ghostWhite:hover { border-color: rgba(255,255,255,0.7) !important; }
+.btn-invert:hover     { background: var(--bg) !important; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(0,26,34,0.14); border-radius: 99px; }
+.nav-active { color: var(--cyan) !important; }
+
+.section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+  padding: 0 32px;
+  box-shadow: 0 1px 8px rgba(0,26,34,0.06);
+}
+.section-nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-inner::-webkit-scrollbar { display: none; }
+.section-nav-item {
+  padding: 16px 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+  white-space: nowrap;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+  text-decoration: none;
+  display: block;
+}
+.section-nav-item:hover { color: var(--navy); }
+.section-nav-item.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+.section-nav-mobile {
+  display: none;
+  padding: 0 32px;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: #fff;
+  border-bottom: 1px solid var(--border-1);
+}
+.section-nav-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7480' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.bootcamp-sec { padding: 100px 32px; }
+.bootcamp-sec-alt { background: #fff; }
+.bootcamp-sec-navy { background: var(--navy); color: #fff; }
+.bootcamp-sec-light { background: var(--bg); }
+.container { max-width: var(--container); margin: 0 auto; }
+.narrow { max-width: var(--container-narrow); margin: 0 auto; }
+
+.hero-bootcamp { background: var(--navy); padding: 96px 32px 88px; }
+.hero-breadcrumb { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.hero-breadcrumb a { color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 140ms; }
+.hero-breadcrumb a:hover { opacity: 1; }
+.hero-breadcrumb-sep { opacity: 0.4; }
+
+.eyebrow-dark {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 14px;
+}
+
+.comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 14px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.5;
+  vertical-align: top; min-width: 140px;
+}
+.comparison-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.comparison-table tr:nth-child(even) td { background: var(--bg); }
+.comparison-table tr:nth-child(odd) td { background: #fff; }
+.comparison-table td:first-child {
+  font-weight: 600; color: var(--navy); font-size: 13px;
+  background: var(--bg) !important; white-space: nowrap;
+}
+
+.accordion-group { border: 1px solid var(--border-1); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+.accordion-group-header {
+  padding: 18px 24px; background: var(--bg);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none; transition: background 140ms;
+}
+.accordion-group-header:hover { background: #eaedef; }
+.accordion-group-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--navy);
+}
+.accordion-term {
+  border-top: 1px solid var(--border-1); padding: 0;
+  background: #fff;
+}
+.accordion-term-header {
+  padding: 16px 24px; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; user-select: none;
+  transition: background 140ms;
+}
+.accordion-term-header:hover { background: rgba(0,182,237,0.03); }
+.accordion-term-name {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.3;
+}
+.accordion-term-body {
+  padding: 0 24px 20px;
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2);
+}
+.accordion-chevron { flex-shrink: 0; transition: transform 220ms var(--ease-out); color: var(--muted); }
+.accordion-chevron.open { transform: rotate(180deg); }
+
+.pull-quote {
+  border-left: 4px solid var(--yellow);
+  background: var(--navy); color: #fff;
+  padding: 32px 36px; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.feature-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 36px 32px;
+  display: flex; flex-direction: column;
+}
+.feature-card-icon {
+  width: 48px; height: 48px; border-radius: 4px;
+  background: rgba(0,182,237,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; flex-shrink: 0;
+}
+.feature-card-h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.2rem; color: var(--navy);
+  line-height: 1.25; margin: 0 0 16px; letter-spacing: -0.01em;
+}
+.feature-card-body {
+  font-family: var(--font-sans); font-size: 14.5px;
+  line-height: 1.65; color: var(--fg-2); flex: 1;
+}
+
+.stat-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 28px 24px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.stat-card-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.question-item {
+  display: flex; gap: 20px; padding: 24px 28px;
+  border-bottom: 1px solid var(--border-1);
+  background: #fff; align-items: flex-start;
+}
+.question-item:first-child { border-top: 1px solid var(--border-1); border-radius: 4px 4px 0 0; }
+.question-item:last-child { border-radius: 0 0 4px 4px; border-bottom: 1px solid var(--border-1); }
+.question-num {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.4rem; color: var(--cyan); letter-spacing: -0.02em;
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.question-text { flex: 1; }
+.question-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 15px; color: var(--navy); line-height: 1.4;
+}
+.question-body { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.65; color: var(--fg-2); }
+
+.journey-step {
+  display: flex; flex-direction: column; align-items: center; flex: 1; position: relative;
+}
+.journey-step-circle {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  position: relative; z-index: 2; flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+}
+.journey-connector {
+  position: absolute; top: 22px; left: calc(50% + 22px);
+  right: calc(-50% + 22px); height: 1px; background: var(--border-1);
+}
+.journey-step-label {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 14px; color: var(--navy); margin-top: 14px; text-align: center;
+  line-height: 1.3;
+}
+.journey-step-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-3);
+  line-height: 1.5; text-align: center; margin-top: 6px; max-width: 160px;
+}
+.journey-step-link {
+  margin-top: 10px; font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; color: var(--cyan); text-decoration: none; text-align: center;
+}
+.journey-step-link:hover { text-decoration: underline; }
+
+.sec-eyebrow {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); display: block; margin-bottom: 12px;
+}
+.sec-h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy); margin: 0;
+}
+.sec-h2-white {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.025em; color: #fff; margin: 0;
+}
+
+.callout-yellow {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--yellow);
+  border-radius: 4px; padding: 24px 28px;
+}
+.callout-cyan {
+  background: #fff; border: 1px solid var(--border-1);
+  border-left: 4px solid var(--cyan);
+  border-radius: 4px; padding: 28px 32px;
+}
+
+.model-card {
+  background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 32px 28px;
+}
+.model-card-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.05rem; color: var(--navy); line-height: 1.3; margin: 0 0 16px;
+}
+
+/* BI stack pipeline */
+.pipeline-wrap {
+  display: flex; align-items: stretch; gap: 0;
+  margin: 24px 0 0;
+}
+.pipeline-stage {
+  flex: 1; background: #fff; border: 1px solid var(--border-1);
+  border-radius: 4px; padding: 24px 20px; display: flex; flex-direction: column;
+  align-items: flex-start; position: relative;
+}
+.pipeline-stage-icon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: rgba(0,182,237,0.08); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.pipeline-stage-num {
+  font-family: var(--font-display); font-weight: 700; font-size: 12px;
+  color: var(--cyan); margin-bottom: 6px;
+}
+.pipeline-stage-label {
+  font-family: var(--font-display); font-weight: 600; font-size: 14px;
+  color: var(--navy); line-height: 1.3; margin-bottom: 8px;
+}
+.pipeline-stage-desc {
+  font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-2); line-height: 1.55;
+}
+.pipeline-arrow {
+  flex: 0 0 28px; display: flex; align-items: center; justify-content: center;
+  color: var(--muted);
+}
+
+.bc-table-wrap { overflow-x: auto; }
+.bc-table { width: 100%; border-collapse: collapse; }
+.bc-table th, .bc-table td {
+  padding: 14px 18px; text-align: left;
+  border: 1px solid var(--border-1); line-height: 1.55;
+  vertical-align: top; font-size: 13.5px;
+  font-family: var(--font-sans);
+}
+.bc-table th {
+  background: var(--navy); color: #fff;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 13px; letter-spacing: -0.01em;
+}
+.bc-table tr:nth-child(even) td { background: var(--bg); }
+.bc-table tr:nth-child(odd) td { background: #fff; }
+.bc-table td:first-child { font-weight: 600; color: var(--navy); min-width: 140px; }
+
+@media (max-width: 1023px) {
+  .bootcamp-sec { padding: 80px 24px; }
+  .hero-bootcamp { padding: 80px 24px 72px; }
+  .section-nav { display: none; }
+  .section-nav-mobile { display: block; }
+  .grid-3-resp { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2-resp { grid-template-columns: 1fr !important; }
+  .journey-wrap { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; }
+  .journey-step { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; flex: none !important; width: 100% !important; }
+  .journey-connector { display: none !important; }
+  .journey-step-circle { flex-shrink: 0 !important; }
+  .journey-step-label, .journey-step-desc, .journey-step-link { text-align: left !important; max-width: none !important; }
+  .pipeline-wrap { flex-direction: column; }
+  .pipeline-arrow { flex: 0 0 28px; transform: rotate(90deg); }
+}
+@media (max-width: 767px) {
+  .bootcamp-sec { padding: 64px 20px; }
+  .hero-bootcamp { padding: 64px 20px 56px; }
+  .section-nav-mobile { padding: 0 20px; }
+  .grid-3-resp { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  .question-item { padding: 18px 20px; }
+  .question-num { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../../vendor/react.development.js"></script>
+<script src="../../vendor/react-dom.development.js"></script>
+<script src="../../vendor/babel.min.js"></script>
+
+<script type="text/babel" src="../../Button.jsx"></script>
+<script type="text/babel" src="../../NavBar.jsx"></script>
+<script type="text/babel" src="../../Footer.jsx"></script>
+
+<script type="text/babel">
+
+// ─── ICONS ───────────────────────────────────────────────────────────────────
+
+const ICON_PATHS = {
+  TrendingUp:  `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`,
+  BarChart2:   `<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>`,
+  Layers:      `<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>`,
+  GitBranch:   `<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>`,
+  Archive:     `<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/>`,
+  BookOpen:    `<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>`,
+  Database:    `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>`,
+  PieChart:    `<path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>`,
+  Check:       `<polyline points="20 6 9 17 4 12"/>`,
+  ChevronDown: `<polyline points="6 9 12 15 18 9"/>`,
+  ArrowRight:  `<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>`,
+};
+
+const Icon = ({ name, size = 20, color = 'currentColor', strokeWidth = 1.75, style = {} }) => (
+  <svg
+    viewBox="0 0 24 24" width={size} height={size}
+    fill="none" stroke={color}
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+    style={style}
+    dangerouslySetInnerHTML={{ __html: ICON_PATHS[name] || '' }}
+  />
+);
+
+// ─── SECTION NAV ─────────────────────────────────────────────────────────────
+
+const BI_NAV_ITEMS = [
+  { id: 's1',  label: 'Why BI' },
+  { id: 's2',  label: 'Glossary' },
+  { id: 's3',  label: 'Reporting vs BI vs AI' },
+  { id: 's4',  label: 'The BI Stack' },
+  { id: 's5',  label: 'Failure Modes' },
+  { id: 's6',  label: 'BI for Finance' },
+  { id: 's7',  label: 'BI for Operations' },
+  { id: 's8',  label: 'Selecting a Tool' },
+  { id: 's9',  label: 'Vendor Questions' },
+  { id: 's10', label: 'Mysoft Approach' },
+  { id: 's11', label: 'Learning Journey' },
+];
+
+const SectionNav = () => {
+  const [active, setActive] = React.useState('s1');
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+      },
+      { rootMargin: '-80px 0px -50% 0px', threshold: 0 }
+    );
+    BI_NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <nav className="section-nav">
+        <div className="section-nav-inner">
+          {BI_NAV_ITEMS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={'#' + id}
+              className={'section-nav-item' + (active === id ? ' active' : '')}
+              onClick={e => { e.preventDefault(); scrollTo(id); }}
+            >{label}</a>
+          ))}
+        </div>
+      </nav>
+      <nav className="section-nav-mobile">
+        <select
+          className="section-nav-select"
+          value={active}
+          onChange={e => scrollTo(e.target.value)}
+        >
+          {BI_NAV_ITEMS.map(({ id, label }) => (
+            <option key={id} value={id}>{label}</option>
+          ))}
+        </select>
+      </nav>
+    </>
+  );
+};
+
+// ─── HERO ────────────────────────────────────────────────────────────────────
+
+const HeroSection = () => (
+  <section className="hero-bootcamp">
+    <div className="container">
+      <div className="hero-breadcrumb">
+        <a href="../../">Home</a>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span>Resources</span>
+        <span className="hero-breadcrumb-sep">/</span>
+        <span style={{ color: 'rgba(255,255,255,0.65)' }}>BI &amp; Analytics Bootcamp</span>
+      </div>
+
+      <div style={{ maxWidth: 880 }}>
+        <span className="eyebrow-dark">BI &amp; ANALYTICS BOOTCAMP</span>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.05,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 24px',
+        }}>
+          Business intelligence: what it actually is, and why most BI projects fail before they start
+        </h1>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+          lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: 720, margin: '0 0 12px',
+        }}>
+          "Better reporting" is one of the most common reasons mid-market businesses give for investing in ERP or finance systems, and one of the least well defined. This Bootcamp explains what business intelligence actually involves, why it differs from the reports your ERP produces on its own, which tools sit between your financial system and your board pack, and what separates the BI programmes that deliver decisions from the ones that produce dashboards nobody trusts. It is written for finance and operations leaders, not for technologists.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 14, color: 'rgba(255,255,255,0.4)',
+          margin: 0,
+        }}>
+          Eleven sections. Built for finance and operations leaders who need to decide, not just understand.
+        </p>
+
+        <div style={{
+          marginTop: 48, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          {[
+            { n: '11', l: 'Core sections', sub: 'From vocabulary to vendor selection' },
+            { n: '4',  l: 'Glossary groups', sub: 'Over 30 defined terms' },
+            { n: '6',  l: 'BI tools compared', sub: 'Native to specialist' },
+            { n: '10', l: 'Vendor questions', sub: 'Shareable checklist' },
+          ].map((s, i) => (
+            <div key={i} style={{
+              paddingLeft: i > 0 ? 32 : 0,
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 700,
+                fontSize: '2rem', color: '#fff', letterSpacing: '-0.03em', lineHeight: 1,
+              }}>{s.n}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 5 }}>{s.l}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11.5, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 1: WHY BI ────────────────────────────────────────────────────────────
+
+const WhyBISection = () => (
+  <section id="s1" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE CONTEXT</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          Why "I need better reporting" is the right problem with the wrong solution attached
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Most mid-market businesses that ask for a reporting tool do not have a reporting tool problem. They have a data problem: a data model that was never designed for analysis, data quality that erodes a little every month, or no agreed definition of what a given number actually means. A business intelligence tool applied to data like that does not fix the problem. It renders it in higher resolution. The output is a set of confident, well-designed dashboards that happen to be wrong, which is more dangerous than a spreadsheet everyone already distrusts.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          It helps to be precise about what BI is for. Your ERP or finance system is the source of financial truth. It records what happened and produces the standard reports that close the books and satisfy the auditor. Business intelligence extends that truth into the operational and analytical dimensions the system holds but does not surface well: profitability by customer, performance by product line, efficiency by site, the trend behind the number rather than the number itself. The gap between what your ERP reports and what the business actually needs to understand is the gap BI exists to fill, but only when the data underneath is trustworthy.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          There is also a board-level reality. Chief executives and non-executive directors are now accustomed to live, visual, self-service data in every other part of their lives. A finance function that arrives at the board meeting with a static spreadsheet pack assembled over two days is increasingly read as operationally behind, however accurate that pack is. The perception gap is real and it influences confidence in the finance function itself.
+        </p>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-3-resp">
+        {[
+          {
+            icon: 'BarChart2',
+            stat: 'Most BI failures are data failures.',
+            copy: 'Industry analysts have for years estimated that the majority of business intelligence initiatives fail to meet their original objectives, with figures commonly cited in the 70 to 80 per cent range. The recurring root cause is not the tool. It is the data model, data quality, and the absence of agreed metric definitions beneath it.',
+          },
+          {
+            icon: 'Layers',
+            stat: 'Adoption is the silent killer.',
+            copy: 'Self-service BI is widely reported to reach only around a fifth of licensed users in active monthly use. The tool is rarely the bottleneck. Training, trust, and a business-readable data model are.',
+          },
+          {
+            icon: 'TrendingUp',
+            stat: 'AI analytics needs a BI foundation.',
+            copy: 'Clean, consistently dimensioned data has to exist before AI can surface reliable insight from it. AI applied to an ungoverned data model produces fluent, confident, unreliable answers. BI done properly is the groundwork that makes AI analytics safe.',
+          },
+        ].map((c, i) => (
+          <div key={i} className="stat-card">
+            <div className="stat-card-icon">
+              <Icon name={c.icon} size={20} color="var(--navy)" />
+            </div>
+            <div>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: 15, color: 'var(--navy)', lineHeight: 1.3, marginBottom: 6,
+              }}>{c.stat}</div>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: 13.5, color: 'var(--fg-2)', lineHeight: 1.6 }}>{c.copy}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 2: GLOSSARY ──────────────────────────────────────────────────────────
+
+const GLOSSARY_GROUPS = [
+  {
+    id: 'bg1', title: 'Foundations',
+    terms: [
+      { term: 'Business Intelligence (BI)', def: 'The tools, processes, and disciplines that turn raw operational and financial data into insight that supports a decision. BI is analytical and exploratory, not just descriptive.' },
+      { term: 'Analytics', def: 'The activity of examining data to find patterns, explanations, and predictions. Reporting tells you what happened; analytics helps you understand why and what to do next.' },
+      { term: 'Data', def: 'The raw records held in your systems. Data on its own is not information. It becomes information when it is structured, defined, and given context.' },
+      { term: 'KPI (Key Performance Indicator)', def: 'A small number of measures that track progress against a specific objective. A KPI is a metric the business has decided to act on.' },
+      { term: 'Metric', def: 'Any quantifiable measure. All KPIs are metrics; not all metrics are KPIs.' },
+      { term: 'Dashboard', def: 'A single visual surface that brings related metrics together for monitoring. A good dashboard answers a defined set of questions for a defined audience.' },
+      { term: 'Report', def: 'A structured presentation of data, usually backward-looking and produced to a fixed format. Reports document; dashboards monitor; analytics explores.' },
+      { term: 'Data Literacy', def: 'The ability of people across the business to read, interpret, and question data correctly. Low data literacy is a more common cause of BI failure than poor tooling.' },
+    ],
+  },
+  {
+    id: 'bg2', title: 'Architecture',
+    terms: [
+      { term: 'Data Source', def: 'Any system that holds data you want to analyse: the ERP, the finance system, the CRM, the billing platform, spreadsheets.' },
+      { term: 'Data Warehouse', def: 'A central store designed for analysis, holding structured data drawn from multiple sources and organised for fast querying.' },
+      { term: 'Data Lake', def: 'A store that holds large volumes of raw data in its native format, structured or not, for later processing. More common in larger or data-intensive organisations than in typical mid-market finance.' },
+      { term: 'Data Model', def: 'The way data is structured, related, and defined for analysis. The single biggest determinant of whether BI succeeds.' },
+      { term: 'ETL (Extract, Transform, Load)', def: 'The process of taking data from source systems, reshaping it into a consistent structure, and loading it into the warehouse or BI tool.' },
+      { term: 'OLAP and Cube', def: 'OLAP (Online Analytical Processing) is a way of pre-organising data across dimensions (time, product, region) so that users can slice and explore it quickly. A cube is the multidimensional structure that makes that exploration fast.' },
+      { term: 'Semantic Layer', def: 'A translation layer that maps technical database fields into business language, so that a user selects "Revenue" rather than T_SALES_HDR.AMT_GROSS. Crucial to self-service adoption.' },
+    ],
+  },
+  {
+    id: 'bg3', title: 'Visualisation and delivery',
+    terms: [
+      { term: 'Visualisation', def: 'The presentation of data in charts, tables, and graphics that make patterns legible.' },
+      { term: 'Self-Service BI', def: 'The ability for non-technical users such as finance managers and operational leads to build their own reports and dashboards without IT involvement. Depends entirely on a well-governed semantic layer.' },
+      { term: 'Embedded Analytics', def: 'BI delivered inside another application, so users see relevant data without switching tools.' },
+      { term: 'Drill-Down and Drill-Through', def: 'Drilling down moves from a summary to its detail within the same view; drilling through navigates to a related, more detailed report.' },
+      { term: 'Ad Hoc Reporting', def: 'Building a one-off report to answer a specific question, rather than running a pre-built one.' },
+      { term: 'Scheduled Report', def: 'A report generated and distributed automatically on a set cadence.' },
+    ],
+  },
+  {
+    id: 'bg4', title: 'Advanced',
+    terms: [
+      { term: 'Descriptive Analytics', def: 'What happened.' },
+      { term: 'Predictive Analytics', def: 'What is likely to happen, based on patterns in historical data.' },
+      { term: 'Prescriptive Analytics', def: 'What you should do about it, given the prediction.' },
+      { term: 'AI-Driven Analytics', def: 'The use of machine learning and AI to surface patterns, anomalies, and answers that would be impractical to find manually.' },
+      { term: 'Anomaly Detection', def: 'Automated identification of values that fall outside expected patterns, used for exception monitoring and fraud signals.' },
+      { term: 'Natural Language Query (NLQ)', def: 'The ability to ask a BI tool a question in plain English, such as "what was gross margin in Q3 by product line", and receive a visual answer. Increasingly available in modern tools and typically powered by AI.' },
+    ],
+  },
+];
+
+const AccordionGroup = ({ group }) => {
+  const [open, setOpen] = React.useState(false);
+  const [openTerms, setOpenTerms] = React.useState({});
+
+  const toggleTerm = (i) => setOpenTerms(prev => ({ ...prev, [i]: !prev[i] }));
+
+  return (
+    <div className="accordion-group">
+      <div className="accordion-group-header" onClick={() => setOpen(o => !o)}>
+        <span className="accordion-group-title">{group.title}</span>
+        <Icon
+          name="ChevronDown" size={18}
+          color="var(--muted)"
+          style={{ transition: 'transform 220ms', transform: open ? 'rotate(180deg)' : 'none' }}
+        />
+      </div>
+      {open && group.terms.map((t, i) => (
+        <div key={i} className="accordion-term">
+          <div className="accordion-term-header" onClick={() => toggleTerm(i)}>
+            <span className="accordion-term-name">{t.term}</span>
+            <Icon
+              name="ChevronDown" size={16}
+              color="var(--muted)"
+              style={{ transition: 'transform 220ms', transform: openTerms[i] ? 'rotate(180deg)' : 'none', flexShrink: 0, marginTop: 2 }}
+            />
+          </div>
+          {openTerms[i] && (
+            <div className="accordion-term-body">{t.def}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const GlossarySection = () => (
+  <section id="s2" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div style={{ textAlign: 'center', marginBottom: 48 }}>
+        <span className="sec-eyebrow" style={{ display: 'inline-block' }}>GLOSSARY</span>
+        <h2 className="sec-h2" style={{ maxWidth: 640, margin: '0 auto 16px' }}>
+          The vocabulary of business intelligence, defined clearly
+        </h2>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.65, color: 'var(--fg-2)', maxWidth: 640, margin: '0 auto' }}>
+          Business intelligence borrows vocabulary from accounting, data engineering, and statistics. These definitions give finance and operations leaders the working understanding needed to scope a programme, evaluate tools, and engage with IT.
+        </p>
+      </div>
+      {GLOSSARY_GROUPS.map(g => <AccordionGroup key={g.id} group={g} />)}
+
+      <div className="callout-cyan" style={{ marginTop: 32, maxWidth: 880 }}>
+        <h3 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.1rem',
+          color: 'var(--navy)', margin: '0 0 14px',
+        }}>The four definitions worth getting right</h3>
+        {[
+          ['BI versus reporting:', 'Reporting answers "what happened" and is backward-looking and structured. BI adds "why did it happen" and "what might happen next" and is analytical and exploratory. Many tools do both. The distinction is in how they are used, not only in what they are.'],
+          ['Self-service BI:', 'Genuine self-service means a finance manager or operational lead can answer a new question without raising a ticket. That is only possible when the semantic layer presents data in language they recognise. Without it, self-service is a licence nobody uses.'],
+          ['Semantic layer:', 'The unglamorous component that decides whether BI is adopted. If the data model is not translated into business terms, users will not navigate it, and the programme quietly reverts to a handful of analysts exporting to Excel.'],
+          ['NLQ:', 'Useful and improving quickly, but only as reliable as the governed data model behind it. NLQ on a clean, well-defined model is powerful. NLQ on an ungoverned one produces plausible answers to the wrong question.'],
+        ].map(([lead, body], i) => (
+          <p key={i} style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: i === 3 ? 0 : '0 0 12px' }}>
+            <strong style={{ color: 'var(--navy)' }}>{lead}</strong> {body}
+          </p>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 3: REPORTING VS BI VS AI ─────────────────────────────────────────────
+
+const LandscapeSection = () => {
+  const rows = [
+    ['What it is', 'Standard, structured reports produced by the core system', 'An analytical layer that models, combines, and visualises data for exploration', 'Machine learning applied to surface patterns, anomalies, and answers automatically'],
+    ['Primary question answered', 'What happened?', 'Why did it happen, and what is the trend?', 'What is unusual, what is likely next, and what should we ask?'],
+    ['Who uses it', 'Finance and operations staff running the business day to day', 'Finance managers, operational leads, analysts exploring performance', 'Decision-makers querying in natural language; systems flagging exceptions'],
+    ['Data source', 'The ERP or finance system itself', 'The ERP plus other systems, combined in a governed model', 'The governed BI model, plus historical data for training'],
+    ['Update frequency', 'Real time to scheduled, within the system', 'Real time to scheduled, depending on integration', 'Continuous, on the underlying model'],
+    ['Finance example', 'The aged debtors report; the trial balance', 'Customer profitability across entities; cash flow trend with drill-down', '"Flag invoices that look unusual"; "forecast Q4 collections from the cohort"'],
+    ['Risk profile', 'Low. Bounded by the system\'s own data', 'Moderate. Only as good as the data model and metric definitions', 'Higher. Confident, fluent output can mask a flawed model or biased data'],
+  ];
+
+  const cards = [
+    { t: 'Operational reporting.', b: 'This is your floor, not your ceiling. Most mid-market businesses underuse the native reporting in Sage X3 and Sage Intacct before concluding they need a BI tool. Exhaust the platform first.' },
+    { t: 'Business intelligence.', b: 'This is where cross-functional insight lives: combining sales, stock, and finance, or projects and revenue, into a single explorable view. It is also where most of the value, and most of the risk, sits.' },
+    { t: 'AI-driven analytics.', b: 'This is the newest layer and the most oversold. It delivers genuine value on a clean foundation and unreliable theatre on a poor one. Treat it as the top of the ladder, not the first rung.' },
+  ];
+
+  return (
+    <section id="s3" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">UNDERSTANDING THE LANDSCAPE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            Operational reporting, business intelligence, and AI analytics are three different things
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            These three are complementary layers, not competing choices. Operational reporting is the baseline that every ERP and finance system produces. BI adds analytical depth, combines data across systems, and enables self-service exploration. AI analytics adds pattern recognition, anomaly detection, and natural language interaction. Each layer builds on the one beneath it. None replaces the previous one, and skipping a layer is how programmes go wrong: AI analytics on top of an unreliable data model inherits every weakness of that model and presents it with more authority.
+          </p>
+        </div>
+
+        <div className="comparison-table-wrap" style={{ marginBottom: 40 }}>
+          <table className="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Operational Reporting (ERP/FMS native)</th>
+                <th>Business Intelligence (dedicated BI tool)</th>
+                <th>AI-Driven Analytics</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i}>
+                  {r.map((cell, j) => (
+                    <td key={j}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }} className="grid-3-resp">
+          {cards.map((c, i) => (
+            <div key={i} className="feature-card">
+              <h3 className="feature-card-h3">{c.t}</h3>
+              <p className="feature-card-body">{c.b}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 4: THE BI STACK ──────────────────────────────────────────────────────
+
+const BIStackSection = () => {
+  const pipeline = [
+    { num: '01', icon: 'Layers',    label: 'Data Sources',         desc: 'The ERP, finance system, CRM, and other systems that hold the data.' },
+    { num: '02', icon: 'GitBranch', label: 'Integration / ETL',    desc: 'Extracting data and reshaping it into a consistent structure.' },
+    { num: '03', icon: 'Archive',   label: 'Data Model / Warehouse', desc: 'The structured, related store designed for analysis.' },
+    { num: '04', icon: 'BookOpen',  label: 'Semantic Layer',       desc: 'The translation of technical fields into business language.' },
+    { num: '05', icon: 'BarChart2', label: 'Visualisation / Delivery', desc: 'The dashboards, reports, and queries people actually use.' },
+  ];
+
+  const tools = [
+    { t: 'Native dashboards in Sage X3 and Sage Intacct (the baseline).', b: 'Both platforms include reporting and dashboard capability as standard. Sage X3 provides operational reports, enquiry screens, and configurable dashboards across finance and operations. Sage Intacct provides real-time dashboards, dimensional reporting, and role-based home screens. Native capability is the starting point: it covers standard reporting, it is included in the platform licence, and it is routinely underused. It does not, on its own, replace a dedicated BI tool for cross-functional analytics, self-service exploration, or complex visualisation.' },
+    { t: 'Sage Enterprise Intelligence (SEI), also known as Nectari.', b: 'A Sage-native BI and analytics platform, referred to by both names within the Sage ecosystem. It ships with pre-built connectors and data models for Sage X3 and Sage Intacct, which materially reduces time-to-value against a generic tool. It covers financial and operational analytics with dashboards and self-service reporting built around Sage data structures. It is the right choice where a Sage-specific, maintained BI layer is needed without the configuration overhead of a generic platform. Mysoft positions SEI as a Stage 3 capability in its AI maturity framework for Sage X3.' },
+    { t: 'Phocas.', b: 'Operational BI with pre-built connectors for Sage X3 and Sage Intacct, strongest in manufacturing, distribution, and wholesale. It combines financial and operational data, including sales, stock, purchasing, and production, in a single analytical environment designed for operational managers rather than only finance. It reaches value quickly for X3 customers whose primary need is operational insight such as customer profitability, stock performance, and sales analysis.' },
+    { t: 'Velixo.', b: 'Excel-connected reporting and planning for Sage X3 and Sage Intacct. It lets finance teams work in Excel against live system data, removing the manual export and re-import cycle while keeping familiar Excel workflows. It is not a full BI platform. It is the right tool where Excel-native financial reporting and planning is the requirement and broad self-service BI adoption is not the goal.' },
+    { t: 'ZAP BI.', b: 'Sage-specific BI and analytics, relevant where a customer needs deeper Sage integration than generic tools provide, with broader analytical scope than Velixo.' },
+    { t: 'Power BI (Microsoft).', b: 'Generic, widely adopted, and strong on visualisation. It has no native Sage connector, so integration is via API or a third-party connector and requires more effort than a pre-built option. It is the right fit where the organisation already has a Microsoft stack investment and the internal BI capability to configure and maintain it. It is rarely the right first BI tool for a business with no dedicated BI resource.' },
+  ];
+
+  return (
+    <section id="s4" className="bootcamp-sec bootcamp-sec-alt">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">HOW IT WORKS</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            What a BI stack looks like, from data source to dashboard
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+            Business intelligence is not a single product you buy. It is a pipeline. Data flows from your source systems, through an integration step, into a structured model, where a semantic layer makes it readable, and finally out to the dashboards and reports people use. Understanding the pipeline matters because BI projects fail at specific points in it, and because the tool you choose mainly affects the last two stages. The stages before it, integration and modelling, are where the real work and the real risk live.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            In the mid-market, the ERP or finance system is the primary data source. BI tools connect to it through one of three mechanisms: a pre-built connector designed for that system, a generic API connection, or a direct database connection. Pre-built connectors matter more than they sound. A tool with a maintained connector and data model for Sage X3 or Sage Intacct reaches useful output in a fraction of the time it takes to build a generic connection and model from scratch. The semantic layer is where self-service then succeeds or fails: if the model is not translated into business language, users will not adopt it, however capable the tool.
+          </p>
+        </div>
+
+        <div className="pipeline-wrap">
+          {pipeline.map((p, i) => (
+            <React.Fragment key={i}>
+              <div className="pipeline-stage">
+                <div className="pipeline-stage-icon"><Icon name={p.icon} size={20} color="var(--cyan)" /></div>
+                <div className="pipeline-stage-num">{p.num}</div>
+                <div className="pipeline-stage-label">{p.label}</div>
+                <div className="pipeline-stage-desc">{p.desc}</div>
+              </div>
+              {i < pipeline.length - 1 && (
+                <div className="pipeline-arrow"><Icon name="ArrowRight" size={20} /></div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 56 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 600,
+            fontSize: '1.25rem', color: 'var(--navy)', margin: '0 0 12px',
+          }}>BI capability layers, from native to specialist</h3>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 24px', maxWidth: 880 }}>
+            BI is best understood as a layered capability rather than a single purchase. The right layer for a business depends on what it needs to analyse and what it already runs.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {tools.map((t, i) => (
+              <div key={i} className="model-card">
+                <div className="model-card-title">{t.t}</div>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>{t.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 5: FAILURE MODES ─────────────────────────────────────────────────────
+
+const FailureModesSection = () => {
+  const failures = [
+    { t: 'Failure 1: BI applied to poor-quality data.', b: 'When the data in your system is inconsistently coded, partially migrated, or simply not trusted by the business, a BI tool does not repair it. It surfaces it and amplifies it. The result is a set of visually impressive dashboards that the operational teams quietly ignore because they know the numbers are not right. Fix the data model and the data quality first. The tool comes after.' },
+    { t: 'Failure 2: Adoption failure, where only the builder uses the tool.', b: 'Self-service BI needs training, governance, and a semantic layer that a non-technical user can navigate. Most implementations reach real adoption with one or two power users and almost no one else. Design for the median user, not the analyst who built it, or the investment serves a handful of people and the rest of the business carries on in spreadsheets.' },
+    { t: 'Failure 3: Too many dashboards, not enough decisions.', b: 'Organisations build a dashboard for every function and every metric, then discover that nobody knows which one is authoritative and nobody maintains the ones that have drifted from the data model. The outcome is a sprawl of partially accurate views that erode trust rather than build it. Fewer, governed, owned dashboards beat many unowned ones.' },
+    { t: 'Failure 4: BI without a business owner.', b: 'BI needs continuous stewardship: maintaining the model, updating reports as the business changes, training new users, and governing the authoritative definition of each metric. Without a named owner, the capability decays quietly until someone notices the numbers no longer reconcile.' },
+    { t: 'Failure 5: Selecting a tool before defining the questions.', b: 'The most common sequencing error. The business picks a tool from a strong vendor demonstration, then tries to work out what questions it wants to answer. Reverse it. Define the decisions the business needs to make, then choose the tool that answers them against your data.' },
+  ];
+
+  return (
+    <section id="s5" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">WHERE BI PROJECTS FAIL</span>
+          <h2 className="sec-h2">
+            Why most BI implementations underdeliver, and how to avoid it
+          </h2>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 980 }}>
+          {failures.map((f, i) => (
+            <div key={i} className="callout-yellow">
+              <div style={{
+                fontFamily: 'var(--font-display)', fontWeight: 600,
+                fontSize: '1.05rem', color: 'var(--navy)', margin: '0 0 8px',
+              }}>{f.t}</div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, lineHeight: 1.65, color: 'var(--fg-2)', margin: 0 }}>{f.b}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 6: BI FOR FINANCE ────────────────────────────────────────────────────
+
+const BIFinanceSection = () => (
+  <section id="s6" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">FINANCE APPLICATIONS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          What BI delivers for a finance function, beyond the management accounts
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          For finance, BI extends well past the trial balance. It brings multi-entity performance, cost centre analysis, cash flow forecasting, working capital visibility, and project profitability into views the team can explore rather than reports they have to assemble. During the close, BI dashboards let the team monitor accruals, prepayments, and reconciliation status in real time, which removes the bottlenecks that come from finding out where things stand only at period end.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 32px' }}>
+          For the finance director specifically, the value is a single live view of entity performance, treasury position, and the key financial KPIs, available on any day rather than after a period-end report cycle. And at board level, BI lets finance move from static PDF packs to live, interactive presentation, or to producing the static pack in minutes from a governed model rather than assembling it by hand over days.
+        </p>
+
+        <div className="callout-cyan">
+          <span style={{
+            fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10.5,
+            letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--cyan)',
+            display: 'block', marginBottom: 10,
+          }}>Illustrative scenario</span>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 15, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 8px' }}>
+            A professional services firm running Velixo on Sage Intacct produces its board pack from a governed Velixo model in around 40 minutes at period end. The same pack previously took two days of spreadsheet assembly and was often still incomplete when it reached the board.
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 12.5, color: 'var(--muted)', margin: 0 }}>
+            Illustrative scenario, not a named customer reference.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 7: BI FOR OPERATIONS ─────────────────────────────────────────────────
+
+const BIOperationsSection = () => (
+  <section id="s7" className="bootcamp-sec bootcamp-sec-light">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">OPERATIONS APPLICATIONS</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          What BI delivers for operations, the insight the ERP holds but does not surface
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Operational BI, where Phocas is the typical fit, turns data the ERP already records into insight operational managers can act on: sales performance by product, customer, and territory; stock turn and inventory analysis; supplier performance; production efficiency; and purchasing trends. The critical difference from native ERP reporting is that BI combines data across modules, joining sales, stock, and finance, and presents it in an explorable, self-service form for operational managers rather than only for finance.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          In distribution and wholesale, that means customer profitability, product margin by SKU, rebate visibility, and early identification of slow-moving stock. In manufacturing, it means production yield, work-centre efficiency, material cost variance, and bill-of-materials actual against standard. These are questions the ERP can answer but rarely surfaces well, which is precisely the gap BI fills.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 8: SELECTING A BI TOOL ───────────────────────────────────────────────
+
+const SelectingSection = () => (
+  <section id="s8" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">MAKING THE DECISION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          How to choose the right BI tool for a mid-market business
+        </h2>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          Selection should turn on a small number of criteria that actually predict success: the quality of the connector to your ERP or finance system, whether pre-built or custom; the strength of the semantic layer; how well the tool is designed for self-service adoption rather than analyst-only use; total cost of ownership; the quality of vendor support; and the licensing model against your real user count.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: '0 0 20px' }}>
+          The build-versus-buy question sits underneath this. Generic tools such as Power BI and Tableau offer broad capability but require significant configuration against ERP data and the internal skill to maintain it. Pre-built ERP connectors such as Phocas, Velixo, SEI, and ZAP reach value faster for ERP-centric analytics, at the cost of some flexibility. For most mid-market finance functions without a dedicated BI team, faster time-to-value on a maintained connector is the better trade.
+        </p>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+          Two disciplines protect the decision. First, always run a structured proof of concept against your own data before committing, using your real data model, your specific KPIs, and your awkward edge cases, not the vendor's demonstration dataset. Second, put governance first: define your metric definitions, data ownership, and maintenance model before you select. A governance-first process produces both a better tool choice and far better adoption.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 9: VENDOR QUESTIONS ──────────────────────────────────────────────────
+
+const VendorQuestionsSection = () => {
+  const questions = [
+    'What is the specific integration mechanism with our ERP or finance system: a pre-built connector, an API, or direct database access?',
+    'How current is the data: real time, near real time, or batch updated, and what drives the refresh?',
+    'Show us a self-service report built by a non-technical user against our data model, not a pre-built demonstration.',
+    'What does the semantic layer look like, and can business users navigate it without IT support?',
+    'What is the governance model for metric definitions, and how do we keep definitions consistent across the organisation?',
+    'What does adoption look like in comparable customers: what proportion of licensed users are active monthly?',
+    'How is the tool maintained when our ERP or finance system is upgraded or reconfigured?',
+    'What is the licensing model: per user, per viewer, or per data volume, and how does it scale?',
+    'What AI analytics capabilities are available today, and what is firmly on the roadmap?',
+    'Who owns the data model on an ongoing basis: us, you, or a shared arrangement?',
+  ];
+
+  return (
+    <section id="s9" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div className="narrow" style={{ padding: 0, marginBottom: 40 }}>
+          <span className="sec-eyebrow">BUYER INTELLIGENCE</span>
+          <h2 className="sec-h2" style={{ marginBottom: 20 }}>
+            Ten questions to ask before selecting a BI solution
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: 0 }}>
+            BI vendor claims vary widely in their specificity. These questions test whether a tool can deliver the integration, adoption, and governance that decide whether a BI programme is used or shelved.
+          </p>
+        </div>
+
+        <div>
+          {questions.map((q, i) => (
+            <div key={i} className="question-item">
+              <div className="question-num">{String(i + 1).padStart(2, '0')}</div>
+              <div className="question-text">
+                <div className="question-title">{q}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--muted)',
+          margin: '20px 0 0', textAlign: 'center',
+        }}>
+          This list is intended for use in vendor briefings, procurement panels, and board presentations.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+// ─── SEC 10: MYSOFT APPROACH ──────────────────────────────────────────────────
+
+const MysoftApproachSection = () => (
+  <section id="s10" className="bootcamp-sec bootcamp-sec-alt">
+    <div className="container">
+      <div className="narrow" style={{ padding: 0 }}>
+        <span className="sec-eyebrow">THE MYSOFT RECOMMENDATION</span>
+        <h2 className="sec-h2" style={{ marginBottom: 28 }}>
+          How Mysoft approaches BI, and which tools we recommend for which situations
+        </h2>
+        {[
+          'Mysoft positions BI as Stage 3 of the AI maturity ladder: the analytical intelligence layer that sits on the governed ERP and finance foundation built in Stages 1 and 2. That sequence matters. BI on an ungoverned foundation produces the failure modes set out above, which is why the foundation comes first.',
+          'The starting point is always native. Before recommending any third-party BI tool, Mysoft assesses whether native Sage X3 or Sage Intacct dashboards and reporting already meet the requirement. A large share of mid-market businesses are underusing the platform they already own before they invest in additional tooling, and closing that gap is often the fastest and cheapest improvement available.',
+          'For Sage X3 customers who need BI beyond native capability, Sage Enterprise Intelligence (SEI/Nectari) is the primary recommendation: Sage-native, maintained, and fast to value. Phocas is the recommendation where operational BI is the priority and manufacturing, distribution, or wholesale analytics is the main need. Velixo is the recommendation where Excel-connected financial reporting and planning is the actual workflow requirement.',
+          'For Sage Intacct customers who need BI beyond native, Velixo suits Excel-connected financial reporting and planning, while ZAP BI or SEI suit deeper analytical requirements. It is worth noting that Sage Intacct\'s native dimensional reporting handles more of the standard financial BI requirement than most customers expect before go-live, which again argues for assessing native capability first.',
+          'Power BI is the recommendation where the organisation already has a Microsoft stack investment and the internal BI capability to configure and maintain it, rather than as a first BI tool for a business without dedicated BI resource.',
+          'Mysoft\'s role is BI requirements assessment and tool recommendation as part of Stage 3 scoping, ensuring the data model is correctly structured before any tooling is selected and configured. Tool selection follows requirements definition, never the other way around.',
+        ].map((p, i, arr) => (
+          <p key={i} style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--fg-2)', margin: i === arr.length - 1 ? '0 0 32px' : '0 0 20px' }}>{p}</p>
+        ))}
+        <Button variant="primary" onClick={() => { window.location.href = '../../contact/'; }}>
+          Speak to Mysoft about your analytics requirements
+        </Button>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── SEC 11: LEARNING JOURNEY ─────────────────────────────────────────────────
+
+const LearningJourneySection = () => {
+  const steps = [
+    { num: 1, label: 'BI Bootcamp', active: true, desc: 'What BI is, how it differs from reporting and AI analytics, the BI stack, and the tools that fit the mid-market.', linkText: 'You are here', href: null },
+    { num: 2, label: 'ERP Bootcamp', active: false, desc: 'The operational platform beneath the analytics, and what Sage X3 delivers as the source of truth.', linkText: 'Read the ERP Bootcamp', href: '../../resources/erp-bootcamp/' },
+    { num: 3, label: 'FMS Bootcamp', active: false, desc: 'The finance system beneath the analytics, and where Sage Intacct dimensional reporting fits.', linkText: 'Read the FMS Bootcamp', href: '../../resources/fms-bootcamp/' },
+    { num: 4, label: 'AI Bootcamp', active: false, desc: 'How AI analytics builds on a governed BI foundation, and where it adds value or risk.', linkText: 'Read the AI Bootcamp', href: '../../resources/ai-bootcamp/' },
+    { num: 5, label: 'Talk to Mysoft', active: false, desc: 'A conversation about your reporting and analytics requirements and the right tool for your data.', linkText: 'Book a conversation', href: '../../contact/' },
+  ];
+
+  return (
+    <section id="s11" className="bootcamp-sec bootcamp-sec-light">
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span className="sec-eyebrow" style={{ display: 'inline-block' }}>WHERE TO GO NEXT</span>
+          <h2 className="sec-h2" style={{ maxWidth: 640, margin: '0 auto' }}>
+            Your learning journey, from BI fundamentals to a tool decision
+          </h2>
+        </div>
+
+        <div className="journey-wrap" style={{ display: 'flex', gap: 0, alignItems: 'flex-start' }}>
+          {steps.map((s, i) => (
+            <div key={i} className="journey-step">
+              {i < steps.length - 1 && <div className="journey-connector" />}
+              <div
+                className="journey-step-circle"
+                style={s.active
+                  ? { background: 'var(--cyan)', color: '#fff', boxShadow: '0 0 0 6px rgba(0,182,237,0.15)' }
+                  : { background: 'var(--navy)', color: 'rgba(255,255,255,0.7)' }
+                }
+              >
+                {s.num}
+              </div>
+              <div className="journey-step-label">{s.label}</div>
+              <div className="journey-step-desc">{s.desc}</div>
+              {s.href
+                ? <a href={s.href} className="journey-step-link">{s.linkText} →</a>
+                : <span className="journey-step-link" style={{ color: 'var(--muted)', cursor: 'default' }}>{s.linkText}</span>
+              }
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── FINAL CTA ────────────────────────────────────────────────────────────────
+
+const FinalCTASection = ({ onAssess }) => (
+  <section className="bootcamp-sec bootcamp-sec-navy">
+    <div className="container" style={{ textAlign: 'center' }}>
+      <div style={{ maxWidth: 640, margin: '0 auto' }}>
+        <h2 style={{
+          fontFamily: 'var(--font-display)', fontWeight: 600,
+          fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', lineHeight: 1.1,
+          letterSpacing: '-0.025em', color: '#fff', margin: '0 0 20px',
+        }}>
+          What decisions is your business making without the data it needs?
+        </h2>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 16, lineHeight: 1.7,
+          color: 'rgba(255,255,255,0.7)', margin: '0 0 36px',
+        }}>
+          BI delivers decisions when the foundation is sound and fails quietly when it is not. The right starting point is rarely a tool. It is a clear view of the questions the business needs to answer and the state of the data underneath. That is the conversation to have first.
+        </p>
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Button variant="primary" onClick={onAssess}>
+            Speak to Mysoft about BI strategy
+          </Button>
+          <Button variant="ghostWhite" onClick={() => { window.location.href = '../../insights/'; }}>
+            Explore the Learning Hub
+          </Button>
+        </div>
+        <p style={{
+          fontFamily: 'var(--font-sans)', fontSize: 13, color: 'rgba(255,255,255,0.35)',
+          margin: '24px 0 0',
+        }}>
+          No commitment required. A conversation about your reporting and analytics requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+// ─── APP ──────────────────────────────────────────────────────────────────────
+
+const App = () => {
+  const scrollToAssess = () => { window.location.href = '../../contact/'; };
+  return (
+    <>
+      <NavBar basePath="../../" onAssess={scrollToAssess} />
+      <SectionNav />
+      <main>
+        <HeroSection />
+        <WhyBISection />
+        <GlossarySection />
+        <LandscapeSection />
+        <BIStackSection />
+        <FailureModesSection />
+        <BIFinanceSection />
+        <BIOperationsSection />
+        <SelectingSection />
+        <VendorQuestionsSection />
+        <MysoftApproachSection />
+        <LearningJourneySection />
+        <FinalCTASection onAssess={scrollToAssess} />
+      </main>
+      <Footer basePath="../../" onAssess={scrollToAssess} />
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+</script>
+</body>
+</html>
