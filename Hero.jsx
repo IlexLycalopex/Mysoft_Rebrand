@@ -4,9 +4,11 @@
 const HERO_OUTCOMES = [
   "Built for growth",
   "Ready for the AI era",
-  "Free of operational drag",
+  "Free of friction",
   "Designed to scale",
-  "Built for what's next",
+  "Made for what's next",
+  "Taking you further",
+  "Start Up to Enterprise",
 ];
 
 const JOURNEY_STAGES = [
@@ -51,8 +53,8 @@ const HeroJourneyPanel = () => {
 
       {/* Company */}
       <div style={{ marginTop: 20 }}>
-        <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 20, letterSpacing: "-0.01em" }}>Thornfield Group</div>
-        <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "rgba(255,255,255,0.55)", marginTop: 3 }}>Sage Intacct · Manufacturing · UK + North America</div>
+        <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 20, letterSpacing: "-0.01em" }}>Example Customer</div>
+        <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "rgba(255,255,255,0.55)", marginTop: 3 }}>Sage X3 · Manufacturing · UK + North America</div>
       </div>
 
       {/* Stage stepper */}
@@ -200,9 +202,9 @@ const Hero = ({ onAssess }) => {
             <div style={{ marginTop: 48, display: "flex", gap: 0, alignItems: "stretch" }}>
               {[
                 { label: "Sage Platinum Club 2025" },
-                { label: "20 Years' Experience" },
+                { label: "20+ Years' Experience" },
                 { label: "UK + North America" },
-                { label: "98% SLA Met" },
+                { label: "First UK Sage X3 Partner" },
               ].map((t, i) => (
                 <div key={t.label} style={{
                   fontFamily: "var(--font-sans)", fontSize: 11.5, fontWeight: 500,
