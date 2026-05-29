@@ -50,7 +50,7 @@ const NAV_ITEMS = {
     label: "The Challenge",
     href: "the-challenge/",
     cols: [
-      { t: "Triggers", l: [
+      { t: "Your Challenges", l: [
         { name: "Growth Bottleneck",  sub: "When your back office can't keep pace", href: "the-challenge/growth-bottleneck/" },
         { name: "AI Mandate",         sub: "Board has asked for a credible AI strategy", href: "the-challenge/ai-mandate/" },
         { name: "Scale Ambition",     sub: "Infrastructure for 2× or 3× growth", href: "the-challenge/scale-ambition/" },
@@ -120,8 +120,7 @@ const NAV_ITEMS = {
         { name: "eInvoicing Bootcamp",  sub: "eInvoicing mandates and standards",    href: "resources/einvoicing-bootcamp/" },
       ]},
       { t: "Resources", l: [
-        { name: "AI Bootcamp",                      sub: "AI in plain English for finance", href: "resources/ai-bootcamp/" },
-        { name: "AI-Ready Finance Guide",           sub: "Gated — free download",          href: "insights/ai-ready-finance-guide/" },
+        { name: "AI-Ready Finance Guide",           sub: "Free download",          href: "insights/ai-ready-finance-guide/" },
         { name: "ERP Selection Framework",          sub: "Six-stage evaluation process",   href: "insights/erp-selection-framework/" },
         { name: "Customer Transformation Stories",  sub: "Measurable outcomes",            href: "insights/customer-transformation-stories/" },
         { name: "Demo Hub",                         sub: "Watch on demand or book live",   href: "insights/demo-hub/" },
